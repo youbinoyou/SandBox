@@ -4,22 +4,27 @@
 コーディング規約
 ---
 
-[Apple](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CodingGuidelines/CodingGuidelines.html) と [NYTimes](https://github.com/NYTimes/objective-c-style-guide) あたりに目を通しておきましょう。
+・[Apple](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CodingGuidelines/CodingGuidelines.html) 
+・[NYTimes](https://github.com/NYTimes/objective-c-style-guide)
 
 ---
 ディレクトリ構造
 ---
 
-模索中。確定しているものについては先頭に◯がついています。
 <pre>
 sandbox-iOS
 ├── ◯Controllers
-├── ?Logic（APIへのアクセスとか）
+|     ├── ◯Common 
+|     └── UIView
 ├── ◯Models
-├── ?Utils（悩んでる）
+|     ├── ◯Common 
+|     └── UIView
+├── ○Utils
+|     ├── ◯Common 
+|     └── UIView
 ├── ◯Resources（plist等）
 ├── ◯StoryBoards
 └── ◯Views
-      ├── ◯Common (UIButton 等、共通で使うものを格納)  
-      └── UIView（他、UIAlertView やら TableView やらなんやら）
+      ├── ◯Common 
+      └── UIView
 </pre>
