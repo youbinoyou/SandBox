@@ -10,6 +10,8 @@
 
 @interface ViewController ()
 
+@property (nonatomic) NSArray *buttons;
+
 @end
 
 @implementation ViewController
@@ -17,11 +19,76 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    self.buttons = @[
+                     @{@"title":@"アラートについて",@"listViewController:":@"ListAlertViewController"},
+                     ];
+    
+    CGRect rectButton = CGRectZero;
+    for (NSDictionary *item in self.buttons) {
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        
+        const CGFloat r = arc4random_uniform(255) / 255.0;
+        const CGFloat g = arc4random_uniform(255) / 255.0;
+        const CGFloat b = arc4random_uniform(255) / 255.0;
+        
+        button.backgroundColor = [UIColor colorWithRed:r green:g blue:b alpha:0.5];
+        [button setTitle:item[@"title"] forState:UIControlStateNormal];
+        [button sizeToFit];
+        button.tag = [self.buttons indexOfObject:item];
+        rectButton.origin.x = 20;
+        rectButton.size.width  = [UIScreen mainScreen].applicationFrame.size.width - 40;
+        rectButton.size.height = [UIScreen mainScreen].applicationFrame.size.height / (self.buttons.count + 2);
+        rectButton.origin.y += rectButton.size.height + 1;
+        button.frame = rectButton;
+        if (item[@"listViewController:"]) {
+            [button addTarget:self action:@selector(listViewController:event:) forControlEvents:UIControlEventTouchUpInside];
+        }
+        [self.view addSubview:button];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)listViewController:(id)sender event:(id)event{
+    
+    NSLog(@"%s",__PRETTY_FUNCTION__);
+    NSLog(@"@param\n\nsender:\n%@\nevent:\n%@",sender,event);
+    
+    UIButton *sendButton = sender;
+    Class listViewControllerClass = NSClassFromString(self.buttons[sendButton.tag][@"listViewController:"]);
+    if (listViewControllerClass) {
+        /**
+         * 遷移するViewControllerの生成
+         */
+        UIViewController *listViewController = [[listViewControllerClass alloc] init];
+        listViewController.view.backgroundColor = self.view.backgroundColor;
+        listViewController.title = self.buttons[sendButton.tag][@"title"];
+        listViewController.navigationItem.leftBarButtonItem =
+        // TOPページに戻る処理
+        [[UIBarButtonItem alloc] initWithTitle:@"TOP" style:UIBarButtonItemStylePlain target:self action:@selector(dismissCloseButtonAction:)];
+    
+        
+        UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:listViewController];
+        navigationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        [self presentViewController:navigationController animated:YES completion:^(){
+            NSLog(@"%@",self.buttons[sendButton.tag][@"title"]);
+        }];
+    } else {
+        NSLog(@"No Class : %@",self.buttons[sendButton.tag][@"listViewController:"]);
+    }
+}
+
+/**
+ * TOPページに戻る処理
+ */
+- (void)dismissCloseButtonAction:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:^(){
+        NSLog(@"%@",sender);
+    }];
 }
 
 @end
