@@ -20,6 +20,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    UILabel *titleLabel = [[UILabel alloc] init];
+    titleLabel.textAlignment = NSTextAlignmentCenter;
+    titleLabel.text = @"Xcode 学習（c）You Ohshima";
+    [titleLabel sizeToFit];
+    titleLabel.frame = CGRectMake(0,[UIScreen mainScreen].applicationFrame.size.height - titleLabel.frame.size.height,[UIScreen mainScreen].applicationFrame.size.width , titleLabel.frame.size.height);
+    [self.view addSubview:titleLabel];
     self.buttons = @[
                      @{@"title":@"アラートについて",@"listViewController:":@"ListAlertViewController"},
                      ];

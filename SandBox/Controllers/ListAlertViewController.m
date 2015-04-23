@@ -26,7 +26,7 @@
                                @"title":@"UIAlertView",
                                @"message":@"message",
                                @"delegate":self,
-                               @"cancelButtonIndex":@2,
+                               @"cancelButtonIndex":@1,
                                @"alertViewStyle":[NSNumber numberWithInteger:UIAlertViewStyleDefault],
                                @"buttonTitles":@[
                                        @"ボタンタイトル１",
@@ -39,9 +39,11 @@
                      @{@"title":@"アラートビュー（操作）Title",@"action":@"setCustomAlertTitle:"},
                      @{@"title":@"アラートビュー（操作）Message",@"action":@"setCustomAlertMessage:"},
                      @{@"title":@"アラートビュー（操作）Delegate",@"action":@"setCustomAlertDelegate:"},
-                     @{@"title":@"アラートビュー（操作）CancelButtonIndex",@"action":@"setCustomAlertCancelButtonIndex:"},
-                     @{@"title":@"アラートビュー（操作）ViewStyle",@"action":@"setCustomAlertViewStyle:"},
+                     @{@"title":@"アラートビュー（操作）CancelButtonIndex",@"action":@"selectCustomAlertCancelButtonIndex"},
+                     @{@"title":@"アラートビュー（操作）ViewStyle",@"action":@"selectCustomAlertViewStyle"},
                      @{@"title":@"アラートビュー（操作）ButtonTitles",@"action":@"setCustomAlertButtonTitles:"},
+                     @{@"title":@"アラートビュー（デフォルト）",@"action":@"defalutUIAlertButtonAction:"},
+                     
             
                      @{@"title":@"アラートビュー（カスタム）"},
                      ];
@@ -182,12 +184,13 @@
     
     NSLog(@"%@ : 生成",sender);
     
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"UIAlertView"
-                                                        message:@"message"
-                                                       delegate:self
-                                              cancelButtonTitle:@"確認"
-                                              otherButtonTitles:nil];
+//    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"UIAlertView"
+//                                                        message:@"message"
+//                                                       delegate:self
+//                                              cancelButtonTitle:@"キャンセル"
+//                                              otherButtonTitles:nil];
 
+    UIAlertView *alertView = [UIAlertView new];
     NSDictionary *item = self.buttons[0][@"UIAlertView"];
     if (item[@"title"]) {
         alertView.title = item[@"title"];
@@ -197,6 +200,9 @@
     }
     if (item[@"delegate"]) {
         alertView.delegate = item[@"delegate"];
+    }
+    for(int b = 0; b < alertView.numberOfButtons;b++) {
+        NSLog(@"button[%d] : %@",b,[alertView buttonTitleAtIndex:b]);
     }
     if (item[@"buttonTitles"]) {
         if ([alertView respondsToSelector:@selector(addButtonWithTitle:)]){
@@ -235,7 +241,23 @@
     
     [self cheackUIAlertView:alertView];
     
+    if (UIAlertViewStylePlainTextInput == alertView.alertViewStyle){
+        if ([alertView respondsToSelector:@selector(textFieldAtIndex:)]){
+            /*  - (UITextField *)textFieldAtIndex:(NSInteger)textFieldIndex NS_AVAILABLE_IOS(5_0); */
+            for (int b = 0; b < 1; b++) {
+                NSLog(@"alertView.text = %@",[alertView textFieldAtIndex:b].text);
+            }
+        }
+    }
     if (UIAlertViewStyleSecureTextInput == alertView.alertViewStyle){
+        if ([alertView respondsToSelector:@selector(textFieldAtIndex:)]){
+            /*  - (UITextField *)textFieldAtIndex:(NSInteger)textFieldIndex NS_AVAILABLE_IOS(5_0); */
+            for (int b = 0; b < 1; b++) {
+                NSLog(@"alertView.text = %@",[alertView textFieldAtIndex:b].text);
+            }
+        }
+    }
+    if (UIAlertViewStyleLoginAndPasswordInput == alertView.alertViewStyle){
         if ([alertView respondsToSelector:@selector(textFieldAtIndex:)]){
             /*  - (UITextField *)textFieldAtIndex:(NSInteger)textFieldIndex NS_AVAILABLE_IOS(5_0); */
             for (int b = 0; b < 2; b++) {
@@ -336,7 +358,6 @@
 }
 
 - (void)setCustomAlertCancelButtonIndex:(NSInteger )cancelButtonIndex {
-    cancelButtonIndex = 3;
     NSMutableArray *mButtons = [self.buttons mutableCopy];
     NSMutableDictionary *mButton = [mButtons[0] mutableCopy];
     NSMutableDictionary *mUIAlertView = [mButton[@"UIAlertView"] mutableCopy];
@@ -345,9 +366,27 @@
     mButtons[0] = mButton;
     self.buttons = mButtons;
 }
+- (void)selectCustomAlertCancelButtonIndex{
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"UIAlertView"
+                                                                   message:@"cancelButtonIndex?"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    NSArray *buttonTitles = self.buttons[0][@"UIAlertView"][@"buttonTitles"];
+    for(NSString *buttonTitle in buttonTitles){
+        [alert addAction:[UIAlertAction actionWithTitle:buttonTitle
+                                                  style:UIAlertActionStyleDefault
+                                                handler:^(UIAlertAction *action){
+                                                    [self setCustomAlertCancelButtonIndex:[buttonTitles indexOfObject:buttonTitle]];
+                                                }]];
+    }
+    
+    [self presentViewController:alert animated:YES completion:^(){
+        
+    }];
+
+}
 
 - (void)setCustomAlertViewStyle:(UIAlertViewStyle )alertViewStyle {
-    alertViewStyle = UIAlertViewStyleSecureTextInput;
     NSMutableArray *mButtons = [self.buttons mutableCopy];
     NSMutableDictionary *mButton = [mButtons[0] mutableCopy];
     NSMutableDictionary *mUIAlertView = [mButton[@"UIAlertView"] mutableCopy];
@@ -355,6 +394,37 @@
     mButton[@"UIAlertView"] = mUIAlertView;
     mButtons[0] = mButton;
     self.buttons = mButtons;
+}
+
+- (void)selectCustomAlertViewStyle{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"UIAlertView"
+                                                                   message:@"alertViewStyle?"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"UIAlertViewStyleDefault"
+                                              style:UIAlertActionStyleDefault
+                                            handler:^(UIAlertAction *action){
+                                                [self setCustomAlertViewStyle:UIAlertViewStyleDefault];
+                                            }]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"UIAlertViewStylePlainTextInput"
+                                              style:UIAlertActionStyleDefault
+                                            handler:^(UIAlertAction *action){
+                                                [self setCustomAlertViewStyle:UIAlertViewStylePlainTextInput];
+                                            }]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"UIAlertViewStyleSecureTextInput"
+                                              style:UIAlertActionStyleDefault
+                                            handler:^(UIAlertAction *action){
+                                                [self setCustomAlertViewStyle:UIAlertViewStyleSecureTextInput];
+                                            }]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"UIAlertViewStyleLoginAndPasswordInput"
+                                              style:UIAlertActionStyleDefault
+                                            handler:^(UIAlertAction *action){
+                                                [self setCustomAlertViewStyle:UIAlertViewStyleLoginAndPasswordInput];
+                                            }]];
+
+    [self presentViewController:alert animated:YES completion:^(){
+        
+    }];
+    
 }
 
 - (void)setCustomAlertButtonTitles:(NSArray *)buttonTitles {
@@ -368,6 +438,25 @@
     NSMutableDictionary *mUIAlertView = [mButton[@"UIAlertView"] mutableCopy];
     mUIAlertView[@"buttonTitles"] = buttonTitles;
     mButton[@"UIAlertView"] = mUIAlertView;
+    mButtons[0] = mButton;
+    self.buttons = mButtons;
+}
+
+-(void)defalutUIAlertButtonAction:(id)sender {
+    NSMutableArray *mButtons = [self.buttons mutableCopy];
+    NSMutableDictionary *mButton = [mButtons[0] mutableCopy];
+    mButton[@"UIAlertView"] = @{
+                                @"title":@"UIAlertView",
+                                @"message":@"message",
+                                @"delegate":self,
+                                @"cancelButtonIndex":@1,
+                                @"alertViewStyle":[NSNumber numberWithInteger:UIAlertViewStyleDefault],
+                                @"buttonTitles":@[
+                                        @"ボタンタイトル１",
+                                        @"ボタンタイトル２（キャンセル）",
+                                        @"ボタンタイトル３",
+                                        ]
+                                };
     mButtons[0] = mButton;
     self.buttons = mButtons;
 }
