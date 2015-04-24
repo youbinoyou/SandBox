@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		570B69441AE9D00D00A42DEC /* www.youbinoyou.com in Resources */ = {isa = PBXBuildFile; fileRef = 570B69431AE9D00D00A42DEC /* www.youbinoyou.com */; };
 		BDE2122F1AE69102002A0746 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDE2122E1AE69102002A0746 /* Main.storyboard */; };
 		BDE212321AE69182002A0746 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE212311AE69182002A0746 /* ViewController.m */; };
 		BDE212351AE6B477002A0746 /* CustomAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE212341AE6B477002A0746 /* CustomAlertController.m */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		570B69431AE9D00D00A42DEC /* www.youbinoyou.com */ = {isa = PBXFileReference; lastKnownFileType = folder; name = www.youbinoyou.com; path = ../../../../../../Library/WebServer/Documents/www.youbinoyou.com; sourceTree = "<group>"; };
 		BDE2122E1AE69102002A0746 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/StoryBoards/Main.storyboard; sourceTree = "<group>"; };
 		BDE212301AE69182002A0746 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = Controllers/ViewController.h; sourceTree = "<group>"; };
 		BDE212311AE69182002A0746 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = Controllers/ViewController.m; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 		BDE212271AE68D4F002A0746 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				570B69431AE9D00D00A42DEC /* www.youbinoyou.com */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 			files = (
 				BDE212381AE6B636002A0746 /* CustomAlert.storyboard in Resources */,
 				BDE2122F1AE69102002A0746 /* Main.storyboard in Resources */,
+				570B69441AE9D00D00A42DEC /* www.youbinoyou.com in Resources */,
 				BDEEC2361AD7EE9F00B522D9 /* LaunchScreen.xib in Resources */,
 				BDEEC2331AD7EE9F00B522D9 /* Images.xcassets in Resources */,
 			);
