@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		570B69441AE9D00D00A42DEC /* www.youbinoyou.com in Resources */ = {isa = PBXBuildFile; fileRef = 570B69431AE9D00D00A42DEC /* www.youbinoyou.com */; };
+		570B69471AE9D42200A42DEC /* CustomLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 570B69461AE9D42200A42DEC /* CustomLabel.m */; };
+		570B694A1AE9D4A800A42DEC /* ListLabelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 570B69491AE9D4A800A42DEC /* ListLabelViewController.m */; };
 		BDE2122F1AE69102002A0746 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDE2122E1AE69102002A0746 /* Main.storyboard */; };
 		BDE212321AE69182002A0746 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE212311AE69182002A0746 /* ViewController.m */; };
 		BDE212351AE6B477002A0746 /* CustomAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE212341AE6B477002A0746 /* CustomAlertController.m */; };
@@ -33,6 +35,10 @@
 
 /* Begin PBXFileReference section */
 		570B69431AE9D00D00A42DEC /* www.youbinoyou.com */ = {isa = PBXFileReference; lastKnownFileType = folder; name = www.youbinoyou.com; path = ../../../../../../Library/WebServer/Documents/www.youbinoyou.com; sourceTree = "<group>"; };
+		570B69451AE9D42200A42DEC /* CustomLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomLabel.h; path = Views/Common/CustomLabel.h; sourceTree = "<group>"; };
+		570B69461AE9D42200A42DEC /* CustomLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomLabel.m; path = Views/Common/CustomLabel.m; sourceTree = "<group>"; };
+		570B69481AE9D4A800A42DEC /* ListLabelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListLabelViewController.h; path = Controllers/ListLabelViewController.h; sourceTree = "<group>"; };
+		570B69491AE9D4A800A42DEC /* ListLabelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListLabelViewController.m; path = Controllers/ListLabelViewController.m; sourceTree = "<group>"; };
 		BDE2122E1AE69102002A0746 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/StoryBoards/Main.storyboard; sourceTree = "<group>"; };
 		BDE212301AE69182002A0746 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = Controllers/ViewController.h; sourceTree = "<group>"; };
 		BDE212311AE69182002A0746 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = Controllers/ViewController.m; sourceTree = "<group>"; };
@@ -81,6 +87,8 @@
 				BDE2122D1AE68E8C002A0746 /* Common */,
 				BDE2123F1AE91B8F002A0746 /* ListAlertViewController.h */,
 				BDE212401AE91B8F002A0746 /* ListAlertViewController.m */,
+				570B69481AE9D4A800A42DEC /* ListLabelViewController.h */,
+				570B69491AE9D4A800A42DEC /* ListLabelViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -131,6 +139,8 @@
 			children = (
 				BDE212331AE6B477002A0746 /* CustomAlertController.h */,
 				BDE212341AE6B477002A0746 /* CustomAlertController.m */,
+				570B69451AE9D42200A42DEC /* CustomLabel.h */,
+				570B69461AE9D42200A42DEC /* CustomLabel.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -333,9 +343,11 @@
 				BDE212321AE69182002A0746 /* ViewController.m in Sources */,
 				BDE212351AE6B477002A0746 /* CustomAlertController.m in Sources */,
 				BDEEC22B1AD7EE9F00B522D9 /* AppDelegate.m in Sources */,
+				570B69471AE9D42200A42DEC /* CustomLabel.m in Sources */,
 				BDE2123B1AE7D14A002A0746 /* 3DViewController.m in Sources */,
 				BDEEC2281AD7EE9F00B522D9 /* main.m in Sources */,
 				BDE212411AE91B8F002A0746 /* ListAlertViewController.m in Sources */,
+				570B694A1AE9D4A800A42DEC /* ListLabelViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

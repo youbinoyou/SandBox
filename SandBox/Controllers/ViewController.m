@@ -28,6 +28,7 @@
     [self.view addSubview:titleLabel];
     self.buttons = @[
                      @{@"title":@"アラートについて",@"listViewController:":@"ListAlertViewController"},
+                     @{@"title":@"ラベルについて",@"listViewController:":@"ListLabelViewController"},
                      ];
     
     CGRect rectButton = CGRectZero;
@@ -77,7 +78,6 @@
         // TOPページに戻る処理
         [[UIBarButtonItem alloc] initWithTitle:@"TOP" style:UIBarButtonItemStylePlain target:self action:@selector(dismissCloseButtonAction:)];
     
-        
         UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:listViewController];
         navigationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
         [self presentViewController:navigationController animated:YES completion:^(){
