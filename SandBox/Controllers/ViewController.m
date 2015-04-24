@@ -27,8 +27,12 @@
     titleLabel.frame = CGRectMake(0,[UIScreen mainScreen].applicationFrame.size.height - titleLabel.frame.size.height,[UIScreen mainScreen].applicationFrame.size.width , titleLabel.frame.size.height);
     [self.view addSubview:titleLabel];
     self.buttons = @[
+                     @{@"title":@"ビューコントローラーについて",@"listViewController:":@"ListViewController"},
                      @{@"title":@"アラートについて",@"listViewController:":@"ListAlertViewController"},
+                     
                      @{@"title":@"ラベルについて",@"listViewController:":@"ListLabelViewController"},
+                     @{@"title":@"文字列装飾について",@"listViewController:":@"ListAttributedStringViewController"},
+                     
                      ];
     
     CGRect rectButton = CGRectZero;
