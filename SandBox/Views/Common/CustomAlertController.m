@@ -8,10 +8,55 @@
 
 #import "CustomAlertController.h"
 
+
+@interface CustomAlertView : UIView
+
+@end
+
+@implementation CustomAlertView
+
+- (id)init{
+    if (self) {
+        self = [super init];
+    }
+    return self;
+}
+
+- (void)drawRect:(CGRect)rect{
+    
+}
+
+@end
+
+@interface CustomAlertBackgroundView : UIView
+
+@end
+
+@implementation CustomAlertBackgroundView
+
+- (id)init{
+    if (self) {
+        self = [super init];
+        self.frame = [[UIScreen mainScreen] bounds];
+        self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.3];
+    }
+    return self;
+}
+
+- (void)drawRect:(CGRect)rect{
+    
+}
+
+@end
+
+
 @interface CustomAlertController ()<UIActionSheetDelegate>
 
 @property UIButton *actionButton;
 @property (nonatomic) NSArray *buttons;
+
+@property (nonatomic,strong) CustomAlertBackgroundView *customAlertBackgroundView;
+@property (nonatomic,strong) CustomAlertView *customAlertView;
 
 @end
 
@@ -23,11 +68,28 @@
     
     self.modalPresentationStyle = 4;
     self.modalTransitionStyle = 0;
-    self.view.backgroundColor = [UIColor clearColor];
+    [self preferredStatusBarUpdateAnimation];
+
+    UIViewController *nextViewController = self.presentingViewController;
+    if ([nextViewController isKindOfClass:[UINavigationController class]]) {
+        nextViewController = self.presentingViewController.childViewControllers.lastObject;
+    }
+    self.customAlertView = [CustomAlertView new];
+    self.customAlertBackgroundView = [CustomAlertBackgroundView new];
+
+    NSLog(@"nextViewController : %@",nextViewController);
+    NSLog(@"presentingViewController : %@",self.presentingViewController);
+    NSLog(@"presentedViewController : %@",self.presentedViewController);
+    NSLog(@"parentViewController : %@",self.parentViewController);
+    self.view.backgroundColor = nextViewController.view.backgroundColor;
+
+    
+    self.view.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.0];
     self.title = NSStringFromClass(self.class);
     
     self.buttons = @[
                      @{@"title":@"押しボタン（アクション）",@"action":@"pressActionButton:"},
+                     @{@"title":@"アニメーション",@"action":@"setAnimation:"},
                      ];
     
     CGRect rectButton = CGRectZero;
@@ -60,7 +122,7 @@
             }
         }
         
-        [self.view addSubview:button];
+        [self.customAlertBackgroundView addSubview:button];
     }
     
 }
@@ -80,8 +142,68 @@
 }
 */
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:NO];
+    
+    [self animation:self.view];
 
+}
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    UIViewController *nextViewController = self.presentingViewController;
+    if ([nextViewController isKindOfClass:[UINavigationController class]]) {
+        nextViewController = self.presentingViewController.childViewControllers.lastObject;
+    }
+    NSLog(@"nextViewController : %@",nextViewController);
+    NSLog(@"presentingViewController : %@",self.presentingViewController);
+    NSLog(@"presentedViewController : %@",self.presentedViewController);
+    NSLog(@"parentViewController : %@",self.parentViewController);
+    for (UIView *view in nextViewController.view.subviews) {
+        [self.view insertSubview:view atIndex:[nextViewController.view.subviews indexOfObject:view]];
+    }
+    self.view.backgroundColor = nextViewController.view.backgroundColor;
+    [self.view insertSubview:nextViewController.navigationController.navigationBar atIndex:0];
+    
+    self.customAlertBackgroundView.transform = CGAffineTransformMakeTranslation(0, 0);
+    //self.view.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.3];
+    [self.view addSubview:self.customAlertView];
+    [self.view addSubview:self.customAlertBackgroundView];
+    self.customAlertBackgroundView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.0];
+    
+    [UIView animateWithDuration:0.3 animations:^(void){
+        self.customAlertBackgroundView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.3];
+        self.customAlertBackgroundView.transform = CGAffineTransformIdentity;
+    }completion:^(BOOL finished){
+        
+    }];
 
+}
+
+- (void)setAnimation:(id)sender {
+    [self animation:self.view];
+}
+
+- (void)animation:(UIView *)animationView{
+    CGPoint point = CGPointMake(self.view.frame.origin.x,self.view.center.y);
+    //移動に関する設定
+    CABasicAnimation *moveAnimation = [CABasicAnimation animationWithKeyPath:@"position"];
+    moveAnimation.fromValue = [NSValue valueWithCGPoint:animationView.layer.position];
+    moveAnimation.toValue = [NSValue valueWithCGPoint:point];
+    animationView.layer.position = point;
+    moveAnimation.duration = 5;
+    
+    //回転に関する設定
+    CABasicAnimation* rotertAnimation = [CABasicAnimation animationWithKeyPath:@"transform"];
+    rotertAnimation.duration = 2.5;
+    rotertAnimation.repeatCount = 2;
+    rotertAnimation.autoreverses = YES;
+    CATransform3D transform = CATransform3DMakeRotation(M_PI, 0.0, 1.0, 0.0);
+    rotertAnimation.toValue = [NSNumber valueWithCATransform3D:transform];
+}
+
+- (void)transitionFromViewController:(UIViewController *)fromViewController toViewController:(UIViewController *)toViewController duration:(NSTimeInterval)duration options:(UIViewAnimationOptions)options animations:(void (^)(void))animations completion:(void (^)(BOOL))completion{
+    
+}
 /*
  UIAlertController と Alertの設定
  */
@@ -96,7 +218,15 @@
                                              preferredStyle:UIAlertControllerStyleAlert];
         [alert addAction:[UIAlertAction actionWithTitle:@"OK"
                                                   style:UIAlertActionStyleDefault
-                                                handler:nil]];
+                                                handler:^(UIAlertAction *action){
+                                                    [self close];
+                                                    [self dismissViewControllerAnimated:YES
+                                                completion:^(void){
+                                                    
+                                                }
+                                                     ];
+                                                }
+                          ]];
         [self presentViewController:alert animated:YES completion:nil];
     }else{
         // UIAlertViewを使ってアラートを表示
@@ -112,6 +242,7 @@
 - (void)action1
 {
     [self showAlert:@"action 1"];
+    
 }
 
 // action2ボタンが押された時の処理
@@ -197,5 +328,22 @@
             break;
     }
 }
+- (void)close{
+    UIViewController *nextViewController = self.presentingViewController;
+    if ([nextViewController isKindOfClass:[UINavigationController class]]) {
+        nextViewController = self.presentingViewController.childViewControllers.lastObject;
+    }
+    NSLog(@"nextViewController : %@",nextViewController);
+    NSLog(@"presentingViewController : %@",self.presentingViewController);
+    NSLog(@"presentedViewController : %@",self.presentedViewController);
+    NSLog(@"parentViewController : %@",self.parentViewController);
+    for (UIView *view in self.view.subviews) {
+        [nextViewController.view insertSubview:view atIndex:[self.view.subviews indexOfObject:view]];
+    }
+    nextViewController.view.backgroundColor = self.view.backgroundColor;
+    [self.customAlertBackgroundView removeFromSuperview];
+
+}
+
 
 @end

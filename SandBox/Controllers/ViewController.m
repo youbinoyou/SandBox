@@ -7,10 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "CustomAlertController.h"
 
 @interface ViewController ()
 
-@property (nonatomic) NSArray *buttons;
+@property (nonatomic,retain) NSArray *buttons;
 
 @end
 
@@ -32,6 +33,7 @@
                      
                      @{@"title":@"ラベルについて",@"listViewController:":@"ListLabelViewController"},
                      @{@"title":@"文字列装飾について",@"listViewController:":@"ListAttributedStringViewController"},
+                     @{@"title":@"注目",@"action":@"newCustomAlert:"},
                      ];
     
     CGRect rectButton = CGRectZero;
@@ -106,6 +108,14 @@
 - (void)dismissCloseButtonAction:(id)sender {
     [self dismissViewControllerAnimated:YES completion:^(){
         NSLog(@"%@",sender);
+    }];
+}
+
+- (void)newCustomAlert:(id)sender{
+    CustomAlertController *customAlertController = [[CustomAlertController alloc] init];
+    //customAlertController.view.backgroundColor = self.view.backgroundColor;
+    [self presentViewController:customAlertController animated:YES completion:^(void){
+        NSLog(@"Custom");
     }];
 }
 

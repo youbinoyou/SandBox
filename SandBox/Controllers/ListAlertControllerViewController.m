@@ -106,7 +106,107 @@
                                         message:@"message"
                                  preferredStyle:UIAlertControllerStyleAlert];
     
-    [alertController addChildViewController:[[UIViewController alloc] init]];
+    alertController.view.backgroundColor = [UIColor redColor];
+    alertController.title = @"";
+    UIView *setView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    setView.backgroundColor = [UIColor redColor];
+    [alertController.inputView addSubview: setView];
+    alertController.message = @"";
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField){
+        textField.text = @"OK";
+        textField.textAlignment = NSTextAlignmentCenter;
+        textField.backgroundColor = [UIColor colorWithRed:1 green:0.8 blue:0.8 alpha:0.5];
+        textField.font = [UIFont boldSystemFontOfSize:[UIFont buttonFontSize]];
+        textField.textColor = [UIColor orangeColor];
+        textField.superview.backgroundColor = [UIColor redColor];
+        textField.superview.frame = CGRectMake(0, 0, 100, 200);
+        textField.superview.layer.borderWidth = 5;
+        textField.superview.layer.borderColor = [UIColor redColor].CGColor;
+    }];
+    
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField){
+        textField.placeholder = @"Sample Text";
+        textField.backgroundColor = [UIColor colorWithRed:1 green:0.8 blue:0.8 alpha:0.5];
+        textField.font = [UIFont boldSystemFontOfSize:[UIFont buttonFontSize]];
+        textField.textColor = [UIColor orangeColor];
+        textField.superview.backgroundColor = [UIColor redColor];
+        textField.superview.frame = CGRectMake(0, 0, 100, 200);
+        textField.superview.layer.borderWidth = 5;
+        textField.superview.layer.borderColor = [UIColor redColor].CGColor;
+    }];
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField){
+        textField.backgroundColor = [UIColor clearColor];
+        textField.text = @"UITextBorderStyleBezel";
+        textField.borderStyle = UITextBorderStyleBezel;
+        textField.layer.borderWidth = 5;
+        textField.layer.borderColor = [UIColor redColor].CGColor;
+        
+        UIView *leftItem = [[UIView alloc] init];
+        leftItem.frame = CGRectMake(0, 0, 100,100);
+        leftItem.backgroundColor = [UIColor redColor];
+        [textField.leftView addSubview: leftItem];
+        UIView *rightItem = [[UIView alloc] init];
+        rightItem.frame = CGRectMake(0, 0, 100,100);
+        rightItem.backgroundColor = [UIColor orangeColor];
+        [textField.rightView addSubview: rightItem];
+        //textField.frame = CGRectMake(0, 0, 100, 100);
+        //textField.backgroundColor = [UIColor colorWithRed:1 green:0.8 blue:0.8 alpha:0.5];
+        textField.font = [UIFont boldSystemFontOfSize:[UIFont buttonFontSize]];
+        textField.textColor = [UIColor orangeColor];
+        textField.superview.backgroundColor = [UIColor redColor];
+        textField.superview.frame = CGRectMake(0, 0, 100, 200);
+        textField.superview.layer.borderWidth = 5;
+        textField.superview.layer.borderColor = [UIColor redColor].CGColor;
+    }];
+    
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField){
+        textField.text = @"UITextBorderStyleLine";
+        textField.borderStyle = UITextBorderStyleLine;
+        textField.backgroundColor = [UIColor colorWithRed:1 green:0.8 blue:0.8 alpha:0.5];
+        textField.font = [UIFont boldSystemFontOfSize:[UIFont buttonFontSize]];
+        textField.textColor = [UIColor orangeColor];
+        textField.superview.backgroundColor = [UIColor redColor];
+        textField.superview.frame = CGRectMake(0, 0, 100, 200);
+        textField.superview.layer.borderWidth = 5;
+        textField.superview.layer.borderColor = [UIColor redColor].CGColor;
+    }];
+    
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField){
+        textField.text = @"UITextBorderStyleRoundedRect";
+        textField.borderStyle = UITextBorderStyleRoundedRect;
+        textField.backgroundColor = [UIColor colorWithRed:1 green:0.8 blue:0.8 alpha:0.5];
+        textField.font = [UIFont boldSystemFontOfSize:[UIFont buttonFontSize]];
+        textField.textColor = [UIColor orangeColor];
+        textField.superview.backgroundColor = [UIColor redColor];
+        textField.superview.frame = CGRectMake(0, 0, 100, 200);
+        textField.superview.layer.borderWidth = 5;
+        textField.superview.layer.borderColor = [UIColor redColor].CGColor;
+    }];
+    
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField){
+        textField.text = @"UITextBorderStyleNone";
+        UIFont *font = [UIFont fontWithName:@"Verdana-Bold" size:30.f];
+        NSString *text = @"UITextBorderStyleNone";
+        NSAttributedString *attributedText = [[NSAttributedString alloc]
+                                   initWithString:text
+                                   attributes:@{NSStrokeColorAttributeName:[UIColor orangeColor],
+                                                NSStrokeWidthAttributeName:@4.5,
+                                                NSFontAttributeName:font}];
+        CGSize size = [attributedText size];
+        [attributedText drawInRect:CGRectMake(0, 0, size.width, size.height)];
+        
+        textField.attributedText = attributedText;
+        
+        textField.borderStyle = UITextBorderStyleNone;
+        textField.backgroundColor = [UIColor colorWithRed:1 green:0.8 blue:0.8 alpha:0.5];
+        textField.font = [UIFont boldSystemFontOfSize:[UIFont buttonFontSize]];
+        textField.textColor = [UIColor orangeColor];
+        textField.superview.backgroundColor = [UIColor redColor];
+        textField.superview.frame = CGRectMake(0, 0, 100, 200);
+        textField.superview.layer.borderWidth = 5;
+        textField.superview.layer.borderColor = [UIColor redColor].CGColor;
+    }];
+    
     
     [alertController addAction:[UIAlertAction actionWithTitle:@"actionTitle"
                                                         style:UIAlertActionStyleDefault
@@ -116,40 +216,17 @@
                                                           view.frame = self.view.frame;
                                                           [alertController.view addSubview:view];
                                                       }]];
-    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField){
-        textField.text = @"OK";
-        textField.textAlignment = NSTextAlignmentCenter;
-        textField.backgroundColor = [UIColor colorWithRed:1 green:0.8 blue:0.8 alpha:0.5];
-    }];
     
-    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField){
-        textField.placeholder = @"Sample Text";
-        textField.backgroundColor = [UIColor colorWithRed:1 green:0.8 blue:0.8 alpha:0.5];
-    }];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"actionView"
+                                                        style:UIAlertActionStyleDefault
+                                                      handler:^(UIAlertAction *action){
+                                                          [self dismissCloseButtonAction:action];
+                                                      }]];
     
-    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField){
-        textField.text = @"UITextBorderStyleBezel";
-        textField.borderStyle = UITextBorderStyleBezel;
-        textField.backgroundColor = [UIColor colorWithRed:1 green:0.8 blue:0.8 alpha:0.5];
-    }];
-    
-    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField){
-        textField.text = @"UITextBorderStyleLine";
-        textField.borderStyle = UITextBorderStyleLine;
-        textField.backgroundColor = [UIColor colorWithRed:1 green:0.8 blue:0.8 alpha:0.5];
-    }];
-    
-    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField){
-        textField.text = @"UITextBorderStyleRoundedRect";
-        textField.borderStyle = UITextBorderStyleRoundedRect;
-        textField.backgroundColor = [UIColor colorWithRed:1 green:0.8 blue:0.8 alpha:0.5];
-    }];
-    
-    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField){
-        textField.text = @"UITextBorderStyleNone";
-        textField.borderStyle = UITextBorderStyleNone;
-        textField.backgroundColor = [UIColor colorWithRed:1 green:0.8 blue:0.8 alpha:0.5];
-    }];
+    NSMutableArray *mActions = [alertController.actions mutableCopy];
+    for (UIAlertAction *action in mActions) {
+        NSLog(@"action : %@",action);
+    }
     
     [self presentViewController:alertController animated:YES
                      completion:^(void){
@@ -204,12 +281,12 @@
 
 - (void)newCustomAlertController:(id)sender {
     CustomAlertController *customAlertController = [[CustomAlertController alloc] init];
-    customAlertController.view.backgroundColor = self.view.backgroundColor;
+    //customAlertController.view.backgroundColor = self.view.backgroundColor;
     [self presentViewController:customAlertController animated:YES completion:^(void){
         NSLog(@"Custom");
-        customAlertController.navigationItem.leftBarButtonItem =
-        // TOPページに戻る処理
-        [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(dismissCloseButtonAction:)];
+//        customAlertController.navigationItem.leftBarButtonItem =
+//        // TOPページに戻る処理
+//        [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(dismissCloseButtonAction:)];
 
     }];
 }
