@@ -11,6 +11,7 @@
 @interface CustomAlertController ()<UIActionSheetDelegate>
 
 @property UIButton *actionButton;
+@property (nonatomic) NSArray *buttons;
 
 @end
 
@@ -20,19 +21,47 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    UIButton *showAlertButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [showAlertButton setTitle:@"アラート" forState:UIControlStateNormal];
-    [showAlertButton sizeToFit];
-    showAlertButton.center = self.view.center;
-    [showAlertButton addTarget:self action:@selector(showAlertButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-    //[self.view addSubview:showAlertButton];
-
-    UIButton *pressActionButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [pressActionButton setTitle:@"ボタンを押す" forState:UIControlStateNormal];
-    [pressActionButton sizeToFit];
-    pressActionButton.center = self.view.center;
-    [pressActionButton addTarget:self action:@selector(pressActionButton:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:pressActionButton];
+    self.modalPresentationStyle = 4;
+    self.modalTransitionStyle = 0;
+    self.view.backgroundColor = [UIColor clearColor];
+    self.title = NSStringFromClass(self.class);
+    
+    self.buttons = @[
+                     @{@"title":@"押しボタン（アクション）",@"action":@"pressActionButton:"},
+                     ];
+    
+    CGRect rectButton = CGRectZero;
+    for (NSDictionary *item in self.buttons) {
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        
+        const CGFloat r = arc4random_uniform(255) / 255.0;
+        const CGFloat g = arc4random_uniform(255) / 255.0;
+        const CGFloat b = arc4random_uniform(255) / 255.0;
+        
+        button.backgroundColor = [UIColor colorWithRed:r green:g blue:b alpha:0.5];
+        [button setTitle:item[@"title"] forState:UIControlStateNormal];
+        [button sizeToFit];
+        button.tag = [self.buttons indexOfObject:item];
+        rectButton.origin.x = 20;
+        rectButton.size.width  = [UIScreen mainScreen].applicationFrame.size.width - 40;
+        rectButton.size.height = [UIScreen mainScreen].applicationFrame.size.height / (self.buttons.count + 2);
+        rectButton.origin.y += rectButton.size.height + 1;
+        button.frame = rectButton;
+        if (item[@"action"]) {
+            SEL action = NSSelectorFromString(item[@"action"]);
+            if ([self respondsToSelector:action]) {
+                [button addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
+            }
+        }
+        if (item[@"listViewController:"]) {
+            SEL action = NSSelectorFromString(@"listViewController:event:");
+            if ([self respondsToSelector:action]) {
+                [button addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
+            }
+        }
+        
+        [self.view addSubview:button];
+    }
     
 }
 
@@ -51,6 +80,11 @@
 }
 */
 
+
+
+/*
+ UIAlertController と Alertの設定
+ */
 - (void)showAlert:(NSString*)text
 {
     Class UIAlertControllerClass = NSClassFromString(@"UIAlertController");
@@ -127,6 +161,7 @@
         UIPopoverPresentationController *pop = actionSheet.popoverPresentationController;
         pop.sourceView = self.actionButton;
         pop.sourceRect = self.actionButton.bounds;
+        pop.sourceView.backgroundColor = [UIColor redColor];
         
         [self presentViewController:actionSheet
                            animated:YES

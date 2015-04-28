@@ -32,7 +32,6 @@
                      
                      @{@"title":@"ラベルについて",@"listViewController:":@"ListLabelViewController"},
                      @{@"title":@"文字列装飾について",@"listViewController:":@"ListAttributedStringViewController"},
-                     
                      ];
     
     CGRect rectButton = CGRectZero;
@@ -52,8 +51,17 @@
         rectButton.size.height = [UIScreen mainScreen].applicationFrame.size.height / (self.buttons.count + 2);
         rectButton.origin.y += rectButton.size.height + 1;
         button.frame = rectButton;
+        if (item[@"action"]) {
+            SEL action = NSSelectorFromString(item[@"action"]);
+            if ([self respondsToSelector:action]) {
+                [button addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
+            }
+        }
         if (item[@"listViewController:"]) {
-            [button addTarget:self action:@selector(listViewController:event:) forControlEvents:UIControlEventTouchUpInside];
+            SEL action = NSSelectorFromString(@"listViewController:event:");
+            if ([self respondsToSelector:action]) {
+                [button addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
+            }
         }
         [self.view addSubview:button];
     }
@@ -80,7 +88,7 @@
         listViewController.title = self.buttons[sendButton.tag][@"title"];
         listViewController.navigationItem.leftBarButtonItem =
         // TOPページに戻る処理
-        [[UIBarButtonItem alloc] initWithTitle:@"TOP" style:UIBarButtonItemStylePlain target:self action:@selector(dismissCloseButtonAction:)];
+        [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(dismissCloseButtonAction:)];
     
         UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:listViewController];
         navigationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;

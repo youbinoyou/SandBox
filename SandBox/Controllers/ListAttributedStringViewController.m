@@ -77,7 +77,12 @@
                 [button addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
             }
         }
-        [self.view addSubview:button];
+        if (item[@"listViewController:"]) {
+            SEL action = NSSelectorFromString(@"listViewController:event:");
+            if ([self respondsToSelector:action]) {
+                [button addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
+            }
+        }        [self.view addSubview:button];
     }
 }
 
