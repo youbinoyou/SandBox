@@ -16,10 +16,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(windowDidBecomeVisible:)
-                                                 name:UIWindowDidBecomeVisibleNotification
-                                               object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(windowDidBecomeVisible:)
+//                                                 name:UIWindowDidBecomeVisibleNotification
+//                                               object:nil];
     // Override point for customization after application launch.
     return YES;
 }
