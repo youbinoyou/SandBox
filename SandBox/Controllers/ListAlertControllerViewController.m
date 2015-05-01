@@ -280,40 +280,79 @@
 }
 
 - (void)newCustomAlertController:(id)sender {
-    CustomAlertController *customAlertController = [[CustomAlertController alloc] init];
+    CustomAlertController *customAlertController =
+    [CustomAlertController customAlertControllerWithTitle:@"CustomAlert"
+                                                                                                  message:@"message"
+                                                                                           preferredStyle:CustomAlertControllerStyleAlert];
     //customAlertController.view.backgroundColor = self.view.backgroundColor;
+    customAlertController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    customAlertController.modalPresentationStyle = UIModalPresentationCustom;
+    NSLog(@"self : %@",customAlertController);
+    NSLog(@"modalTransitionStyle : %@",@(customAlertController.modalTransitionStyle));
+    NSLog(@"modalPresentationStyle : %@",@(customAlertController.modalPresentationStyle));
+    [customAlertController addAction:
+     [CustomAlertAction actionWithTitle:@"OK"
+                                  style:CustomAlertActionStyleDefault
+                                handler:^(CustomAlertAction *action){
+                                    [self dismissCloseButtonAction:nil];
+                                }
+     ]];
+    
     [self presentViewController:customAlertController animated:YES completion:^(void){
         NSLog(@"Custom");
-//        customAlertController.navigationItem.leftBarButtonItem =
-//        // TOPページに戻る処理
-//        [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(dismissCloseButtonAction:)];
-
     }];
 }
 
 - (void)newOriginalAlertController:(id)sender {
-    CustomAlertController *customAlertController = [[CustomAlertController alloc] init];
-    customAlertController.view.backgroundColor = self.view.backgroundColor;
-    [self presentViewController:customAlertController animated:YES completion:^(void){
+    UIAlertController *alertController =
+    [UIAlertController alertControllerWithTitle:@"OriginalAlert"
+                                                  message:@"message"
+                                           preferredStyle:UIAlertControllerStyleAlert];
+    //customAlertController.view.backgroundColor = self.view.backgroundColor;
+    alertController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    alertController.modalPresentationStyle = UIModalPresentationCustom;
+    NSLog(@"self : %@",alertController);
+    NSLog(@"modalTransitionStyle : %@",@(alertController.modalTransitionStyle));
+    NSLog(@"modalPresentationStyle : %@",@(alertController.modalPresentationStyle));
+
+    [alertController addAction:
+     [UIAlertAction actionWithTitle:@"OK"
+                                  style:UIAlertActionStyleDefault
+                                handler:^(UIAlertAction *action){
+                                    [self dismissCloseButtonAction:nil];
+                                }
+      ]];
+    
+    [self presentViewController:alertController animated:YES completion:^(void){
         NSLog(@"Custom");
-        customAlertController.navigationItem.leftBarButtonItem =
-        // TOPページに戻る処理
-        [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(dismissCloseButtonAction:)];
-        
     }];
+    
+    return;
+//    CustomAlertController *customAlertController = [[CustomAlertController alloc] init];
+//    customAlertController.view.backgroundColor = self.view.backgroundColor;
+//    [self presentViewController:customAlertController animated:YES completion:^(void){
+//        NSLog(@"Custom");
+//        customAlertController.navigationItem.leftBarButtonItem =
+//        // TOPページに戻る処理
+//        [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(dismissCloseButtonAction:)];
+//        
+//    }];
     
 }
 
 - (void)newCustomUIAlertController:(id)sender {
-    CustomAlertController *customAlertController = [[CustomAlertController alloc] init];
-    customAlertController.view.backgroundColor = self.view.backgroundColor;
-    [self presentViewController:customAlertController animated:YES completion:^(void){
-        NSLog(@"Custom");
-        customAlertController.navigationItem.leftBarButtonItem =
-        // TOPページに戻る処理
-        [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(dismissCloseButtonAction:)];
-        
-    }];
+//    CustomAlertController *customAlertController =
+//    [CustomAlertController customAlertControllerWithTitle:@"CustomAlert"
+//                                                   message:@"message"
+//                                            preferredStyle:CustomAlertControllerStyleAlert];
+//    customAlertController.view.backgroundColor = self.view.backgroundColor;
+//    [self presentViewController:customAlertController animated:YES completion:^(void){
+//        NSLog(@"Custom");
+//        customAlertController.navigationItem.leftBarButtonItem =
+//        // TOPページに戻る処理
+//        [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(dismissCloseButtonAction:)];
+//        
+//    }];
     
 }
 
@@ -347,7 +386,7 @@
 }
 
 /**
- * TOPページに戻る処理
+ * 戻る処理
  */
 - (void)dismissCloseButtonAction:(id)sender {
     [self dismissViewControllerAnimated:YES completion:^(){

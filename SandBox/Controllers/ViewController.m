@@ -31,8 +31,10 @@
                      @{@"title":@"ビューコントローラーについて",@"listViewController:":@"ListViewController"},
                      @{@"title":@"アラートについて",@"listViewController:":@"ListAlertViewController"},
                      
+                     @{@"title":@"ウィンドウについて",@"listViewController:":@"ListWindowViewController"},
                      @{@"title":@"ラベルについて",@"listViewController:":@"ListLabelViewController"},
                      @{@"title":@"文字列装飾について",@"listViewController:":@"ListAttributedStringViewController"},
+                     @{@"title":@"例外処理について",@"listViewController:":@"ListExceptionViewController"},
                      @{@"title":@"注目",@"action":@"newCustomAlert:"},
                      ];
     
@@ -82,6 +84,7 @@
     UIButton *sendButton = sender;
     Class listViewControllerClass = NSClassFromString(self.buttons[sendButton.tag][@"listViewController:"]);
     if (listViewControllerClass) {
+        
         /**
          * 遷移するViewControllerの生成
          */

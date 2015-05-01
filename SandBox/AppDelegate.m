@@ -16,6 +16,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(windowDidBecomeVisible:)
+                                                 name:UIWindowDidBecomeVisibleNotification
+                                               object:nil];
     // Override point for customization after application launch.
     return YES;
 }
@@ -40,6 +44,13 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+-(void)windowDidBecomeVisible:(NSNotification*)noti
+{
+    UIWindow *window = noti.object;
+    NSLog(@"window = %@, windowLevel = %@", window, @(window.windowLevel));
+    NSLog(@"app's windows = %@", [UIApplication sharedApplication].windows);
 }
 
 @end

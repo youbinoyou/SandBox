@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5704E4C01AF1CF040027C067 /* ListWindowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5704E4BF1AF1CF040027C067 /* ListWindowViewController.m */; };
+		5704E4C31AF221F10027C067 /* ListExceptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5704E4C21AF221F10027C067 /* ListExceptionViewController.m */; };
 		5708100D1AEF3D87009A6570 /* ListAlertControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5708100C1AEF3D87009A6570 /* ListAlertControllerViewController.m */; };
 		570B69441AE9D00D00A42DEC /* www.youbinoyou.com in Resources */ = {isa = PBXBuildFile; fileRef = 570B69431AE9D00D00A42DEC /* www.youbinoyou.com */; };
 		570B69471AE9D42200A42DEC /* CustomLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 570B69461AE9D42200A42DEC /* CustomLabel.m */; };
@@ -37,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5704E4BE1AF1CF040027C067 /* ListWindowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListWindowViewController.h; path = Controllers/ListWindowViewController.h; sourceTree = "<group>"; };
+		5704E4BF1AF1CF040027C067 /* ListWindowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListWindowViewController.m; path = Controllers/ListWindowViewController.m; sourceTree = "<group>"; };
+		5704E4C11AF221F10027C067 /* ListExceptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListExceptionViewController.h; path = Controllers/ListExceptionViewController.h; sourceTree = "<group>"; };
+		5704E4C21AF221F10027C067 /* ListExceptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListExceptionViewController.m; path = Controllers/ListExceptionViewController.m; sourceTree = "<group>"; };
 		5708100B1AEF3D87009A6570 /* ListAlertControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListAlertControllerViewController.h; path = Controllers/ListAlertControllerViewController.h; sourceTree = "<group>"; };
 		5708100C1AEF3D87009A6570 /* ListAlertControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListAlertControllerViewController.m; path = Controllers/ListAlertControllerViewController.m; sourceTree = "<group>"; };
 		570B69431AE9D00D00A42DEC /* www.youbinoyou.com */ = {isa = PBXFileReference; lastKnownFileType = folder; name = www.youbinoyou.com; path = ../../../../../../Library/WebServer/Documents/www.youbinoyou.com; sourceTree = "<group>"; };
@@ -104,6 +110,10 @@
 				570B694F1AEA1D9D00A42DEC /* ListViewController.m */,
 				5708100B1AEF3D87009A6570 /* ListAlertControllerViewController.h */,
 				5708100C1AEF3D87009A6570 /* ListAlertControllerViewController.m */,
+				5704E4BE1AF1CF040027C067 /* ListWindowViewController.h */,
+				5704E4BF1AF1CF040027C067 /* ListWindowViewController.m */,
+				5704E4C11AF221F10027C067 /* ListExceptionViewController.h */,
+				5704E4C21AF221F10027C067 /* ListExceptionViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -355,10 +365,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5704E4C31AF221F10027C067 /* ListExceptionViewController.m in Sources */,
 				570B69501AEA1D9D00A42DEC /* ListViewController.m in Sources */,
 				BDE212321AE69182002A0746 /* ViewController.m in Sources */,
 				BDE212351AE6B477002A0746 /* CustomAlertController.m in Sources */,
 				5708100D1AEF3D87009A6570 /* ListAlertControllerViewController.m in Sources */,
+				5704E4C01AF1CF040027C067 /* ListWindowViewController.m in Sources */,
 				BDEEC22B1AD7EE9F00B522D9 /* AppDelegate.m in Sources */,
 				570B69471AE9D42200A42DEC /* CustomLabel.m in Sources */,
 				BDE2123B1AE7D14A002A0746 /* 3DViewController.m in Sources */,
