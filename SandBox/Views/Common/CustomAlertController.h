@@ -3,7 +3,7 @@
 //  sandbox-iOS
 //
 //  Created by You Ohshima on 2015/04/20.
-//  Copyright (c) 2015年 teamLab INC. All rights reserved.
+//  Copyright (c) 2015年 大島 曜. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

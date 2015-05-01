@@ -35,7 +35,11 @@
                      @{@"title":@"ラベルについて",@"listViewController:":@"ListLabelViewController"},
                      @{@"title":@"文字列装飾について",@"listViewController:":@"ListAttributedStringViewController"},
                      @{@"title":@"例外処理について",@"listViewController:":@"ListExceptionViewController"},
-                     @{@"title":@"注目",@"action":@"newCustomAlert:"},
+                     @{@"title":@"アクション",@"action":@"newsAlert:"},
+                     
+                     
+                     @{@"title":@"CustomAlert",@"action":@"newCustomAlert:"},
+                     @{@"title":@"ActionSheet",@"action":@"newCustomActionSheet:"},
                      ];
     
     CGRect rectButton = CGRectZero;
@@ -114,12 +118,64 @@
     }];
 }
 
+- (void)newsAlert:(id)sender {
+    
+    CustomAlertController *customAlertController = [CustomAlertController customAlertControllerWithTitle:@"お知らせ" message:@"ログインボーナスを取得しました。" preferredStyle:CustomAlertControllerStyleAlert];
+    CustomAlertAction *okAction = [CustomAlertAction actionWithTitle:@"OK" style:CustomAlertActionStyleDefault handler:^(CustomAlertAction *action){
+        NSLog(@"OK");
+        
+    }];
+    [customAlertController addAction:okAction];
+    
+    [self presentViewController:customAlertController animated:YES completion:^(void){
+        NSLog(@"お知らせ");
+    }];
+
+}
+
 - (void)newCustomAlert:(id)sender{
-    CustomAlertController *customAlertController = [[CustomAlertController alloc] init];
-    //customAlertController.view.backgroundColor = self.view.backgroundColor;
+    CustomAlertController *customAlertController = [CustomAlertController customAlertControllerWithTitle:@"タイトル" message:@"message" preferredStyle:CustomAlertControllerStyleAlert];
+    CustomAlertAction *okAction = [CustomAlertAction actionWithTitle:@"OK" style:CustomAlertActionStyleDefault handler:^(CustomAlertAction *action){
+        NSLog(@"OK");
+
+    }];
+    [customAlertController addAction:okAction];
+    CustomAlertAction *cancelAction = [CustomAlertAction actionWithTitle:@"NG" style:CustomAlertActionStyleCancel handler:^(CustomAlertAction *action){
+        NSLog(@"NG");
+    }];
+    [customAlertController addAction:cancelAction];
+    
+//    CustomAlertAction *cancel2Action = [CustomAlertAction actionWithTitle:@"NG" style:CustomAlertActionStyleCancel handler:^(CustomAlertAction *action){
+//        NSLog(@"NG");
+//    }];
+//    [customAlertController addAction:cancel2Action];
+    
+    CustomAlertAction *openAction = [CustomAlertAction actionWithTitle:@"開く" style:CustomAlertActionStyleDestructive handler:^(CustomAlertAction *action){
+        NSLog(@"MENU");
+    }];
+    [customAlertController addAction:openAction];
+    
     [self presentViewController:customAlertController animated:YES completion:^(void){
         NSLog(@"Custom");
     }];
 }
+
+- (void)newCustomActionSheet:(id)sender{
+    CustomAlertController *customAlertController = [CustomAlertController customAlertControllerWithTitle:@"タイトル" message:@"message" preferredStyle:CustomAlertControllerStyleActionSheet];
+    CustomAlertAction *okAction = [CustomAlertAction actionWithTitle:@"OK" style:CustomAlertActionStyleDefault handler:^(CustomAlertAction *action){
+        NSLog(@"OK");
+        
+    }];
+    [customAlertController addAction:okAction];
+    CustomAlertAction *cancelAction = [CustomAlertAction actionWithTitle:@"NG" style:CustomAlertActionStyleCancel handler:^(CustomAlertAction *action){
+        NSLog(@"NG");
+    }];
+    [customAlertController addAction:cancelAction];
+    
+    [self presentViewController:customAlertController animated:YES completion:^(void){
+        NSLog(@"Custom");
+    }];
+}
+
 
 @end
