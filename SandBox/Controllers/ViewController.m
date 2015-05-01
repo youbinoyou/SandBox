@@ -7,10 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "CustomAlertController.h"
 
 @interface ViewController ()
 
-@property (nonatomic) NSArray *buttons;
+@property (nonatomic,retain) NSArray *buttons;
 
 @end
 
@@ -27,7 +28,14 @@
     titleLabel.frame = CGRectMake(0,[UIScreen mainScreen].applicationFrame.size.height - titleLabel.frame.size.height,[UIScreen mainScreen].applicationFrame.size.width , titleLabel.frame.size.height);
     [self.view addSubview:titleLabel];
     self.buttons = @[
+                     @{@"title":@"ビューコントローラーについて",@"listViewController:":@"ListViewController"},
                      @{@"title":@"アラートについて",@"listViewController:":@"ListAlertViewController"},
+                     
+                     @{@"title":@"ウィンドウについて",@"listViewController:":@"ListWindowViewController"},
+                     @{@"title":@"ラベルについて",@"listViewController:":@"ListLabelViewController"},
+                     @{@"title":@"文字列装飾について",@"listViewController:":@"ListAttributedStringViewController"},
+                     @{@"title":@"例外処理について",@"listViewController:":@"ListExceptionViewController"},
+                     @{@"title":@"注目",@"action":@"newCustomAlert:"},
                      ];
     
     CGRect rectButton = CGRectZero;
@@ -47,8 +55,17 @@
         rectButton.size.height = [UIScreen mainScreen].applicationFrame.size.height / (self.buttons.count + 2);
         rectButton.origin.y += rectButton.size.height + 1;
         button.frame = rectButton;
+        if (item[@"action"]) {
+            SEL action = NSSelectorFromString(item[@"action"]);
+            if ([self respondsToSelector:action]) {
+                [button addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
+            }
+        }
         if (item[@"listViewController:"]) {
-            [button addTarget:self action:@selector(listViewController:event:) forControlEvents:UIControlEventTouchUpInside];
+            SEL action = NSSelectorFromString(@"listViewController:event:");
+            if ([self respondsToSelector:action]) {
+                [button addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
+            }
         }
         [self.view addSubview:button];
     }
@@ -67,6 +84,7 @@
     UIButton *sendButton = sender;
     Class listViewControllerClass = NSClassFromString(self.buttons[sendButton.tag][@"listViewController:"]);
     if (listViewControllerClass) {
+        
         /**
          * 遷移するViewControllerの生成
          */
@@ -75,9 +93,8 @@
         listViewController.title = self.buttons[sendButton.tag][@"title"];
         listViewController.navigationItem.leftBarButtonItem =
         // TOPページに戻る処理
-        [[UIBarButtonItem alloc] initWithTitle:@"TOP" style:UIBarButtonItemStylePlain target:self action:@selector(dismissCloseButtonAction:)];
+        [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(dismissCloseButtonAction:)];
     
-        
         UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:listViewController];
         navigationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
         [self presentViewController:navigationController animated:YES completion:^(){
@@ -94,6 +111,14 @@
 - (void)dismissCloseButtonAction:(id)sender {
     [self dismissViewControllerAnimated:YES completion:^(){
         NSLog(@"%@",sender);
+    }];
+}
+
+- (void)newCustomAlert:(id)sender{
+    CustomAlertController *customAlertController = [[CustomAlertController alloc] init];
+    //customAlertController.view.backgroundColor = self.view.backgroundColor;
+    [self presentViewController:customAlertController animated:YES completion:^(void){
+        NSLog(@"Custom");
     }];
 }
 

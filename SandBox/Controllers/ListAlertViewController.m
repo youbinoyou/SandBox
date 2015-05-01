@@ -32,7 +32,7 @@
                                        @"ボタンタイトル１",
                                        @"ボタンタイトル２（キャンセル）",
                                        @"ボタンタイトル３",
-                               ]
+                                       ]
                                }
                        },
                      
@@ -43,9 +43,8 @@
                      @{@"title":@"アラートビュー（操作）ViewStyle",@"action":@"selectCustomAlertViewStyle"},
                      @{@"title":@"アラートビュー（操作）ButtonTitles",@"action":@"setCustomAlertButtonTitles:"},
                      @{@"title":@"アラートビュー（デフォルト）",@"action":@"defalutUIAlertButtonAction:"},
-                     
-            
-                     @{@"title":@"アラートビュー（カスタム）"},
+                     @{@"title":@"アラートコントローラ",@"listViewController:":@"ListAlertControllerViewController"},
+                     @{@"title":@"カスタムアラート"},
                      ];
     
     CGRect rectButton = CGRectZero;
@@ -67,6 +66,12 @@
         button.frame = rectButton;
         if (item[@"action"]) {
             SEL action = NSSelectorFromString(item[@"action"]);
+            if ([self respondsToSelector:action]) {
+                [button addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
+            }
+        }
+        if (item[@"listViewController:"]) {
+            SEL action = NSSelectorFromString(@"listViewController:event:");
             if ([self respondsToSelector:action]) {
                 [button addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
             }
@@ -152,30 +157,25 @@
             //            };
             
         case UIAlertViewStyleDefault : {
-            
             NSLog(@"alertViewStyle : %ld",UIAlertViewStyleDefault);
             break;
         }
         case UIAlertViewStyleSecureTextInput : {
-            
             NSLog(@"alertViewStyle : %ld",UIAlertViewStyleSecureTextInput);
             break;
         }
         case UIAlertViewStylePlainTextInput : {
-            
             NSLog(@"alertViewStyle : %ld",UIAlertViewStylePlainTextInput);
             break;
         }
         case UIAlertViewStyleLoginAndPasswordInput : {
-            
             NSLog(@"alertViewStyle : %ld",UIAlertViewStyleLoginAndPasswordInput);
             break;
         }
-            default:{
-                
-                NSLog(@"alertViewStyle : %ld",alertView.alertViewStyle);
-                break;
-            }
+        default:{
+            NSLog(@"alertViewStyle : %ld",alertView.alertViewStyle);
+            break;
+        }
     }
     
 }
@@ -184,12 +184,12 @@
     
     NSLog(@"%@ : 生成",sender);
     
-//    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"UIAlertView"
-//                                                        message:@"message"
-//                                                       delegate:self
-//                                              cancelButtonTitle:@"キャンセル"
-//                                              otherButtonTitles:nil];
-
+    //    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"UIAlertView"
+    //                                                        message:@"message"
+    //                                                       delegate:self
+    //                                              cancelButtonTitle:@"キャンセル"
+    //                                              otherButtonTitles:nil];
+    
     UIAlertView *alertView = [UIAlertView new];
     NSDictionary *item = self.buttons[0][@"UIAlertView"];
     if (item[@"title"]) {
@@ -221,7 +221,7 @@
     if (item[@"alertViewStyle"]) {
         alertView.alertViewStyle = [item[@"alertViewStyle"] integerValue];
     }
-
+    
     //
     [self cheackUIAlertView:alertView];
     
@@ -269,8 +269,8 @@
 
 - (void)alertViewCancel:(UIAlertView *)alertView  {
     
-//    NSLog(@"%s",__PRETTY_FUNCTION__);
-//    NSLog(@"@param\n\nalertView:\n%@",alertView);
+    //    NSLog(@"%s",__PRETTY_FUNCTION__);
+    //    NSLog(@"@param\n\nalertView:\n%@",alertView);
     
 }
 
@@ -279,8 +279,8 @@
  */
 - (void)willPresentAlertView:(UIAlertView *)alertView {
     
-//    NSLog(@"%s",__PRETTY_FUNCTION__);
-//    NSLog(@"@param\n\nalertView:\n%@",alertView);
+    //    NSLog(@"%s",__PRETTY_FUNCTION__);
+    //    NSLog(@"@param\n\nalertView:\n%@",alertView);
     
 }
 
@@ -289,8 +289,8 @@
  */
 - (void)didPresentAlertView:(UIAlertView *)alertView {
     
-//    NSLog(@"%s",__PRETTY_FUNCTION__);
-//    NSLog(@"@param\n\nalertView:\n%@",alertView);
+    //    NSLog(@"%s",__PRETTY_FUNCTION__);
+    //    NSLog(@"@param\n\nalertView:\n%@",alertView);
     
 }
 
@@ -299,8 +299,8 @@
  */
 - (void)alertView:(UIAlertView *)alertView willDismissWithButtonIndex:(NSInteger)buttonIndex {
     
-//    NSLog(@"%s",__PRETTY_FUNCTION__);
-//    NSLog(@"@param\n\nalertView:\n%@\nindex:\n%ld",alertView,buttonIndex);
+    //    NSLog(@"%s",__PRETTY_FUNCTION__);
+    //    NSLog(@"@param\n\nalertView:\n%@\nindex:\n%ld",alertView,buttonIndex);
     
 }
 
@@ -309,8 +309,8 @@
  */
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
     
-//    NSLog(@"%s",__PRETTY_FUNCTION__);
-//    NSLog(@"@param\n\nalertView:\n%@\nindex:\n%ld",alertView,buttonIndex);
+    //    NSLog(@"%s",__PRETTY_FUNCTION__);
+    //    NSLog(@"@param\n\nalertView:\n%@\nindex:\n%ld",alertView,buttonIndex);
     
 }
 
@@ -383,7 +383,7 @@
     [self presentViewController:alert animated:YES completion:^(){
         
     }];
-
+    
 }
 
 - (void)setCustomAlertViewStyle:(UIAlertViewStyle )alertViewStyle {
@@ -420,7 +420,7 @@
                                             handler:^(UIAlertAction *action){
                                                 [self setCustomAlertViewStyle:UIAlertViewStyleLoginAndPasswordInput];
                                             }]];
-
+    
     [self presentViewController:alert animated:YES completion:^(){
         
     }];
@@ -461,5 +461,41 @@
     self.buttons = mButtons;
 }
 
+- (void)listViewController:(id)sender event:(id)event{
+    
+    NSLog(@"%s",__PRETTY_FUNCTION__);
+    NSLog(@"@param\n\nsender:\n%@\nevent:\n%@",sender,event);
+    
+    UIButton *sendButton = sender;
+    Class listViewControllerClass = NSClassFromString(self.buttons[sendButton.tag][@"listViewController:"]);
+    if (listViewControllerClass) {
+        /**
+         * 遷移するViewControllerの生成
+         */
+        UIViewController *listViewController = [[listViewControllerClass alloc] init];
+        listViewController.view.backgroundColor = self.view.backgroundColor;
+        listViewController.title = self.buttons[sendButton.tag][@"title"];
+        listViewController.navigationItem.leftBarButtonItem =
+        // TOPページに戻る処理
+        [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(dismissCloseButtonAction:)];
+        
+        UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:listViewController];
+        navigationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        [self presentViewController:navigationController animated:YES completion:^(){
+            NSLog(@"%@",self.buttons[sendButton.tag][@"title"]);
+        }];
+    } else {
+        NSLog(@"No Class : %@",self.buttons[sendButton.tag][@"listViewController:"]);
+    }
+}
+
+/**
+ * TOPページに戻る処理
+ */
+- (void)dismissCloseButtonAction:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:^(){
+        NSLog(@"%@",sender);
+    }];
+}
 
 @end
