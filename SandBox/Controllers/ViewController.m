@@ -35,9 +35,6 @@
                      @{@"title":@"ラベルについて",@"listViewController:":@"ListLabelViewController"},
                      @{@"title":@"文字列装飾について",@"listViewController:":@"ListAttributedStringViewController"},
                      @{@"title":@"例外処理について",@"listViewController:":@"ListExceptionViewController"},
-                     @{@"title":@"アクション",@"action":@"newsAlert:"},
-                     
-                     
                      @{@"title":@"CustomAlert",@"action":@"newCustomAlert:"},
                      @{@"title":@"ActionSheet",@"action":@"newCustomActionSheet:"},
                      ];
@@ -116,21 +113,6 @@
     [self dismissViewControllerAnimated:YES completion:^(){
         NSLog(@"%@",sender);
     }];
-}
-
-- (void)newsAlert:(id)sender {
-    
-    CustomAlertController *customAlertController = [CustomAlertController customAlertControllerWithTitle:@"お知らせ" message:@"ログインボーナスを取得しました。" preferredStyle:CustomAlertControllerStyleAlert];
-    CustomAlertAction *okAction = [CustomAlertAction actionWithTitle:@"OK" style:CustomAlertActionStyleDefault handler:^(CustomAlertAction *action){
-        NSLog(@"OK");
-        
-    }];
-    [customAlertController addAction:okAction];
-    
-    [self presentViewController:customAlertController animated:YES completion:^(void){
-        NSLog(@"お知らせ");
-    }];
-
 }
 
 - (void)newCustomAlert:(id)sender{
