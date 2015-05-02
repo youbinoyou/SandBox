@@ -35,8 +35,6 @@
                      @{@"title":@"ラベルについて",@"listViewController:":@"ListLabelViewController"},
                      @{@"title":@"文字列装飾について",@"listViewController:":@"ListAttributedStringViewController"},
                      @{@"title":@"例外処理について",@"listViewController:":@"ListExceptionViewController"},
-                     @{@"title":@"CustomAlert",@"action":@"newCustomAlert:"},
-                     @{@"title":@"ActionSheet",@"action":@"newCustomActionSheet:"},
                      ];
     
     CGRect rectButton = CGRectZero;
@@ -114,50 +112,10 @@
         NSLog(@"%@",sender);
     }];
 }
-
-- (void)newCustomAlert:(id)sender{
-    CustomAlertController *customAlertController = [CustomAlertController customAlertControllerWithTitle:@"タイトル" message:@"message" preferredStyle:CustomAlertControllerStyleAlert];
-    CustomAlertAction *okAction = [CustomAlertAction actionWithTitle:@"OK" style:CustomAlertActionStyleDefault handler:^(CustomAlertAction *action){
-        NSLog(@"OK");
-
-    }];
-    [customAlertController addAction:okAction];
-    CustomAlertAction *cancelAction = [CustomAlertAction actionWithTitle:@"NG" style:CustomAlertActionStyleCancel handler:^(CustomAlertAction *action){
-        NSLog(@"NG");
-    }];
-    [customAlertController addAction:cancelAction];
+- (void)dealloc
+{
+    NSLog(@"%@ dealloc", NSStringFromClass([self class]));
     
-//    CustomAlertAction *cancel2Action = [CustomAlertAction actionWithTitle:@"NG" style:CustomAlertActionStyleCancel handler:^(CustomAlertAction *action){
-//        NSLog(@"NG");
-//    }];
-//    [customAlertController addAction:cancel2Action];
-    
-    CustomAlertAction *openAction = [CustomAlertAction actionWithTitle:@"開く" style:CustomAlertActionStyleDestructive handler:^(CustomAlertAction *action){
-        NSLog(@"MENU");
-    }];
-    [customAlertController addAction:openAction];
-    
-    [self presentViewController:customAlertController animated:YES completion:^(void){
-        NSLog(@"Custom");
-    }];
 }
-
-- (void)newCustomActionSheet:(id)sender{
-    CustomAlertController *customAlertController = [CustomAlertController customAlertControllerWithTitle:@"タイトル" message:@"message" preferredStyle:CustomAlertControllerStyleActionSheet];
-    CustomAlertAction *okAction = [CustomAlertAction actionWithTitle:@"OK" style:CustomAlertActionStyleDefault handler:^(CustomAlertAction *action){
-        NSLog(@"OK");
-        
-    }];
-    [customAlertController addAction:okAction];
-    CustomAlertAction *cancelAction = [CustomAlertAction actionWithTitle:@"NG" style:CustomAlertActionStyleCancel handler:^(CustomAlertAction *action){
-        NSLog(@"NG");
-    }];
-    [customAlertController addAction:cancelAction];
-    
-    [self presentViewController:customAlertController animated:YES completion:^(void){
-        NSLog(@"Custom");
-    }];
-}
-
 
 @end

@@ -53,4 +53,10 @@
     NSLog(@"app's windows = %@", [UIApplication sharedApplication].windows);
 }
 
+- (void)dealloc
+{
+    NSLog(@"%@ dealloc", NSStringFromClass([self class]));
+    
+}
+
 @end
