@@ -10,7 +10,7 @@
 
 @interface ListExceptionViewController ()
 
-@property (nonatomic) NSArray *buttons;
+@property (nonatomic,retain) NSArray *buttons;
 
 @end
 
@@ -113,6 +113,15 @@
     @finally {
         
     }
+}
+
+/**
+ * 戻る処理
+ */
+- (void)dismissCloseButtonAction:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:^(){
+        NSLog(@"%@",sender);
+    }];
 }
 
 - (void)dealloc

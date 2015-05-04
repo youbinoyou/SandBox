@@ -10,7 +10,7 @@
 
 @interface ListWindowViewController ()
 
-@property (nonatomic) NSArray *buttons;
+@property (nonatomic,retain) NSArray *buttons;
 
 @end
 
@@ -86,6 +86,16 @@
     [window makeKeyAndVisible];
     [window makeKeyWindow];
     [self.view addSubview:window];
+}
+
+
+/**
+ * 戻る処理
+ */
+- (void)dismissCloseButtonAction:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:^(){
+        NSLog(@"%@",sender);
+    }];
 }
 
 - (void)dealloc

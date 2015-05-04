@@ -112,6 +112,7 @@
         NSLog(@"%@",sender);
     }];
 }
+
 - (void)dealloc
 {
     NSLog(@"%@ dealloc", NSStringFromClass([self class]));

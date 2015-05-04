@@ -10,7 +10,7 @@
 
 @interface ListAlertViewController ()
 
-@property (nonatomic) NSArray *buttons;
+@property (nonatomic,retain) NSArray *buttons;
 
 @end
 

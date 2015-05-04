@@ -11,7 +11,8 @@
 
 @interface ListLabelViewController ()
 
-@property (nonatomic) NSArray *buttons;
+@property (nonatomic,retain) NSArray *buttons;
+
 @property (nonatomic) CustomLabel *label1;
 @property (nonatomic) CustomLabel *label2;
 @property (nonatomic) CustomLabel *label3;
@@ -196,6 +197,16 @@
     self.label5.gradientStartPoint = CGPointMake(0.0f, 0.5f);
     self.label5.gradientEndPoint = CGPointMake(1.0f, 0.5f);
     self.label5.oversampling = 2;
+
+}
+
+/**
+ * 戻る処理
+ */
+- (void)dismissCloseButtonAction:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:^(){
+        NSLog(@"%@",sender);
+    }];
 
 }
 

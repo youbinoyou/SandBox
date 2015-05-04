@@ -60,7 +60,7 @@
 
 @interface ListViewController ()
 
-@property (nonatomic) NSArray *buttons;
+@property (nonatomic,retain) NSArray *buttons;
 
 @end
 
@@ -164,6 +164,16 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+/**
+ * TOPページに戻る処理
+ */
+- (void)dismissCloseButtonAction:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:^(){
+        NSLog(@"%@",sender);
+    }];
+}
+
 - (void)dealloc
 {
     NSLog(@"%@ dealloc", NSStringFromClass([self class]));
