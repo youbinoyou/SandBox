@@ -16,7 +16,6 @@
 		570B694D1AEA0C7200A42DEC /* ListAttributedStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 570B694C1AEA0C7200A42DEC /* ListAttributedStringViewController.m */; };
 		570B69501AEA1D9D00A42DEC /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 570B694F1AEA1D9D00A42DEC /* ListViewController.m */; };
 		BD0DA5B31AF7134400BDA278 /* UIAlertView+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0DA5B21AF7134400BDA278 /* UIAlertView+Custom.m */; };
-		BD0DA5B61AF7146900BDA278 /* UIView+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0DA5B51AF7146900BDA278 /* UIView+Custom.m */; };
 		BDE2122F1AE69102002A0746 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDE2122E1AE69102002A0746 /* Main.storyboard */; };
 		BDE212321AE69182002A0746 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE212311AE69182002A0746 /* ViewController.m */; };
 		BDE212351AE6B477002A0746 /* CustomAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE212341AE6B477002A0746 /* CustomAlertController.m */; };
@@ -58,8 +57,6 @@
 		570B694F1AEA1D9D00A42DEC /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListViewController.m; path = Controllers/ListViewController.m; sourceTree = "<group>"; };
 		BD0DA5B11AF7134400BDA278 /* UIAlertView+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIAlertView+Custom.h"; path = "Views/UIAlertView+Custom.h"; sourceTree = "<group>"; };
 		BD0DA5B21AF7134400BDA278 /* UIAlertView+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIAlertView+Custom.m"; path = "Views/UIAlertView+Custom.m"; sourceTree = "<group>"; };
-		BD0DA5B41AF7146900BDA278 /* UIView+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Custom.h"; path = "Views/UIView+Custom.h"; sourceTree = "<group>"; };
-		BD0DA5B51AF7146900BDA278 /* UIView+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Custom.m"; path = "Views/UIView+Custom.m"; sourceTree = "<group>"; };
 		BDE2122E1AE69102002A0746 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/StoryBoards/Main.storyboard; sourceTree = "<group>"; };
 		BDE212301AE69182002A0746 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = Controllers/ViewController.h; sourceTree = "<group>"; };
 		BDE212311AE69182002A0746 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = Controllers/ViewController.m; sourceTree = "<group>"; };
@@ -160,8 +157,6 @@
 		BDE212291AE68D68002A0746 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BD0DA5B41AF7146900BDA278 /* UIView+Custom.h */,
-				BD0DA5B51AF7146900BDA278 /* UIView+Custom.m */,
 				BD0DA5B11AF7134400BDA278 /* UIAlertView+Custom.h */,
 				BD0DA5B21AF7134400BDA278 /* UIAlertView+Custom.m */,
 				BDE2122A1AE68DF9002A0746 /* Common */,
@@ -379,7 +374,6 @@
 				570B69501AEA1D9D00A42DEC /* ListViewController.m in Sources */,
 				BDE212321AE69182002A0746 /* ViewController.m in Sources */,
 				BDE212351AE6B477002A0746 /* CustomAlertController.m in Sources */,
-				BD0DA5B61AF7146900BDA278 /* UIView+Custom.m in Sources */,
 				BD0DA5B31AF7134400BDA278 /* UIAlertView+Custom.m in Sources */,
 				5708100D1AEF3D87009A6570 /* ListAlertControllerViewController.m in Sources */,
 				5704E4C01AF1CF040027C067 /* ListWindowViewController.m in Sources */,
