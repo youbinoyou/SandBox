@@ -10,7 +10,8 @@
 
 @interface ListAttributedStringViewController ()
 
-@property (nonatomic) NSArray *buttons;
+@property (nonatomic,retain) NSArray *buttons;
+
 @property (nonatomic) UILabel *label;
 
 @end
@@ -458,5 +459,11 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)dealloc
+{
+    NSLog(@"%@ dealloc", NSStringFromClass([self class]));
+    
+}
 
 @end

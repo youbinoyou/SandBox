@@ -11,7 +11,8 @@
 
 @interface ListLabelViewController ()
 
-@property (nonatomic) NSArray *buttons;
+@property (nonatomic,retain) NSArray *buttons;
+
 @property (nonatomic) CustomLabel *label1;
 @property (nonatomic) CustomLabel *label2;
 @property (nonatomic) CustomLabel *label3;
@@ -199,4 +200,19 @@
 
 }
 
+/**
+ * 戻る処理
+ */
+- (void)dismissCloseButtonAction:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:^(){
+        NSLog(@"%@",sender);
+    }];
+
+}
+
+- (void)dealloc
+{
+    NSLog(@"%@ dealloc", NSStringFromClass([self class]));
+    
+}
 @end

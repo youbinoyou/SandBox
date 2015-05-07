@@ -1,31 +1,47 @@
 //
-//  ListExceptionViewController.m
+//  ListObjeciveCViewController.m
 //  SandBox
 //
-//  Created by YouOhshima on 2015/04/30.
+//  Created by 大島 曜 on 2015/05/08.
 //  Copyright (c) 2015年 大島 曜. All rights reserved.
 //
 
-#import "ListExceptionViewController.h"
+#import "ListObjeciveCViewController.h"
 
-@interface ListExceptionViewController ()
+@interface ListObjeciveCViewController ()
 
 @property (nonatomic,retain) NSArray *buttons;
 
 @end
 
-@implementation ListExceptionViewController
+@implementation ListObjeciveCViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
     self.buttons = @[
-                     @{@"title":@"例外処理",@"action":@"newNSException:",
-                       @"UIWindow":@{
-                               }
+                     @{@"title":@"ObjectiveCの基本"},
+                     @{@"title":@"データ型について"},
+                     @{@"title":@"関数について"},
+                     @{@"title":@"基本構文"},
+                     @{@"title":@"基本知識"},
+                     @{
+                         @"title":@"Fundation Framework",
+                         @"listViewController:":@"ListFoundationViewController",
                        },
-                     @{@"title":@"例外処理"},
+                     @{
+                         @"title":@"UIKit Framework",
+                         @"listViewController:":@"ListUIKitViewController",
+                         },
+                     @{
+                         @"title":@"ListCoreLocation Framework",
+                         @"listViewController:":@"ListCoreLocationViewController",
+                         },
+                     @{
+                         @"title":@"MapKit Framework",
+                         @"listViewController:":@"ListMapKitViewController",
+                         },
                      ];
     
     CGRect rectButton = CGRectZero;
@@ -59,7 +75,7 @@
         }
         [self.view addSubview:button];
     }
-
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -77,46 +93,37 @@
 }
 */
 
-- (void)newNSException:(id)sender{
+- (void)listViewController:(id)sender event:(id)event{
     
-    /** raiseで例外を投げる */
-    @try {
-        [NSException raise:@"TestException" format:@"テスト"];
-    }
-    @catch (NSException *exception) {
-        NSLog(@"例外名：%@", exception.name);
-        NSLog(@"理由：%@", exception.reason);
-    }
-    @finally {
-        
-    }
+    NSLog(@"%s",__PRETTY_FUNCTION__);
+    NSLog(@"@param\n\nsender:\n%@\nevent:\n%@",sender,event);
     
-}
-
-- (void)newException:(id)sender {
-    /** @throwで例外を投げる */
-    @try {
-        // 文字列を例外として投げる
-        @throw @"string exception";
-    }
-    @catch (NSString *exception) {
-        // 文字列をキャッチ
-        NSLog(@"%@", exception);
-    }
-    @catch (id exception) {
-        // すべての例外をキャッチ
-        NSLog(@"%@", exception);
+    UIButton *sendButton = sender;
+    Class listViewControllerClass = NSClassFromString(self.buttons[sendButton.tag][@"listViewController:"]);
+    if (listViewControllerClass) {
         
-        // このブロックでキャッチした例外を伝播
-        @throw;
-    }
-    @finally {
+        /**
+         * 遷移するViewControllerの生成
+         */
+        UIViewController *listViewController = [[listViewControllerClass alloc] init];
+        listViewController.view.backgroundColor = self.view.backgroundColor;
+        listViewController.title = self.buttons[sendButton.tag][@"title"];
+        listViewController.navigationItem.leftBarButtonItem =
+        // TOPページに戻る処理
+        [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(dismissCloseButtonAction:)];
         
+        UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:listViewController];
+        navigationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        [self presentViewController:navigationController animated:YES completion:^(){
+            NSLog(@"%@",self.buttons[sendButton.tag][@"title"]);
+        }];
+    } else {
+        NSLog(@"No Class : %@",self.buttons[sendButton.tag][@"listViewController:"]);
     }
 }
 
 /**
- * 戻る処理
+ * TOPページに戻る処理
  */
 - (void)dismissCloseButtonAction:(id)sender {
     [self dismissViewControllerAnimated:YES completion:^(){
@@ -129,5 +136,6 @@
     NSLog(@"%@ dealloc", NSStringFromClass([self class]));
     
 }
+
 
 @end
