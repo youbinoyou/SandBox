@@ -1,42 +1,47 @@
 //
-//  ViewController.m
+//  ListObjeciveCViewController.m
 //  SandBox
 //
-//  Created by 大島 曜 on 2015/04/10.
+//  Created by 大島 曜 on 2015/05/08.
 //  Copyright (c) 2015年 大島 曜. All rights reserved.
 //
 
-#import "ViewController.h"
-#import "CustomAlertController.h"
+#import "ListObjeciveCViewController.h"
 
-@interface ViewController ()
+@interface ListObjeciveCViewController ()
 
 @property (nonatomic,retain) NSArray *buttons;
 
 @end
 
-@implementation ViewController
+@implementation ListObjeciveCViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    // Do any additional setup after loading the view.
     
-    UILabel *titleLabel = [[UILabel alloc] init];
-    titleLabel.textAlignment = NSTextAlignmentCenter;
-    titleLabel.text = @"Xcode 学習（c）You Ohshima";
-    [titleLabel sizeToFit];
-    titleLabel.frame = CGRectMake(0,[UIScreen mainScreen].applicationFrame.size.height - titleLabel.frame.size.height,[UIScreen mainScreen].applicationFrame.size.width , titleLabel.frame.size.height);
-    [self.view addSubview:titleLabel];
     self.buttons = @[
-                     
-                     @{@"title":@"Objective-Cについて",@"listViewController:":@"ListObjeciveCViewController"},
-                     @{@"title":@"ビューコントローラーについて",@"listViewController:":@"ListViewController"},
-                     @{@"title":@"アラートについて",@"listViewController:":@"ListAlertViewController"},
-                     
-                     @{@"title":@"ウィンドウについて",@"listViewController:":@"ListWindowViewController"},
-                     @{@"title":@"ラベルについて",@"listViewController:":@"ListLabelViewController"},
-                     @{@"title":@"文字列装飾について",@"listViewController:":@"ListAttributedStringViewController"},
-                     @{@"title":@"例外処理について",@"listViewController:":@"ListExceptionViewController"},
+                     @{@"title":@"ObjectiveCの基本"},
+                     @{@"title":@"データ型について"},
+                     @{@"title":@"関数について"},
+                     @{@"title":@"基本構文"},
+                     @{@"title":@"基本知識"},
+                     @{
+                         @"title":@"Fundation Framework",
+                         @"listViewController:":@"ListFoundationViewController",
+                       },
+                     @{
+                         @"title":@"UIKit Framework",
+                         @"listViewController:":@"ListUIKitViewController",
+                         },
+                     @{
+                         @"title":@"ListCoreLocation Framework",
+                         @"listViewController:":@"ListCoreLocationViewController",
+                         },
+                     @{
+                         @"title":@"MapKit Framework",
+                         @"listViewController:":@"ListMapKitViewController",
+                         },
                      ];
     
     CGRect rectButton = CGRectZero;
@@ -70,12 +75,23 @@
         }
         [self.view addSubview:button];
     }
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 - (void)listViewController:(id)sender event:(id)event{
     
@@ -95,7 +111,7 @@
         listViewController.navigationItem.leftBarButtonItem =
         // TOPページに戻る処理
         [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(dismissCloseButtonAction:)];
-    
+        
         UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:listViewController];
         navigationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
         [self presentViewController:navigationController animated:YES completion:^(){
@@ -120,5 +136,6 @@
     NSLog(@"%@ dealloc", NSStringFromClass([self class]));
     
 }
+
 
 @end
