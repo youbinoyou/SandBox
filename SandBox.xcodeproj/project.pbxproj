@@ -10,6 +10,7 @@
 		5704E4C01AF1CF040027C067 /* ListWindowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5704E4BF1AF1CF040027C067 /* ListWindowViewController.m */; };
 		5704E4C31AF221F10027C067 /* ListExceptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5704E4C21AF221F10027C067 /* ListExceptionViewController.m */; };
 		5708100D1AEF3D87009A6570 /* ListAlertControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5708100C1AEF3D87009A6570 /* ListAlertControllerViewController.m */; };
+		570896C41AFB644000300587 /* ListTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 570896C31AFB644000300587 /* ListTabBarViewController.m */; };
 		570B69441AE9D00D00A42DEC /* www.youbinoyou.com in Resources */ = {isa = PBXBuildFile; fileRef = 570B69431AE9D00D00A42DEC /* www.youbinoyou.com */; };
 		570B69471AE9D42200A42DEC /* CustomLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 570B69461AE9D42200A42DEC /* CustomLabel.m */; };
 		570B694A1AE9D4A800A42DEC /* ListLabelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 570B69491AE9D4A800A42DEC /* ListLabelViewController.m */; };
@@ -53,6 +54,8 @@
 		5708100B1AEF3D87009A6570 /* ListAlertControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListAlertControllerViewController.h; path = Controllers/ListAlertControllerViewController.h; sourceTree = "<group>"; };
 		5708100C1AEF3D87009A6570 /* ListAlertControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListAlertControllerViewController.m; path = Controllers/ListAlertControllerViewController.m; sourceTree = "<group>"; };
 		570B69431AE9D00D00A42DEC /* www.youbinoyou.com */ = {isa = PBXFileReference; lastKnownFileType = folder; name = www.youbinoyou.com; path = ../../../../../../Library/WebServer/Documents/www.youbinoyou.com; sourceTree = "<group>"; };
+		570896C21AFB644000300587 /* ListTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListTabBarViewController.h; path = Controllers/ListTabBarViewController.h; sourceTree = "<group>"; };
+		570896C31AFB644000300587 /* ListTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListTabBarViewController.m; path = Controllers/ListTabBarViewController.m; sourceTree = "<group>"; };
 		570B69451AE9D42200A42DEC /* CustomLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomLabel.h; path = Views/Common/CustomLabel.h; sourceTree = "<group>"; };
 		570B69461AE9D42200A42DEC /* CustomLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomLabel.m; path = Views/Common/CustomLabel.m; sourceTree = "<group>"; };
 		570B69481AE9D4A800A42DEC /* ListLabelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListLabelViewController.h; path = Controllers/ListLabelViewController.h; sourceTree = "<group>"; };
@@ -145,6 +148,8 @@
 				BD0E8B8B1AFC102B00F8F355 /* ListCoreLocationViewController.m */,
 				BD0E8B8D1AFC10A400F8F355 /* ListMapKitViewController.h */,
 				BD0E8B8E1AFC10A400F8F355 /* ListMapKitViewController.m */,
+				570896C21AFB644000300587 /* ListTabBarViewController.h */,
+				570896C31AFB644000300587 /* ListTabBarViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -417,6 +422,7 @@
 				BDE2123B1AE7D14A002A0746 /* 3DViewController.m in Sources */,
 				BD0E8B831AFC09BD00F8F355 /* ListFoundationViewController.m in Sources */,
 				BDEEC2281AD7EE9F00B522D9 /* main.m in Sources */,
+				570896C41AFB644000300587 /* ListTabBarViewController.m in Sources */,
 				BDE212411AE91B8F002A0746 /* ListAlertViewController.m in Sources */,
 				570B694D1AEA0C7200A42DEC /* ListAttributedStringViewController.m in Sources */,
 				570B694A1AE9D4A800A42DEC /* ListLabelViewController.m in Sources */,

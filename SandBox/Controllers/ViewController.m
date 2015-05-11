@@ -37,6 +37,11 @@
                      @{@"title":@"ラベルについて",@"listViewController:":@"ListLabelViewController"},
                      @{@"title":@"文字列装飾について",@"listViewController:":@"ListAttributedStringViewController"},
                      @{@"title":@"例外処理について",@"listViewController:":@"ListExceptionViewController"},
+                     @{@"title":@"タブバーについて",@"listViewController:":@"ListTabBarViewController"},
+                     /*
+                     @{@"title":@"CustomAlert",@"action":@"newCustomAlert:"},
+                     @{@"title":@"ActionSheet",@"action":@"newCustomActionSheet:"},
+                      */
                      ];
     
     CGRect rectButton = CGRectZero;
