@@ -38,6 +38,8 @@
                      @{@"title":@"文字列装飾について",@"listViewController:":@"ListAttributedStringViewController"},
                      @{@"title":@"例外処理について",@"listViewController:":@"ListExceptionViewController"},
                      @{@"title":@"タブバーについて",@"listViewController:":@"ListTabBarViewController"},
+                     @{@"title":@"アクティビティビューコントローラについて",@"listViewController:":@"ActivityViewControllerListViewController"},
+                     
                      /*
                      @{@"title":@"CustomAlert",@"action":@"newCustomAlert:"},
                      @{@"title":@"ActionSheet",@"action":@"newCustomActionSheet:"},
