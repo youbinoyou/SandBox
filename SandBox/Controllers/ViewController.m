@@ -35,9 +35,11 @@
                      
                      @{@"title":@"ウィンドウについて",@"listViewController:":@"ListWindowViewController"},
                      @{@"title":@"ラベルについて",@"listViewController:":@"ListLabelViewController"},
+                     @{@"title":@"テーブルビューについて",@"listViewController:":@"TableViewListViewController"},
                      @{@"title":@"文字列装飾について",@"listViewController:":@"ListAttributedStringViewController"},
                      @{@"title":@"例外処理について",@"listViewController:":@"ListExceptionViewController"},
                      @{@"title":@"タブバーについて",@"listViewController:":@"ListTabBarViewController"},
+                     @{@"title":@"ピッカービューについて",@"listViewController:":@"PickerViewListViewController"},
                      @{@"title":@"アクティビティビューコントローラについて",@"listViewController:":@"ActivityViewControllerListViewController"},
                      
                      /*

@@ -7,10 +7,13 @@
 //
 
 #import "ActivityViewControllerListViewController.h"
+#import "Store.h"
 
-@interface ActivityViewControllerListViewController ()
+@interface ActivityViewControllerListViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic,retain) NSArray *buttons;
+@property (nonatomic,retain) NSArray *datas;
+@property (nonatomic,retain) UITableView *tableView;
 
 @end
 
@@ -37,7 +40,8 @@
                                }
                        },
                      
-                     @{@"title":@"アラートビュー（操作）Title",@"action":@"setCustomAlertTitle:"},                     ];
+                     @{@"title":@"ストア情報",@"action":@"storeMaking"},
+                     ];
     
     CGRect rectButton = CGRectZero;
     for (NSDictionary *item in self.buttons) {
@@ -493,6 +497,130 @@
 - (void)dealloc
 {
     NSLog(@"%@ dealloc", NSStringFromClass([self class]));
-    
 }
+
+- (void)storeMaking
+{
+    if (!self.tableView)
+    {
+        self.tableView = [UITableView new];
+        [self.view addSubview:self.tableView];
+    }
+    self.tableView.frame = CGRectMake(0,
+                                      CGRectGetMidY([UIScreen mainScreen].applicationFrame),
+                                      CGRectGetWidth([UIScreen mainScreen].applicationFrame),
+                                      CGRectGetHeight([UIScreen mainScreen].applicationFrame) / 2.0);
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    
+    NSArray *tempDatas = [self createStore];
+    UILocalizedIndexedCollation *collation = [UILocalizedIndexedCollation currentCollation];
+    
+    NSInteger sectionCount = [[collation sectionTitles] count];
+    NSMutableArray *unsortedSections = [NSMutableArray arrayWithCapacity:sectionCount];
+    
+    for (int i = 0; i < sectionCount; i++)
+    {
+        [unsortedSections addObject:[NSMutableArray array]];
+    }
+    
+    for (id data in tempDatas)
+    {
+        NSInteger index = [collation sectionForObject:data collationStringSelector:@selector(phoneticGuides)];
+        [[unsortedSections objectAtIndex:index] addObject:data];
+    }
+    
+    NSMutableArray *sections = [NSMutableArray arrayWithCapacity:sectionCount];
+    
+    for (NSMutableArray *section in unsortedSections)
+    {
+        [sections addObject:[collation sortedArrayFromArray:section collationStringSelector:@selector(phoneticGuides)]];
+    }
+    
+    self.datas = sections;
+}
+
+- (NSArray *)createStore
+{
+    Store *temp1 = [[Store alloc] initWithBranchName:@"新宿店"
+                                      phoneticGuides:@"しんじゅく"
+                                          prefecture:@"東京都"];
+    Store *temp2 = [[Store alloc] initWithBranchName:@"飯田橋店"
+                                      phoneticGuides:@"いいだばし"
+                                          prefecture:@"東京都"];
+    Store *temp3 = [[Store alloc] initWithBranchName:@"立川店"
+                                      phoneticGuides:@"たちかわ"
+                                          prefecture:@"東京都"];
+    Store *temp4 = [[Store alloc] initWithBranchName:@"大手町店"
+                                      phoneticGuides:@"おおてまち"
+                                          prefecture:@"東京都"];
+    Store *temp5 = [[Store alloc] initWithBranchName:@"成田店"
+                                      phoneticGuides:@"なりた"
+                                          prefecture:@"千葉県"];
+    Store *temp6 = [[Store alloc] initWithBranchName:@"浦安店"
+                                      phoneticGuides:@"うらやす"
+                                          prefecture:@"千葉県"];
+    Store *temp7 = [[Store alloc] initWithBranchName:@"みなとみらい店"
+                                      phoneticGuides:@"みなとみらい"
+                                          prefecture:@"神奈川県"];
+    Store *temp8 = [[Store alloc] initWithBranchName:@"川崎店"
+                                      phoneticGuides:@"かわさき"
+                                          prefecture:@"神奈川県"];
+    Store *temp9 = [[Store alloc] initWithBranchName:@"溝の口店"
+                                      phoneticGuides:@"みぞのくち"
+                                          prefecture:@"神奈川県"];
+    Store *temp10 = [[Store alloc] initWithBranchName:@"朝霞店"
+                                       phoneticGuides:@"あさか"
+                                           prefecture:@"埼玉県"];
+    NSArray *tempDatas = @[temp1, temp2, temp3, temp4, temp5, temp6, temp7, temp8, temp9, temp10];
+    
+    return tempDatas;
+}
+
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return [[[UILocalizedIndexedCollation currentCollation] sectionTitles] count];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [[self.datas objectAtIndex:section] count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    
+    Store *data = [[self.datas objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+    cell.textLabel.text = data.branchName;
+    cell.backgroundColor = [UIColor colorWithRed:0 green:0 blue:1 alpha:0.3];
+    return cell;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    if (0 == [[self.datas objectAtIndex:section] count])
+    {
+        return nil;
+    }
+    return [[[UILocalizedIndexedCollation currentCollation] sectionTitles] objectAtIndex:section];
+}
+
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
+{
+    return [[UILocalizedIndexedCollation currentCollation] sectionIndexTitles];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index
+{
+    return [[UILocalizedIndexedCollation currentCollation] sectionForSectionIndexTitleAtIndex:index];
+}
+
 @end
