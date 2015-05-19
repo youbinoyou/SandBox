@@ -25,19 +25,8 @@
     // Do any additional setup after loading the view.
     
     self.buttons = @[
-                     @{@"title":@"アラートビュー",@"action":@"newUIAlertView:",
-                       @"UIAlertView":@{
-                               @"title":@"UIAlertView",
-                               @"message":@"message",
-                               @"delegate":self,
-                               @"cancelButtonIndex":@1,
-                               @"alertViewStyle":[NSNumber numberWithInteger:UIAlertViewStyleDefault],
-                               @"buttonTitles":@[
-                                       @"ボタンタイトル１",
-                                       @"ボタンタイトル２（キャンセル）",
-                                       @"ボタンタイトル３",
-                                       ]
-                               }
+                     @{@"title":@"アクティティビューコントローラ起動",@"action":@"setActivityViewControllerAction:",
+                      
                        },
                      
                      @{@"title":@"ストア情報",@"action":@"storeMaking"},
@@ -498,6 +487,23 @@
 {
     NSLog(@"%@ dealloc", NSStringFromClass([self class]));
 }
+
+- (void)setActivityViewControllerAction:(id)sender
+{
+    //共有したい物を用意 (Arrayにまとめる)
+    NSString *text = [NSString stringWithFormat:@"文字文字文字文字"];
+    NSURL *url = [NSURL URLWithString:@"http://www....."];
+    NSArray *array = @[text,url];
+    
+    //連携可能アプリをArrayに。
+    UIActivity *activity = [UIActivity new];
+    NSArray *app = @[activity];
+    
+    //アクティビティビューコントローラー
+    UIActivityViewController *activityVC = [[UIActivityViewController alloc]initWithActivityItems:array applicationActivities:app];
+    [self presentViewController:activityVC animated:YES completion:nil];
+}
+
 
 - (void)storeMaking
 {

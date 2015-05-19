@@ -41,6 +41,11 @@
                      @{@"title":@"タブバーについて",@"listViewController:":@"ListTabBarViewController"},
                      @{@"title":@"ピッカービューについて",@"listViewController:":@"PickerViewListViewController"},
                      @{@"title":@"アクティビティビューコントローラについて",@"listViewController:":@"ActivityViewControllerListViewController"},
+                     @{@"title":@"スライダーについて",@"listViewController:":@"SliderListViewController"},
+                     @{@"title":@"プログレスビューについて",@"listViewController:":@"ProgressViewListViewController"},
+                     @{@"title":@"ページコントロールについて",@"listViewController:":@"PageControlListViewController"},
+
+                     @{@"title":@"ステッパーについて",@"listViewController:":@"StepperListViewController"},
                      
                      /*
                      @{@"title":@"CustomAlert",@"action":@"newCustomAlert:"},
