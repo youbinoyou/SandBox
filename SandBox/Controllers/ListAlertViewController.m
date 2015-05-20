@@ -489,7 +489,8 @@
         [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(dismissCloseButtonAction:)];
         
         UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:listViewController];
-        navigationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        navigationController.modalTransitionStyle = arc4random_uniform(4);
+
         [self presentViewController:navigationController animated:YES completion:^(){
             NSLog(@"%@",self.buttons[sendButton.tag][@"title"]);
         }];
