@@ -1,12 +1,12 @@
 //
-//  ListViewController.m
+//  ViewControllerListViewController.m
 //  SandBox
 //
 //  Created by YouOhshima on 2015/04/24.
 //  Copyright (c) 2015年 大島 曜. All rights reserved.
 //
 
-#import "ListViewController.h"
+#import "ViewControllerListViewController.h"
 
 
 #if __IPHONE_OS_VERSION_MIN_REQUIRED >= 90000
@@ -58,13 +58,13 @@
 #endif
 
 
-@interface ListViewController ()
+@interface ViewControllerListViewController ()
 
 @property (nonatomic,retain) NSArray *buttons;
 
 @end
 
-@implementation ListViewController
+@implementation ViewControllerListViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -164,6 +164,35 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)listViewController:(id)sender event:(id)event{
+    
+    NSLog(@"%s",__PRETTY_FUNCTION__);
+    NSLog(@"@param\n\nsender:\n%@\nevent:\n%@",sender,event);
+    
+    UIButton *sendButton = sender;
+    Class listViewControllerClass = NSClassFromString(self.buttons[sendButton.tag][@"listViewController:"]);
+    if (listViewControllerClass) {
+        /**
+         * 遷移するViewControllerの生成
+         */
+        UIViewController *listViewController = [[listViewControllerClass alloc] init];
+        listViewController.view.backgroundColor = self.view.backgroundColor;
+        listViewController.title = self.buttons[sendButton.tag][@"title"];
+        listViewController.navigationItem.leftBarButtonItem =
+        // TOPページに戻る処理
+        [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(dismissCloseButtonAction:)];
+        
+        UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:listViewController];
+        navigationController.modalTransitionStyle = arc4random_uniform(4);
+        
+        [self presentViewController:navigationController animated:YES completion:^(){
+            NSLog(@"%@",self.buttons[sendButton.tag][@"title"]);
+        }];
+    } else {
+        NSLog(@"No Class : %@",self.buttons[sendButton.tag][@"listViewController:"]);
+    }
+}
 
 /**
  * TOPページに戻る処理

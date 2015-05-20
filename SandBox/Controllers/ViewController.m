@@ -30,11 +30,12 @@
     self.buttons = @[
                      
                      @{@"title":@"Objective-Cについて",@"listViewController:":@"ListObjeciveCViewController"},
-                     @{@"title":@"ビューコントローラーについて",@"listViewController:":@"ListViewController"},
+                     @{@"title":@"ビューコントローラーについて",@"listViewController:":@"ViewControllerListViewController"},
                      @{@"title":@"アラートについて",@"listViewController:":@"ListAlertViewController"},
                      
                      @{@"title":@"ウィンドウについて",@"listViewController:":@"ListWindowViewController"},
                      @{@"title":@"ラベルについて",@"listViewController:":@"ListLabelViewController"},
+                     @{@"title":@"テーブルビューコントローラについて",@"listViewController:":@"TableViewControllerListViewController"},
                      @{@"title":@"テーブルビューについて",@"listViewController:":@"TableViewListViewController"},
                      @{@"title":@"文字列装飾について",@"listViewController:":@"ListAttributedStringViewController"},
                      @{@"title":@"例外処理について",@"listViewController:":@"ListExceptionViewController"},
@@ -111,7 +112,7 @@
         [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(dismissCloseButtonAction:)];
     
         UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:listViewController];
-        navigationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        navigationController.modalTransitionStyle = arc4random_uniform(4);
         [self presentViewController:navigationController animated:YES completion:^(){
             NSLog(@"%@",self.buttons[sendButton.tag][@"title"]);
         }];
