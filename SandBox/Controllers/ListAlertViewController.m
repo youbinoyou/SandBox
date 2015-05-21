@@ -52,6 +52,8 @@
                      @{@"title":@"カスタムアラート",@"action":@"alertViewController:"},
                      @{@"title":@"カスタムアラート2",@"action":@"alert2ViewController:"},
                      @{@"title":@"カスタムアラート",@"action":@"sampleAlertViewController:"},
+                     @{@"title":@"エリア選択",@"action":@"areaSelectionViewController:"},
+                     
                      
                      
                      ];
@@ -611,8 +613,45 @@
     
 }
 
+
+- (void)areaSelectionViewController:(id)sender {
+    // PickerViewControllerのインスタンスをStoryboardから取得し
+    self.alertViewController = [[UIStoryboard storyboardWithName:@"AreaSelection" bundle:nil] instantiateViewControllerWithIdentifier:@"AreaSelectionAlertViewController"];
+    if (!self.alertViewController)
+    {
+        self.alertViewController = [[AlertViewController alloc] init];
+        self.alertViewController.view.backgroundColor = [UIColor clearColor];
+    }
+    
+    
+    self.alertViewController.delegate = self;
+
+    // AlertViewをサブビューとして表示する
+    // 表示するときはアニメーションをつけて下から上にゆっくり表示させる
+    
+    // アニメーション完了時のPickerViewの位置を計算
+    UIView *alertView = self.alertViewController.view;
+    CGPoint middleCenter = alertView.center;
+    
+    // アニメーション開始時のPickerViewの位置を計算
+    UIWindow *mainWindow = [UIApplication sharedApplication].keyWindow;
+    [mainWindow addSubview:alertView];
+    alertView.alpha = 0.0f;
+    
+    // アニメーションを使ってPickerViewをアニメーション完了時の位置に表示されるようにする
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:0.3];
+    alertView.alpha = 1.0f;
+    alertView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.6];
+    alertView.center = middleCenter;
+    [UIView commitAnimations];
+    
+    
+}
+
+
 // PickerViewController上にある透明ボタンがタップされたときに呼び出されるPickerViewControllerDelegateプロトコルのデリゲートメソッド
-- (void)closeAlertView:(UIViewController *)controller
+- (void)closeAlertView:(UIViewController *)controller withObject:(id)object
 {
     // AlertViewをアニメーションを使ってゆっくり非表示にする
     UIView *alertView = controller.view;
@@ -624,6 +663,26 @@
     alertView.alpha = 0.0f;
     [UIView commitAnimations];
     controller = nil;
+    NSString *torstMessage = [[NSString stringWithFormat:@"「%@」",object] stringByAppendingString:@"が設定されました"];
+    UILabel *torstLabel = [UILabel new];
+    torstLabel.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:1.0];
+    torstLabel.textAlignment = NSTextAlignmentCenter;
+    torstLabel.text = torstMessage;
+    [torstLabel sizeToFit];
+    torstLabel.frame = CGRectMake(0,
+                                  0,
+                                  CGRectGetWidth([UIScreen mainScreen].bounds) - 100,
+                                  CGRectGetHeight(torstLabel.frame) * 3);
+    torstLabel.center = self.view.center;
+    [self.view addSubview:torstLabel];
+    [UIView animateKeyframesWithDuration:3.0
+                                   delay:0.3
+                                 options:UIViewKeyframeAnimationOptionCalculationModeLinear
+                              animations:^(void){
+                                  torstLabel.alpha = 0.0f;
+                              }completion:^(BOOL finished) {
+                                  [torstLabel removeFromSuperview];
+                              }];
 }
 
 // 単位のPickerViewを閉じるアニメーションが終了したときに呼び出されるメソッド
@@ -634,6 +693,5 @@
     [alertView removeFromSuperview];
     self.alertViewController = nil;
 }
-
 
 @end

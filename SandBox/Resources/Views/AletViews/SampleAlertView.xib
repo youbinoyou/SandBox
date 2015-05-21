@@ -150,6 +150,11 @@
                             <exclude reference="apr-VT-mei"/>
                         </mask>
                         <mask key="constraints">
+                            <exclude reference="4H5-Hf-OM4"/>
+                            <exclude reference="BRU-S2-GKP"/>
+                            <exclude reference="NxQ-w4-s7l"/>
+                            <exclude reference="p9n-Bf-yO4"/>
+                            <exclude reference="qME-hn-N3A"/>
                             <exclude reference="WlU-Yu-W84"/>
                             <exclude reference="d6Q-H7-rnb"/>
                             <exclude reference="kIg-IN-0hH"/>
@@ -157,11 +162,6 @@
                             <exclude reference="D9o-mV-n7s"/>
                             <exclude reference="aLB-NE-iCG"/>
                             <exclude reference="zj9-aR-MZb"/>
-                            <exclude reference="4H5-Hf-OM4"/>
-                            <exclude reference="BRU-S2-GKP"/>
-                            <exclude reference="NxQ-w4-s7l"/>
-                            <exclude reference="p9n-Bf-yO4"/>
-                            <exclude reference="qME-hn-N3A"/>
                         </mask>
                     </variation>
                     <variation key="heightClass=regular-widthClass=compact">
@@ -171,6 +171,11 @@
                             <include reference="apr-VT-mei"/>
                         </mask>
                         <mask key="constraints">
+                            <include reference="4H5-Hf-OM4"/>
+                            <exclude reference="BRU-S2-GKP"/>
+                            <include reference="NxQ-w4-s7l"/>
+                            <include reference="p9n-Bf-yO4"/>
+                            <include reference="qME-hn-N3A"/>
                             <exclude reference="WlU-Yu-W84"/>
                             <include reference="d6Q-H7-rnb"/>
                             <include reference="kIg-IN-0hH"/>
@@ -178,11 +183,6 @@
                             <include reference="D9o-mV-n7s"/>
                             <include reference="aLB-NE-iCG"/>
                             <include reference="zj9-aR-MZb"/>
-                            <include reference="4H5-Hf-OM4"/>
-                            <exclude reference="BRU-S2-GKP"/>
-                            <include reference="NxQ-w4-s7l"/>
-                            <include reference="p9n-Bf-yO4"/>
-                            <include reference="qME-hn-N3A"/>
                         </mask>
                     </variation>
                 </view>

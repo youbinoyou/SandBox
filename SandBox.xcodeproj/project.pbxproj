@@ -34,6 +34,7 @@
 		7F2BF3AE1B0B2A4200CA83C4 /* ProgressViewListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2BF3AD1B0B2A4200CA83C4 /* ProgressViewListViewController.m */; };
 		7F2BF3B11B0B2A5800CA83C4 /* PageControlListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2BF3B01B0B2A5800CA83C4 /* PageControlListViewController.m */; };
 		7F2BF3B41B0B2B1100CA83C4 /* StepperListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2BF3B31B0B2B1100CA83C4 /* StepperListViewController.m */; };
+		7F2ED0611B0D8BF300F795A4 /* AreaSelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F2ED0601B0D8BF300F795A4 /* AreaSelection.storyboard */; };
 		BD0DA5B31AF7134400BDA278 /* UIAlertView+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0DA5B21AF7134400BDA278 /* UIAlertView+Custom.m */; };
 		BD0DA5B91AF7153900BDA278 /* UIView+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0DA5B81AF7153900BDA278 /* UIView+Custom.m */; };
 		BD0E8B831AFC09BD00F8F355 /* ListFoundationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0E8B821AFC09BD00F8F355 /* ListFoundationViewController.m */; };
@@ -114,6 +115,7 @@
 		7F2BF3B01B0B2A5800CA83C4 /* PageControlListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PageControlListViewController.m; path = Controllers/PageControlListViewController.m; sourceTree = "<group>"; };
 		7F2BF3B21B0B2B1100CA83C4 /* StepperListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StepperListViewController.h; path = Controllers/StepperListViewController.h; sourceTree = "<group>"; };
 		7F2BF3B31B0B2B1100CA83C4 /* StepperListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StepperListViewController.m; path = Controllers/StepperListViewController.m; sourceTree = "<group>"; };
+		7F2ED0601B0D8BF300F795A4 /* AreaSelection.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = AreaSelection.storyboard; path = Base.lproj/StoryBoards/AreaSelection.storyboard; sourceTree = "<group>"; };
 		BD0DA5B11AF7134400BDA278 /* UIAlertView+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIAlertView+Custom.h"; path = "Views/UIAlertView+Custom.h"; sourceTree = "<group>"; };
 		BD0DA5B21AF7134400BDA278 /* UIAlertView+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIAlertView+Custom.m"; path = "Views/UIAlertView+Custom.m"; sourceTree = "<group>"; };
 		BD0DA5B71AF7153900BDA278 /* UIView+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Custom.h"; path = "Views/UIView+Custom.h"; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 				7F24F6411B09D8F40024D249 /* Alert.storyboard */,
 				7F2BF3A51B0AD34B00CA83C4 /* SampleAlert.storyboard */,
 				7F2BF3A71B0B10AB00CA83C4 /* Alert2.storyboard */,
+				7F2ED0601B0D8BF300F795A4 /* AreaSelection.storyboard */,
 			);
 			name = StoryBoards;
 			sourceTree = "<group>";
@@ -489,6 +492,7 @@
 				BDEEC2361AD7EE9F00B522D9 /* LaunchScreen.xib in Resources */,
 				BDEEC2331AD7EE9F00B522D9 /* Images.xcassets in Resources */,
 				7F24F6421B09D8F40024D249 /* Alert.storyboard in Resources */,
+				7F2ED0611B0D8BF300F795A4 /* AreaSelection.storyboard in Resources */,
 				7F2BF3A61B0AD34B00CA83C4 /* SampleAlert.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

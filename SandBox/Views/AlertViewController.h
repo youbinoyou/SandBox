@@ -10,11 +10,15 @@
 
 @protocol AlertViewControllerDelegate;
 
-@interface AlertViewController : UIViewController
+@interface AlertViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
+
 @property (weak, nonatomic) IBOutlet UINavigationBar *alertNavigationBar;
 @property (weak, nonatomic) IBOutlet UINavigationItem *alertNavigationItem;
 @property (weak, nonatomic) IBOutlet UIView *alertView;
 @property (weak, nonatomic) IBOutlet UILabel *messageLabel;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property (nonatomic,retain) NSArray *datasource;
 
 /**
  * 処理のデリゲート先の参照
@@ -29,6 +33,6 @@
 /**
  * 当該PickerViewを閉じるためのデリゲートメソッド
  */
--(void)closeAlertView:(UIViewController *)controller;
+-(void)closeAlertView:(UIViewController *)controller withObject:(id)object;
 
 @end

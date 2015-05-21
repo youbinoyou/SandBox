@@ -13,6 +13,7 @@
                         <viewControllerLayoutGuide type="bottom" id="5x9-6t-hCc"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="oCU-Ro-wpk">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </view>
                 </viewController>
