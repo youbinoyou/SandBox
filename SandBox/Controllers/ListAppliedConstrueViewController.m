@@ -1,51 +1,42 @@
 //
-//  ListObjeciveCViewController.m
+//  ListAppliedConstrueViewController.m
 //  SandBox
 //
-//  Created by 大島 曜 on 2015/05/08.
+//  Created by YouOhshima on 2015/09/16.
 //  Copyright (c) 2015年 大島 曜. All rights reserved.
 //
 
-#import "ListObjeciveCViewController.h"
+#import "ListAppliedConstrueViewController.h"
 
-@interface ListObjeciveCViewController ()
+@interface ListAppliedConstrueViewController ()
 
 @property (nonatomic,retain) NSArray *buttons;
 
 @end
 
-@implementation ListObjeciveCViewController
+@implementation ListAppliedConstrueViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    // Do any additional setup after loading the view, typically from a nib.
     
+    UILabel *titleLabel = [[UILabel alloc] init];
+    titleLabel.textAlignment = NSTextAlignmentCenter;
+    titleLabel.text = @"Xcode 学習（c）You Ohshima";
+    [titleLabel sizeToFit];
+    titleLabel.frame = CGRectMake(0,[UIScreen mainScreen].applicationFrame.size.height - titleLabel.frame.size.height,[UIScreen mainScreen].applicationFrame.size.width , titleLabel.frame.size.height);
+    [self.view addSubview:titleLabel];
     self.buttons = @[
-                     @{@"title":@"ObjectiveCの基本"},
-                     @{@"title":@"データ型について"},
-                     @{@"title":@"関数について"},
-                     @{@"title":@"基本知識"},
-                     @{@"title":@"基本構文"},
                      @{
-                         @"title":@"応用構文",
-                         @"listViewController:":@"ListAppliedConstrueViewController",
+                         @"title":@"block",
+                         //@"listViewController:":@"BlockConstrueViewController",
+                         @"action":@"block:"
                          },
-                     @{
-                         @"title":@"Fundation Framework",
-                         @"listViewController:":@"ListFoundationViewController",
-                       },
-                     @{
-                         @"title":@"UIKit Framework",
-                         @"listViewController:":@"ListUIKitViewController",
-                         },
-                     @{
-                         @"title":@"ListCoreLocation Framework",
-                         @"listViewController:":@"ListCoreLocationViewController",
-                         },
-                     @{
-                         @"title":@"MapKit Framework",
-                         @"listViewController:":@"ListMapKitViewController",
-                         },
+
+                     /*
+                      @{@"title":@"CustomAlert",@"action":@"newCustomAlert:"},
+                      @{@"title":@"ActionSheet",@"action":@"newCustomActionSheet:"},
+                      */
                      ];
     
     CGRect rectButton = CGRectZero;
@@ -79,23 +70,12 @@
         }
         [self.view addSubview:button];
     }
-    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (void)listViewController:(id)sender event:(id)event{
     
@@ -105,6 +85,7 @@
     UIButton *sendButton = sender;
     Class listViewControllerClass = NSClassFromString(self.buttons[sendButton.tag][@"listViewController:"]);
     if (listViewControllerClass) {
+        
         /**
          * 遷移するViewControllerの生成
          */
@@ -117,7 +98,6 @@
         
         UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:listViewController];
         navigationController.modalTransitionStyle = arc4random_uniform(4);
-        
         [self presentViewController:navigationController animated:YES completion:^(){
             NSLog(@"%@",self.buttons[sendButton.tag][@"title"]);
         }];
@@ -127,7 +107,17 @@
 }
 
 /**
- * 戻る処理
+ * action
+ *
+ * @param sender
+ */
+- (void)block:(id)sender
+{
+    NSLog(@"block : %@",sender);
+}
+
+/**
+ * TOPページに戻る処理
  */
 - (void)dismissCloseButtonAction:(id)sender {
     [self dismissViewControllerAnimated:YES completion:^(){
@@ -140,6 +130,5 @@
     NSLog(@"%@ dealloc", NSStringFromClass([self class]));
     
 }
-
 
 @end
