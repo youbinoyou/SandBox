@@ -11,7 +11,6 @@
 		5704E4C31AF221F10027C067 /* ListExceptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5704E4C21AF221F10027C067 /* ListExceptionViewController.m */; };
 		5708100D1AEF3D87009A6570 /* ListAlertControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5708100C1AEF3D87009A6570 /* ListAlertControllerViewController.m */; };
 		570896C41AFB644000300587 /* ListTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 570896C31AFB644000300587 /* ListTabBarViewController.m */; };
-		570B69441AE9D00D00A42DEC /* www.youbinoyou.com in Resources */ = {isa = PBXBuildFile; fileRef = 570B69431AE9D00D00A42DEC /* www.youbinoyou.com */; };
 		570B69471AE9D42200A42DEC /* CustomLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 570B69461AE9D42200A42DEC /* CustomLabel.m */; };
 		570B694A1AE9D4A800A42DEC /* ListLabelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 570B69491AE9D4A800A42DEC /* ListLabelViewController.m */; };
 		570B694D1AEA0C7200A42DEC /* ListAttributedStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 570B694C1AEA0C7200A42DEC /* ListAttributedStringViewController.m */; };
@@ -35,6 +34,8 @@
 		7F2BF3B11B0B2A5800CA83C4 /* PageControlListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2BF3B01B0B2A5800CA83C4 /* PageControlListViewController.m */; };
 		7F2BF3B41B0B2B1100CA83C4 /* StepperListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2BF3B31B0B2B1100CA83C4 /* StepperListViewController.m */; };
 		7F2ED0611B0D8BF300F795A4 /* AreaSelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F2ED0601B0D8BF300F795A4 /* AreaSelection.storyboard */; };
+		7F462AEF1BA953F300896434 /* ListAppliedConstrueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F462AEE1BA953F300896434 /* ListAppliedConstrueViewController.m */; };
+		7F462AF01BA953F300896434 /* ListAppliedConstrueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F462AEE1BA953F300896434 /* ListAppliedConstrueViewController.m */; };
 		BD0DA5B31AF7134400BDA278 /* UIAlertView+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0DA5B21AF7134400BDA278 /* UIAlertView+Custom.m */; };
 		BD0DA5B91AF7153900BDA278 /* UIView+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0DA5B81AF7153900BDA278 /* UIView+Custom.m */; };
 		BD0E8B831AFC09BD00F8F355 /* ListFoundationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0E8B821AFC09BD00F8F355 /* ListFoundationViewController.m */; };
@@ -74,7 +75,6 @@
 		5708100C1AEF3D87009A6570 /* ListAlertControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListAlertControllerViewController.m; path = Controllers/ListAlertControllerViewController.m; sourceTree = "<group>"; };
 		570896C21AFB644000300587 /* ListTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListTabBarViewController.h; path = Controllers/ListTabBarViewController.h; sourceTree = "<group>"; };
 		570896C31AFB644000300587 /* ListTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListTabBarViewController.m; path = Controllers/ListTabBarViewController.m; sourceTree = "<group>"; };
-		570B69431AE9D00D00A42DEC /* www.youbinoyou.com */ = {isa = PBXFileReference; lastKnownFileType = folder; name = www.youbinoyou.com; path = ../../../../../../Library/WebServer/Documents/www.youbinoyou.com; sourceTree = "<group>"; };
 		570B69451AE9D42200A42DEC /* CustomLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomLabel.h; path = Views/Common/CustomLabel.h; sourceTree = "<group>"; };
 		570B69461AE9D42200A42DEC /* CustomLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomLabel.m; path = Views/Common/CustomLabel.m; sourceTree = "<group>"; };
 		570B69481AE9D4A800A42DEC /* ListLabelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListLabelViewController.h; path = Controllers/ListLabelViewController.h; sourceTree = "<group>"; };
@@ -116,6 +116,8 @@
 		7F2BF3B21B0B2B1100CA83C4 /* StepperListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StepperListViewController.h; path = Controllers/StepperListViewController.h; sourceTree = "<group>"; };
 		7F2BF3B31B0B2B1100CA83C4 /* StepperListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StepperListViewController.m; path = Controllers/StepperListViewController.m; sourceTree = "<group>"; };
 		7F2ED0601B0D8BF300F795A4 /* AreaSelection.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = AreaSelection.storyboard; path = Base.lproj/StoryBoards/AreaSelection.storyboard; sourceTree = "<group>"; };
+		7F462AED1BA953F300896434 /* ListAppliedConstrueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListAppliedConstrueViewController.h; path = Controllers/ListAppliedConstrueViewController.h; sourceTree = "<group>"; };
+		7F462AEE1BA953F300896434 /* ListAppliedConstrueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListAppliedConstrueViewController.m; path = Controllers/ListAppliedConstrueViewController.m; sourceTree = "<group>"; };
 		BD0DA5B11AF7134400BDA278 /* UIAlertView+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIAlertView+Custom.h"; path = "Views/UIAlertView+Custom.h"; sourceTree = "<group>"; };
 		BD0DA5B21AF7134400BDA278 /* UIAlertView+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIAlertView+Custom.m"; path = "Views/UIAlertView+Custom.m"; sourceTree = "<group>"; };
 		BD0DA5B71AF7153900BDA278 /* UIView+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Custom.h"; path = "Views/UIView+Custom.h"; sourceTree = "<group>"; };
@@ -236,6 +238,8 @@
 				7F21D0BC1B0C29D200311AC2 /* TableViewControllerListViewController.m */,
 				7F21D0C11B0C571400311AC2 /* NumberFormatterListViewController.h */,
 				7F21D0C21B0C571400311AC2 /* NumberFormatterListViewController.m */,
+				7F462AED1BA953F300896434 /* ListAppliedConstrueViewController.h */,
+				7F462AEE1BA953F300896434 /* ListAppliedConstrueViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -262,7 +266,6 @@
 			isa = PBXGroup;
 			children = (
 				7F2BF39E1B0ACD0A00CA83C4 /* Views */,
-				570B69431AE9D00D00A42DEC /* www.youbinoyou.com */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -487,7 +490,6 @@
 				BDE212381AE6B636002A0746 /* CustomAlert.storyboard in Resources */,
 				7F2BF3A81B0B10AB00CA83C4 /* Alert2.storyboard in Resources */,
 				BDE2122F1AE69102002A0746 /* Main.storyboard in Resources */,
-				570B69441AE9D00D00A42DEC /* www.youbinoyou.com in Resources */,
 				7F2BF3A11B0ACD7F00CA83C4 /* SampleAlertView.xib in Resources */,
 				BDEEC2361AD7EE9F00B522D9 /* LaunchScreen.xib in Resources */,
 				BDEEC2331AD7EE9F00B522D9 /* Images.xcassets in Resources */,
@@ -546,6 +548,7 @@
 				570B694D1AEA0C7200A42DEC /* ListAttributedStringViewController.m in Sources */,
 				7F2BF3AE1B0B2A4200CA83C4 /* ProgressViewListViewController.m in Sources */,
 				570B694A1AE9D4A800A42DEC /* ListLabelViewController.m in Sources */,
+				7F462AEF1BA953F300896434 /* ListAppliedConstrueViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,6 +557,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDEEC2421AD7EEA000B522D9 /* SandBoxTests.m in Sources */,
+				7F462AF01BA953F300896434 /* ListAppliedConstrueViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
