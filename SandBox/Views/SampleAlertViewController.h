@@ -23,6 +23,7 @@
 /**
  * 当該PickerViewを閉じるためのデリゲートメソッド
  */
--(void)closeAlertView:(UIViewController *)controller;
+- (void)closeAlertView:(UIViewController *)controller;
+- (void)closeAlertView:(UIViewController *)controller withObject:(id)object;
 
 @end

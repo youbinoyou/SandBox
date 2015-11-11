@@ -61,7 +61,7 @@
     NSString *nibName = @"SampleAlertView";
     UINib *nib = [UINib nibWithNibName:nibName bundle:nil];
     NSLog(@"%@",nib);
-    return [[nib instantiateWithOwner:nil options:nil] objectAtIndex:0];
+    return [nib instantiateWithOwner:nil options:nil][0];
 }
 
 - (void)viewDidLoad {

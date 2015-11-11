@@ -40,6 +40,7 @@
                      @{@"title":@"文字列装飾について",@"listViewController:":@"ListAttributedStringViewController"},
                      @{@"title":@"例外処理について",@"listViewController:":@"ListExceptionViewController"},
                      @{@"title":@"タブバーについて",@"listViewController:":@"ListTabBarViewController"},
+                     @{@"title":@"イメージについて",@"listViewController:":@"ListImageViewController"},
                      @{@"title":@"ピッカービューについて",@"listViewController:":@"PickerViewListViewController"},
                      @{@"title":@"アクティビティビューコントローラについて",@"listViewController:":@"ActivityViewControllerListViewController"},
                      @{@"title":@"スライダーについて",@"listViewController:":@"SliderListViewController"},

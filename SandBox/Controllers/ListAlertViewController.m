@@ -651,6 +651,41 @@
 
 
 // PickerViewController上にある透明ボタンがタップされたときに呼び出されるPickerViewControllerDelegateプロトコルのデリゲートメソッド
+
+- (void)closeAlertView:(UIViewController *)controller{
+    // AlertViewをアニメーションを使ってゆっくり非表示にする
+    UIView *alertView = controller.view;
+    [UIView beginAnimations:nil context:(void *)alertView];
+    [UIView setAnimationDuration:0.3];
+    [UIView setAnimationDelegate:self];
+    // アニメーション終了時に呼び出す処理を設定
+    [UIView setAnimationDidStopSelector:@selector(animationDidStop:finished:context:)];
+    alertView.alpha = 0.0f;
+    [UIView commitAnimations];
+    controller = nil;
+    NSString *torstMessage = [[NSString stringWithFormat:@"「%@」",@""] stringByAppendingString:@"が設定されました"];
+    UILabel *torstLabel = [UILabel new];
+    torstLabel.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:1.0];
+    torstLabel.textAlignment = NSTextAlignmentCenter;
+    torstLabel.text = torstMessage;
+    [torstLabel sizeToFit];
+    torstLabel.frame = CGRectMake(0,
+                                  0,
+                                  CGRectGetWidth([UIScreen mainScreen].bounds) - 100,
+                                  CGRectGetHeight(torstLabel.frame) * 3);
+    torstLabel.center = self.view.center;
+    [self.view addSubview:torstLabel];
+    [UIView animateKeyframesWithDuration:3.0
+                                   delay:0.3
+                                 options:UIViewKeyframeAnimationOptionCalculationModeLinear
+                              animations:^(void){
+                                  torstLabel.alpha = 0.0f;
+                              }completion:^(BOOL finished) {
+                                  [torstLabel removeFromSuperview];
+                              }];
+
+}
+
 - (void)closeAlertView:(UIViewController *)controller withObject:(id)object
 {
     // AlertViewをアニメーションを使ってゆっくり非表示にする
