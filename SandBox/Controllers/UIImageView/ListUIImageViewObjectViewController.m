@@ -40,22 +40,26 @@
 - (void)setListButtons {
     
     self.buttons = @[
-                     @{@"title":@"UIImageViewでユーザー操作を扱う設定"},
+                     @{keyTitle : @"UIImageViewでユーザー操作を扱う設定"},
                      @{
-                         @"title":@"userInteractionEnabledを YES にする。",
-                         @"action":@"setImageUserInteractionEnabledYES",
+                         keyTitle : @"userInteractionEnabledを YES にする。",
+                         keyAction : @"setImageUserInteractionEnabledYES",
                        },
                      @{
-                         @"title":@"userInteractionEnabledを NO にする。",
-                         @"action":@"setImageUserInteractionEnabledNO",
+                         keyTitle : @"userInteractionEnabledを NO にする。",
+                         keyAction : @"setImageUserInteractionEnabledNO",
                        },
                      @{
-                         @"title":@"UIImageViewでユーザー操作を追加する",
-                         @"action":@"setImageTapGesture",
+                         keyTitle : @"UIImageViewでユーザー操作を追加する",
+                         keyAction : @"setImageTapGesture",
                          },
                      @{
-                         @"title":@"情報提供元",
-                         @"link":@"http://www.yoheim.net/blog.php?q=20111027",
+                         keyTitle : @"UIImageViewでユーザー操作を削除する",
+                         keyAction : @"removeImageTapGesture",
+                         },
+                     @{
+                         keyTitle : @"情報提供元",
+                         keyLink : @"http://www.yoheim.net/blog.php?q=20111027",
                          }
                      
                      ];
@@ -63,30 +67,92 @@
 }
 
 - (void)setImageView{
+    CGFloat width = 100;
+    CGFloat height = 100;
     self.mainImageView = [UIImageView new];
-    self.mainImageView.frame = CGRectMake(0, 0, 100, 100);
-    self.mainImageView.center = self.view.center;
-    self.mainImageView.backgroundColor = [UIColor redColor];
+    dispatch_queue_t q_global = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_queue_t q_main   = dispatch_get_main_queue();
+    dispatch_async(q_global, ^{
+        NSURL *url = [NSURL URLWithString:@"https://avatars3.githubusercontent.com/u/6211673?v=3&s=460"];
+        NSError *error = nil;
+        NSData *data = [NSData dataWithContentsOfURL:url options:NSDataReadingUncached error:&error];
+        dispatch_async(q_main, ^{
+            // メインスレッドでダウンロード完了時になにか処理を実行したいときや
+            // 複数ダウンロードの途中経過をメインスレッドで通知したい時などはここに記述
+            self.mainImageView.image = [UIImage imageWithData:data];
+        });
+    });
+    self.mainImageView.frame = CGRectMake(
+                                          ((CGRectGetMaxX(self.view.frame) - width)/ 2.0),
+                                          CGRectGetMaxY(self.view.frame) - height,
+                                          width,
+                                          height
+                                          );
+    self.mainImageView.userInteractionEnabled = NO;
+    self.mainImageView.backgroundColor = [UIColor blueColor];
+    self.mainImageView.alpha = 0.3;
     [self.view addSubview:self.mainImageView];
 }
 
 - (void)setImageUserInteractionEnabledYES {
     _mainImageView.userInteractionEnabled = YES;
     NSLog(@"userInteractionEnabledを YES にする。");
+    //画面上でわかりやすくするための処理
+    self.mainImageView.backgroundColor = [UIColor redColor];
+    dispatch_queue_t q_global = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_queue_t q_main   = dispatch_get_main_queue();
+    dispatch_async(q_global, ^{
+        NSURL *url = [NSURL URLWithString:@"https://avatars2.githubusercontent.com/u/6211682?v=3&s=200"];
+        NSError *error = nil;
+        NSData *data = [NSData dataWithContentsOfURL:url options:NSDataReadingUncached error:&error];
+        dispatch_async(q_main, ^{
+            // メインスレッドでダウンロード完了時になにか処理を実行したいときや
+            // 複数ダウンロードの途中経過をメインスレッドで通知したい時などはここに記述
+            self.mainImageView.image = [UIImage imageWithData:data];
+        });
+    });
+
 }
 
 - (void)setImageUserInteractionEnabledNO {
     _mainImageView.userInteractionEnabled = NO;
     NSLog(@"userInteractionEnabledを NO にする。");
+    //画面上でわかりやすくするための処理
+    self.mainImageView.backgroundColor = [UIColor blueColor];
+    dispatch_queue_t q_global = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_queue_t q_main   = dispatch_get_main_queue();
+    dispatch_async(q_global, ^{
+        NSURL *url = [NSURL URLWithString:@"https://avatars3.githubusercontent.com/u/6211673?v=3&s=460"];
+        NSError *error = nil;
+        NSData *data = [NSData dataWithContentsOfURL:url options:NSDataReadingUncached error:&error];
+        dispatch_async(q_main, ^{
+            // メインスレッドでダウンロード完了時になにか処理を実行したいときや
+            // 複数ダウンロードの途中経過をメインスレッドで通知したい時などはここに記述
+            self.mainImageView.image = [UIImage imageWithData:data];
+        });
+    });
+
 }
 
 - (void)setImageTapGesture {
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
-    [_mainImageView addGestureRecognizer:tap];
+    if(_mainImageView.gestureRecognizers.count == 0){
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
+        [_mainImageView addGestureRecognizer:tap];
+    }
+    //画面上でわかりやすくするための処理
+    self.mainImageView.alpha = 1.0;
 }
 
-- (void)tapAction:(id)sender {
-    NSLog(@"[%@]\nがタップされました。",sender);
+- (void)removeImageTapGesture {
+    for( UIGestureRecognizer *gestureReconizer in _mainImageView.gestureRecognizers){
+        [_mainImageView removeGestureRecognizer:gestureReconizer];
+    }
+    //画面上でわかりやすくするための処理
+    self.mainImageView.alpha = 0.3;
+}
+
+- (void)tapAction:(UIGestureRecognizer *)sender {
+    NSLog(@"[%@]\nがタップされました。",sender.view);
 }
 
 @end

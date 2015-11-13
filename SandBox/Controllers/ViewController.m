@@ -42,13 +42,14 @@
                      @{@"title":@"タブバーについて",@"listViewController:":@"ListTabBarViewController"},
                      @{@"title":@"イメージについて",@"listViewController:":@"ListImageViewController"},
                      @{@"title":@"ピッカービューについて",@"listViewController:":@"PickerViewListViewController"},
+                     @{@"title":@"タッチイベントについて",@"listViewController:":@"ListUIResponderObjectViewController"},
                      @{@"title":@"アクティビティビューコントローラについて",@"listViewController:":@"ActivityViewControllerListViewController"},
                      @{@"title":@"スライダーについて",@"listViewController:":@"SliderListViewController"},
                      @{@"title":@"プログレスビューについて",@"listViewController:":@"ProgressViewListViewController"},
                      @{@"title":@"ページコントロールについて",@"listViewController:":@"PageControlListViewController"},
 
                      @{@"title":@"ステッパーについて",@"listViewController:":@"StepperListViewController"},
-                     
+                     @{@"title":@"ローカル通知について",@"listViewController:":@"ListUILocalNotificationObjectViewController"},
                      /*
                      @{@"title":@"CustomAlert",@"action":@"newCustomAlert:"},
                      @{@"title":@"ActionSheet",@"action":@"newCustomActionSheet:"},

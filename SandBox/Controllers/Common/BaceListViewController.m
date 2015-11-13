@@ -7,6 +7,17 @@
 //
 
 #import "BaceListViewController.h"
+#import "UtilsFILE.h"
+
+#define KEY_TITLE @"title"
+#define KEY_LINL @"link"
+#define KEY_ACTION @"action"
+#define KEY_LIST_VIEW_CONTROLLER @"listViewController:"
+
+const NSString *keyTitle = @"title";
+const NSString *keyLink = @"link";
+const NSString *keyAction = @"action";
+const NSString *keyListViewController = @"listViewController:";
 
 @interface BaceListViewController ()
 
@@ -17,7 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    NSLog(@"%@",[UtilsFILE fileStringWithFormat:@"%@",NSStringFromClass(self.class)]);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,35 +48,35 @@
 
 - (void)setListButtons {
     self.buttons = @[
-                     @{@"title":@"イメージの基本"},
-                     @{@"title":@"データ型について"},
-                     @{@"title":@"関数について"},
-                     @{@"title":@"基本知識"},
-                     @{@"title":@"基本構文"},
+                     @{keyTitle : @"イメージの基本"},
+                     @{keyTitle : @"データ型について"},
+                     @{keyTitle : @"関数について"},
+                     @{keyTitle : @"基本知識"},
+                     @{keyTitle : @"基本構文"},
                      @{
-                         @"title":@"UIImageViewでユーザーからの操作を扱いたい",
-                         @"listViewController:":@"ListUIImageViewObjectViewController",
+                         KEY_TITLE : @"UIImageViewでユーザーからの操作を扱いたい",
+                         KEY_LIST_VIEW_CONTROLLER : @"ListUIImageViewObjectViewController",
                          },
                      
                      @{
-                         @"title":@"応用構文",
-                         @"listViewController:":@"ListAppliedConstrueViewController",
+                         KEY_TITLE : @"応用構文",
+                         KEY_LIST_VIEW_CONTROLLER : @"ListAppliedConstrueViewController",
                          },
                      @{
-                         @"title":@"Fundation Framework",
-                         @"listViewController:":@"ListFoundationViewController",
+                         KEY_TITLE : @"Fundation Framework",
+                         KEY_LIST_VIEW_CONTROLLER : @"ListFoundationViewController",
                          },
                      @{
-                         @"title":@"UIKit Framework",
-                         @"listViewController:":@"ListUIKitViewController",
+                         KEY_TITLE : @"UIKit Framework",
+                         KEY_LIST_VIEW_CONTROLLER : @"ListUIKitViewController",
                          },
                      @{
-                         @"title":@"ListCoreLocation Framework",
-                         @"listViewController:":@"ListCoreLocationViewController",
+                         KEY_TITLE : @"ListCoreLocation Framework",
+                         KEY_LIST_VIEW_CONTROLLER : @"ListCoreLocationViewController",
                          },
                      @{
-                         @"title":@"MapKit Framework",
-                         @"listViewController:":@"ListMapKitViewController",
+                         KEY_TITLE : @"MapKit Framework",
+                         KEY_LIST_VIEW_CONTROLLER : @"ListMapKitViewController",
                          },
                      ];
     [self setButtons];
@@ -81,31 +92,31 @@
         const CGFloat b = arc4random_uniform(255) / 255.0;
         
         button.backgroundColor = [UIColor colorWithRed:r green:g blue:b alpha:0.5];
-        [button setTitle:item[@"title"] forState:UIControlStateNormal];
+        [button setTitle : item[ keyTitle ] forState : UIControlStateNormal];
         [button sizeToFit];
-        button.tag = [self.buttons indexOfObject:item];
+        button.tag = [self.buttons indexOfObject : item];
         rectButton.origin.x = 20;
         rectButton.size.width  = [UIScreen mainScreen].applicationFrame.size.width - 40;
         rectButton.size.height = [UIScreen mainScreen].applicationFrame.size.height / (self.buttons.count + 2);
         rectButton.origin.y += rectButton.size.height + 1;
         button.frame = rectButton;
         
-        if (item[@"action"]) {
+        if (item[keyLink]) {
+            SEL linkAction = NSSelectorFromString(@"linkURLAction:event:");
+            if ([self respondsToSelector : linkAction]) {
+                [button addTarget:self action:linkAction forControlEvents:UIControlEventTouchUpInside];
+            }
+        }
+        
+        if (item[keyListViewController]) {
             SEL action = NSSelectorFromString(@"listViewController:event:");
-            if ([self respondsToSelector:action]) {
+            if ([self respondsToSelector : action]) {
                 [button addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
             }
         }
         
-        if (item[@"link"]) {
-            SEL action = NSSelectorFromString(@"linkURLAction:event:");
-            if ([self respondsToSelector:action]) {
-                [button addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
-            }
-        }
-        
-        if (item[@"listViewController:"]) {
-            SEL action = NSSelectorFromString(@"listViewController:event:");
+        if (item[keyAction]) {
+            SEL action = NSSelectorFromString(item[keyAction]);
             if ([self respondsToSelector:action]) {
                 [button addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
             }
@@ -118,7 +129,7 @@
 - (void)linkURLAction:(id)sender event:(id)event {
     
     UIButton *sendButton = sender;
-    NSString *linkURLString = self.buttons[sendButton.tag][@"link"];
+    NSString *linkURLString = self.buttons[sendButton.tag][keyLink];
     NSURL *linkURL = [NSURL URLWithString:linkURLString];
     if ([[UIApplication sharedApplication] canOpenURL:linkURL]) {
         [[UIApplication sharedApplication] openURL:linkURL];
@@ -130,30 +141,30 @@
 
 - (void)listViewController:(id)sender event:(id)event {
     
-    NSLog(@"%s",__PRETTY_FUNCTION__);
+    NSLog(@"%@", [NSString stringWithUTF8String:__PRETTY_FUNCTION__]);
     NSLog(@"@param\n\nsender:\n%@\nevent:\n%@",sender,event);
     
     UIButton *sendButton = sender;
-    Class listViewControllerClass = NSClassFromString(self.buttons[sendButton.tag][@"listViewController:"]);
+    Class listViewControllerClass = NSClassFromString(self.buttons[sendButton.tag][keyListViewController]);
     if (listViewControllerClass) {
         /**
          * 遷移するViewControllerの生成
          */
         UIViewController *listViewController = [[listViewControllerClass alloc] init];
         listViewController.view.backgroundColor = self.view.backgroundColor;
-        listViewController.title = self.buttons[sendButton.tag][@"title"];
+        listViewController.title = self.buttons[sendButton.tag][keyTitle];
         listViewController.navigationItem.leftBarButtonItem =
         // TOPページに戻る処理
-        [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(dismissCloseButtonAction:)];
+        [[UIBarButtonItem alloc] initWithTitle:@"<<<" style:UIBarButtonItemStylePlain target:self action:@selector(dismissCloseButtonAction:)];
         
         UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:listViewController];
         navigationController.modalTransitionStyle = arc4random_uniform(4);
         
         [self presentViewController:navigationController animated:YES completion:^(){
-            NSLog(@"%@",self.buttons[sendButton.tag][@"title"]);
+            NSLog(@"%@",self.buttons[sendButton.tag][keyTitle]);
         }];
     } else {
-        NSLog(@"No Class : %@",self.buttons[sendButton.tag][@"listViewController:"]);
+        NSLog(@"No Class : %@",self.buttons[sendButton.tag][keyListViewController]);
     }
 }
 

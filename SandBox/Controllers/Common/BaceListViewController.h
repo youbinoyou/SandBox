@@ -10,7 +10,13 @@
 
 @interface BaceListViewController : UIViewController
 
+extern const NSString *keyTitle;
+extern const NSString *keyLink;;
+extern const NSString *keyAction;
+extern const NSString *keyListViewController;
+
 @property (nonatomic,copy) NSArray *buttons;
+
 - (void)setListButtons;
 - (void)setButtons;
 
