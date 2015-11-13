@@ -56,7 +56,7 @@
     // TODO: ローカル通知を作成 [Isusues:1] 設定しているのですがうまくシュミレーター上では確認ができず
     UIAlertView *alertView = [UIAlertView new];
     alertView.title = @"ローカル通知を作成";
-    alertView.message = @"[Isusues:#1]\n設定しているのですがうまくシュミレーター上では確認ができず";
+    alertView.message = @"[Isusues:#12]\n設定しているのですがうまくシュミレーター上では確認ができず";
     [alertView addButtonWithTitle:@"OK"];
     [alertView show];
     //本アプリに対して登録されているすべての通知を取得する。
