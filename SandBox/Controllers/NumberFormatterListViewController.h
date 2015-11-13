@@ -7,7 +7,8 @@
 //
 
 #import "ListViewController.h"
+#import "BaceListViewController.h"
 
-@interface NumberFormatterListViewController : ListViewController
+@interface NumberFormatterListViewController : BaceListViewController
 
 @end

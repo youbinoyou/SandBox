@@ -84,20 +84,34 @@ const NSString *keyListViewController = @"listViewController:";
 
 - (void)setButtons{
     CGRect rectButton = CGRectZero;
+    
+    if (self.buttons.count > 10) {
+        UIScrollView *scrollView = [UIScrollView new];
+        scrollView.frame = self.view.frame;
+        scrollView.backgroundColor = self.view.backgroundColor;
+        self.view = scrollView;
+    }
+
     for (NSDictionary *item in self.buttons) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         
         const CGFloat r = arc4random_uniform(255) / 255.0;
         const CGFloat g = arc4random_uniform(255) / 255.0;
         const CGFloat b = arc4random_uniform(255) / 255.0;
-        
+        const CGFloat x = 20;
         button.backgroundColor = [UIColor colorWithRed:r green:g blue:b alpha:0.5];
         [button setTitle : item[ keyTitle ] forState : UIControlStateNormal];
         [button sizeToFit];
         button.tag = [self.buttons indexOfObject : item];
-        rectButton.origin.x = 20;
-        rectButton.size.width  = [UIScreen mainScreen].applicationFrame.size.width - 40;
-        rectButton.size.height = [UIScreen mainScreen].applicationFrame.size.height / (self.buttons.count + 2);
+        rectButton.origin.x = x;
+        rectButton.size.width  = [UIScreen mainScreen].applicationFrame.size.width - (x * 2);
+        
+        if (self.buttons.count > 10) {
+            rectButton.size.height = [UIScreen mainScreen].applicationFrame.size.height / (10 + 2);
+        } else {
+            rectButton.size.height = [UIScreen mainScreen].applicationFrame.size.height / (self.buttons.count + 2);
+        }
+        
         rectButton.origin.y += rectButton.size.height + 1;
         button.frame = rectButton;
         
@@ -123,6 +137,14 @@ const NSString *keyListViewController = @"listViewController:";
         }
         
         [self.view addSubview:button];
+        
+        if (self.buttons.count > 10) {
+            if ([self.view isKindOfClass:[UIScrollView class]]) {
+                NSLog(@"UIScrollView");
+                UIScrollView *scrollView = (UIScrollView *)(self.view);
+                scrollView.contentSize = CGSizeMake(self.view.frame.size.width, button.frame.origin.y + button.frame.size.height + 20);
+            }
+        }
     }
 }
 

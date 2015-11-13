@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaceListViewController.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : BaceListViewController
 
 @end
 

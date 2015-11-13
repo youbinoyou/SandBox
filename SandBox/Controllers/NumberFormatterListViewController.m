@@ -18,53 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.buttons = @[
-                     @{@"title":@"文字列を数値に、数値を文字列に変換する",@"action":@"newValue:"},
-                     @{@"title":@"数値を３桁ごとカンマ区切り形式で\n文字列に変換する",@"action":@"newNSNumberFormatter:"},
-                     @{@"title":@"円周率を取得する",@"action":@"newPI:"},
-                     @{@"title":@"ベキ乗を計算する",@"action":@"newPow:"},
-                     @{@"title":@"平方根や立方根を計算する",@"action":@"newSqrt:"},
-                     @{@"title":@"対数（自然対数・常用対数）を計算する",@"action":@"newExp:"},
-                     @{@"title":@"三角関数を計算する",@"action":@"newAngle:"},
-                     @{@"title":@"逆三角関数を計算する",@"action":@"newArc:"},
-                     @{@"title":@"乱数を発生させる",@"action":@"newRandom:"},
-                     @{@"title":@"関連",@"action":@"dismissCloseButtonAction:"},
-                     ];
-    
-    CGRect rectButton = CGRectZero;
-    for (NSDictionary *item in self.buttons) {
-        UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        
-        const CGFloat r = arc4random_uniform(255) / 255.0;
-        const CGFloat g = arc4random_uniform(255) / 255.0;
-        const CGFloat b = arc4random_uniform(255) / 255.0;
-        
-        button.backgroundColor = [UIColor colorWithRed:r green:g blue:b alpha:0.5];
-        [button setTitle:item[@"title"] forState:UIControlStateNormal];
-        [button sizeToFit];
-        button.tag = [self.buttons indexOfObject:item];
-        button.titleLabel.numberOfLines = 0;
-        rectButton.origin.x = 20;
-        rectButton.size.width  = [UIScreen mainScreen].applicationFrame.size.width - 40;
-        rectButton.size.height = [UIScreen mainScreen].applicationFrame.size.height / (self.buttons.count + 2);
-        rectButton.origin.y += rectButton.size.height + 1;
-        button.frame = rectButton;
-        if (item[@"action"]) {
-            SEL action = NSSelectorFromString(item[@"action"]);
-            if ([self respondsToSelector:action]) {
-                [button addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
-            }
-        }
-        if (item[@"listViewController:"]) {
-            SEL action = NSSelectorFromString(@"listViewController:event:");
-            if ([self respondsToSelector:action]) {
-                [button addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
-            }
-        }
-        [self.view addSubview:button];
-    }
-    
-
+    [self setListButtons];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -81,6 +35,22 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)setListButtons {
+    self.buttons = @[
+                     @{@"title":@"文字列を数値に、数値を文字列に変換する",@"action":@"newValue:"},
+                     @{@"title":@"数値を３桁ごとカンマ区切り形式で\n文字列に変換する",@"action":@"newNSNumberFormatter:"},
+                     @{@"title":@"円周率を取得する",@"action":@"newPI:"},
+                     @{@"title":@"ベキ乗を計算する",@"action":@"newPow:"},
+                     @{@"title":@"平方根や立方根を計算する",@"action":@"newSqrt:"},
+                     @{@"title":@"対数（自然対数・常用対数）を計算する",@"action":@"newExp:"},
+                     @{@"title":@"三角関数を計算する",@"action":@"newAngle:"},
+                     @{@"title":@"逆三角関数を計算する",@"action":@"newArc:"},
+                     @{@"title":@"乱数を発生させる",@"action":@"newRandom:"},
+                     @{@"title":@"関連",@"action":@"dismissCloseButtonAction:"},
+                     ];
+    [self setButtons];
+}
 
 - (void)newValue:(id)sender
 {
