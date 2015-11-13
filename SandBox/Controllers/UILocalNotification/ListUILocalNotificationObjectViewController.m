@@ -38,7 +38,9 @@
 
 - (void)setListButtons {
     self.buttons = @[
-                     @{keyTitle : @"iPhoneローカル通知を設定"},
+                     @{
+                         keyTitle : @"iPhoneローカル通知を設定"
+                         },
                      @{
                          keyTitle : @"ローカル通知を作成",
                          keyAction : @"setUILocalNotification",
@@ -53,7 +55,7 @@
 }
 
 - (void)setUILocalNotification {
-    // TODO: ローカル通知を作成 [Isusues:1] 設定しているのですがうまくシュミレーター上では確認ができず
+    // TODO: ローカル通知を作成 [Isusues:#12] 設定しているのですがうまくシュミレーター上では確認ができず
     UIAlertView *alertView = [UIAlertView new];
     alertView.title = @"ローカル通知を作成";
     alertView.message = @"[Isusues:#12]\n設定しているのですがうまくシュミレーター上では確認ができず";
