@@ -10,8 +10,6 @@
 
 @interface ListImageViewController ()
 
-@property (nonatomic,copy) NSArray *buttons;
-
 @end
 
 @implementation ListImageViewController

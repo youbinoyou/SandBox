@@ -142,7 +142,7 @@ const NSString *keyListViewController = @"listViewController:";
             if ([self.view isKindOfClass:[UIScrollView class]]) {
                 NSLog(@"UIScrollView");
                 UIScrollView *scrollView = (UIScrollView *)(self.view);
-                scrollView.contentSize = CGSizeMake(self.view.frame.size.width, button.frame.origin.y + button.frame.size.height + 20);
+                scrollView.contentSize = CGSizeMake(self.view.frame.size.width, button.frame.origin.y + button.frame.size.height + 30);
             }
         }
     }

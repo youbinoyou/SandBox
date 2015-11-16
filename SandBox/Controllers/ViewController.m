@@ -39,7 +39,7 @@
     self.buttons = @[
                      
                      @{@"title":@"Objective-Cについて",@"listViewController:":@"ListObjeciveCViewController"},
-                     @{@"title":@"ビューコントローラーについて",@"listViewController:":@"ViewControllerListViewController"},
+                     @{@"title":@"ビューコントローラーについて",@"listViewController:":@"ListUIViewControllerObjectViewController"},
                      @{@"title":@"アラートについて",@"listViewController:":@"ListAlertViewController"},
                      
                      @{@"title":@"ウィンドウについて",@"listViewController:":@"ListWindowViewController"},
