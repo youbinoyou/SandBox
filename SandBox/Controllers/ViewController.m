@@ -59,6 +59,7 @@
                      
                      @{@"title":@"ステッパーについて",@"listViewController:":@"StepperListViewController"},
                      @{@"title":@"ローカル通知について",@"listViewController:":@"ListUILocalNotificationObjectViewController"},
+                     @{@"title":@"設定",@"listViewController:":@"SettingContentsViewController"},
                      /*
                       @{@"title":@"CustomAlert",@"action":@"newCustomAlert:"},
                       @{@"title":@"ActionSheet",@"action":@"newCustomActionSheet:"},

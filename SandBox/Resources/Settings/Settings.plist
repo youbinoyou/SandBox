@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>title</key>
+		<string>このアプリについて</string>
+		<key>items</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string>バージョン</string>
+				<key>sectionStyle</key>
+				<true/>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>環境設定</string>
+		<key>items</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>関連</string>
+		<key>items</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>その他</string>
+		<key>items</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>ログイン情報</string>
+		<key>items</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+</array>
+</plist>

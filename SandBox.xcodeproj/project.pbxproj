@@ -36,6 +36,8 @@
 		7F462AF01BA953F300896434 /* ListAppliedConstrueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F462AEE1BA953F300896434 /* ListAppliedConstrueViewController.m */; };
 		9A064CAB1BF5E61000E44803 /* ListUIViewControllerObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A064CAA1BF5E61000E44803 /* ListUIViewControllerObjectViewController.m */; };
 		9A064CAF1BF5E91400E44803 /* ListUIWindowObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A064CAE1BF5E91400E44803 /* ListUIWindowObjectViewController.m */; };
+		9A962D711BF9CF71009AD1A4 /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A962D701BF9CF71009AD1A4 /* Settings.plist */; };
+		9A962D751BF9D24A009AD1A4 /* SettingContentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A962D741BF9D24A009AD1A4 /* SettingContentsViewController.m */; };
 		9AD8CE0F1BF34AB1003C2566 /* UtilsFILE.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD8CE0E1BF34AB1003C2566 /* UtilsFILE.m */; };
 		9AFAD5E11BF2DFF800FD0665 /* ListImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAD5E01BF2DFF800FD0665 /* ListImageViewController.m */; };
 		9AFAD5E51BF2E2A100FD0665 /* ListUIImageViewObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAD5E41BF2E2A100FD0665 /* ListUIImageViewObjectViewController.m */; };
@@ -124,6 +126,9 @@
 		9A064CAA1BF5E61000E44803 /* ListUIViewControllerObjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListUIViewControllerObjectViewController.m; path = Controllers/UIViewController/ListUIViewControllerObjectViewController.m; sourceTree = "<group>"; };
 		9A064CAD1BF5E91400E44803 /* ListUIWindowObjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListUIWindowObjectViewController.h; path = Controllers/UIWindow/ListUIWindowObjectViewController.h; sourceTree = "<group>"; };
 		9A064CAE1BF5E91400E44803 /* ListUIWindowObjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListUIWindowObjectViewController.m; path = Controllers/UIWindow/ListUIWindowObjectViewController.m; sourceTree = "<group>"; };
+		9A962D701BF9CF71009AD1A4 /* Settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Settings.plist; path = Resources/Settings/Settings.plist; sourceTree = "<group>"; };
+		9A962D731BF9D24A009AD1A4 /* SettingContentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingContentsViewController.h; path = Controllers/Setting/SettingContentsViewController.h; sourceTree = "<group>"; };
+		9A962D741BF9D24A009AD1A4 /* SettingContentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingContentsViewController.m; path = Controllers/Setting/SettingContentsViewController.m; sourceTree = "<group>"; };
 		9AD8CE0D1BF34AB1003C2566 /* UtilsFILE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UtilsFILE.h; path = Utils/FILE/UtilsFILE.h; sourceTree = "<group>"; };
 		9AD8CE0E1BF34AB1003C2566 /* UtilsFILE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UtilsFILE.m; path = Utils/FILE/UtilsFILE.m; sourceTree = "<group>"; };
 		9AFAD5DF1BF2DFF800FD0665 /* ListImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListImageViewController.h; path = Controllers/ListImageViewController.h; sourceTree = "<group>"; };
@@ -224,6 +229,22 @@
 			name = UIWindow;
 			sourceTree = "<group>";
 		};
+		9A962D6F1BF99508009AD1A4 /* UITableView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = UITableView;
+			sourceTree = "<group>";
+		};
+		9A962D721BF9D1ED009AD1A4 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				9A962D731BF9D24A009AD1A4 /* SettingContentsViewController.h */,
+				9A962D741BF9D24A009AD1A4 /* SettingContentsViewController.m */,
+			);
+			name = Setting;
+			sourceTree = "<group>";
+		};
 		9AD8CE0C1BF34A65003C2566 /* FILE */ = {
 			isa = PBXGroup;
 			children = (
@@ -263,6 +284,8 @@
 		BDE212241AE68D2A002A0746 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				9A962D721BF9D1ED009AD1A4 /* Setting */,
+				9A962D6F1BF99508009AD1A4 /* UITableView */,
 				9A064CAC1BF5E8B400E44803 /* UIWindow */,
 				9A064CA81BF5E53900E44803 /* UIViewController */,
 				9AFAD5ED1BF3103C00FD0665 /* UILocalNotification */,
@@ -464,6 +487,7 @@
 			children = (
 				BDEEC2261AD7EE9F00B522D9 /* Info.plist */,
 				BDEEC2271AD7EE9F00B522D9 /* main.m */,
+				9A962D701BF9CF71009AD1A4 /* Settings.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -574,6 +598,7 @@
 				7F24F6421B09D8F40024D249 /* Alert.storyboard in Resources */,
 				7F2ED0611B0D8BF300F795A4 /* AreaSelection.storyboard in Resources */,
 				7F2BF3A61B0AD34B00CA83C4 /* SampleAlert.storyboard in Resources */,
+				9A962D711BF9CF71009AD1A4 /* Settings.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -621,6 +646,7 @@
 				7F2BF3B41B0B2B1100CA83C4 /* StepperListViewController.m in Sources */,
 				BDE2123B1AE7D14A002A0746 /* 3DViewController.m in Sources */,
 				BD0E8B831AFC09BD00F8F355 /* ListFoundationViewController.m in Sources */,
+				9A962D751BF9D24A009AD1A4 /* SettingContentsViewController.m in Sources */,
 				BDEEC2281AD7EE9F00B522D9 /* main.m in Sources */,
 				7F21D0C01B0C552000311AC2 /* ListViewController.m in Sources */,
 				7F21D0BD1B0C29D200311AC2 /* TableViewControllerListViewController.m in Sources */,
@@ -702,7 +728,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -738,7 +764,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
