@@ -9,16 +9,6 @@
 #import "BaceListViewController.h"
 #import "UtilsFILE.h"
 
-#define KEY_TITLE @"title"
-#define KEY_LINL @"link"
-#define KEY_ACTION @"action"
-#define KEY_LIST_VIEW_CONTROLLER @"listViewController:"
-
-const NSString *keyTitle = @"title";
-const NSString *keyLink = @"link";
-const NSString *keyAction = @"action";
-const NSString *keyListViewController = @"listViewController:";
-
 @interface BaceListViewController ()
 
 @end
@@ -140,7 +130,6 @@ const NSString *keyListViewController = @"listViewController:";
         
         if (self.buttons.count > 10) {
             if ([self.view isKindOfClass:[UIScrollView class]]) {
-                NSLog(@"UIScrollView");
                 UIScrollView *scrollView = (UIScrollView *)(self.view);
                 scrollView.contentSize = CGSizeMake(self.view.frame.size.width, button.frame.origin.y + button.frame.size.height + 30);
             }

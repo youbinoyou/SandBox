@@ -7,6 +7,7 @@
 //
 
 #import "SettingContentsViewController.h"
+#import "KeyNames.h"
 
 @interface SettingContentsViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -15,10 +16,6 @@
 @end
 
 @implementation SettingContentsViewController
-
-const NSString *keyTitle = @"title";
-const NSString *keyItems = @"items";
-const NSString *keySectionStyle = @"sectionStyle";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -31,6 +28,7 @@ const NSString *keySectionStyle = @"sectionStyle";
     self.tableList = [self getSettigContentsPlist];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.separatorColor = [UIColor clearColor];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -59,12 +57,22 @@ const NSString *keySectionStyle = @"sectionStyle";
     return headerTitle;
 }
 
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UIView *headerView = [UIView new];
+    headerView.backgroundColor = [UIColor colorWithRed:1.0 green:0.5 blue:0.5 alpha:1.0];
+    UILabel *headerLabel = [UILabel new];
+    //headerLabel.backgroundColor = [UIColor colorWithRed:0 green:0 blue:1 alpha:1.0];
+    headerLabel.text =  [self tableView:tableView titleForHeaderInSection:section];
+    [headerLabel sizeToFit];
+    [headerView addSubview:headerLabel];
+    return headerView;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"" forIndexPath:indexPath];
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"SettingCell"];
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:SETTING_CELL];
     // Configure the cell...
     if (self.tableList[indexPath.section][keyItems]) {
-        NSLog(@"%@",self.tableList[indexPath.section][keyItems][indexPath.row][keyTitle]);
         cell.textLabel.text = self.tableList[indexPath.section][keyItems][indexPath.row][keyTitle];
     }
     if (self.tableList[indexPath.section][keyItems][indexPath.row][keySectionStyle]) {
