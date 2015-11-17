@@ -137,10 +137,12 @@
                          @"title":@"UIPageControl"
                          },
                      @{
-                         @"title":@"UIScrollView"
+                         keyTitle : @"UIScrollView",
+                         keyListViewController : @"ListUIScrollViewObjectViewController",
                          },
                      @{
-                         @"title":@"UITableView"
+                         keyTitle : @"UITableView",
+                         keyListViewController : @"ListUITableViewObjectViewController",
                          },
                      @{
                          @"title":@"UITextView"
