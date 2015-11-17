@@ -5,6 +5,8 @@
 //  Created by CatenaRentalSystem on 2015/11/17.
 //  Copyright © 2015年 大島 曜. All rights reserved.
 //
+// http://mako-wis.hatenablog.com/entry/2014/03/07/110322
+//
 
 #import "CheckMarkTableViewController.h"
 
@@ -23,7 +25,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     // YESで複数選択・NOで単一選択
-    self.tableView.allowsMultipleSelection = YES;
+    self.tableView.allowsMultipleSelection = NO;
 }
 
 - (void)didReceiveMemoryWarning {
