@@ -17,34 +17,36 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
     [self setListButtons];
 }
 
 - (void)setListButtons {
     self.buttons = @[
                      @{
-                         @"title":@"スクロールビュー",
-                         @"action":@"newUITableView:",
+                         keyTitle : @"スクロールビュー",
+                         keyAction : @"newUITableView:",
                          },
                      @{
-                         @"title":@"カスタムスクロールビュー",
-                         @"action":@"customTableView:"},
-                     @{
-                         keyTitle:@"UITableViewのスクロールをロックするには",
-                         keyListViewController:@"NoScrollTableViewController",
+                         keyTitle : @"カスタムスクロールビュー",
+                         keyAction : @"customTableView:"
                          },
                      @{
-                         keyTitle:@"UITableViewのセルを選択した時にチェックマークをつけるには",
-                         keyListViewController:@"CheckMarkTableViewController",
+                         keyTitle : @"UITableViewのスクロールをロックするには",
+                         keyListViewController : @"NoScrollTableViewController",
                          },
                      @{
                          keyTitle:@"UITableViewのセルを選択した時にチェックマークをつけるには",
-                         keyListViewController:@"CheckMarkTableViewController",
+                         keyListViewController : @"CheckMarkTableViewController",
                          },
-                     
+                     @{
+                         keyTitle:@"UITableViewの複数選択モード時のチェックボックスの色を変更する方法",
+                         keyListViewController : @"ColorCheckMarkTableViewController",
+                         },
+                     @{
+                         keyTitle:@"UITableViewのセルを選択した時にチェックマークをつけるには",
+                         keyListViewController : @"CheckMarkTableViewController",
+                         },
                      ];
-    
     [self setButtons];
 }
 
