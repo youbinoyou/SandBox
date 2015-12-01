@@ -31,6 +31,10 @@
                          @"listViewController:":@"ListAppliedConstrueViewController",
                          },
                      @{
+                         @"title":@"XCode エラーについて",
+                         @"listViewController:":@"ListXCodeErrorViewController",
+                         },
+                     @{
                          @"title":@"Fundation Framework",
                          @"listViewController:":@"ListFoundationViewController",
                        },

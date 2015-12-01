@@ -40,6 +40,7 @@
 		9A06C8101BFB337F00882EAA /* ListUITableViewObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A06C80F1BFB337F00882EAA /* ListUITableViewObjectViewController.m */; };
 		9A06C8141BFB385C00882EAA /* NoScrollTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A06C8131BFB385C00882EAA /* NoScrollTableViewController.m */; };
 		9A06C8171BFB3BE800882EAA /* CheckMarkTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A06C8161BFB3BE800882EAA /* CheckMarkTableViewController.m */; };
+		9A6A4D841C0D7ACC00C95A08 /* ListXCodeErrorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6A4D831C0D7ACC00C95A08 /* ListXCodeErrorViewController.m */; };
 		9A6F68191BFC1E4D0090E2D4 /* ColorCheckMarkTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6F68181BFC1E4D0090E2D4 /* ColorCheckMarkTableViewController.m */; };
 		9A904BAA1BFACFDD00258ACB /* KeyNames.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A904BA91BFACFDD00258ACB /* KeyNames.m */; };
 		9A904BAD1BFAD19D00258ACB /* SettingContentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A904BAC1BFAD19D00258ACB /* SettingContentsViewController.m */; };
@@ -140,6 +141,8 @@
 		9A06C8131BFB385C00882EAA /* NoScrollTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NoScrollTableViewController.m; path = Controllers/UITableView/Custom/NoScrollTableViewController.m; sourceTree = "<group>"; };
 		9A06C8151BFB3BE800882EAA /* CheckMarkTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckMarkTableViewController.h; path = Controllers/UITableView/Custom/CheckMarkTableViewController.h; sourceTree = "<group>"; };
 		9A06C8161BFB3BE800882EAA /* CheckMarkTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckMarkTableViewController.m; path = Controllers/UITableView/Custom/CheckMarkTableViewController.m; sourceTree = "<group>"; };
+		9A6A4D821C0D7ACC00C95A08 /* ListXCodeErrorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListXCodeErrorViewController.h; path = Controllers/ListXCodeErrorViewController.h; sourceTree = "<group>"; };
+		9A6A4D831C0D7ACC00C95A08 /* ListXCodeErrorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListXCodeErrorViewController.m; path = Controllers/ListXCodeErrorViewController.m; sourceTree = "<group>"; };
 		9A6F68171BFC1E4D0090E2D4 /* ColorCheckMarkTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ColorCheckMarkTableViewController.h; path = Controllers/UITableView/Custom/ColorCheckMarkTableViewController.h; sourceTree = "<group>"; };
 		9A6F68181BFC1E4D0090E2D4 /* ColorCheckMarkTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ColorCheckMarkTableViewController.m; path = Controllers/UITableView/Custom/ColorCheckMarkTableViewController.m; sourceTree = "<group>"; };
 		9A904BA81BFACFDD00258ACB /* KeyNames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeyNames.h; path = Models/Common/KeyNames.h; sourceTree = "<group>"; };
@@ -360,6 +363,8 @@
 				BD0E8B8B1AFC102B00F8F355 /* ListCoreLocationViewController.m */,
 				BD0E8B8D1AFC10A400F8F355 /* ListMapKitViewController.h */,
 				BD0E8B8E1AFC10A400F8F355 /* ListMapKitViewController.m */,
+				9A6A4D821C0D7ACC00C95A08 /* ListXCodeErrorViewController.h */,
+				9A6A4D831C0D7ACC00C95A08 /* ListXCodeErrorViewController.m */,
 				570896C21AFB644000300587 /* ListTabBarViewController.h */,
 				570896C31AFB644000300587 /* ListTabBarViewController.m */,
 				7F2185A41B05E32E00F1D652 /* TableViewListViewController.h */,
@@ -687,6 +692,7 @@
 				7F2BF3A41B0AD10F00CA83C4 /* SampleAlertViewController.m in Sources */,
 				9AFAD5E51BF2E2A100FD0665 /* ListUIImageViewObjectViewController.m in Sources */,
 				BDEEC22B1AD7EE9F00B522D9 /* AppDelegate.m in Sources */,
+				9A6A4D841C0D7ACC00C95A08 /* ListXCodeErrorViewController.m in Sources */,
 				9A06C80D1BFB317600882EAA /* ListUIScrollViewObjectViewController.m in Sources */,
 				9A06C8171BFB3BE800882EAA /* CheckMarkTableViewController.m in Sources */,
 				9A06C8141BFB385C00882EAA /* NoScrollTableViewController.m in Sources */,

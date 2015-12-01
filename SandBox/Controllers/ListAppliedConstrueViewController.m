@@ -8,9 +8,17 @@
 
 #import "ListAppliedConstrueViewController.h"
 
-@interface ListAppliedConstrueViewController ()
+@interface ListAppliedConstrueViewController () {
+    // ブロックをインスタンス変数として保持
+    // これが循環参照を起こしやすい
+    void (^_block)();
+    void (^_blockThread)();
+    void (^_blockList)(ListAppliedConstrueViewController *);
+}
 
 @property (nonatomic,retain) NSArray *buttons;
+
+@property (strong, nonatomic) NSString *name;
 
 @end
 
@@ -28,11 +36,15 @@
     [self.view addSubview:titleLabel];
     self.buttons = @[
                      @{
-                         @"title":@"block",
+                         @"title":@"ブロック構文",
                          //@"listViewController:":@"BlockConstrueViewController",
                          @"action":@"block:"
                          },
-
+                     @{
+                         @"title":@"ARCでのブロックによるキャプチャと、__weakや引数を使った対処法",
+                         //@"listViewController:":@"BlockConstrueViewController",
+                         @"action":@"block:"
+                         },
                      /*
                       @{@"title":@"CustomAlert",@"action":@"newCustomAlert:"},
                       @{@"title":@"ActionSheet",@"action":@"newCustomActionSheet:"},
@@ -114,6 +126,40 @@
 - (void)block:(id)sender
 {
     NSLog(@"block : %@",sender);
+    self.name = @"block";
+    
+    _block = ^() {
+        // _nameは、self->_nameの略なので、
+        // ここでブロックからselfへの強い参照が生まれる
+        NSLog(@"name: %@", _name);
+    };
+    _block();
+    __weak ListAppliedConstrueViewController *weakSelf = self;
+    _block = ^() {
+        NSLog(@"name: %@", weakSelf.name);
+    };
+    
+    _blockThread = ^() {
+        NSOperation *op = [NSBlockOperation blockOperationWithBlock:^() {
+            [NSThread sleepForTimeInterval:2];
+            NSLog(@"NSThread");
+            NSLog(@"name: %@", weakSelf.name);
+        }];
+        [[[NSOperationQueue alloc] init] addOperation:op];
+    };
+    
+    _blockList = ^(ListAppliedConstrueViewController *arg) {
+        NSOperation *op = [NSBlockOperation blockOperationWithBlock:^() {
+            [NSThread sleepForTimeInterval:1];
+            NSLog(@"BlockList");
+            NSLog(@"name: %@", arg.name);
+        }];
+        [[[NSOperationQueue alloc] init] addOperation:op];
+    };
+    _block();
+    _blockThread();
+    _blockList(self);
+    
 }
 
 /**
