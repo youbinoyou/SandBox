@@ -40,6 +40,9 @@
 		9A06C8101BFB337F00882EAA /* ListUITableViewObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A06C80F1BFB337F00882EAA /* ListUITableViewObjectViewController.m */; };
 		9A06C8141BFB385C00882EAA /* NoScrollTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A06C8131BFB385C00882EAA /* NoScrollTableViewController.m */; };
 		9A06C8171BFB3BE800882EAA /* CheckMarkTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A06C8161BFB3BE800882EAA /* CheckMarkTableViewController.m */; };
+		9A5C9E441C0FFA43002EA33A /* ListUINavigationControllerObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5C9E431C0FFA43002EA33A /* ListUINavigationControllerObjectViewController.m */; };
+		9A5C9E481C100EC4002EA33A /* ListUIViewObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5C9E471C100EC4002EA33A /* ListUIViewObjectViewController.m */; };
+		9A5C9E4C1C10217B002EA33A /* ListNSURLConnectionObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5C9E4B1C10217B002EA33A /* ListNSURLConnectionObjectViewController.m */; };
 		9A6A4D841C0D7ACC00C95A08 /* ListXCodeErrorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6A4D831C0D7ACC00C95A08 /* ListXCodeErrorViewController.m */; };
 		9A6F68191BFC1E4D0090E2D4 /* ColorCheckMarkTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6F68181BFC1E4D0090E2D4 /* ColorCheckMarkTableViewController.m */; };
 		9A904BAA1BFACFDD00258ACB /* KeyNames.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A904BA91BFACFDD00258ACB /* KeyNames.m */; };
@@ -141,6 +144,12 @@
 		9A06C8131BFB385C00882EAA /* NoScrollTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NoScrollTableViewController.m; path = Controllers/UITableView/Custom/NoScrollTableViewController.m; sourceTree = "<group>"; };
 		9A06C8151BFB3BE800882EAA /* CheckMarkTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckMarkTableViewController.h; path = Controllers/UITableView/Custom/CheckMarkTableViewController.h; sourceTree = "<group>"; };
 		9A06C8161BFB3BE800882EAA /* CheckMarkTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckMarkTableViewController.m; path = Controllers/UITableView/Custom/CheckMarkTableViewController.m; sourceTree = "<group>"; };
+		9A5C9E421C0FFA43002EA33A /* ListUINavigationControllerObjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListUINavigationControllerObjectViewController.h; path = Controllers/UINavigationController/ListUINavigationControllerObjectViewController.h; sourceTree = "<group>"; };
+		9A5C9E431C0FFA43002EA33A /* ListUINavigationControllerObjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListUINavigationControllerObjectViewController.m; path = Controllers/UINavigationController/ListUINavigationControllerObjectViewController.m; sourceTree = "<group>"; };
+		9A5C9E461C100EC4002EA33A /* ListUIViewObjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListUIViewObjectViewController.h; path = Controllers/UIView/ListUIViewObjectViewController.h; sourceTree = "<group>"; };
+		9A5C9E471C100EC4002EA33A /* ListUIViewObjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListUIViewObjectViewController.m; path = Controllers/UIView/ListUIViewObjectViewController.m; sourceTree = "<group>"; };
+		9A5C9E4A1C10217B002EA33A /* ListNSURLConnectionObjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListNSURLConnectionObjectViewController.h; path = Controllers/NSURLConnection/ListNSURLConnectionObjectViewController.h; sourceTree = "<group>"; };
+		9A5C9E4B1C10217B002EA33A /* ListNSURLConnectionObjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListNSURLConnectionObjectViewController.m; path = Controllers/NSURLConnection/ListNSURLConnectionObjectViewController.m; sourceTree = "<group>"; };
 		9A6A4D821C0D7ACC00C95A08 /* ListXCodeErrorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListXCodeErrorViewController.h; path = Controllers/ListXCodeErrorViewController.h; sourceTree = "<group>"; };
 		9A6A4D831C0D7ACC00C95A08 /* ListXCodeErrorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListXCodeErrorViewController.m; path = Controllers/ListXCodeErrorViewController.m; sourceTree = "<group>"; };
 		9A6F68171BFC1E4D0090E2D4 /* ColorCheckMarkTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ColorCheckMarkTableViewController.h; path = Controllers/UITableView/Custom/ColorCheckMarkTableViewController.h; sourceTree = "<group>"; };
@@ -272,6 +281,33 @@
 			name = Custom;
 			sourceTree = "<group>";
 		};
+		9A5C9E411C0FF9FC002EA33A /* UINavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				9A5C9E421C0FFA43002EA33A /* ListUINavigationControllerObjectViewController.h */,
+				9A5C9E431C0FFA43002EA33A /* ListUINavigationControllerObjectViewController.m */,
+			);
+			name = UINavigationController;
+			sourceTree = "<group>";
+		};
+		9A5C9E451C100E93002EA33A /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				9A5C9E461C100EC4002EA33A /* ListUIViewObjectViewController.h */,
+				9A5C9E471C100EC4002EA33A /* ListUIViewObjectViewController.m */,
+			);
+			name = UIView;
+			sourceTree = "<group>";
+		};
+		9A5C9E491C102153002EA33A /* NSURLConnection */ = {
+			isa = PBXGroup;
+			children = (
+				9A5C9E4A1C10217B002EA33A /* ListNSURLConnectionObjectViewController.h */,
+				9A5C9E4B1C10217B002EA33A /* ListNSURLConnectionObjectViewController.m */,
+			);
+			name = NSURLConnection;
+			sourceTree = "<group>";
+		};
 		9A962D6F1BF99508009AD1A4 /* UITableView */ = {
 			isa = PBXGroup;
 			children = (
@@ -330,6 +366,9 @@
 		BDE212241AE68D2A002A0746 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				9A5C9E491C102153002EA33A /* NSURLConnection */,
+				9A5C9E451C100E93002EA33A /* UIView */,
+				9A5C9E411C0FF9FC002EA33A /* UINavigationController */,
 				9A06C80A1BFB30F700882EAA /* UIScrollView */,
 				9A962D721BF9D1ED009AD1A4 /* Setting */,
 				9A962D6F1BF99508009AD1A4 /* UITableView */,
@@ -667,6 +706,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A5C9E481C100EC4002EA33A /* ListUIViewObjectViewController.m in Sources */,
 				5704E4C31AF221F10027C067 /* ListExceptionViewController.m in Sources */,
 				9A904BAD1BFAD19D00258ACB /* SettingContentsViewController.m in Sources */,
 				9AFAD5EC1BF3087100FD0665 /* ListUIResponderObjectViewController.m in Sources */,
@@ -693,9 +733,11 @@
 				9AFAD5E51BF2E2A100FD0665 /* ListUIImageViewObjectViewController.m in Sources */,
 				BDEEC22B1AD7EE9F00B522D9 /* AppDelegate.m in Sources */,
 				9A6A4D841C0D7ACC00C95A08 /* ListXCodeErrorViewController.m in Sources */,
+				9A5C9E441C0FFA43002EA33A /* ListUINavigationControllerObjectViewController.m in Sources */,
 				9A06C80D1BFB317600882EAA /* ListUIScrollViewObjectViewController.m in Sources */,
 				9A06C8171BFB3BE800882EAA /* CheckMarkTableViewController.m in Sources */,
 				9A06C8141BFB385C00882EAA /* NoScrollTableViewController.m in Sources */,
+				9A5C9E4C1C10217B002EA33A /* ListNSURLConnectionObjectViewController.m in Sources */,
 				9A064CAF1BF5E91400E44803 /* ListUIWindowObjectViewController.m in Sources */,
 				570B69471AE9D42200A42DEC /* CustomLabel.m in Sources */,
 				BD0E8B891AFC0D4900F8F355 /* ListUIKitViewController.m in Sources */,
@@ -836,7 +878,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = SandBox/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "you.ohshima.apps.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -849,7 +891,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = SandBox/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "you.ohshima.apps.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";

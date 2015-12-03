@@ -90,6 +90,11 @@
                          @"title":@"NSLog",
                          @"action":@""
                          },
+                     @{
+                         @"title":@"NSURLConnection",
+                         @"listViewController:":@"ListNSURLConnectionObjectViewController"
+                         },
+                     
                      @{@"title":@"関連",@"action":@"dismissCloseButtonAction:"},
 
                      ];

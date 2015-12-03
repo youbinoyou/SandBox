@@ -40,6 +40,7 @@
                      
                      @{@"title":@"Objective-Cについて",@"listViewController:":@"ListObjeciveCViewController"},
                      @{@"title":@"ビューコントローラーについて",@"listViewController:":@"ListUIViewControllerObjectViewController"},
+                     @{@"title":@"ナビゲーションコントローラーについて",@"listViewController:":@"ListUINavigationControllerObjectViewController"},
                      @{@"title":@"アラートについて",@"listViewController:":@"ListAlertViewController"},
                      
                      @{@"title":@"ウィンドウについて",@"listViewController:":@"ListWindowViewController"},
