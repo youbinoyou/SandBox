@@ -91,6 +91,10 @@
                          @"action":@""
                          },
                      @{
+                         @"title":@"NSFileManager",
+                         @"listViewController:":@"ListNSFileManagerObjectViewController"
+                         },
+                     @{
                          @"title":@"NSURLConnection",
                          @"listViewController:":@"ListNSURLConnectionObjectViewController"
                          },
