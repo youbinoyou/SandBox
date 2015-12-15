@@ -33,7 +33,8 @@
                          @"title":@"UIFont"
                          },
                      @{
-                         @"title":@"UIImage"
+                         keyTitle : @"UIImage",
+                         keyListViewController : @"ListUIImageObjectViewController"
                          },
                      @{
                          @"title":@"UIScreen"

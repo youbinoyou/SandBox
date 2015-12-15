@@ -36,7 +36,7 @@
                          },
                      @{
                          @"title":@"NSString",
-                         @"action":@""
+                         @"listViewController:":@"ListNSStringObjectViewController"
                          },
                      
                      @{

@@ -48,6 +48,8 @@
 		9A5C9E4C1C10217B002EA33A /* ListNSURLConnectionObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5C9E4B1C10217B002EA33A /* ListNSURLConnectionObjectViewController.m */; };
 		9A6A4D841C0D7ACC00C95A08 /* ListXCodeErrorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6A4D831C0D7ACC00C95A08 /* ListXCodeErrorViewController.m */; };
 		9A6F68191BFC1E4D0090E2D4 /* ColorCheckMarkTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6F68181BFC1E4D0090E2D4 /* ColorCheckMarkTableViewController.m */; };
+		9A7580051C1FB2BC003067AB /* ListUIImageObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7580041C1FB2BC003067AB /* ListUIImageObjectViewController.m */; };
+		9A7580091C1FCCF1003067AB /* ListNSStringObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7580081C1FCCF1003067AB /* ListNSStringObjectViewController.m */; };
 		9A904BAA1BFACFDD00258ACB /* KeyNames.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A904BA91BFACFDD00258ACB /* KeyNames.m */; };
 		9A904BAD1BFAD19D00258ACB /* SettingContentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A904BAC1BFAD19D00258ACB /* SettingContentsViewController.m */; };
 		9A962D711BF9CF71009AD1A4 /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A962D701BF9CF71009AD1A4 /* Settings.plist */; };
@@ -163,6 +165,10 @@
 		9A6A4D831C0D7ACC00C95A08 /* ListXCodeErrorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListXCodeErrorViewController.m; path = Controllers/ListXCodeErrorViewController.m; sourceTree = "<group>"; };
 		9A6F68171BFC1E4D0090E2D4 /* ColorCheckMarkTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ColorCheckMarkTableViewController.h; path = Controllers/UITableView/Custom/ColorCheckMarkTableViewController.h; sourceTree = "<group>"; };
 		9A6F68181BFC1E4D0090E2D4 /* ColorCheckMarkTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ColorCheckMarkTableViewController.m; path = Controllers/UITableView/Custom/ColorCheckMarkTableViewController.m; sourceTree = "<group>"; };
+		9A7580031C1FB2BC003067AB /* ListUIImageObjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListUIImageObjectViewController.h; path = Controllers/UIImage/ListUIImageObjectViewController.h; sourceTree = "<group>"; };
+		9A7580041C1FB2BC003067AB /* ListUIImageObjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListUIImageObjectViewController.m; path = Controllers/UIImage/ListUIImageObjectViewController.m; sourceTree = "<group>"; };
+		9A7580071C1FCCF1003067AB /* ListNSStringObjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListNSStringObjectViewController.h; path = Controllers/NSString/ListNSStringObjectViewController.h; sourceTree = "<group>"; };
+		9A7580081C1FCCF1003067AB /* ListNSStringObjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListNSStringObjectViewController.m; path = Controllers/NSString/ListNSStringObjectViewController.m; sourceTree = "<group>"; };
 		9A904BA81BFACFDD00258ACB /* KeyNames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeyNames.h; path = Models/Common/KeyNames.h; sourceTree = "<group>"; };
 		9A904BA91BFACFDD00258ACB /* KeyNames.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeyNames.m; path = Models/Common/KeyNames.m; sourceTree = "<group>"; };
 		9A904BAB1BFAD19D00258ACB /* SettingContentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingContentsViewController.h; path = Controllers/Setting/SettingContentsViewController.h; sourceTree = "<group>"; };
@@ -328,6 +334,24 @@
 			name = NSURLConnection;
 			sourceTree = "<group>";
 		};
+		9A7580021C1FB266003067AB /* UIImage */ = {
+			isa = PBXGroup;
+			children = (
+				9A7580031C1FB2BC003067AB /* ListUIImageObjectViewController.h */,
+				9A7580041C1FB2BC003067AB /* ListUIImageObjectViewController.m */,
+			);
+			name = UIImage;
+			sourceTree = "<group>";
+		};
+		9A7580061C1FCCBF003067AB /* NSString */ = {
+			isa = PBXGroup;
+			children = (
+				9A7580071C1FCCF1003067AB /* ListNSStringObjectViewController.h */,
+				9A7580081C1FCCF1003067AB /* ListNSStringObjectViewController.m */,
+			);
+			name = NSString;
+			sourceTree = "<group>";
+		};
 		9A962D6F1BF99508009AD1A4 /* UITableView */ = {
 			isa = PBXGroup;
 			children = (
@@ -395,19 +419,21 @@
 		BDE212241AE68D2A002A0746 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				9A962D721BF9D1ED009AD1A4 /* Setting */,
 				9A9AE0381C18231800DA7636 /* NSFileManager */,
-				9A5437691C17E7A900B9F5E6 /* CustomKeyboard */,
+				9A7580061C1FCCBF003067AB /* NSString */,
 				9A5C9E491C102153002EA33A /* NSURLConnection */,
 				9A5C9E451C100E93002EA33A /* UIView */,
 				9A5C9E411C0FF9FC002EA33A /* UINavigationController */,
 				9A06C80A1BFB30F700882EAA /* UIScrollView */,
-				9A962D721BF9D1ED009AD1A4 /* Setting */,
 				9A962D6F1BF99508009AD1A4 /* UITableView */,
 				9A064CAC1BF5E8B400E44803 /* UIWindow */,
 				9A064CA81BF5E53900E44803 /* UIViewController */,
 				9AFAD5ED1BF3103C00FD0665 /* UILocalNotification */,
 				9AFAD5E91BF3083D00FD0665 /* UIResponder */,
+				9A7580021C1FB266003067AB /* UIImage */,
 				9AFAD5E21BF2E23E00FD0665 /* UIImageView */,
+				9A5437691C17E7A900B9F5E6 /* CustomKeyboard */,
 				BDE212301AE69182002A0746 /* ViewController.h */,
 				BDE212311AE69182002A0746 /* ViewController.m */,
 				7F21859E1B05A3A100F1D652 /* ActivityViewControllerListViewController.h */,
@@ -762,6 +788,7 @@
 				BD0E8B8F1AFC10A400F8F355 /* ListMapKitViewController.m in Sources */,
 				5708100D1AEF3D87009A6570 /* ListAlertControllerViewController.m in Sources */,
 				7F21D0C31B0C571400311AC2 /* NumberFormatterListViewController.m in Sources */,
+				9A7580051C1FB2BC003067AB /* ListUIImageObjectViewController.m in Sources */,
 				9A904BAA1BFACFDD00258ACB /* KeyNames.m in Sources */,
 				9AFAD5F01BF3106D00FD0665 /* ListUILocalNotificationObjectViewController.m in Sources */,
 				BD0E8B861AFC0AFC00F8F355 /* ListObjeciveCViewController.m in Sources */,
@@ -777,6 +804,7 @@
 				9A5C9E4C1C10217B002EA33A /* ListNSURLConnectionObjectViewController.m in Sources */,
 				9A064CAF1BF5E91400E44803 /* ListUIWindowObjectViewController.m in Sources */,
 				570B69471AE9D42200A42DEC /* CustomLabel.m in Sources */,
+				9A7580091C1FCCF1003067AB /* ListNSStringObjectViewController.m in Sources */,
 				BD0E8B891AFC0D4900F8F355 /* ListUIKitViewController.m in Sources */,
 				BD0E8B8C1AFC102B00F8F355 /* ListCoreLocationViewController.m in Sources */,
 				7F2185AC1B05ED8400F1D652 /* PickerViewController.m in Sources */,

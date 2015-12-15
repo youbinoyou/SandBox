@@ -24,6 +24,7 @@
     [self setListButtons];
     kingakuTx = [UITextField new];
     kingakuTx.borderStyle = UITextBorderStyleRoundedRect;
+    kingakuTx.backgroundColor = [UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:1];
     CGRect kingakuTxRect = [UIScreen mainScreen].applicationFrame;
     kingakuTxRect.origin.y = 60;
     kingakuTxRect.size.height = 44;
@@ -39,14 +40,14 @@
 - (void)setListButtons {
     self.buttons = @[
                      @{
-                         keyTitle : @"CustomNumberKeyboard",
-                         keyAction : @"start",
+                         keyTitle : @"CustomNumberKeyboardの設定",
+                         keyAction : @"makeCustomNumberKeyboard",
                          },
                      ];
     [self setButtons];
 }
 
-- (void)start {    
+- (void)makeCustomNumberKeyboard {
     CustomNumberKeyboard *aCustomNumberKeyboard = [CustomNumberKeyboard new];
     aCustomNumberKeyboard.activeTextField = kingakuTx;
     kingakuTx.inputView = aCustomNumberKeyboard;

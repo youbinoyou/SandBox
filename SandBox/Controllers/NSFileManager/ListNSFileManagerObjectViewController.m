@@ -35,7 +35,7 @@
     NSLog(@"%@",NSHomeDirectory());
     
     // file://localhost/Users/idevris/Library/Application Support/iPhone Simulator/6.1/Documents/
-    for (int i = 0; i < 108; i++) {
+    for (NSSearchPathDirectory i = 0; i < 102; i++) {
         NSFileManager *fm = [NSFileManager defaultManager];
         NSArray *urls = [fm URLsForDirectory:i inDomains:NSUserDomainMask];
         NSURL *url = urls.lastObject;
