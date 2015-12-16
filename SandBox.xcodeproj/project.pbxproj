@@ -50,6 +50,10 @@
 		9A6F68191BFC1E4D0090E2D4 /* ColorCheckMarkTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6F68181BFC1E4D0090E2D4 /* ColorCheckMarkTableViewController.m */; };
 		9A7580051C1FB2BC003067AB /* ListUIImageObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7580041C1FB2BC003067AB /* ListUIImageObjectViewController.m */; };
 		9A7580091C1FCCF1003067AB /* ListNSStringObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7580081C1FCCF1003067AB /* ListNSStringObjectViewController.m */; };
+		9A7693781C21197400F3FFB0 /* AdScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A7693771C21197400F3FFB0 /* AdScreen.storyboard */; };
+		9A76937B1C211A2E00F3FFB0 /* AdScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A76937A1C211A2E00F3FFB0 /* AdScreenViewController.m */; };
+		9A76937E1C213C3800F3FFB0 /* UtilsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A76937D1C213C3800F3FFB0 /* UtilsViewController.m */; };
+		9A7693811C21427100F3FFB0 /* ToastViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7693801C21427100F3FFB0 /* ToastViewController.m */; };
 		9A904BAA1BFACFDD00258ACB /* KeyNames.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A904BA91BFACFDD00258ACB /* KeyNames.m */; };
 		9A904BAD1BFAD19D00258ACB /* SettingContentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A904BAC1BFAD19D00258ACB /* SettingContentsViewController.m */; };
 		9A962D711BF9CF71009AD1A4 /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A962D701BF9CF71009AD1A4 /* Settings.plist */; };
@@ -169,6 +173,13 @@
 		9A7580041C1FB2BC003067AB /* ListUIImageObjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListUIImageObjectViewController.m; path = Controllers/UIImage/ListUIImageObjectViewController.m; sourceTree = "<group>"; };
 		9A7580071C1FCCF1003067AB /* ListNSStringObjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListNSStringObjectViewController.h; path = Controllers/NSString/ListNSStringObjectViewController.h; sourceTree = "<group>"; };
 		9A7580081C1FCCF1003067AB /* ListNSStringObjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListNSStringObjectViewController.m; path = Controllers/NSString/ListNSStringObjectViewController.m; sourceTree = "<group>"; };
+		9A7693771C21197400F3FFB0 /* AdScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = AdScreen.storyboard; path = Base.lproj/StoryBoards/AdScreen.storyboard; sourceTree = "<group>"; };
+		9A7693791C211A2E00F3FFB0 /* AdScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AdScreenViewController.h; path = Controllers/AdScreenViewController.h; sourceTree = "<group>"; };
+		9A76937A1C211A2E00F3FFB0 /* AdScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AdScreenViewController.m; path = Controllers/AdScreenViewController.m; sourceTree = "<group>"; };
+		9A76937C1C213C3700F3FFB0 /* UtilsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UtilsViewController.h; path = Utils/Common/UtilsViewController.h; sourceTree = "<group>"; };
+		9A76937D1C213C3800F3FFB0 /* UtilsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UtilsViewController.m; path = Utils/Common/UtilsViewController.m; sourceTree = "<group>"; };
+		9A76937F1C21427100F3FFB0 /* ToastViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ToastViewController.h; path = Controllers/ToastViewController.h; sourceTree = "<group>"; };
+		9A7693801C21427100F3FFB0 /* ToastViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ToastViewController.m; path = Controllers/ToastViewController.m; sourceTree = "<group>"; };
 		9A904BA81BFACFDD00258ACB /* KeyNames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeyNames.h; path = Models/Common/KeyNames.h; sourceTree = "<group>"; };
 		9A904BA91BFACFDD00258ACB /* KeyNames.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeyNames.m; path = Models/Common/KeyNames.m; sourceTree = "<group>"; };
 		9A904BAB1BFAD19D00258ACB /* SettingContentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingContentsViewController.h; path = Controllers/Setting/SettingContentsViewController.h; sourceTree = "<group>"; };
@@ -483,6 +494,10 @@
 				7F462AEE1BA953F300896434 /* ListAppliedConstrueViewController.m */,
 				9AFAD5DF1BF2DFF800FD0665 /* ListImageViewController.h */,
 				9AFAD5E01BF2DFF800FD0665 /* ListImageViewController.m */,
+				9A7693791C211A2E00F3FFB0 /* AdScreenViewController.h */,
+				9A76937A1C211A2E00F3FFB0 /* AdScreenViewController.m */,
+				9A76937F1C21427100F3FFB0 /* ToastViewController.h */,
+				9A7693801C21427100F3FFB0 /* ToastViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -523,6 +538,7 @@
 				7F2BF3A51B0AD34B00CA83C4 /* SampleAlert.storyboard */,
 				7F2BF3A71B0B10AB00CA83C4 /* Alert2.storyboard */,
 				7F2ED0601B0D8BF300F795A4 /* AreaSelection.storyboard */,
+				9A7693771C21197400F3FFB0 /* AdScreen.storyboard */,
 			);
 			name = StoryBoards;
 			sourceTree = "<group>";
@@ -561,6 +577,8 @@
 		BDE2122B1AE68E06002A0746 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				9A76937C1C213C3700F3FFB0 /* UtilsViewController.h */,
+				9A76937D1C213C3800F3FFB0 /* UtilsViewController.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -750,6 +768,7 @@
 				7F2ED0611B0D8BF300F795A4 /* AreaSelection.storyboard in Resources */,
 				7F2BF3A61B0AD34B00CA83C4 /* SampleAlert.storyboard in Resources */,
 				9A962D711BF9CF71009AD1A4 /* Settings.plist in Resources */,
+				9A7693781C21197400F3FFB0 /* AdScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -768,8 +787,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A5C9E481C100EC4002EA33A /* ListUIViewObjectViewController.m in Sources */,
+				9A7693811C21427100F3FFB0 /* ToastViewController.m in Sources */,
 				5704E4C31AF221F10027C067 /* ListExceptionViewController.m in Sources */,
 				9A904BAD1BFAD19D00258ACB /* SettingContentsViewController.m in Sources */,
+				9A76937B1C211A2E00F3FFB0 /* AdScreenViewController.m in Sources */,
 				9AFAD5EC1BF3087100FD0665 /* ListUIResponderObjectViewController.m in Sources */,
 				9A064CAB1BF5E61000E44803 /* ListUIViewControllerObjectViewController.m in Sources */,
 				9AFAD5E11BF2DFF800FD0665 /* ListImageViewController.m in Sources */,
@@ -794,6 +815,7 @@
 				BD0E8B861AFC0AFC00F8F355 /* ListObjeciveCViewController.m in Sources */,
 				9A6F68191BFC1E4D0090E2D4 /* ColorCheckMarkTableViewController.m in Sources */,
 				7F2BF3A41B0AD10F00CA83C4 /* SampleAlertViewController.m in Sources */,
+				9A76937E1C213C3800F3FFB0 /* UtilsViewController.m in Sources */,
 				9AFAD5E51BF2E2A100FD0665 /* ListUIImageViewObjectViewController.m in Sources */,
 				BDEEC22B1AD7EE9F00B522D9 /* AppDelegate.m in Sources */,
 				9A6A4D841C0D7ACC00C95A08 /* ListXCodeErrorViewController.m in Sources */,

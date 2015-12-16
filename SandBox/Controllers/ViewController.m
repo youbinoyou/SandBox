@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "CustomAlertController.h"
+#import "UtilsViewController.h"
 
 @interface ViewController ()
 
@@ -60,6 +61,7 @@
                      
                      @{@"title":@"ステッパーについて",@"listViewController:":@"StepperListViewController"},
                      @{@"title":@"ローカル通知について",@"listViewController:":@"ListUILocalNotificationObjectViewController"},
+                     @{@"title":@"トースト",@"action":@"toast"},
                      @{
                          @"title":@"オリジナルキーボード",
                          @"listViewController:":@"ListCustomKeyboardsViewController"
@@ -71,6 +73,10 @@
                       */
                      ];
     [self setButtons];
+}
+
+- (void)toast {
+    [UtilsViewController showToastMessage:@"トースト"];
 }
 
 @end

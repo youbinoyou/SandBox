@@ -104,6 +104,10 @@
                          keyAction : @"getStringByAppendingString",
                          },
                      @{
+                         keyTitle : @"連想配列",
+                         keyAction : @"memo",
+                         },
+                     @{
                          keyTitle : @"情報提供元",
                          keyLink : @"http://iphone-tora.sakura.ne.jp/nsstring.html",
                          }
@@ -364,8 +368,8 @@
 }
 
 - (void)getStringByAppendingString {
-    //［文字列の結合】
-//     文字列str1とstr2を結合する
+//    ［文字列の結合】
+//    文字列str1とstr2を結合する
 //    NSString *str1 = @"ho";
 //    NSString *str2 = @"ge";
 //    
@@ -378,4 +382,121 @@
     [alert addButtonWithTitle : @"OK"];
     [alert show];
 }
+
+- (void)memo {
+    NSDictionary *dic =
+    @{
+      @"key":@"value",
+      @"apple":@"100円",
+      @"orange":@"50円",
+      @"peach":@"500円",
+      };
+    NSMutableDictionary *addDictionary = [dic mutableCopy];
+    addDictionary[@"grape"] = @"300円";
+    dic = addDictionary;
+    NSArray *array =
+    @[
+      @{@"key":@"value"},
+      @{@"apple":@"100円"},
+      @{@"orange":@"50円"},
+      @{@"peach":@"500円"},
+      ];
+    NSMutableArray *addArray = [array mutableCopy];
+    addArray[[array count]] = @{@"grape" : @"300円"};
+    array = @[
+              @{@"CAR":@"1000円"},
+              @{@"TV":@"2000円"},
+              @{@"PC":@"3000円"},
+                     ];
+    array = addArray;
+    NSLog(@"%@",dic);
+    NSLog(@"%@",array);
+    dic = [self unsetObject:dic key:@"grape"];
+    array = [self unsetObject:array key:@"grape"];
+    NSLog(@"%@",dic);
+    NSLog(@"%@",array);
+    array = [self ksortObject:array];
+    NSLog(@"%@",array);
+}
+
+- (id)unsetObject:(id)object key:(NSString *)key {
+    if ([object isKindOfClass:[NSArray class]]) {
+        NSMutableArray *mArray = [NSMutableArray new];
+        for (NSDictionary *dic in object) {
+            if (!dic[key]) {
+                [mArray addObject:dic];
+            }
+        }
+        object = mArray;
+    }
+    
+    if ([object isKindOfClass:[NSDictionary class]]) {
+        NSMutableDictionary *mDictionary = [object mutableCopy];
+        [mDictionary removeObjectForKey:key];
+        object = mDictionary;
+    }
+    return object;
+}
+
+//昇順
+- (id)ksortObject:(id)object {
+    NSLog(@"%@",object);
+    if ([object isKindOfClass:[NSArray class]]) {
+        NSMutableArray *mArray = [NSMutableArray new];
+        for (NSDictionary *dic in object) {
+            [mArray addObject:[NSString stringWithFormat:@"%@",dic]];
+        }
+        object = [mArray sortedArrayUsingSelector:@selector(compare:)];
+    }
+    
+    if ([object isKindOfClass:[NSDictionary class]]) {
+        NSMutableDictionary *mDictionary = [object mutableCopy];
+        object = mDictionary;
+    }
+    return object;
+}
+
+//降順
+- (id)krsortObject:(id)object {
+    if ([object isKindOfClass:[NSArray class]]) {
+        NSMutableArray *mArray = [NSMutableArray new];
+        object = mArray;
+    }
+    
+    if ([object isKindOfClass:[NSDictionary class]]) {
+        NSMutableDictionary *mDictionary = [object mutableCopy];
+        object = mDictionary;
+    }
+    return object;
+}
+
+
+//昇順
+- (id)asortObject:(id)object {
+    if ([object isKindOfClass:[NSArray class]]) {
+        NSMutableArray *mArray = [NSMutableArray new];
+        object = mArray;
+    }
+    
+    if ([object isKindOfClass:[NSDictionary class]]) {
+        NSMutableDictionary *mDictionary = [object mutableCopy];
+        object = mDictionary;
+    }
+    return object;
+}
+
+//降順
+- (id)arsortObject:(id)object {
+    if ([object isKindOfClass:[NSArray class]]) {
+        NSMutableArray *mArray = [NSMutableArray new];
+        object = mArray;
+    }
+    
+    if ([object isKindOfClass:[NSDictionary class]]) {
+        NSMutableDictionary *mDictionary = [object mutableCopy];
+        object = mDictionary;
+    }
+    return object;
+}
+
 @end

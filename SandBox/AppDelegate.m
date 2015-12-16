@@ -30,15 +30,16 @@
 //                                                 name:UIWindowDidBecomeVisibleNotification
 //                                               object:nil];
     // Override point for customization after application launch.
-    UIAlertView *alertController = [UIAlertView new];
-    alertController.title = @"前回のエラー";
-    alertController.message = [NSString stringWithFormat:@"%@\n%@\n%@",
-                               [[NSUserDefaults standardUserDefaults] stringForKey:@"exception.name"],
-                               [[NSUserDefaults standardUserDefaults] stringForKey:@"exception.reason"],
-                               [[NSUserDefaults standardUserDefaults] stringForKey:@"exception.callStackSymbols"]];
-    
-    [alertController addButtonWithTitle:@"OK"];
-    [alertController show];
+    NSString *exceptionLog = [[NSUserDefaults standardUserDefaults] stringForKey:@"exceptionLog"];
+    if (exceptionLog) {
+        UIAlertView *alertController = [UIAlertView new];
+        alertController.title = @"前回のエラー";
+        alertController.message = exceptionLog;
+        [alertController addButtonWithTitle:@"OK"];
+        [alertController show];
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"exceptionLog"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
     
     // エラー追跡用の機能を追加する。
     NSSetUncaughtExceptionHandler(&exceptionHandler);
@@ -97,6 +98,7 @@ void exceptionHandler(NSException *exception) {
     // ここで、例外発生時の情報を出力します。
     // NSLog関数でcallStackSymbolsを出力することで、
     // XCODE上で開発している際にも、役立つスタックトレースを取得できるようになります。
+    NSLog(@"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
     NSLog(@"exception.name : %@", exception.name);
     NSLog(@"exception.reason : %@", exception.reason);
     NSLog(@"exception.callStackSymbols : %@", exception.callStackSymbols);
@@ -104,9 +106,11 @@ void exceptionHandler(NSException *exception) {
     // ログをUserDefaultsに保存しておく。
     // 次の起動の際に存在チェックすれば、前の起動時に異常終了したことを検知できます。
     //NSString *log = [NSString stringWithFormat:@"%@, %@, %@", exception.name, exception.reason, exception.callStackSymbols];
-    [[NSUserDefaults standardUserDefaults] setValue:exception.name forKey:@"exception.name"];
-    [[NSUserDefaults standardUserDefaults] setValue:exception.reason forKey:@"exception.reason"];
-    [[NSUserDefaults standardUserDefaults] setValue:[NSString stringWithFormat:@"%@",exception.callStackSymbols] forKey:@"exception.callStackSymbols"];
+    [[NSUserDefaults standardUserDefaults] setValue:
+     [NSString stringWithFormat:@"name : [%@]\nreason : [%@]\ncallStackSymbols : [%@]",
+      exception.name,
+      exception.reason,
+      exception.callStackSymbols] forKey:@"exceptionLog"];
 }
 
 @end
