@@ -131,7 +131,7 @@
     _block = ^() {
         // _nameは、self->_nameの略なので、
         // ここでブロックからselfへの強い参照が生まれる
-        NSLog(@"name: %@", _name);
+        // NSLog(@"name: %@", _name);
     };
     _block();
     __weak ListAppliedConstrueViewController *weakSelf = self;

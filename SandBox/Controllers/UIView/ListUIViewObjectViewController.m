@@ -73,7 +73,8 @@
     NSString *retValue = [[NSString alloc] initWithBytes:receivedData.bytes length:receivedData.length encoding:NSUTF8StringEncoding];
     
     if (client && method) {
-        [client performSelector:method withObject:nil withObject:retValue];
+        // [client performSelector:method withObject:nil withObject:retValue];
+        [client performSelector:method withObject:retValue afterDelay:0.0];
     }
 }
 // 通信が失敗したら呼び出されるメソッド。
@@ -86,7 +87,8 @@
      */
     
     if (client && method) {
-        [client performSelector:method withObject:error withObject:nil];
+        //[client performSelector:method withObject:error withObject:nil];
+        [client performSelector:method withObject:error afterDelay:0.0];
     }
 }
 

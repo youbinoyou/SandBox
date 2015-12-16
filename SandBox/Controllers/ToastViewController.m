@@ -20,7 +20,7 @@
     if (!_viewMessage) {
         _viewMessage = [UIView new];
         _viewMessage.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 44);
-        _viewMessage.backgroundColor = [UIColor colorWithRed:1 green:0.5 blue:0.5 alpha:0.5];
+        _viewMessage.backgroundColor = [UIColor colorWithRed:1 green:0 blue:1 alpha:0.5];
         [self.view addSubview:_viewMessage];
         UITapGestureRecognizer *tapGestureRecognizer = [UITapGestureRecognizer new];
         [tapGestureRecognizer addTarget:self action:@selector(clickView:)];
@@ -40,6 +40,8 @@
     self.view.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, _viewMessage.frame.size.height);
     self.preferredContentSize = self.view.frame.size;
     _labelMessage.text = _message;
+    NSLog(@"ToastViewController start %@",_labelMessage.text);
+    self.startHandler();
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,16 +68,17 @@
 }
 
 - (void)dealloc {
-    NSLog(@"ToastViewController %@",_labelMessage.text);
+    NSLog(@"ToastViewController end%@",_labelMessage.text);
+    self.endHandler();
 }
 
--(void)viewWillDisappear:(BOOL)animated {
+- (void)viewWillDisappear:(BOOL)animated {
     //タイマー停止
     [timer invalidate];
 }
 
 //トースト閉じる
--(void)actionClose {
+- (void)actionClose {
     //アニメーション
     [UIView animateWithDuration:0.5f animations:^{
         CGRect rectViewMessage = _viewMessage.frame;

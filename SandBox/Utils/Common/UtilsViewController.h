@@ -67,5 +67,6 @@
           nextViewController:(UIViewController *)nextViewController;
 
 + (void)showToastMessage:(NSString*)message;
++ (void)showToastMessage:(NSString*)message actionStart:(void (^)())actionStart actionFinish:(void (^)())actionFinish;
 
 @end

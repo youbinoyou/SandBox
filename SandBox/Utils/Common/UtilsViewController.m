@@ -100,6 +100,7 @@
     
 }
 
+//non action
 + (void)transformNextViewControllerToNowViewController : (UIViewController *)nowViewController
                                     nowDisplayDuration : (NSTimeInterval )nowDisplayDuration
                                     nextViewController : (UIViewController *)nextViewController
@@ -200,9 +201,14 @@
 
 //トースト画面を表示する。
 + (void)showToastMessage:(NSString*)message {
+    [self showToastMessage:message actionStart:nil actionFinish:nil];
+}
+
++ (void)showToastMessage:(NSString*)message actionStart:(void (^)())actionStart actionFinish:(void (^)())actionFinish {
     ToastViewController *toastViewController = [ToastViewController new];
     toastViewController.message = message;
-    
+    toastViewController.startHandler = actionStart;
+    toastViewController.endHandler = actionFinish;
     //コントローラーを取得
     UIViewController *rootViewController = (UIViewController*)[UIApplication sharedApplication].keyWindow.rootViewController;
     [UtilsViewController displayContentViewController:toastViewController parentViewController:rootViewController];

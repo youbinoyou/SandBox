@@ -49,8 +49,9 @@
 - (void)unusedVariable {
     // Objective-C
     BOOL success = [self isSomething];
-    
-    __attribute__((unused)) BOOL unusedSuccess = [self isSomething];
+    if (success) {
+        __attribute__((unused)) BOOL unusedSuccess = [self isSomething];
+    }
 }
 
 - (BOOL)isSomething {
