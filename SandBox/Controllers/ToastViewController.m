@@ -15,6 +15,16 @@
 
 @implementation ToastViewController
 
+- (id)init {
+    self = [super init];
+    if (self) {
+        // 遅延時間
+        _duration = 0.5;
+        _displayDuration = 2.0;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     if (!_viewMessage) {
@@ -35,13 +45,17 @@
         _labelMessage.backgroundColor = [UIColor clearColor];
         [_viewMessage addSubview:_labelMessage];
     }
-    
     // Do any additional setup after loading the view.
-    self.view.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, _viewMessage.frame.size.height);
+    self.view.frame = CGRectMake(0,
+                                 0,
+                                 [UIScreen mainScreen].bounds.size.width,
+                                 _viewMessage.frame.size.height);
     self.preferredContentSize = self.view.frame.size;
     _labelMessage.text = _message;
     NSLog(@"ToastViewController start %@",_labelMessage.text);
-    self.startHandler();
+    if (self.startHandler) {
+        self.startHandler();
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -57,19 +71,20 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     //アニメーション
-    [UIView animateWithDuration:0.5f animations:^{
+    [UIView animateWithDuration:_duration animations:^{
         CGRect rectViewMessage = _viewMessage.frame;
         rectViewMessage.origin.y = 0;
         _viewMessage.frame = rectViewMessage;
     }completion:^(BOOL finished){
-        //タイマー発動
-        timer = [NSTimer scheduledTimerWithTimeInterval:2.0f target:self selector:@selector(actionClose) userInfo:nil repeats:NO];
+        if (finished) {
+            //タイマー発動
+            timer = [NSTimer scheduledTimerWithTimeInterval : _displayDuration
+                                                     target : self
+                                                   selector : @selector(toastClose)
+                                                   userInfo : nil
+                                                    repeats : NO];
+        }
     }];
-}
-
-- (void)dealloc {
-    NSLog(@"ToastViewController end%@",_labelMessage.text);
-    self.endHandler();
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -77,29 +92,39 @@
     [timer invalidate];
 }
 
+- (IBAction)clickView:(id)sender {
+    //タイマー停止
+    [timer invalidate];
+    _duration = 0.5;
+    //トースト閉じる
+    [self toastClose];
+}
+
+
 //トースト閉じる
-- (void)actionClose {
+- (void)toastClose {
     //アニメーション
-    [UIView animateWithDuration:0.5f animations:^{
+    [UIView animateWithDuration:_duration animations:^{
         CGRect rectViewMessage = _viewMessage.frame;
         rectViewMessage.origin.y = -_viewMessage.frame.size.height;
         _viewMessage.frame = rectViewMessage;
     }completion:^(BOOL finished){
-        //画面閉じる
-        if (self.presentingViewController) {
-            [self dismissViewControllerAnimated:YES completion:nil];
-        } else {
-            [UtilsViewController hideContentViewController:self];
+        if (finished) {
+            //画面閉じる
+            if (self.presentingViewController) {
+                [self dismissViewControllerAnimated:YES completion:nil];
+            } else {
+                [UtilsViewController hideContentViewController:self];
+            }
         }
     }];
 }
 
-- (IBAction)clickView:(id)sender {
-    //タイマー停止
-    [timer invalidate];
-    //トースト閉じる
-    [self actionClose];
+- (void)dealloc {
+    NSLog(@"ToastViewController end%@",_labelMessage.text);
+    if (self.endHandler) {
+        self.endHandler();
+    }
 }
-
 
 @end

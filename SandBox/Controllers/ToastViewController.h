@@ -17,7 +17,10 @@
 @property (strong, nonatomic) IBOutlet UILabel *labelMessage;
 @property (strong, nonatomic) IBOutlet UIView *viewMessage;
 
-@property (nonatomic,assign) void (^startHandler)(void);
-@property (nonatomic,assign) void (^endHandler)(void);
+@property (nonatomic, assign) NSTimeInterval duration;
+@property (nonatomic, assign) NSTimeInterval displayDuration;
+
+@property (nonatomic, assign) void (^startHandler)(void);
+@property (nonatomic, assign) void (^endHandler)(void);
 
 @end

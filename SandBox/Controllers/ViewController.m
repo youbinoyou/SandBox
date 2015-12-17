@@ -76,7 +76,7 @@
 }
 
 - (void)toast {
-    [UtilsViewController showToastMessage:@"トースト"];
+    [UtilsViewController showToastMessage:@"トースト" duration:1.0 displayDuration:5.0 actionStart:nil actionFinish:nil];
 }
 
 @end

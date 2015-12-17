@@ -61,6 +61,8 @@
     [contentViewController removeFromParentViewController];
 }
 
+#pragma mark - UIViewControllerのA画面toB画面遷移処理
+
 /**
  * 画面遷移用
  * @param nowViewController 今表示しているビューコントローラ
@@ -199,13 +201,28 @@
                                             }];
 }
 
+#pragma mark - トースト画面遷移処理
+
 //トースト画面を表示する。
 + (void)showToastMessage:(NSString*)message {
     [self showToastMessage:message actionStart:nil actionFinish:nil];
 }
 
-+ (void)showToastMessage:(NSString*)message actionStart:(void (^)())actionStart actionFinish:(void (^)())actionFinish {
++ (void)showToastMessage:(NSString*)message
+             actionStart:(void (^)())actionStart actionFinish:(void (^)())actionFinish {
+    [self showToastMessage:message duration:0.5 displayDuration:2.0
+               actionStart:actionStart actionFinish:actionFinish];
+}
+
++ (void)showToastMessage:(NSString*)message duration:(NSTimeInterval)duration
+         displayDuration:(NSTimeInterval)displayDuration
+             actionStart:(void (^)())actionStart actionFinish:(void (^)())actionFinish {
     ToastViewController *toastViewController = [ToastViewController new];
+    if (duration > 1.0) {
+        duration = 1.0;
+    }
+    toastViewController.duration = duration;
+    toastViewController.displayDuration = displayDuration;
     toastViewController.message = message;
     toastViewController.startHandler = actionStart;
     toastViewController.endHandler = actionFinish;
