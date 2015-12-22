@@ -175,7 +175,7 @@
                                             actionFinish : actionFinish];
 }
 
-+ (void)parentViewController:(UIViewController *)parentViewController
++ (void)transitionFromParentViewController:(UIViewController *)parentViewController
            nowViewController:(UIViewController *)nowViewController
           nextViewController:(UIViewController *)nextViewController
 {
@@ -215,7 +215,34 @@
 }
 
 + (void)showToastMessage:(NSString*)message duration:(NSTimeInterval)duration
-         displayDuration:(NSTimeInterval)displayDuration
+                  displayDuration:(NSTimeInterval)displayDuration
+                      actionStart:(void (^)())actionStart actionFinish:(void (^)())actionFinish
+{
+    [self showToastOnViewController:nil message:message
+                           duration:duration displayDuration:displayDuration
+                        actionStart:actionStart actionFinish:actionFinish];
+}
+
++ (void)showToastOnViewController:(UIViewController *)viewController
+                          message:(NSString*)message
+{
+    [self showToastOnViewController:viewController message:message
+                           duration:0.5 displayDuration:2.0 actionStart:nil actionFinish:nil];
+}
+
++ (void)showToastOnViewController:(UIViewController *)viewController
+                          message:(NSString*)message
+                      actionStart:(void (^)())actionStart
+                     actionFinish:(void (^)())actionFinish
+{
+    [self showToastOnViewController:viewController message:message
+                           duration:0.5 displayDuration:2.0
+                        actionStart:actionStart actionFinish:actionFinish];
+}
+
++ (void)showToastOnViewController:(UIViewController *)viewController message:(NSString*)message
+                         duration:(NSTimeInterval)duration
+                  displayDuration:(NSTimeInterval)displayDuration
              actionStart:(void (^)())actionStart actionFinish:(void (^)())actionFinish {
     ToastViewController *toastViewController = [ToastViewController new];
     if (duration > 1.0) {
@@ -226,8 +253,19 @@
     toastViewController.message = message;
     toastViewController.startHandler = actionStart;
     toastViewController.endHandler = actionFinish;
+    UIViewController *rootViewController;
     //コントローラーを取得
-    UIViewController *rootViewController = (UIViewController*)[UIApplication sharedApplication].keyWindow.rootViewController;
+    if (viewController) {
+        rootViewController = viewController;
+    } else {
+       rootViewController = (UIViewController *)[UIApplication sharedApplication].keyWindow.rootViewController;
+    }
+    NSLog(@"%@",rootViewController);
+    NSLog(@"%@",rootViewController.parentViewController);
+    NSLog(@"%@",rootViewController.popoverPresentationController);
+    NSLog(@"%@",rootViewController.presentationController);
+    NSLog(@"%@",rootViewController.presentedViewController);
+    NSLog(@"%@",rootViewController.presentingViewController);
     [UtilsViewController displayContentViewController:toastViewController parentViewController:rootViewController];
 }
 

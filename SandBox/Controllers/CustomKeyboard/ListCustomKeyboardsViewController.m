@@ -8,6 +8,8 @@
 
 #import "ListCustomKeyboardsViewController.h"
 #import "CustomNumberKeyboard.h"
+#import "UtilsViewController.h"
+#import "CustomSecurityNumberKeyboardViewController.h"
 
 @interface ListCustomKeyboardsViewController () {
     UITextField *kingakuTx;
@@ -43,6 +45,10 @@
                          keyTitle : @"CustomNumberKeyboardの設定",
                          keyAction : @"makeCustomNumberKeyboard",
                          },
+                     @{
+                         keyTitle : @"セキュリティ設定",
+                         keyAction : @"openCustomSecurityNumberKeyboardViewController",
+                         },
                      ];
     [self setButtons];
 }
@@ -62,6 +68,14 @@
 //
 //    [self.view addSubview:aCustomNumberKeyboard];
 
+}
+
+- (void)openCustomSecurityNumberKeyboardViewController {
+    id viewController = [UtilsViewController getTransitionModalViewController:@"CustomSecurityNumberKeyboard"
+                                                     withStortboardIdentifier:@"CustomSecurityNumberKeyboardViewController"];
+    [self presentViewController:viewController animated:YES completion:^(void){
+        
+    }];
 }
 
 /*

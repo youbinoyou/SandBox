@@ -8,8 +8,13 @@
 
 #import "ListUIViewControllerObjectViewController.h"
 
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= 100000
+#define __IPHONE_TARGET_IOS10 1
+#else
+#define __IPHONE_TARGET_IOS10 0
+#endif
 
-#if __IPHONE_OS_VERSION_MIN_REQUIRED >= 90000
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_9_0
 #define __IPHONE_TARGET_IOS9 1
 #else
 #define __IPHONE_TARGET_IOS9 0
@@ -56,7 +61,6 @@
 #else
 #define __IPHONE_TARGET_IOS2 0
 #endif
-
 
 @interface ListUIViewControllerObjectViewController ()
 

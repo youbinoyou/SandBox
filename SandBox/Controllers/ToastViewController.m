@@ -75,6 +75,7 @@
         CGRect rectViewMessage = _viewMessage.frame;
         rectViewMessage.origin.y = 0;
         _viewMessage.frame = rectViewMessage;
+        _viewMessage.alpha = 1.0;
     }completion:^(BOOL finished){
         if (finished) {
             //タイマー発動
@@ -112,8 +113,10 @@
         if (finished) {
             //画面閉じる
             if (self.presentingViewController) {
-                [self dismissViewControllerAnimated:YES completion:nil];
+                //[self dismissViewControllerAnimated:YES completion:nil];
+                _viewMessage.alpha = 0.0;
             } else {
+                _viewMessage.alpha = 0.0;
                 [UtilsViewController hideContentViewController:self];
             }
         }

@@ -50,14 +50,13 @@
                                                      nextViewController : nextViewController
                                                     nextDisplayDuration : _delayTimeInterval
                                                             actionStart : ^(void){
-                                                                [UtilsViewController showToastMessage:@"トースト開始"
-                                                                                          actionStart:^(void){
-                                                                                              NSLog(@"開始");
-                                                                                          }
-                                                                                         actionFinish:^(void){
-                                                                                             NSLog(@"終了");
-                                                                                         }
-                                                                 ];
+                                                                [UtilsViewController showToastOnViewController:self
+                                                                                                       message:@"トースト開始"
+                                                                                                   actionStart:^(void){
+                                                                                                           NSLog(@"開始");
+                                                                                                       } actionFinish:^(void){
+                                                                                                           NSLog(@"終了");
+                                                                                                       }];
                                                             }
                                                            actionMiddle : ^(void){
                                                                //[UtilsViewController showToastMessage:@"中間処理"];

@@ -40,6 +40,8 @@
 		9A06C8101BFB337F00882EAA /* ListUITableViewObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A06C80F1BFB337F00882EAA /* ListUITableViewObjectViewController.m */; };
 		9A06C8141BFB385C00882EAA /* NoScrollTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A06C8131BFB385C00882EAA /* NoScrollTableViewController.m */; };
 		9A06C8171BFB3BE800882EAA /* CheckMarkTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A06C8161BFB3BE800882EAA /* CheckMarkTableViewController.m */; };
+		9A4FC02C1C22673700BAD54A /* CustomSecurityNumberKeyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4FC02B1C22673700BAD54A /* CustomSecurityNumberKeyboard.storyboard */; };
+		9A4FC02F1C2272C100BAD54A /* CustomSecurityNumberKeyboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4FC02E1C2272C100BAD54A /* CustomSecurityNumberKeyboardViewController.m */; };
 		9A5437651C17E2CB00B9F5E6 /* CustomNumberKeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A5437641C17E2CB00B9F5E6 /* CustomNumberKeyboard.xib */; };
 		9A5437681C17E4D100B9F5E6 /* CustomNumberKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5437671C17E4D100B9F5E6 /* CustomNumberKeyboard.m */; };
 		9A54376C1C17E7E500B9F5E6 /* ListCustomKeyboardsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A54376B1C17E7E500B9F5E6 /* ListCustomKeyboardsViewController.m */; };
@@ -154,6 +156,9 @@
 		9A06C8131BFB385C00882EAA /* NoScrollTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NoScrollTableViewController.m; path = Controllers/UITableView/Custom/NoScrollTableViewController.m; sourceTree = "<group>"; };
 		9A06C8151BFB3BE800882EAA /* CheckMarkTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckMarkTableViewController.h; path = Controllers/UITableView/Custom/CheckMarkTableViewController.h; sourceTree = "<group>"; };
 		9A06C8161BFB3BE800882EAA /* CheckMarkTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckMarkTableViewController.m; path = Controllers/UITableView/Custom/CheckMarkTableViewController.m; sourceTree = "<group>"; };
+		9A4FC02B1C22673700BAD54A /* CustomSecurityNumberKeyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = CustomSecurityNumberKeyboard.storyboard; path = Base.lproj/StoryBoards/Common/CustomSecurityNumberKeyboard.storyboard; sourceTree = "<group>"; };
+		9A4FC02D1C2272C100BAD54A /* CustomSecurityNumberKeyboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomSecurityNumberKeyboardViewController.h; path = Controllers/CustomKeyboard/CustomSecurityNumberKeyboardViewController.h; sourceTree = "<group>"; };
+		9A4FC02E1C2272C100BAD54A /* CustomSecurityNumberKeyboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomSecurityNumberKeyboardViewController.m; path = Controllers/CustomKeyboard/CustomSecurityNumberKeyboardViewController.m; sourceTree = "<group>"; };
 		9A5437641C17E2CB00B9F5E6 /* CustomNumberKeyboard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CustomNumberKeyboard.xib; path = Base.lproj/StoryBoards/Common/CustomNumberKeyboard.xib; sourceTree = "<group>"; };
 		9A5437661C17E4D100B9F5E6 /* CustomNumberKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomNumberKeyboard.h; path = Views/Common/CustomNumberKeyboard.h; sourceTree = "<group>"; };
 		9A5437671C17E4D100B9F5E6 /* CustomNumberKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomNumberKeyboard.m; path = Views/Common/CustomNumberKeyboard.m; sourceTree = "<group>"; };
@@ -314,6 +319,8 @@
 			children = (
 				9A54376A1C17E7E500B9F5E6 /* ListCustomKeyboardsViewController.h */,
 				9A54376B1C17E7E500B9F5E6 /* ListCustomKeyboardsViewController.m */,
+				9A4FC02D1C2272C100BAD54A /* CustomSecurityNumberKeyboardViewController.h */,
+				9A4FC02E1C2272C100BAD54A /* CustomSecurityNumberKeyboardViewController.m */,
 			);
 			name = CustomKeyboard;
 			sourceTree = "<group>";
@@ -610,6 +617,7 @@
 			children = (
 				BDE212371AE6B635002A0746 /* CustomAlert.storyboard */,
 				9A5437641C17E2CB00B9F5E6 /* CustomNumberKeyboard.xib */,
+				9A4FC02B1C22673700BAD54A /* CustomSecurityNumberKeyboard.storyboard */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -762,6 +770,7 @@
 				BDE2122F1AE69102002A0746 /* Main.storyboard in Resources */,
 				9A5437651C17E2CB00B9F5E6 /* CustomNumberKeyboard.xib in Resources */,
 				7F2BF3A11B0ACD7F00CA83C4 /* SampleAlertView.xib in Resources */,
+				9A4FC02C1C22673700BAD54A /* CustomSecurityNumberKeyboard.storyboard in Resources */,
 				BDEEC2361AD7EE9F00B522D9 /* LaunchScreen.xib in Resources */,
 				BDEEC2331AD7EE9F00B522D9 /* Images.xcassets in Resources */,
 				7F24F6421B09D8F40024D249 /* Alert.storyboard in Resources */,
@@ -789,6 +798,7 @@
 				9A5C9E481C100EC4002EA33A /* ListUIViewObjectViewController.m in Sources */,
 				9A7693811C21427100F3FFB0 /* ToastViewController.m in Sources */,
 				5704E4C31AF221F10027C067 /* ListExceptionViewController.m in Sources */,
+				9A4FC02F1C2272C100BAD54A /* CustomSecurityNumberKeyboardViewController.m in Sources */,
 				9A904BAD1BFAD19D00258ACB /* SettingContentsViewController.m in Sources */,
 				9A76937B1C211A2E00F3FFB0 /* AdScreenViewController.m in Sources */,
 				9AFAD5EC1BF3087100FD0665 /* ListUIResponderObjectViewController.m in Sources */,

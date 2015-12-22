@@ -62,7 +62,7 @@
                                    nextDisplayDuration : (NSTimeInterval )nextDisplayDuration
                                           actionFinish : (void (^)())actionFinish;
 
-+ (void)parentViewController:(UIViewController *)parentViewController
++ (void)transitionFromParentViewController:(UIViewController *)parentViewController
            nowViewController:(UIViewController *)nowViewController
           nextViewController:(UIViewController *)nextViewController;
 
@@ -74,4 +74,20 @@
 + (void)showToastMessage:(NSString*)message duration:(NSTimeInterval)duration
          displayDuration:(NSTimeInterval)displayDuration
              actionStart:(void (^)())actionStart actionFinish:(void (^)())actionFinish;
+
++ (void)showToastOnViewController:(UIViewController *)viewController
+                          message:(NSString*)message;
+
++ (void)showToastOnViewController:(UIViewController *)viewController
+                          message:(NSString*)message
+                      actionStart:(void (^)())actionStart
+                     actionFinish:(void (^)())actionFinish;
+
++ (void)showToastOnViewController:(UIViewController *)viewController
+                          message:(NSString*)message
+                         duration:(NSTimeInterval)duration
+                  displayDuration:(NSTimeInterval)displayDuration
+                      actionStart:(void (^)())actionStart
+                     actionFinish:(void (^)())actionFinish;
+
 @end
