@@ -66,6 +66,10 @@
                          @"title":@"オリジナルキーボード",
                          @"listViewController:":@"ListCustomKeyboardsViewController"
                          },
+                     @{
+                         @"title":@"ショッピング",
+                         @"action":@"shopping"
+                         },
                      @{@"title":@"設定",@"listViewController:":@"SettingContentsViewController"},
                      /*
                       @{@"title":@"CustomAlert",@"action":@"newCustomAlert:"},
@@ -76,7 +80,17 @@
 }
 
 - (void)toast {
-    [UtilsViewController showToastMessage:@"トースト" duration:1.0 displayDuration:5.0 actionStart:nil actionFinish:nil];
+    [UtilsViewController showToastMessage:@"トースト" duration:1.0 displayDuration:5.0
+                              actionStart:nil actionFinish:nil];
+}
+
+- (void)shopping {
+    id viewController = [UtilsViewController getTransitionModalViewController:@"CustomShopping"
+                                 withStortboardIdentifier:nil];
+    [self presentViewController:viewController animated:YES completion:^(void){
+        
+    }];
+    //[self.navigationController pushViewController:viewController animated:YES];
 }
 
 @end

@@ -26,6 +26,9 @@
               withStortboardIdentifier:(NSString *)stortboardIdentifier
 {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:stortboardName bundle:nil];
+    if (!stortboardIdentifier) {
+        return [storyboard instantiateInitialViewController];
+    }
     id viewController = [storyboard instantiateViewControllerWithIdentifier:stortboardIdentifier];
     return viewController;
 }

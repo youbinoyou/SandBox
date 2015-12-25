@@ -56,10 +56,20 @@
 		9A76937B1C211A2E00F3FFB0 /* AdScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A76937A1C211A2E00F3FFB0 /* AdScreenViewController.m */; };
 		9A76937E1C213C3800F3FFB0 /* UtilsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A76937D1C213C3800F3FFB0 /* UtilsViewController.m */; };
 		9A7693811C21427100F3FFB0 /* ToastViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7693801C21427100F3FFB0 /* ToastViewController.m */; };
+		9A7FBB311C292F7300B4E1C6 /* CustomShopping.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A7FBB301C292F7300B4E1C6 /* CustomShopping.storyboard */; };
+		9A7FBB351C2933C500B4E1C6 /* CustomShoppingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7FBB341C2933C500B4E1C6 /* CustomShoppingViewController.m */; };
+		9A7FBB3D1C2938B400B4E1C6 /* ContentsGiftingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7FBB3C1C2938B400B4E1C6 /* ContentsGiftingViewController.m */; };
+		9A7FBB401C2938DB00B4E1C6 /* ContentsSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7FBB3F1C2938DB00B4E1C6 /* ContentsSettingViewController.m */; };
+		9A7FBB431C29391100B4E1C6 /* ContentsShoppingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7FBB421C29391100B4E1C6 /* ContentsShoppingViewController.m */; };
+		9A7FBB461C29394600B4E1C6 /* ContentsTopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7FBB451C29394600B4E1C6 /* ContentsTopViewController.m */; };
+		9A7FBB491C293D9F00B4E1C6 /* ContentsSettingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7FBB481C293D9F00B4E1C6 /* ContentsSettingTableView.m */; };
+		9A7FBB4C1C2940EA00B4E1C6 /* ContentsSettingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7FBB4B1C2940EA00B4E1C6 /* ContentsSettingTableViewCell.m */; };
 		9A904BAA1BFACFDD00258ACB /* KeyNames.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A904BA91BFACFDD00258ACB /* KeyNames.m */; };
 		9A904BAD1BFAD19D00258ACB /* SettingContentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A904BAC1BFAD19D00258ACB /* SettingContentsViewController.m */; };
 		9A962D711BF9CF71009AD1A4 /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A962D701BF9CF71009AD1A4 /* Settings.plist */; };
 		9A9AE03B1C18235400DA7636 /* ListNSFileManagerObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A9AE03A1C18235400DA7636 /* ListNSFileManagerObjectViewController.m */; };
+		9AC984411C2D140D004D28AB /* CustomButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AC984401C2D140D004D28AB /* CustomButtonCell.m */; };
+		9AC984441C2D1717004D28AB /* CommonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AC984431C2D1717004D28AB /* CommonCell.m */; };
 		9AD8CE0F1BF34AB1003C2566 /* UtilsFILE.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD8CE0E1BF34AB1003C2566 /* UtilsFILE.m */; };
 		9AFAD5E11BF2DFF800FD0665 /* ListImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAD5E01BF2DFF800FD0665 /* ListImageViewController.m */; };
 		9AFAD5E51BF2E2A100FD0665 /* ListUIImageViewObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAD5E41BF2E2A100FD0665 /* ListUIImageViewObjectViewController.m */; };
@@ -185,6 +195,21 @@
 		9A76937D1C213C3800F3FFB0 /* UtilsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UtilsViewController.m; path = Utils/Common/UtilsViewController.m; sourceTree = "<group>"; };
 		9A76937F1C21427100F3FFB0 /* ToastViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ToastViewController.h; path = Controllers/ToastViewController.h; sourceTree = "<group>"; };
 		9A7693801C21427100F3FFB0 /* ToastViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ToastViewController.m; path = Controllers/ToastViewController.m; sourceTree = "<group>"; };
+		9A7FBB301C292F7300B4E1C6 /* CustomShopping.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = CustomShopping.storyboard; path = Base.lproj/StoryBoards/CustomShopping.storyboard; sourceTree = "<group>"; };
+		9A7FBB331C2933C500B4E1C6 /* CustomShoppingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomShoppingViewController.h; path = Controllers/Shopping/CustomShoppingViewController.h; sourceTree = "<group>"; };
+		9A7FBB341C2933C500B4E1C6 /* CustomShoppingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomShoppingViewController.m; path = Controllers/Shopping/CustomShoppingViewController.m; sourceTree = "<group>"; };
+		9A7FBB3B1C2938B400B4E1C6 /* ContentsGiftingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContentsGiftingViewController.h; path = Controllers/Shopping/Contents/Gifting/ContentsGiftingViewController.h; sourceTree = "<group>"; };
+		9A7FBB3C1C2938B400B4E1C6 /* ContentsGiftingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContentsGiftingViewController.m; path = Controllers/Shopping/Contents/Gifting/ContentsGiftingViewController.m; sourceTree = "<group>"; };
+		9A7FBB3E1C2938DB00B4E1C6 /* ContentsSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContentsSettingViewController.h; path = Controllers/Shopping/Contents/Setting/ContentsSettingViewController.h; sourceTree = "<group>"; };
+		9A7FBB3F1C2938DB00B4E1C6 /* ContentsSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContentsSettingViewController.m; path = Controllers/Shopping/Contents/Setting/ContentsSettingViewController.m; sourceTree = "<group>"; };
+		9A7FBB411C29391100B4E1C6 /* ContentsShoppingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContentsShoppingViewController.h; path = Controllers/Shopping/Contents/Shopping/ContentsShoppingViewController.h; sourceTree = "<group>"; };
+		9A7FBB421C29391100B4E1C6 /* ContentsShoppingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContentsShoppingViewController.m; path = Controllers/Shopping/Contents/Shopping/ContentsShoppingViewController.m; sourceTree = "<group>"; };
+		9A7FBB441C29394600B4E1C6 /* ContentsTopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContentsTopViewController.h; path = Controllers/Shopping/Contents/Top/ContentsTopViewController.h; sourceTree = "<group>"; };
+		9A7FBB451C29394600B4E1C6 /* ContentsTopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContentsTopViewController.m; path = Controllers/Shopping/Contents/Top/ContentsTopViewController.m; sourceTree = "<group>"; };
+		9A7FBB471C293D9F00B4E1C6 /* ContentsSettingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContentsSettingTableView.h; path = Controllers/Shopping/Contents/Setting/ContentsSettingTableView.h; sourceTree = "<group>"; };
+		9A7FBB481C293D9F00B4E1C6 /* ContentsSettingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContentsSettingTableView.m; path = Controllers/Shopping/Contents/Setting/ContentsSettingTableView.m; sourceTree = "<group>"; };
+		9A7FBB4A1C2940EA00B4E1C6 /* ContentsSettingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContentsSettingTableViewCell.h; path = Controllers/Shopping/Contents/Setting/ContentsSettingTableViewCell.h; sourceTree = "<group>"; };
+		9A7FBB4B1C2940EA00B4E1C6 /* ContentsSettingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContentsSettingTableViewCell.m; path = Controllers/Shopping/Contents/Setting/ContentsSettingTableViewCell.m; sourceTree = "<group>"; };
 		9A904BA81BFACFDD00258ACB /* KeyNames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeyNames.h; path = Models/Common/KeyNames.h; sourceTree = "<group>"; };
 		9A904BA91BFACFDD00258ACB /* KeyNames.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeyNames.m; path = Models/Common/KeyNames.m; sourceTree = "<group>"; };
 		9A904BAB1BFAD19D00258ACB /* SettingContentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingContentsViewController.h; path = Controllers/Setting/SettingContentsViewController.h; sourceTree = "<group>"; };
@@ -192,6 +217,10 @@
 		9A962D701BF9CF71009AD1A4 /* Settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Settings.plist; path = Resources/Settings/Settings.plist; sourceTree = "<group>"; };
 		9A9AE0391C18235300DA7636 /* ListNSFileManagerObjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListNSFileManagerObjectViewController.h; path = Controllers/NSFileManager/ListNSFileManagerObjectViewController.h; sourceTree = "<group>"; };
 		9A9AE03A1C18235400DA7636 /* ListNSFileManagerObjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListNSFileManagerObjectViewController.m; path = Controllers/NSFileManager/ListNSFileManagerObjectViewController.m; sourceTree = "<group>"; };
+		9AC9843F1C2D140D004D28AB /* CustomButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomButtonCell.h; path = Views/Common/UITableViewCell/CustomButtonCell.h; sourceTree = "<group>"; };
+		9AC984401C2D140D004D28AB /* CustomButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomButtonCell.m; path = Views/Common/UITableViewCell/CustomButtonCell.m; sourceTree = "<group>"; };
+		9AC984421C2D1717004D28AB /* CommonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonCell.h; path = Views/Common/UITableViewCell/CommonCell.h; sourceTree = "<group>"; };
+		9AC984431C2D1717004D28AB /* CommonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommonCell.m; path = Views/Common/UITableViewCell/CommonCell.m; sourceTree = "<group>"; };
 		9AD8CE0D1BF34AB1003C2566 /* UtilsFILE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UtilsFILE.h; path = Utils/FILE/UtilsFILE.h; sourceTree = "<group>"; };
 		9AD8CE0E1BF34AB1003C2566 /* UtilsFILE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UtilsFILE.m; path = Utils/FILE/UtilsFILE.m; sourceTree = "<group>"; };
 		9AFAD5DF1BF2DFF800FD0665 /* ListImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListImageViewController.h; path = Controllers/ListImageViewController.h; sourceTree = "<group>"; };
@@ -370,6 +399,67 @@
 			name = NSString;
 			sourceTree = "<group>";
 		};
+		9A7FBB321C29335A00B4E1C6 /* Shopping */ = {
+			isa = PBXGroup;
+			children = (
+				9A7FBB361C29374C00B4E1C6 /* Contents */,
+				9A7FBB331C2933C500B4E1C6 /* CustomShoppingViewController.h */,
+				9A7FBB341C2933C500B4E1C6 /* CustomShoppingViewController.m */,
+			);
+			name = Shopping;
+			sourceTree = "<group>";
+		};
+		9A7FBB361C29374C00B4E1C6 /* Contents */ = {
+			isa = PBXGroup;
+			children = (
+				9A7FBB3A1C29377900B4E1C6 /* Gifting */,
+				9A7FBB391C29376500B4E1C6 /* Setting */,
+				9A7FBB381C29375C00B4E1C6 /* Shopping */,
+				9A7FBB371C29375400B4E1C6 /* Top */,
+			);
+			name = Contents;
+			sourceTree = "<group>";
+		};
+		9A7FBB371C29375400B4E1C6 /* Top */ = {
+			isa = PBXGroup;
+			children = (
+				9A7FBB441C29394600B4E1C6 /* ContentsTopViewController.h */,
+				9A7FBB451C29394600B4E1C6 /* ContentsTopViewController.m */,
+			);
+			name = Top;
+			sourceTree = "<group>";
+		};
+		9A7FBB381C29375C00B4E1C6 /* Shopping */ = {
+			isa = PBXGroup;
+			children = (
+				9A7FBB411C29391100B4E1C6 /* ContentsShoppingViewController.h */,
+				9A7FBB421C29391100B4E1C6 /* ContentsShoppingViewController.m */,
+			);
+			name = Shopping;
+			sourceTree = "<group>";
+		};
+		9A7FBB391C29376500B4E1C6 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				9A7FBB3E1C2938DB00B4E1C6 /* ContentsSettingViewController.h */,
+				9A7FBB3F1C2938DB00B4E1C6 /* ContentsSettingViewController.m */,
+				9A7FBB471C293D9F00B4E1C6 /* ContentsSettingTableView.h */,
+				9A7FBB481C293D9F00B4E1C6 /* ContentsSettingTableView.m */,
+				9A7FBB4A1C2940EA00B4E1C6 /* ContentsSettingTableViewCell.h */,
+				9A7FBB4B1C2940EA00B4E1C6 /* ContentsSettingTableViewCell.m */,
+			);
+			name = Setting;
+			sourceTree = "<group>";
+		};
+		9A7FBB3A1C29377900B4E1C6 /* Gifting */ = {
+			isa = PBXGroup;
+			children = (
+				9A7FBB3B1C2938B400B4E1C6 /* ContentsGiftingViewController.h */,
+				9A7FBB3C1C2938B400B4E1C6 /* ContentsGiftingViewController.m */,
+			);
+			name = Gifting;
+			sourceTree = "<group>";
+		};
 		9A962D6F1BF99508009AD1A4 /* UITableView */ = {
 			isa = PBXGroup;
 			children = (
@@ -396,6 +486,17 @@
 				9A9AE03A1C18235400DA7636 /* ListNSFileManagerObjectViewController.m */,
 			);
 			name = NSFileManager;
+			sourceTree = "<group>";
+		};
+		9AC9843E1C2D13E0004D28AB /* UITableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				9AC9843F1C2D140D004D28AB /* CustomButtonCell.h */,
+				9AC984401C2D140D004D28AB /* CustomButtonCell.m */,
+				9AC984421C2D1717004D28AB /* CommonCell.h */,
+				9AC984431C2D1717004D28AB /* CommonCell.m */,
+			);
+			name = UITableViewCell;
 			sourceTree = "<group>";
 		};
 		9AD8CE0C1BF34A65003C2566 /* FILE */ = {
@@ -437,6 +538,7 @@
 		BDE212241AE68D2A002A0746 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				9A7FBB321C29335A00B4E1C6 /* Shopping */,
 				9A962D721BF9D1ED009AD1A4 /* Setting */,
 				9A9AE0381C18231800DA7636 /* NSFileManager */,
 				9A7580061C1FCCBF003067AB /* NSString */,
@@ -546,6 +648,7 @@
 				7F2BF3A71B0B10AB00CA83C4 /* Alert2.storyboard */,
 				7F2ED0601B0D8BF300F795A4 /* AreaSelection.storyboard */,
 				9A7693771C21197400F3FFB0 /* AdScreen.storyboard */,
+				9A7FBB301C292F7300B4E1C6 /* CustomShopping.storyboard */,
 			);
 			name = StoryBoards;
 			sourceTree = "<group>";
@@ -571,6 +674,7 @@
 		BDE2122A1AE68DF9002A0746 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				9AC9843E1C2D13E0004D28AB /* UITableViewCell */,
 				BDE212331AE6B477002A0746 /* CustomAlertController.h */,
 				BDE212341AE6B477002A0746 /* CustomAlertController.m */,
 				570B69451AE9D42200A42DEC /* CustomLabel.h */,
@@ -769,6 +873,7 @@
 				7F2BF3A81B0B10AB00CA83C4 /* Alert2.storyboard in Resources */,
 				BDE2122F1AE69102002A0746 /* Main.storyboard in Resources */,
 				9A5437651C17E2CB00B9F5E6 /* CustomNumberKeyboard.xib in Resources */,
+				9A7FBB311C292F7300B4E1C6 /* CustomShopping.storyboard in Resources */,
 				7F2BF3A11B0ACD7F00CA83C4 /* SampleAlertView.xib in Resources */,
 				9A4FC02C1C22673700BAD54A /* CustomSecurityNumberKeyboard.storyboard in Resources */,
 				BDEEC2361AD7EE9F00B522D9 /* LaunchScreen.xib in Resources */,
@@ -799,6 +904,7 @@
 				9A7693811C21427100F3FFB0 /* ToastViewController.m in Sources */,
 				5704E4C31AF221F10027C067 /* ListExceptionViewController.m in Sources */,
 				9A4FC02F1C2272C100BAD54A /* CustomSecurityNumberKeyboardViewController.m in Sources */,
+				9AC984441C2D1717004D28AB /* CommonCell.m in Sources */,
 				9A904BAD1BFAD19D00258ACB /* SettingContentsViewController.m in Sources */,
 				9A76937B1C211A2E00F3FFB0 /* AdScreenViewController.m in Sources */,
 				9AFAD5EC1BF3087100FD0665 /* ListUIResponderObjectViewController.m in Sources */,
@@ -810,11 +916,15 @@
 				7F2BF3AB1B0B276800CA83C4 /* SliderListViewController.m in Sources */,
 				9A5437681C17E4D100B9F5E6 /* CustomNumberKeyboard.m in Sources */,
 				7F2185A01B05A3A100F1D652 /* ActivityViewControllerListViewController.m in Sources */,
+				9A7FBB3D1C2938B400B4E1C6 /* ContentsGiftingViewController.m in Sources */,
+				9A7FBB491C293D9F00B4E1C6 /* ContentsSettingTableView.m in Sources */,
 				BD0DA5B91AF7153900BDA278 /* UIView+Custom.m in Sources */,
 				7F2185A61B05E32E00F1D652 /* TableViewListViewController.m in Sources */,
 				BD0DA5B31AF7134400BDA278 /* UIAlertView+Custom.m in Sources */,
 				9AFAD5E81BF2E36400FD0665 /* BaceListViewController.m in Sources */,
 				9A54376C1C17E7E500B9F5E6 /* ListCustomKeyboardsViewController.m in Sources */,
+				9A7FBB461C29394600B4E1C6 /* ContentsTopViewController.m in Sources */,
+				9AC984411C2D140D004D28AB /* CustomButtonCell.m in Sources */,
 				7F2BF3B11B0B2A5800CA83C4 /* PageControlListViewController.m in Sources */,
 				BD0E8B8F1AFC10A400F8F355 /* ListMapKitViewController.m in Sources */,
 				5708100D1AEF3D87009A6570 /* ListAlertControllerViewController.m in Sources */,
@@ -831,15 +941,18 @@
 				9A6A4D841C0D7ACC00C95A08 /* ListXCodeErrorViewController.m in Sources */,
 				9A5C9E441C0FFA43002EA33A /* ListUINavigationControllerObjectViewController.m in Sources */,
 				9A06C80D1BFB317600882EAA /* ListUIScrollViewObjectViewController.m in Sources */,
+				9A7FBB4C1C2940EA00B4E1C6 /* ContentsSettingTableViewCell.m in Sources */,
 				9A06C8171BFB3BE800882EAA /* CheckMarkTableViewController.m in Sources */,
 				9A06C8141BFB385C00882EAA /* NoScrollTableViewController.m in Sources */,
 				9A5C9E4C1C10217B002EA33A /* ListNSURLConnectionObjectViewController.m in Sources */,
 				9A064CAF1BF5E91400E44803 /* ListUIWindowObjectViewController.m in Sources */,
+				9A7FBB351C2933C500B4E1C6 /* CustomShoppingViewController.m in Sources */,
 				570B69471AE9D42200A42DEC /* CustomLabel.m in Sources */,
 				9A7580091C1FCCF1003067AB /* ListNSStringObjectViewController.m in Sources */,
 				BD0E8B891AFC0D4900F8F355 /* ListUIKitViewController.m in Sources */,
 				BD0E8B8C1AFC102B00F8F355 /* ListCoreLocationViewController.m in Sources */,
 				7F2185AC1B05ED8400F1D652 /* PickerViewController.m in Sources */,
+				9A7FBB401C2938DB00B4E1C6 /* ContentsSettingViewController.m in Sources */,
 				7F2BF3B41B0B2B1100CA83C4 /* StepperListViewController.m in Sources */,
 				BDE2123B1AE7D14A002A0746 /* 3DViewController.m in Sources */,
 				9A9AE03B1C18235400DA7636 /* ListNSFileManagerObjectViewController.m in Sources */,
@@ -854,6 +967,7 @@
 				7F2185A91B05EC7100F1D652 /* PickerViewListViewController.m in Sources */,
 				BDE212411AE91B8F002A0746 /* ListAlertViewController.m in Sources */,
 				570B694D1AEA0C7200A42DEC /* ListAttributedStringViewController.m in Sources */,
+				9A7FBB431C29391100B4E1C6 /* ContentsShoppingViewController.m in Sources */,
 				7F2BF3AE1B0B2A4200CA83C4 /* ProgressViewListViewController.m in Sources */,
 				570B694A1AE9D4A800A42DEC /* ListLabelViewController.m in Sources */,
 				7F462AEF1BA953F300896434 /* ListAppliedConstrueViewController.m in Sources */,

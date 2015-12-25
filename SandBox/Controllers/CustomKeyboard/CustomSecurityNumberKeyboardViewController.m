@@ -115,10 +115,15 @@
     //タイマー発動
     timer = [NSTimer scheduledTimerWithTimeInterval:2.0f target:self selector:@selector(buttonClear) userInfo:nil repeats:NO];
     [self numberClearAction:nil];
-
-    [self dismissViewControllerAnimated:YES completion:^{
-        
-    }];
+    
+    if (self.nextViewController) {
+        [self presentViewController:self.nextViewController animated:YES completion:^(void){
+        }];
+    } else {
+        [self dismissViewControllerAnimated:YES completion:^{
+            
+        }];
+    }
 }
 
 - (void)dealloc {

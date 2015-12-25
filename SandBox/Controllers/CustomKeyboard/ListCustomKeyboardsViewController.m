@@ -73,6 +73,11 @@
 - (void)openCustomSecurityNumberKeyboardViewController {
     id viewController = [UtilsViewController getTransitionModalViewController:@"CustomSecurityNumberKeyboard"
                                                      withStortboardIdentifier:@"CustomSecurityNumberKeyboardViewController"];
+    id nextViewController = [UtilsViewController getTransitionModalViewController:@"Main"
+                                                     withStortboardIdentifier:@"ViewController"];
+    
+    ((CustomSecurityNumberKeyboardViewController *)viewController).nextViewController = nextViewController;
+    
     [self presentViewController:viewController animated:YES completion:^(void){
         
     }];

@@ -10,4 +10,6 @@
 
 @interface CustomSecurityNumberKeyboardViewController : UIViewController
 
+@property (nonatomic,retain) UIViewController *nextViewController;
+
 @end
