@@ -70,7 +70,7 @@
 - (void)setImage {
     // 画像ファイル名を指定したUIImageの生成例
     UIImage *image = [UIImage imageNamed:@"Sample.png"];
-
+    [image class];
 }
 
 - (void)setImageURL {

@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "CustomAlertController.h"
 #import "UtilsViewController.h"
+#import "UtilsBlogSearch.h"
 
 @interface ViewController ()
 
@@ -39,38 +40,60 @@
 - (void)setListButtons {
     self.buttons = @[
                      
-                     @{@"title":@"Objective-Cについて",@"listViewController:":@"ListObjeciveCViewController"},
-                     @{@"title":@"ビューコントローラーについて",@"listViewController:":@"ListUIViewControllerObjectViewController"},
-                     @{@"title":@"ナビゲーションコントローラーについて",@"listViewController:":@"ListUINavigationControllerObjectViewController"},
-                     @{@"title":@"アラートについて",@"listViewController:":@"ListAlertViewController"},
+                     @{@"title":@"Objective-Cについて",
+                       @"listViewController:":@"ListObjeciveCViewController"},
+                     @{@"title":@"ビューコントローラーについて",
+                       @"listViewController:":@"ListUIViewControllerObjectViewController"},
+                     @{@"title":@"ナビゲーションコントローラーについて",
+                       @"listViewController:":@"ListUINavigationControllerObjectViewController"},
+                     @{@"title":@"アラートについて",
+                       @"listViewController:":@"ListAlertViewController"},
                      
-                     @{@"title":@"ウィンドウについて",@"listViewController:":@"ListWindowViewController"},
-                     @{@"title":@"ラベルについて",@"listViewController:":@"ListLabelViewController"},
-                     @{@"title":@"テーブルビューコントローラについて",@"listViewController:":@"TableViewControllerListViewController"},
-                     @{@"title":@"テーブルビューについて",@"listViewController:":@"TableViewListViewController"},
-                     @{@"title":@"文字列装飾について",@"listViewController:":@"ListAttributedStringViewController"},
-                     @{@"title":@"例外処理について",@"listViewController:":@"ListExceptionViewController"},
-                     @{@"title":@"タブバーについて",@"listViewController:":@"ListTabBarViewController"},
-                     @{@"title":@"イメージについて",@"listViewController:":@"ListImageViewController"},
-                     @{@"title":@"ピッカービューについて",@"listViewController:":@"PickerViewListViewController"},
-                     @{@"title":@"タッチイベントについて",@"listViewController:":@"ListUIResponderObjectViewController"},
-                     @{@"title":@"アクティビティビューコントローラについて",@"listViewController:":@"ActivityViewControllerListViewController"},
-                     @{@"title":@"スライダーについて",@"listViewController:":@"SliderListViewController"},
-                     @{@"title":@"プログレスビューについて",@"listViewController:":@"ProgressViewListViewController"},
-                     @{@"title":@"ページコントロールについて",@"listViewController:":@"PageControlListViewController"},
+                     @{@"title":@"ウィンドウについて",
+                       @"listViewController:":@"ListWindowViewController"},
+                     @{@"title":@"ラベルについて",
+                       @"listViewController:":@"ListLabelViewController"},
+                     @{@"title":@"テーブルビューコントローラについて",
+                       @"listViewController:":@"TableViewControllerListViewController"},
+                     @{@"title":@"テーブルビューについて",
+                       @"listViewController:":@"TableViewListViewController"},
+                     @{@"title":@"文字列装飾について",
+                       @"listViewController:":@"ListAttributedStringViewController"},
+                     @{@"title":@"例外処理について",
+                       @"listViewController:":@"ListExceptionViewController"},
+                     @{@"title":@"タブバーについて",
+                       @"listViewController:":@"ListTabBarViewController"},
+                     @{@"title":@"イメージについて",
+                       @"listViewController:":@"ListImageViewController"},
+                     @{@"title":@"ピッカービューについて",
+                       @"listViewController:":@"PickerViewListViewController"},
+                     @{@"title":@"タッチイベントについて",
+                       @"listViewController:":@"ListUIResponderObjectViewController"},
+                     @{@"title":@"アクティビティビューコントローラについて",
+                       @"listViewController:":@"ActivityViewControllerListViewController"},
+                     @{@"title":@"スライダーについて",
+                       @"listViewController:":@"SliderListViewController"},
+                     @{@"title":@"プログレスビューについて",
+                       @"listViewController:":@"ProgressViewListViewController"},
+                     @{@"title":@"ページコントロールについて",
+                       @"listViewController:":@"PageControlListViewController"},
                      
-                     @{@"title":@"ステッパーについて",@"listViewController:":@"StepperListViewController"},
-                     @{@"title":@"ローカル通知について",@"listViewController:":@"ListUILocalNotificationObjectViewController"},
-                     @{@"title":@"トースト",@"action":@"toast"},
-                     @{
-                         @"title":@"オリジナルキーボード",
-                         @"listViewController:":@"ListCustomKeyboardsViewController"
-                         },
-                     @{
-                         @"title":@"ショッピング",
-                         @"action":@"shopping"
-                         },
-                     @{@"title":@"設定",@"listViewController:":@"SettingContentsViewController"},
+                     @{@"title":@"ステッパーについて",
+                       @"listViewController:":@"StepperListViewController"},
+                     @{@"title":@"ローカル通知について",
+                       @"listViewController:":@"ListUILocalNotificationObjectViewController"},
+                     @{@"title":@"ブログデータの扱いについて",
+                       @"action":@"blogData"},
+                     @{@"title":@"トースト",
+                       @"action":@"toast"},
+                     @{@"title":@"オリジナルキーボード",
+                       @"listViewController:":@"ListCustomKeyboardsViewController"
+                       },
+                     @{@"title":@"ショッピング",
+                       @"action":@"shopping"
+                       },
+                     @{@"title":@"設定",
+                       @"listViewController:":@"SettingContentsViewController"},
                      /*
                       @{@"title":@"CustomAlert",@"action":@"newCustomAlert:"},
                       @{@"title":@"ActionSheet",@"action":@"newCustomActionSheet:"},
@@ -82,6 +105,14 @@
 - (void)toast {
     [UtilsViewController showToastMessage:@"トースト" duration:1.0 displayDuration:5.0
                               actionStart:nil actionFinish:nil];
+}
+
+- (void)blogData {
+   UtilsBlogSearch *blogSearch = [[UtilsBlogSearch alloc] init];
+    if ([blogSearch requestXml:@"http://www.sotechsha.co.jp/xml/sample.xml"]) {
+        
+        NSLog(@"titleList : %@",[blogSearch titleList]);
+    }
 }
 
 - (void)shopping {

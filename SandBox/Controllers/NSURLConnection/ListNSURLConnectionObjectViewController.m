@@ -97,6 +97,11 @@
     }
 }
 
+- (void)connectionDidFinishDownloading:(NSURLConnection *)connection destinationURL:(NSURL *)destinationURL
+{
+    
+}
+
 - (void)test {
     NSLog(@"Test");
 }

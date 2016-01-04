@@ -70,6 +70,8 @@
 		9A9AE03B1C18235400DA7636 /* ListNSFileManagerObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A9AE03A1C18235400DA7636 /* ListNSFileManagerObjectViewController.m */; };
 		9AC984411C2D140D004D28AB /* CustomButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AC984401C2D140D004D28AB /* CustomButtonCell.m */; };
 		9AC984441C2D1717004D28AB /* CommonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AC984431C2D1717004D28AB /* CommonCell.m */; };
+		9ACFE9B21C3A402100E6A12A /* UtilsMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ACFE9B11C3A402100E6A12A /* UtilsMath.m */; };
+		9ACFE9B61C3A4EFD00E6A12A /* UtilsBlogSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ACFE9B51C3A4EFD00E6A12A /* UtilsBlogSearch.m */; };
 		9AD8CE0F1BF34AB1003C2566 /* UtilsFILE.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD8CE0E1BF34AB1003C2566 /* UtilsFILE.m */; };
 		9AFAD5E11BF2DFF800FD0665 /* ListImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAD5E01BF2DFF800FD0665 /* ListImageViewController.m */; };
 		9AFAD5E51BF2E2A100FD0665 /* ListUIImageViewObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAD5E41BF2E2A100FD0665 /* ListUIImageViewObjectViewController.m */; };
@@ -221,6 +223,10 @@
 		9AC984401C2D140D004D28AB /* CustomButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomButtonCell.m; path = Views/Common/UITableViewCell/CustomButtonCell.m; sourceTree = "<group>"; };
 		9AC984421C2D1717004D28AB /* CommonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonCell.h; path = Views/Common/UITableViewCell/CommonCell.h; sourceTree = "<group>"; };
 		9AC984431C2D1717004D28AB /* CommonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommonCell.m; path = Views/Common/UITableViewCell/CommonCell.m; sourceTree = "<group>"; };
+		9ACFE9B01C3A402100E6A12A /* UtilsMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UtilsMath.h; path = Utils/UtilsMath.h; sourceTree = "<group>"; };
+		9ACFE9B11C3A402100E6A12A /* UtilsMath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UtilsMath.m; path = Utils/UtilsMath.m; sourceTree = "<group>"; };
+		9ACFE9B41C3A4EFD00E6A12A /* UtilsBlogSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UtilsBlogSearch.h; path = Utils/BlogSearch/UtilsBlogSearch.h; sourceTree = "<group>"; };
+		9ACFE9B51C3A4EFD00E6A12A /* UtilsBlogSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UtilsBlogSearch.m; path = Utils/BlogSearch/UtilsBlogSearch.m; sourceTree = "<group>"; };
 		9AD8CE0D1BF34AB1003C2566 /* UtilsFILE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UtilsFILE.h; path = Utils/FILE/UtilsFILE.h; sourceTree = "<group>"; };
 		9AD8CE0E1BF34AB1003C2566 /* UtilsFILE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UtilsFILE.m; path = Utils/FILE/UtilsFILE.m; sourceTree = "<group>"; };
 		9AFAD5DF1BF2DFF800FD0665 /* ListImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListImageViewController.h; path = Controllers/ListImageViewController.h; sourceTree = "<group>"; };
@@ -499,6 +505,15 @@
 			name = UITableViewCell;
 			sourceTree = "<group>";
 		};
+		9ACFE9B31C3A4E8F00E6A12A /* BlogSearch */ = {
+			isa = PBXGroup;
+			children = (
+				9ACFE9B41C3A4EFD00E6A12A /* UtilsBlogSearch.h */,
+				9ACFE9B51C3A4EFD00E6A12A /* UtilsBlogSearch.m */,
+			);
+			name = BlogSearch;
+			sourceTree = "<group>";
+		};
 		9AD8CE0C1BF34A65003C2566 /* FILE */ = {
 			isa = PBXGroup;
 			children = (
@@ -624,6 +639,9 @@
 		BDE212261AE68D46002A0746 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				9ACFE9B01C3A402100E6A12A /* UtilsMath.h */,
+				9ACFE9B11C3A402100E6A12A /* UtilsMath.m */,
+				9ACFE9B31C3A4E8F00E6A12A /* BlogSearch */,
 				9AD8CE0C1BF34A65003C2566 /* FILE */,
 				BDE2122B1AE68E06002A0746 /* Common */,
 			);
@@ -921,6 +939,7 @@
 				BD0DA5B91AF7153900BDA278 /* UIView+Custom.m in Sources */,
 				7F2185A61B05E32E00F1D652 /* TableViewListViewController.m in Sources */,
 				BD0DA5B31AF7134400BDA278 /* UIAlertView+Custom.m in Sources */,
+				9ACFE9B61C3A4EFD00E6A12A /* UtilsBlogSearch.m in Sources */,
 				9AFAD5E81BF2E36400FD0665 /* BaceListViewController.m in Sources */,
 				9A54376C1C17E7E500B9F5E6 /* ListCustomKeyboardsViewController.m in Sources */,
 				9A7FBB461C29394600B4E1C6 /* ContentsTopViewController.m in Sources */,
@@ -941,6 +960,7 @@
 				9A6A4D841C0D7ACC00C95A08 /* ListXCodeErrorViewController.m in Sources */,
 				9A5C9E441C0FFA43002EA33A /* ListUINavigationControllerObjectViewController.m in Sources */,
 				9A06C80D1BFB317600882EAA /* ListUIScrollViewObjectViewController.m in Sources */,
+				9ACFE9B21C3A402100E6A12A /* UtilsMath.m in Sources */,
 				9A7FBB4C1C2940EA00B4E1C6 /* ContentsSettingTableViewCell.m in Sources */,
 				9A06C8171BFB3BE800882EAA /* CheckMarkTableViewController.m in Sources */,
 				9A06C8141BFB385C00882EAA /* NoScrollTableViewController.m in Sources */,

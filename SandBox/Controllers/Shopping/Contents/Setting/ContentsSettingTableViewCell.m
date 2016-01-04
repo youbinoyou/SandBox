@@ -59,4 +59,13 @@
     self.settingTableLabel.text = modelDictionary[@"text"];
 }
 
+- (IBAction)settingTableSwitchAction:(id)sender {
+    UISwitch *sendSwitch = (UISwitch *)sender;
+    if (sendSwitch.on) {
+        NSLog(@"ON");
+    } else {
+        NSLog(@"OFF");
+    }
+}
+
 @end

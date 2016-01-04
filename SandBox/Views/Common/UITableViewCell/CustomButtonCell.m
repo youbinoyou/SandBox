@@ -51,6 +51,7 @@
 - (void)buttonAction:(id)sender {
     if (self.action) {
         [self.delegate customButtonAction:self action:self.action];
-    }}
+    }
+}
 
 @end

@@ -8,6 +8,7 @@
 
 #import "BaceListViewController.h"
 #import "UtilsFILE.h"
+#import "UtilsMath.h"
 
 @interface BaceListViewController ()
 
@@ -85,19 +86,20 @@
     for (NSDictionary *item in self.buttons) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         
-        const CGFloat r = arc4random_uniform(255) / 255.0;
-        const CGFloat g = arc4random_uniform(255) / 255.0;
-        const CGFloat b = arc4random_uniform(255) / 255.0;
-        const CGFloat x = 20;
+        const CGFloat r = [UtilsMath randomColorFloat];
+        const CGFloat g = [UtilsMath randomColorFloat];
+        const CGFloat b = [UtilsMath randomColorFloat];
+        const CGFloat breadthWidth = 20;
+        const CGFloat maxHeight = 10;
         button.backgroundColor = [UIColor colorWithRed:r green:g blue:b alpha:0.5];
         [button setTitle : item[ keyTitle ] forState : UIControlStateNormal];
         [button sizeToFit];
         button.tag = [self.buttons indexOfObject : item];
-        rectButton.origin.x = x;
-        rectButton.size.width  = [UIScreen mainScreen].applicationFrame.size.width - (x * 2);
+        rectButton.origin.x = breadthWidth;
+        rectButton.size.width  = [UIScreen mainScreen].applicationFrame.size.width - (breadthWidth * 2);
         
-        if (self.buttons.count > 10) {
-            rectButton.size.height = [UIScreen mainScreen].applicationFrame.size.height / (10 + 2);
+        if (self.buttons.count > maxHeight) {
+            rectButton.size.height = [UIScreen mainScreen].applicationFrame.size.height / (maxHeight + 2);
         } else {
             rectButton.size.height = [UIScreen mainScreen].applicationFrame.size.height / (self.buttons.count + 2);
         }
@@ -128,10 +130,12 @@
         
         [self.view addSubview:button];
         
-        if (self.buttons.count > 10) {
+        if (self.buttons.count > maxHeight) {
             if ([self.view isKindOfClass:[UIScrollView class]]) {
                 UIScrollView *scrollView = (UIScrollView *)(self.view);
-                scrollView.contentSize = CGSizeMake(self.view.frame.size.width, button.frame.origin.y + button.frame.size.height + 30);
+                scrollView.contentSize = CGSizeMake(self.view.frame.size.width,
+                                                    button.frame.origin.y +
+                                                    button.frame.size.height + 30);
             }
         }
     }
