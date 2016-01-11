@@ -103,9 +103,29 @@ NSString *const kXMLReaderTextNodeKey = @"万葉集";
 // XMLのパース終了
 - (void)parserDidEndDocument:(NSXMLParser *)parser
 {
-    for (NSString *status in arrayList) {
+    [arrayList removeObjectAtIndex:0];
+    xmltoArrayList = [NSMutableArray new];
+    for (id status in arrayList) {
         NSLog(@"status : %@", status);
+//        NSArray *array = [status copy];
+//        NSDictionary *dic = array[0];
+//        NSLog(@"elementName : %@", dic[@"elementName"]);
+//        NSLog(@"elements : %@", dic[@"elements"]);
+//        NSLog(@"attributes : %@", dic[@"attributes"]);
+//        NSLog(@"string : %@", dic[@"string"]);
+//        NSArray *arrayElements = [dic[@"elements"] componentsSeparatedByString:@"/"];
+//        NSLog(@"count : %ld",[arrayElements count] - 1);
+//        if ([arrayElements count] - 1 == 0) {
+//            [xmltoArrayList addObject:dic];
+//        } else if([arrayElements count] - 1 == 1){
+//            NSLog(@"%@",xmltoArrayList[xmltoArrayList.count - 1]);
+//        }
     }
+    NSLog(@"xmltoArrayList : %@",xmltoArrayList);
+}
+
+- (void)nextStep{
+    
 }
 
 // 開始タグを読み込み
@@ -124,7 +144,7 @@ NSString *const kXMLReaderTextNodeKey = @"万葉集";
         arrayElements[shift] = elementName;
     } else {
         arrayElements[shift] = elementName;
-        for (int s = 0; s < shift+1; s++) {
+        for (int s = 0; s <= shift; s++) {
             arrayDammy[s] = arrayElements[s];
         }
         arrayElements = [arrayDammy mutableCopy];
@@ -146,7 +166,7 @@ NSString *const kXMLReaderTextNodeKey = @"万葉集";
                                   } mutableCopy];
     arrayStack[[arrayStack count]] = dic;
     
-    //NSLog(@"arrayStack : %@",arrayStack);
+    NSLog(@"arrayStack : %@",arrayStack);
     return;
 
 }
@@ -160,7 +180,6 @@ NSString *const kXMLReaderTextNodeKey = @"万葉集";
 //    NSLog(@"namespaceURI : %@",namespaceURI);
 //    NSLog(@"qualifiedName : %@",qName);
     shift--;
-//    NSLog(@"shift:%ld",shift);
     return;
 }
 

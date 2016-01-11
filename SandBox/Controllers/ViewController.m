@@ -84,10 +84,15 @@
                        @"listViewController:":@"ListUILocalNotificationObjectViewController"},
                      @{@"title":@"ブログデータの扱いについて",
                        @"action":@"blogData"},
+                     @{@"title":@"開発管理表",
+                       @"listViewController:":@"DevelopmentManagementTableViewController"},
                      @{@"title":@"トースト",
                        @"action":@"toast"},
                      @{@"title":@"オリジナルキーボード",
                        @"listViewController:":@"ListCustomKeyboardsViewController"
+                       },
+                     @{@"title":@"ゲーム",
+                       @"listViewController:":@"WordWorfGameViewController"
                        },
                      @{@"title":@"ショッピング",
                        @"action":@"shopping"
