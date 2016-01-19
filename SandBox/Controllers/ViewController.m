@@ -94,6 +94,9 @@
                      @{@"title":@"ゲーム",
                        @"listViewController:":@"WordWorfGameViewController"
                        },
+                     @{@"title":@"ステータス",
+                       @"listViewController:":@"GameStatusViewController"
+                       },
                      @{@"title":@"ショッピング",
                        @"action":@"shopping"
                        },

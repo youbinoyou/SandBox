@@ -65,6 +65,7 @@
 		9A7FBB461C29394600B4E1C6 /* ContentsTopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7FBB451C29394600B4E1C6 /* ContentsTopViewController.m */; };
 		9A7FBB491C293D9F00B4E1C6 /* ContentsSettingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7FBB481C293D9F00B4E1C6 /* ContentsSettingTableView.m */; };
 		9A7FBB4C1C2940EA00B4E1C6 /* ContentsSettingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7FBB4B1C2940EA00B4E1C6 /* ContentsSettingTableViewCell.m */; };
+		9A825D611C4DC1FC000B94AA /* GameStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A825D601C4DC1FC000B94AA /* GameStatusViewController.m */; };
 		9A904BAA1BFACFDD00258ACB /* KeyNames.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A904BA91BFACFDD00258ACB /* KeyNames.m */; };
 		9A904BAD1BFAD19D00258ACB /* SettingContentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A904BAC1BFAD19D00258ACB /* SettingContentsViewController.m */; };
 		9A962D711BF9CF71009AD1A4 /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A962D701BF9CF71009AD1A4 /* Settings.plist */; };
@@ -216,6 +217,8 @@
 		9A7FBB481C293D9F00B4E1C6 /* ContentsSettingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContentsSettingTableView.m; path = Controllers/Shopping/Contents/Setting/ContentsSettingTableView.m; sourceTree = "<group>"; };
 		9A7FBB4A1C2940EA00B4E1C6 /* ContentsSettingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContentsSettingTableViewCell.h; path = Controllers/Shopping/Contents/Setting/ContentsSettingTableViewCell.h; sourceTree = "<group>"; };
 		9A7FBB4B1C2940EA00B4E1C6 /* ContentsSettingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContentsSettingTableViewCell.m; path = Controllers/Shopping/Contents/Setting/ContentsSettingTableViewCell.m; sourceTree = "<group>"; };
+		9A825D5F1C4DC1FC000B94AA /* GameStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameStatusViewController.h; path = Controllers/Game/Status/GameStatusViewController.h; sourceTree = "<group>"; };
+		9A825D601C4DC1FC000B94AA /* GameStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameStatusViewController.m; path = Controllers/Game/Status/GameStatusViewController.m; sourceTree = "<group>"; };
 		9A904BA81BFACFDD00258ACB /* KeyNames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeyNames.h; path = Models/Common/KeyNames.h; sourceTree = "<group>"; };
 		9A904BA91BFACFDD00258ACB /* KeyNames.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeyNames.m; path = Models/Common/KeyNames.m; sourceTree = "<group>"; };
 		9A904BAB1BFAD19D00258ACB /* SettingContentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingContentsViewController.h; path = Controllers/Setting/SettingContentsViewController.h; sourceTree = "<group>"; };
@@ -396,6 +399,7 @@
 		9A6066861C436D64007A723A /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				9A825D5E1C4DC1D2000B94AA /* Status */,
 				9A6066871C436D70007A723A /* WordWolf */,
 			);
 			name = Game;
@@ -487,6 +491,15 @@
 				9A7FBB3C1C2938B400B4E1C6 /* ContentsGiftingViewController.m */,
 			);
 			name = Gifting;
+			sourceTree = "<group>";
+		};
+		9A825D5E1C4DC1D2000B94AA /* Status */ = {
+			isa = PBXGroup;
+			children = (
+				9A825D5F1C4DC1FC000B94AA /* GameStatusViewController.h */,
+				9A825D601C4DC1FC000B94AA /* GameStatusViewController.m */,
+			);
+			name = Status;
 			sourceTree = "<group>";
 		};
 		9A962D6F1BF99508009AD1A4 /* UITableView */ = {
@@ -890,6 +903,7 @@
 				TargetAttributes = {
 					BDEEC2211AD7EE9F00B522D9 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = EXZY2926Q2;
 					};
 					BDEEC23A1AD7EE9F00B522D9 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -1026,6 +1040,7 @@
 				9A7FBB431C29391100B4E1C6 /* ContentsShoppingViewController.m in Sources */,
 				7F2BF3AE1B0B2A4200CA83C4 /* ProgressViewListViewController.m in Sources */,
 				570B694A1AE9D4A800A42DEC /* ListLabelViewController.m in Sources */,
+				9A825D611C4DC1FC000B94AA /* GameStatusViewController.m in Sources */,
 				7F462AEF1BA953F300896434 /* ListAppliedConstrueViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1145,11 +1160,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SandBox/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "you.ohshima.apps.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -1158,11 +1175,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SandBox/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "you.ohshima.apps.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

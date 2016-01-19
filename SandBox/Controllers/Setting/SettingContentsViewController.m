@@ -59,7 +59,7 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UIView *headerView = [UIView new];
-    headerView.backgroundColor = [UIColor colorWithRed:1.0 green:0.5 blue:0.5 alpha:1.0];
+    headerView.backgroundColor = [UIColor colorWithRed:0.4 green:0.4 blue:0.4 alpha:1.0];
     UILabel *headerLabel = [UILabel new];
     //headerLabel.backgroundColor = [UIColor colorWithRed:0 green:0 blue:1 alpha:1.0];
     headerLabel.text =  [self tableView:tableView titleForHeaderInSection:section];
@@ -72,18 +72,106 @@
     //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"" forIndexPath:indexPath];
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:SETTING_CELL];
     // Configure the cell...
-    if (self.tableList[indexPath.section][keyItems]) {
-        cell.textLabel.text = self.tableList[indexPath.section][keyItems][indexPath.row][keyTitle];
-    }
-    if (self.tableList[indexPath.section][keyItems][indexPath.row][keySectionStyle]) {
-        if (self.tableList[indexPath.section][keyItems][indexPath.row][keySectionStyle]) {
-            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    NSArray *tableSectionItems = self.tableList[indexPath.section][keyItems];
+    if (tableSectionItems[indexPath.row][keySectionStyle]) {
+        if (tableSectionItems[indexPath.row][keySectionStyle]) {
+            UITableViewCellSelectionStyle style = [tableSectionItems[indexPath.row][keySectionStyle] integerValue];
+            cell.selectionStyle = style;
         } else {
             
         }
     }
+    if (tableSectionItems[indexPath.row]) {
+        NSLog(@"table[%ld][%@] = %@",indexPath.section,keyItems,tableSectionItems);
+        cell.textLabel.text = self.tableList[indexPath.section][keyItems][indexPath.row][keyTitle];
+        if (self.tableList[indexPath.section][keyItems]) {
+            cell.textLabel.text = self.tableList[indexPath.section][keyItems][indexPath.row][keyTitle];
+        }
+        NSString *setTitle = tableSectionItems[indexPath.row][keySetTitle];
+        if (setTitle) {
+            setTitle = [setTitle stringByAppendingString:@":"];
+           SEL selectorTitle = NSSelectorFromString(setTitle);
+            if ([self respondsToSelector:selectorTitle]) {
+                [self performSelector:selectorTitle withObject:cell afterDelay:0.0];
+            } else {
+                NSLog(@"noActon : %@",setTitle);
+            }
+        }
+    }
     return cell;
 }
+
+- (void)stringVersion:(id)sender {
+    NSDictionary *mainBundleInfoDictionary = [[NSBundle mainBundle] infoDictionary];
+    NSLog(@"%@",mainBundleInfoDictionary);
+    NSString *CFBundleShortVersionString;
+    CFBundleShortVersionString = mainBundleInfoDictionary[@"CFBundleShortVersionString"];
+    NSLog(@"バージョン %@",
+          mainBundleInfoDictionary[@"CFBundleShortVersionString"]);
+    NSString *CFBundleVersion;
+    CFBundleVersion = mainBundleInfoDictionary[@"CFBundleVersion"];
+    NSLog(@"ビルド %@",
+          mainBundleInfoDictionary[@"CFBundleVersion"]);
+    UITableViewCell *cell = (UITableViewCell *)sender;
+    cell.textLabel.text = [cell.textLabel.text stringByAppendingFormat:@" : %@ ビルド : %@",
+                           CFBundleShortVersionString,
+                           CFBundleVersion];
+}
+
+- (void)setAppStoreReceiptURL:(id)sender {
+    NSURL *appStoreReceiptURL = [[NSBundle mainBundle] appStoreReceiptURL];
+    UITableViewCell *cell = (UITableViewCell *)sender;
+    NSString *text = nil;
+    if ([[UIApplication sharedApplication] canOpenURL:appStoreReceiptURL]) {
+        text = [cell.textLabel.text stringByAppendingFormat:@" : %@",
+                appStoreReceiptURL];
+    } else {
+        text = [cell.textLabel.text stringByAppendingString:@" : AppStoreReceiptURL"];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    }
+    cell.textLabel.text = text;
+}
+
+- (void)openAppStoreReceiptURL {
+    NSURL *appStoreReceiptURL = [[NSBundle mainBundle] appStoreReceiptURL];
+    if ([[UIApplication sharedApplication] canOpenURL:appStoreReceiptURL]) {
+        [[UIApplication sharedApplication] openURL:appStoreReceiptURL];
+    } else {
+        NSString *appStoreReceiptString = [NSString stringWithFormat:@"%@",appStoreReceiptURL];
+        NSURL *file = [NSURL fileURLWithPath:appStoreReceiptString];
+        NSLog(@"appStoreReceiptURL : %@",file);
+    }
+}
+
+- (void)setGitHub:(id)sender {
+    NSURL *appStoreReceiptURL = [[NSBundle mainBundle] appStoreReceiptURL];
+    UITableViewCell *cell = (UITableViewCell *)sender;
+    NSString *text = nil;
+    if ([[UIApplication sharedApplication] canOpenURL:appStoreReceiptURL]) {
+        text = [cell.textLabel.text stringByAppendingFormat:@" : %@",
+                appStoreReceiptURL];
+    } else {
+        text = [cell.textLabel.text stringByAppendingString:@" : GitHubURL"];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    }
+    cell.textLabel.text = text;
+}
+
+//- (void)linkURLAction:(id)sender event:(id)event {
+//    
+//}
+
+- (void)linkURLOpen:(id)sender {
+    NSDictionary *sendItem = (NSDictionary *)sender;
+    NSString *linkURLString = sendItem[@"linkURL"];
+    NSURL *linkURL = [NSURL URLWithString:linkURLString];
+    if ([[UIApplication sharedApplication] canOpenURL:linkURL]) {
+        [[UIApplication sharedApplication] openURL:linkURL];
+    } else {
+        NSLog(@"リンク切れ : %@",linkURLString);
+    }
+}
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -128,6 +216,31 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSDictionary *actionItem = self.tableList[indexPath.section][keyItems][indexPath.row][keyActionItem];
+    if (actionItem) {
+        SEL action = NSSelectorFromString(actionItem[keyAction]);
+        if ([self respondsToSelector:action]) {
+            NSLog(@"%@",actionItem);
+            [self performSelector:action withObject:actionItem afterDelay:0.0];
+        } else {
+            NSLog(@"noActionItem : %@",actionItem);
+        }
+    } else {
+        NSString *stringAction = self.tableList[indexPath.section][keyItems][indexPath.row][keyAction];
+        if (stringAction) {
+            SEL action = NSSelectorFromString(stringAction);
+            if ([self respondsToSelector:action]) {
+                [self performSelector:action withObject:tableView afterDelay:0.0];
+            } else {
+                NSLog(@"noAction : %@",stringAction);
+            }
+        }
+    }
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
 
 - (NSMutableArray *)getSettigContentsPlist{
     NSString* path = [[NSBundle mainBundle] pathForResource:@"Settings"

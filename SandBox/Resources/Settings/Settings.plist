@@ -10,8 +10,10 @@
 			<dict>
 				<key>title</key>
 				<string>バージョン</string>
+				<key>setTitle</key>
+				<string>stringVersion</string>
 				<key>sectionStyle</key>
-				<true/>
+				<integer>0</integer>
 			</dict>
 		</array>
 	</dict>
@@ -33,7 +35,16 @@
 		<array>
 			<dict>
 				<key>title</key>
-				<string></string>
+				<string>GitHub</string>
+				<key>setTitle</key>
+				<string>setGitHub</string>
+				<key>actionItem</key>
+				<dict>
+					<key>action</key>
+					<string>linkURLOpen:</string>
+					<key>linkURL</key>
+					<string>https://github.com/youbinoyou/SandBox</string>
+				</dict>
 			</dict>
 		</array>
 	</dict>
@@ -44,7 +55,13 @@
 		<array>
 			<dict>
 				<key>title</key>
-				<string></string>
+				<string>AppleStore</string>
+				<key>setTitle</key>
+				<string>setAppStoreReceiptURL</string>
+				<key>action</key>
+				<string>openAppStoreReceiptURL</string>
+				<key>sectionStyle</key>
+				<string>2</string>
 			</dict>
 		</array>
 	</dict>

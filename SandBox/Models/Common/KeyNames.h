@@ -16,10 +16,13 @@
 #define KEY_LIST_VIEW_CONTROLLER @"listViewController:"
 
 extern const NSString *keyTitle;
+extern const NSString *keySetTitle;
 extern const NSString *keyItems;
 extern const NSString *keySectionStyle;
 extern const NSString *keyLink;
+extern const NSString *keyLinkURL;
 extern const NSString *keyAction;
+extern const NSString *keyActionItem;
 extern const NSString *keyListViewController;
 
 #define SETTING_CELL @"settingCell"
