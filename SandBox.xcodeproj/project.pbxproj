@@ -22,6 +22,7 @@
 		BD0E8B891AFC0D4900F8F355 /* ListUIKitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0E8B881AFC0D4800F8F355 /* ListUIKitViewController.m */; };
 		BD0E8B8C1AFC102B00F8F355 /* ListCoreLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0E8B8B1AFC102B00F8F355 /* ListCoreLocationViewController.m */; };
 		BD0E8B8F1AFC10A400F8F355 /* ListMapKitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0E8B8E1AFC10A400F8F355 /* ListMapKitViewController.m */; };
+		BD0E8B921B03D3FA00F8F355 /* ViewListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0E8B911B03D3FA00F8F355 /* ViewListViewController.m */; };
 		BDE2122F1AE69102002A0746 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDE2122E1AE69102002A0746 /* Main.storyboard */; };
 		BDE212321AE69182002A0746 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE212311AE69182002A0746 /* ViewController.m */; };
 		BDE212351AE6B477002A0746 /* CustomAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE212341AE6B477002A0746 /* CustomAlertController.m */; };
@@ -75,6 +76,8 @@
 		BD0E8B8B1AFC102B00F8F355 /* ListCoreLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListCoreLocationViewController.m; path = Controllers/ListCoreLocationViewController.m; sourceTree = "<group>"; };
 		BD0E8B8D1AFC10A400F8F355 /* ListMapKitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListMapKitViewController.h; path = Controllers/ListMapKitViewController.h; sourceTree = "<group>"; };
 		BD0E8B8E1AFC10A400F8F355 /* ListMapKitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListMapKitViewController.m; path = Controllers/ListMapKitViewController.m; sourceTree = "<group>"; };
+		BD0E8B901B03D3FA00F8F355 /* ViewListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewListViewController.h; path = Controllers/ViewListViewController.h; sourceTree = "<group>"; };
+		BD0E8B911B03D3FA00F8F355 /* ViewListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewListViewController.m; path = Controllers/ViewListViewController.m; sourceTree = "<group>"; };
 		BDE2122E1AE69102002A0746 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/StoryBoards/Main.storyboard; sourceTree = "<group>"; };
 		BDE212301AE69182002A0746 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = Controllers/ViewController.h; sourceTree = "<group>"; };
 		BDE212311AE69182002A0746 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = Controllers/ViewController.m; sourceTree = "<group>"; };
@@ -145,6 +148,8 @@
 				BD0E8B8B1AFC102B00F8F355 /* ListCoreLocationViewController.m */,
 				BD0E8B8D1AFC10A400F8F355 /* ListMapKitViewController.h */,
 				BD0E8B8E1AFC10A400F8F355 /* ListMapKitViewController.m */,
+				BD0E8B901B03D3FA00F8F355 /* ViewListViewController.h */,
+				BD0E8B911B03D3FA00F8F355 /* ViewListViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -414,6 +419,7 @@
 				570B69471AE9D42200A42DEC /* CustomLabel.m in Sources */,
 				BD0E8B891AFC0D4900F8F355 /* ListUIKitViewController.m in Sources */,
 				BD0E8B8C1AFC102B00F8F355 /* ListCoreLocationViewController.m in Sources */,
+				BD0E8B921B03D3FA00F8F355 /* ViewListViewController.m in Sources */,
 				BDE2123B1AE7D14A002A0746 /* 3DViewController.m in Sources */,
 				BD0E8B831AFC09BD00F8F355 /* ListFoundationViewController.m in Sources */,
 				BDEEC2281AD7EE9F00B522D9 /* main.m in Sources */,

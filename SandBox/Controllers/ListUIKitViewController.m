@@ -64,7 +64,8 @@
                          @"title":@"UIImagePickerController"
                          },
                      @{
-                         @"title":@"UIView"
+                         @"title":@"UIView",
+                         @"listViewController:":@"ViewListViewController",
                          },
                      @{
                          @"title":@"UIWindow"
