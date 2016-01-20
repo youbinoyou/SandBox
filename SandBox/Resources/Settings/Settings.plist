@@ -46,6 +46,17 @@
 					<string>https://github.com/youbinoyou/SandBox</string>
 				</dict>
 			</dict>
+			<dict>
+				<key>title</key>
+				<string>iPhoneアプリ開発の虎の巻</string>
+				<key>actionItem</key>
+				<dict>
+					<key>action</key>
+					<string>linkURLOpen:</string>
+					<key>linkURL</key>
+					<string>http://iphone-tora.sakura.ne.jp/</string>
+				</dict>
+			</dict>
 		</array>
 	</dict>
 	<dict>
