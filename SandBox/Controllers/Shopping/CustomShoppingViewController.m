@@ -17,7 +17,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"トップ";
+    NSDictionary *titleItem = @{
+                                @"Top":@"トップ",
+                                @"Gifting":@"贈り物",
+                                @"Shopping":@"買い物",
+                                @"Setting":@"設定",
+                                };
+    NSString *titleKey = self.selectedViewController.tabBarItem.title;
+    self.title = titleItem[@"Top"];
     self.delegate = self;
 }
 
@@ -39,7 +46,29 @@
 #pragma mark - UITabBarControllerDelegate
 
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
-    NSLog(@"selectedIndex : %ld",self.selectedIndex);
+//    NSLog(@"selectedIndex : %ld",self.selectedIndex);
+//    NSLog(@"title : %@",viewController.title);
+//    NSLog(@"title : %@",tabBarController.tabBarItem.title);
+//    NSLog(@"title : %@",tabBarController.tabBarController.title);
+//    NSLog(@"title : %@",viewController.tabBarItem.title);
+//    NSLog(@"title : %@",viewController.tabBarController.title);
+//    NSArray *titles = @[@"トップ",@"贈り物",@"買い物",@"設定"];
+    NSDictionary *titleItem = @{
+                                @"Top":@"トップ",
+                                @"Gifting":@"贈り物",
+                                @"Shopping":@"買い物",
+                                @"Setting":@"設定",
+                                };
+    NSString *titleKey = viewController.tabBarItem.title;
+    self.title = titleItem[titleKey];
+    //self.title = titles[self.selectedIndex];
+//    NSLog(@"title : %@",viewController.navigationController.navigationItem.title);
+// タブの切り替え
+//    NSMutableArray *viewControllers = [NSMutableArray array];
+//    for (int i = (int)[self.viewControllers count] - 1;i >= 0; i--) {
+//        [viewControllers addObject:self.viewControllers[i]];
+//    }
+//    [tabBarController setViewControllers:viewControllers animated:NO];
 }
 
 @end
