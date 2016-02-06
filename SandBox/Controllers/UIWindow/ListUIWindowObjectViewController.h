@@ -1,5 +1,5 @@
 //
-//  ListWindowViewController.h
+//  ListUIWindowObjectViewController.h
 //  SandBox
 //
 //  Created by YouOhshima on 2015/04/30.
@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaceListViewController.h"
 
-@interface ListWindowViewController : UIViewController
+@interface ListUIWindowObjectViewController : BaceListViewController
 
 @end

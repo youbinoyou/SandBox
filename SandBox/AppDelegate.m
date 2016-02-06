@@ -16,11 +16,34 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    // Let the device know we want to receive push notifications
+    if ([[UIApplication sharedApplication] isRegisteredForRemoteNotifications]) {
+        /*
+        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
+         (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
+         */
+        [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeNone|UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
+    }
 //    [[NSNotificationCenter defaultCenter] addObserver:self
 //                                             selector:@selector(windowDidBecomeVisible:)
 //                                                 name:UIWindowDidBecomeVisibleNotification
 //                                               object:nil];
     // Override point for customization after application launch.
+    NSString *exceptionLog = [[NSUserDefaults standardUserDefaults] stringForKey:@"exceptionLog"];
+    if (exceptionLog) {
+        UIAlertView *alertController = [UIAlertView new];
+        alertController.title = @"前回のエラー";
+        alertController.message = exceptionLog;
+        [alertController addButtonWithTitle:@"OK"];
+        [alertController show];
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"exceptionLog"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+    
+    // エラー追跡用の機能を追加する。
+    NSSetUncaughtExceptionHandler(&exceptionHandler);
+    
     return YES;
 }
 
@@ -46,6 +69,18 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+
+- (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken
+{
+    NSLog(@"My token is: %@", deviceToken);
+}
+
+- (void)application:(UIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error
+{
+    NSLog(@"Failed to get token, error: %@", error);
+}
+
+
 -(void)windowDidBecomeVisible:(NSNotification*)noti
 {
     UIWindow *window = noti.object;
@@ -56,7 +91,26 @@
 - (void)dealloc
 {
     NSLog(@"%@ dealloc", NSStringFromClass([self class]));
+}
+
+// 異常終了を検知した場合に呼び出されるメソッド
+void exceptionHandler(NSException *exception) {
+    // ここで、例外発生時の情報を出力します。
+    // NSLog関数でcallStackSymbolsを出力することで、
+    // XCODE上で開発している際にも、役立つスタックトレースを取得できるようになります。
+    NSLog(@"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+    NSLog(@"exception.name : %@", exception.name);
+    NSLog(@"exception.reason : %@", exception.reason);
+    NSLog(@"exception.callStackSymbols : %@", exception.callStackSymbols);
     
+    // ログをUserDefaultsに保存しておく。
+    // 次の起動の際に存在チェックすれば、前の起動時に異常終了したことを検知できます。
+    //NSString *log = [NSString stringWithFormat:@"%@, %@, %@", exception.name, exception.reason, exception.callStackSymbols];
+    [[NSUserDefaults standardUserDefaults] setValue:
+     [NSString stringWithFormat:@"name : [%@]\nreason : [%@]\ncallStackSymbols : [%@]",
+      exception.name,
+      exception.reason,
+      exception.callStackSymbols] forKey:@"exceptionLog"];
 }
 
 @end

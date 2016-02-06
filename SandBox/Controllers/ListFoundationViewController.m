@@ -20,7 +20,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    
     self.buttons = @[
                      @{
                          @"title":@"NSObject",
@@ -31,10 +30,13 @@
                          @"title":@"NSNumber",
                          @"action":@""
                          },
-                     
+                     @{
+                         @"title":@"NSNumberFormatter",
+                         @"listViewController:":@"NumberFormatterListViewController"
+                         },
                      @{
                          @"title":@"NSString",
-                         @"action":@""
+                         @"listViewController:":@"ListNSStringObjectViewController"
                          },
                      
                      @{
@@ -88,7 +90,19 @@
                          @"title":@"NSLog",
                          @"action":@""
                          },
+                     @{
+                         @"title":@"NSFileManager",
+                         @"listViewController:":@"ListNSFileManagerObjectViewController"
+                         },
+                     @{
+                         @"title":@"NSURLConnection",
+                         @"listViewController:":@"ListNSURLConnectionObjectViewController"
+                         },
+                     
+                     @{@"title":@"関連",@"action":@"dismissCloseButtonAction:"},
+
                      ];
+    
     
     CGRect rectButton = CGRectZero;
     for (NSDictionary *item in self.buttons) {
@@ -140,7 +154,6 @@
 }
 */
 
-
 - (void)listViewController:(id)sender event:(id)event{
     
     NSLog(@"%s",__PRETTY_FUNCTION__);
@@ -149,11 +162,10 @@
     UIButton *sendButton = sender;
     Class listViewControllerClass = NSClassFromString(self.buttons[sendButton.tag][@"listViewController:"]);
     if (listViewControllerClass) {
-        
         /**
          * 遷移するViewControllerの生成
          */
-        UIViewController *listViewController = [[listViewControllerClass alloc] init];
+        UIViewController *listViewController = [listViewControllerClass new];
         listViewController.view.backgroundColor = self.view.backgroundColor;
         listViewController.title = self.buttons[sendButton.tag][@"title"];
         listViewController.navigationItem.leftBarButtonItem =
@@ -161,7 +173,8 @@
         [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(dismissCloseButtonAction:)];
         
         UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:listViewController];
-        navigationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        navigationController.modalTransitionStyle = arc4random_uniform(4);
+        
         [self presentViewController:navigationController animated:YES completion:^(){
             NSLog(@"%@",self.buttons[sendButton.tag][@"title"]);
         }];
@@ -171,7 +184,7 @@
 }
 
 /**
- * TOPページに戻る処理
+ * 戻る処理
  */
 - (void)dismissCloseButtonAction:(id)sender {
     [self dismissViewControllerAnimated:YES completion:^(){

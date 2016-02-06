@@ -1,31 +1,32 @@
 //
-//  ListWindowViewController.m
+//  StepperListViewController.m
 //  SandBox
 //
-//  Created by YouOhshima on 2015/04/30.
+//  Created by YouOhshima on 2015/05/19.
 //  Copyright (c) 2015年 大島 曜. All rights reserved.
 //
 
-#import "ListWindowViewController.h"
+#import "StepperListViewController.h"
 
-@interface ListWindowViewController ()
+@interface StepperListViewController ()
 
 @property (nonatomic,retain) NSArray *buttons;
 
 @end
 
-@implementation ListWindowViewController
+@implementation StepperListViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
     self.buttons = @[
-                     @{@"title":@"ウィンドウ",@"action":@"newUIWindow:",
-                       @"UIWindow":@{
+                     @{@"title":@"スライダー",@"action":@"newUISlider:",
+                       @"UISlider":@{
                                }
                        },
-                     @{@"title":@"カスタムウィンドウ"},
+                     @{@"title":@"カスタムカラースライダー",@"action":@"setCustomColorSlider:"},
+                     @{@"title":@"カスタムイラストスライダー",@"action":@"setCustomImageSlider:"},
                      ];
     
     CGRect rectButton = CGRectZero;
@@ -59,7 +60,7 @@
         }
         [self.view addSubview:button];
     }
-
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -77,17 +78,34 @@
 }
 */
 
-- (IBAction)newUIWindow:(id)sender {
-   UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    window.backgroundColor = [UIColor orangeColor];
-    UIViewController *viewController = [[NSClassFromString(@"ViewController") alloc] init];
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
-    window.rootViewController = navigationController;
-    [window makeKeyAndVisible];
-    [window makeKeyWindow];
-    [self.view addSubview:window];
+- (void)listViewController:(id)sender event:(id)event{
+    
+    NSLog(@"%s",__PRETTY_FUNCTION__);
+    NSLog(@"@param\n\nsender:\n%@\nevent:\n%@",sender,event);
+    
+    UIButton *sendButton = sender;
+    Class listViewControllerClass = NSClassFromString(self.buttons[sendButton.tag][@"listViewController:"]);
+    if (listViewControllerClass) {
+        /**
+         * 遷移するViewControllerの生成
+         */
+        UIViewController *listViewController = [[listViewControllerClass alloc] init];
+        listViewController.view.backgroundColor = self.view.backgroundColor;
+        listViewController.title = self.buttons[sendButton.tag][@"title"];
+        listViewController.navigationItem.leftBarButtonItem =
+        // TOPページに戻る処理
+        [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(dismissCloseButtonAction:)];
+        
+        UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:listViewController];
+        navigationController.modalTransitionStyle = arc4random_uniform(4);
+        
+        [self presentViewController:navigationController animated:YES completion:^(){
+            NSLog(@"%@",self.buttons[sendButton.tag][@"title"]);
+        }];
+    } else {
+        NSLog(@"No Class : %@",self.buttons[sendButton.tag][@"listViewController:"]);
+    }
 }
-
 
 /**
  * 戻る処理
@@ -103,5 +121,7 @@
     NSLog(@"%@ dealloc", NSStringFromClass([self class]));
     
 }
+
+
 
 @end

@@ -46,7 +46,7 @@ typedef void (^CustomAlertActionHandler) (CustomAlertAction *action);
 @property (nonatomic, readonly) NSArray *actions;
 @property (nonatomic, readonly) NSArray *textFields;
 
-@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *customTitle;
 @property (nonatomic, copy) NSString *message;
 
 @property (nonatomic, readonly) CustomAlertControllerStyle preferredStyle;

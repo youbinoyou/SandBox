@@ -7,10 +7,13 @@
 //
 
 #import "ListAlertViewController.h"
+#import "AlertViewController.h"
+#import "SampleAlertViewController.h"
 
-@interface ListAlertViewController ()
+@interface ListAlertViewController ()<AlertViewControllerDelegate,SampleAlertViewControllerDelegate>
 
-@property (nonatomic,retain) NSArray *buttons;
+@property (nonatomic,retain) AlertViewController *alertViewController;
+@property (nonatomic,retain) SampleAlertViewController *sampleAlertViewController;
 
 @end
 
@@ -19,6 +22,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [self setListButtons];
+}
+
+
+- (void)setListButtons {
     
     self.buttons = @[
                      @{@"title":@"アラートビュー",@"action":@"newUIAlertView:",
@@ -44,57 +53,18 @@
                      @{@"title":@"アラートビュー（操作）ButtonTitles",@"action":@"setCustomAlertButtonTitles:"},
                      @{@"title":@"アラートビュー（デフォルト）",@"action":@"defalutUIAlertButtonAction:"},
                      @{@"title":@"アラートコントローラ",@"listViewController:":@"ListAlertControllerViewController"},
-                     @{@"title":@"カスタムアラート"},
+                     @{@"title":@"カスタムアラート",@"action":@"alertViewController:"},
+                     @{@"title":@"カスタムアラート2",@"action":@"alert2ViewController:"},
+                     @{@"title":@"カスタムアラート",@"action":@"sampleAlertViewController:"},
+                     @{@"title":@"エリア選択",@"action":@"areaSelectionViewController:"},
+                     
+                     
+                     
                      ];
-    
-    CGRect rectButton = CGRectZero;
-    for (NSDictionary *item in self.buttons) {
-        UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        
-        const CGFloat r = arc4random_uniform(255) / 255.0;
-        const CGFloat g = arc4random_uniform(255) / 255.0;
-        const CGFloat b = arc4random_uniform(255) / 255.0;
-        
-        button.backgroundColor = [UIColor colorWithRed:r green:g blue:b alpha:0.5];
-        [button setTitle:item[@"title"] forState:UIControlStateNormal];
-        [button sizeToFit];
-        button.tag = [self.buttons indexOfObject:item];
-        rectButton.origin.x = 20;
-        rectButton.size.width  = [UIScreen mainScreen].applicationFrame.size.width - 40;
-        rectButton.size.height = [UIScreen mainScreen].applicationFrame.size.height / (self.buttons.count + 2);
-        rectButton.origin.y += rectButton.size.height + 1;
-        button.frame = rectButton;
-        if (item[@"action"]) {
-            SEL action = NSSelectorFromString(item[@"action"]);
-            if ([self respondsToSelector:action]) {
-                [button addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
-            }
-        }
-        if (item[@"listViewController:"]) {
-            SEL action = NSSelectorFromString(@"listViewController:event:");
-            if ([self respondsToSelector:action]) {
-                [button addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
-            }
-        }
-        [self.view addSubview:button];
-    }
-    
+
+    [self setButtons];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
 - (void)cheackUIAlertView:(UIAlertView *)alertView{
     
     if (alertView.delegate) {
@@ -480,7 +450,8 @@
         [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(dismissCloseButtonAction:)];
         
         UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:listViewController];
-        navigationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        navigationController.modalTransitionStyle = arc4random_uniform(4);
+
         [self presentViewController:navigationController animated:YES completion:^(){
             NSLog(@"%@",self.buttons[sendButton.tag][@"title"]);
         }];
@@ -503,4 +474,218 @@
     NSLog(@"%@ dealloc", NSStringFromClass([self class]));
     
 }
+
+
+- (void)sampleAlertViewController:(id)sender {
+    SampleAlertViewController *sampleAlertViewController =
+    [[UIStoryboard storyboardWithName:@"SampleAlert" bundle:nil] instantiateViewControllerWithIdentifier:@"SampleAlertViewController"];
+
+    sampleAlertViewController.delegate = self;
+    // アニメーション完了時のPickerViewの位置を計算
+    UIView *alertView = sampleAlertViewController.view;
+    CGPoint middleCenter = alertView.center;
+    
+    // アニメーション開始時のPickerViewの位置を計算
+    UIWindow *mainWindow = [UIApplication sharedApplication].keyWindow;
+    [mainWindow addSubview:alertView];
+    alertView.alpha = 0.0f;
+    
+    // アニメーションを使ってPickerViewをアニメーション完了時の位置に表示されるようにする
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:0.3];
+    alertView.alpha = 1.0f;
+    alertView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.6];
+    alertView.center = middleCenter;
+    [UIView commitAnimations];
+
+    self.sampleAlertViewController = sampleAlertViewController;
+}
+
+
+
+- (void)alertViewController:(id)sender {
+    // PickerViewControllerのインスタンスをStoryboardから取得し
+    self.alertViewController = [[UIStoryboard storyboardWithName:@"Alert" bundle:nil] instantiateViewControllerWithIdentifier:@"AlertViewController"];
+    if (!self.alertViewController)
+    {
+        self.alertViewController = [[AlertViewController alloc] init];
+        self.alertViewController.view.backgroundColor = [UIColor clearColor];
+    }
+    
+    self.alertViewController.delegate = self;
+    
+    // AlertViewをサブビューとして表示する
+    // 表示するときはアニメーションをつけて下から上にゆっくり表示させる
+    
+    // アニメーション完了時のPickerViewの位置を計算
+    UIView *alertView = self.alertViewController.view;
+    CGPoint middleCenter = alertView.center;
+    
+    // アニメーション開始時のPickerViewの位置を計算
+    UIWindow *mainWindow = [UIApplication sharedApplication].keyWindow;
+    [mainWindow addSubview:alertView];
+    alertView.alpha = 0.0f;
+    
+    // アニメーションを使ってPickerViewをアニメーション完了時の位置に表示されるようにする
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:0.3];
+    alertView.alpha = 1.0f;
+    alertView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.6];
+    alertView.center = middleCenter;
+    [UIView commitAnimations];
+    
+    
+}
+
+
+- (void)alert2ViewController:(id)sender {
+    // PickerViewControllerのインスタンスをStoryboardから取得し
+    self.alertViewController = [[UIStoryboard storyboardWithName:@"Alert2" bundle:nil] instantiateViewControllerWithIdentifier:@"Alert2ViewController"];
+    if (!self.alertViewController)
+    {
+        self.alertViewController = [[AlertViewController alloc] init];
+        self.alertViewController.view.backgroundColor = [UIColor clearColor];
+    }
+    
+    self.alertViewController.delegate = self;
+    
+    // AlertViewをサブビューとして表示する
+    // 表示するときはアニメーションをつけて下から上にゆっくり表示させる
+    
+    // アニメーション完了時のPickerViewの位置を計算
+    UIView *alertView = self.alertViewController.view;
+    CGPoint middleCenter = alertView.center;
+    
+    // アニメーション開始時のPickerViewの位置を計算
+    UIWindow *mainWindow = [UIApplication sharedApplication].keyWindow;
+    [mainWindow addSubview:alertView];
+    alertView.alpha = 0.0f;
+    
+    // アニメーションを使ってPickerViewをアニメーション完了時の位置に表示されるようにする
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:0.3];
+    alertView.alpha = 1.0f;
+    alertView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.6];
+    alertView.center = middleCenter;
+    [UIView commitAnimations];
+    
+    
+}
+
+
+- (void)areaSelectionViewController:(id)sender {
+    // PickerViewControllerのインスタンスをStoryboardから取得し
+    self.alertViewController = [[UIStoryboard storyboardWithName:@"AreaSelection" bundle:nil] instantiateViewControllerWithIdentifier:@"AreaSelectionAlertViewController"];
+    if (!self.alertViewController)
+    {
+        self.alertViewController = [[AlertViewController alloc] init];
+        self.alertViewController.view.backgroundColor = [UIColor clearColor];
+    }
+    
+    
+    self.alertViewController.delegate = self;
+
+    // AlertViewをサブビューとして表示する
+    // 表示するときはアニメーションをつけて下から上にゆっくり表示させる
+    
+    // アニメーション完了時のPickerViewの位置を計算
+    UIView *alertView = self.alertViewController.view;
+    CGPoint middleCenter = alertView.center;
+    
+    // アニメーション開始時のPickerViewの位置を計算
+    UIWindow *mainWindow = [UIApplication sharedApplication].keyWindow;
+    [mainWindow addSubview:alertView];
+    alertView.alpha = 0.0f;
+    
+    // アニメーションを使ってPickerViewをアニメーション完了時の位置に表示されるようにする
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:0.3];
+    alertView.alpha = 1.0f;
+    alertView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.6];
+    alertView.center = middleCenter;
+    [UIView commitAnimations];
+    
+    
+}
+
+
+// PickerViewController上にある透明ボタンがタップされたときに呼び出されるPickerViewControllerDelegateプロトコルのデリゲートメソッド
+
+- (void)closeAlertView:(UIViewController *)controller{
+    // AlertViewをアニメーションを使ってゆっくり非表示にする
+    UIView *alertView = controller.view;
+    [UIView beginAnimations:nil context:(void *)alertView];
+    [UIView setAnimationDuration:0.3];
+    [UIView setAnimationDelegate:self];
+    // アニメーション終了時に呼び出す処理を設定
+    [UIView setAnimationDidStopSelector:@selector(animationDidStop:finished:context:)];
+    alertView.alpha = 0.0f;
+    [UIView commitAnimations];
+    controller = nil;
+    NSString *torstMessage = [[NSString stringWithFormat:@"「%@」",@""] stringByAppendingString:@"が設定されました"];
+    UILabel *torstLabel = [UILabel new];
+    torstLabel.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:1.0];
+    torstLabel.textAlignment = NSTextAlignmentCenter;
+    torstLabel.text = torstMessage;
+    [torstLabel sizeToFit];
+    torstLabel.frame = CGRectMake(0,
+                                  0,
+                                  CGRectGetWidth([UIScreen mainScreen].bounds) - 100,
+                                  CGRectGetHeight(torstLabel.frame) * 3);
+    torstLabel.center = self.view.center;
+    [self.view addSubview:torstLabel];
+    [UIView animateKeyframesWithDuration:3.0
+                                   delay:0.3
+                                 options:UIViewKeyframeAnimationOptionCalculationModeLinear
+                              animations:^(void){
+                                  torstLabel.alpha = 0.0f;
+                              }completion:^(BOOL finished) {
+                                  [torstLabel removeFromSuperview];
+                              }];
+
+}
+
+- (void)closeAlertView:(UIViewController *)controller withObject:(id)object
+{
+    // AlertViewをアニメーションを使ってゆっくり非表示にする
+    UIView *alertView = controller.view;
+    [UIView beginAnimations:nil context:(void *)alertView];
+    [UIView setAnimationDuration:0.3];
+    [UIView setAnimationDelegate:self];
+    // アニメーション終了時に呼び出す処理を設定
+    [UIView setAnimationDidStopSelector:@selector(animationDidStop:finished:context:)];
+    alertView.alpha = 0.0f;
+    [UIView commitAnimations];
+    controller = nil;
+    NSString *torstMessage = [[NSString stringWithFormat:@"「%@」",object] stringByAppendingString:@"が設定されました"];
+    UILabel *torstLabel = [UILabel new];
+    torstLabel.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:1.0];
+    torstLabel.textAlignment = NSTextAlignmentCenter;
+    torstLabel.text = torstMessage;
+    [torstLabel sizeToFit];
+    torstLabel.frame = CGRectMake(0,
+                                  0,
+                                  CGRectGetWidth([UIScreen mainScreen].bounds) - 100,
+                                  CGRectGetHeight(torstLabel.frame) * 3);
+    torstLabel.center = self.view.center;
+    [self.view addSubview:torstLabel];
+    [UIView animateKeyframesWithDuration:3.0
+                                   delay:0.3
+                                 options:UIViewKeyframeAnimationOptionCalculationModeLinear
+                              animations:^(void){
+                                  torstLabel.alpha = 0.0f;
+                              }completion:^(BOOL finished) {
+                                  [torstLabel removeFromSuperview];
+                              }];
+}
+
+// 単位のPickerViewを閉じるアニメーションが終了したときに呼び出されるメソッド
+- (void)animationDidStop:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context
+{
+    // PickerViewをサブビューから削除
+    UIView *alertView = (__bridge UIView *)context;
+    [alertView removeFromSuperview];
+    self.alertViewController = nil;
+}
+
 @end

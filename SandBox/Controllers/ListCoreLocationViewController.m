@@ -81,7 +81,6 @@
     UIButton *sendButton = sender;
     Class listViewControllerClass = NSClassFromString(self.buttons[sendButton.tag][@"listViewController:"]);
     if (listViewControllerClass) {
-        
         /**
          * 遷移するViewControllerの生成
          */
@@ -93,7 +92,8 @@
         [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(dismissCloseButtonAction:)];
         
         UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:listViewController];
-        navigationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        navigationController.modalTransitionStyle = arc4random_uniform(4);
+        
         [self presentViewController:navigationController animated:YES completion:^(){
             NSLog(@"%@",self.buttons[sendButton.tag][@"title"]);
         }];
@@ -103,7 +103,7 @@
 }
 
 /**
- * TOPページに戻る処理
+ * 戻る処理
  */
 - (void)dismissCloseButtonAction:(id)sender {
     [self dismissViewControllerAnimated:YES completion:^(){
