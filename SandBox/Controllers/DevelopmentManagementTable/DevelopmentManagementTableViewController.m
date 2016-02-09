@@ -373,7 +373,7 @@
                                                                                  message:@"選択してください。" preferredStyle:UIAlertControllerStyleActionSheet];
     [alertViewController addAction:[UIAlertAction actionWithTitle:@"保存"
                                                             style:UIAlertActionStyleDefault
-                                                          handler:^(UIAlertAction * _Nonnull action) {
+                                                          handler:^(UIAlertAction * /*_Nonnull*/ action) {
                                                               [self save];
                                                           }]];
     for (NSString *key in [dic allKeys]) {
@@ -381,7 +381,7 @@
         UIAlertActionStyle style = ([[dic allKeys] indexOfObject:key] == dicCount)?UIAlertActionStyleDestructive:UIAlertActionStyleDefault;
         [alertViewController addAction:[UIAlertAction actionWithTitle:key
                                                                 style:style
-                                                              handler:^(UIAlertAction * _Nonnull action) {
+                                                              handler:^(UIAlertAction * /*_Nonnull*/ action) {
                                                                   int d = (int)[[dic allKeys] indexOfObject:key];
                                                                   dicCount = d;
                                                                   [self.tableView reloadData];
@@ -389,7 +389,7 @@
     }
     [alertViewController addAction:[UIAlertAction actionWithTitle:@"前の表"
                                                             style:UIAlertActionStyleDefault
-                                                          handler:^(UIAlertAction * _Nonnull action) {
+                                                          handler:^(UIAlertAction * /*_Nonnull*/ action) {
                                                               dicCount--;
                                                               if (dicCount < 0) {
                                                                   dicCount = 0;
@@ -398,7 +398,7 @@
                                                           }]];
     [alertViewController addAction:[UIAlertAction actionWithTitle:@"次の表"
                                                             style:UIAlertActionStyleDefault
-                                                          handler:^(UIAlertAction * _Nonnull action) {
+                                                          handler:^(UIAlertAction * /*_Nonnull*/ action) {
                                                               dicCount++;
                                                               if ([[dic allKeys] count] <= dicCount) {
                                                                   dicCount = 0;
@@ -419,7 +419,7 @@
                                                                                  message:@"選択してください。" preferredStyle:UIAlertControllerStyleAlert];
     [alertViewController addAction:[UIAlertAction actionWithTitle:@"最初のリスト"
                                                             style:UIAlertActionStyleDefault
-                                                          handler:^(UIAlertAction * _Nonnull action) {
+                                                          handler:^(UIAlertAction * /*_Nonnull*/ action) {
                                                               keyCount = 0;
                                                               footerTitle = [item allKeys][keyCount];
                                                               [self.tableView reloadData];
@@ -430,7 +430,7 @@
         UIAlertActionStyle style = ([[item allKeys] indexOfObject:key] == keyCount)?UIAlertActionStyleDestructive:UIAlertActionStyleDefault;
         [alertViewController addAction:[UIAlertAction actionWithTitle:key
                                                                 style:style
-                                                              handler:^(UIAlertAction * _Nonnull action) {
+                                                              handler:^(UIAlertAction * /*_Nonnull*/ action) {
                                                                   int d = (int)[[item allKeys] indexOfObject:key];
                                                                   keyCount = d;
                                                                   footerTitle = [item allKeys][keyCount];
@@ -439,7 +439,7 @@
     }
     [alertViewController addAction:[UIAlertAction actionWithTitle:@"前のリスト"
                                                             style:UIAlertActionStyleDefault
-                                                          handler:^(UIAlertAction * _Nonnull action) {
+                                                          handler:^(UIAlertAction * /*_Nonnull*/ action) {
                                                               keyCount--;
                                                               if (keyCount < 0) {
                                                                   keyCount = 0;
@@ -449,7 +449,7 @@
                                                           }]];
     [alertViewController addAction:[UIAlertAction actionWithTitle:@"次のリスト"
                                                             style:UIAlertActionStyleDefault
-                                                          handler:^(UIAlertAction * _Nonnull action) {
+                                                          handler:^(UIAlertAction * /*_Nonnull*/ action) {
                                                               keyCount++;
                                                               if ([[item allKeys] count] <= keyCount) {
                                                                   keyCount = 0;

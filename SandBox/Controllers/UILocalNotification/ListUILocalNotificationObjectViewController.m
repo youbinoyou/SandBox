@@ -83,7 +83,7 @@
     [notification setSoundName:UILocalNotificationDefaultSoundName];
     // ボタンの設定
     [notification setAlertAction:@"Open"];
-    [notification setAlertTitle:@"AlertTitle"];
+    // [notification setAlertTitle:@"AlertTitle"];
     
     // ローカル通知を登録する
     [[UIApplication sharedApplication] scheduleLocalNotification:notification];

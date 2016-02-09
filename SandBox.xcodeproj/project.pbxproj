@@ -83,17 +83,13 @@
 		9AFAD5F01BF3106D00FD0665 /* ListUILocalNotificationObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAD5EF1BF3106D00FD0665 /* ListUILocalNotificationObjectViewController.m */; };
 		BD0DA5B31AF7134400BDA278 /* UIAlertView+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0DA5B21AF7134400BDA278 /* UIAlertView+Custom.m */; };
 		BD0DA5B91AF7153900BDA278 /* UIView+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0DA5B81AF7153900BDA278 /* UIView+Custom.m */; };
-		BD0E8B831AFC09BD00F8F355 /* ListFoundationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0E8B821AFC09BD00F8F355 /* ListFoundationViewController.m */; };
-		BD0E8B861AFC0AFC00F8F355 /* ListObjeciveCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0E8B851AFC0AFC00F8F355 /* ListObjeciveCViewController.m */; };
-		BD0E8B891AFC0D4900F8F355 /* ListUIKitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0E8B881AFC0D4800F8F355 /* ListUIKitViewController.m */; };
-		BD0E8B8C1AFC102B00F8F355 /* ListCoreLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0E8B8B1AFC102B00F8F355 /* ListCoreLocationViewController.m */; };
-		BD0E8B8F1AFC10A400F8F355 /* ListMapKitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0E8B8E1AFC10A400F8F355 /* ListMapKitViewController.m */; };
 		BDE2122F1AE69102002A0746 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDE2122E1AE69102002A0746 /* Main.storyboard */; };
 		BDE212321AE69182002A0746 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE212311AE69182002A0746 /* ViewController.m */; };
 		BDE212351AE6B477002A0746 /* CustomAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE212341AE6B477002A0746 /* CustomAlertController.m */; };
 		BDE212381AE6B636002A0746 /* CustomAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDE212371AE6B635002A0746 /* CustomAlert.storyboard */; };
 		BDE2123B1AE7D14A002A0746 /* 3DViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE2123A1AE7D14A002A0746 /* 3DViewController.m */; };
 		BDE212411AE91B8F002A0746 /* ListAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE212401AE91B8F002A0746 /* ListAlertViewController.m */; };
+		BDE62D1A1C65DFEC0085810D /* ListMapKitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE62D191C65DFEC0085810D /* ListMapKitViewController.m */; };
 		BDEEC2281AD7EE9F00B522D9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BDEEC2271AD7EE9F00B522D9 /* main.m */; };
 		BDEEC22B1AD7EE9F00B522D9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BDEEC22A1AD7EE9F00B522D9 /* AppDelegate.m */; };
 		BDEEC2331AD7EE9F00B522D9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDEEC2321AD7EE9F00B522D9 /* Images.xcassets */; };
@@ -252,16 +248,6 @@
 		BD0DA5B21AF7134400BDA278 /* UIAlertView+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIAlertView+Custom.m"; path = "Views/UIAlertView+Custom.m"; sourceTree = "<group>"; };
 		BD0DA5B71AF7153900BDA278 /* UIView+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Custom.h"; path = "Views/UIView+Custom.h"; sourceTree = "<group>"; };
 		BD0DA5B81AF7153900BDA278 /* UIView+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Custom.m"; path = "Views/UIView+Custom.m"; sourceTree = "<group>"; };
-		BD0E8B811AFC09BD00F8F355 /* ListFoundationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListFoundationViewController.h; path = Framework/ListFoundationViewController.h; sourceTree = "<group>"; };
-		BD0E8B821AFC09BD00F8F355 /* ListFoundationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListFoundationViewController.m; path = Framework/ListFoundationViewController.m; sourceTree = "<group>"; };
-		BD0E8B841AFC0AFC00F8F355 /* ListObjeciveCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListObjeciveCViewController.h; sourceTree = "<group>"; };
-		BD0E8B851AFC0AFC00F8F355 /* ListObjeciveCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListObjeciveCViewController.m; sourceTree = "<group>"; };
-		BD0E8B871AFC0D4800F8F355 /* ListUIKitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListUIKitViewController.h; path = Framework/ListUIKitViewController.h; sourceTree = "<group>"; };
-		BD0E8B881AFC0D4800F8F355 /* ListUIKitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListUIKitViewController.m; path = Framework/ListUIKitViewController.m; sourceTree = "<group>"; };
-		BD0E8B8A1AFC102A00F8F355 /* ListCoreLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListCoreLocationViewController.h; path = Framework/ListCoreLocationViewController.h; sourceTree = "<group>"; };
-		BD0E8B8B1AFC102B00F8F355 /* ListCoreLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListCoreLocationViewController.m; path = Framework/ListCoreLocationViewController.m; sourceTree = "<group>"; };
-		BD0E8B8D1AFC10A400F8F355 /* ListMapKitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListMapKitViewController.h; path = Framework/ListMapKitViewController.h; sourceTree = "<group>"; };
-		BD0E8B8E1AFC10A400F8F355 /* ListMapKitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListMapKitViewController.m; path = Framework/ListMapKitViewController.m; sourceTree = "<group>"; };
 		BDE2122E1AE69102002A0746 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/StoryBoards/Main.storyboard; sourceTree = "<group>"; };
 		BDE212301AE69182002A0746 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = Controllers/ViewController.h; sourceTree = "<group>"; };
 		BDE212311AE69182002A0746 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = Controllers/ViewController.m; sourceTree = "<group>"; };
@@ -272,6 +258,8 @@
 		BDE2123A1AE7D14A002A0746 /* 3DViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = 3DViewController.m; path = Controllers/Common/3DViewController.m; sourceTree = "<group>"; };
 		BDE2123F1AE91B8F002A0746 /* ListAlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListAlertViewController.h; path = Controllers/ListAlertViewController.h; sourceTree = "<group>"; };
 		BDE212401AE91B8F002A0746 /* ListAlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListAlertViewController.m; path = Controllers/ListAlertViewController.m; sourceTree = "<group>"; };
+		BDE62D181C65DFEC0085810D /* ListMapKitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListMapKitViewController.h; path = ../../../../../../.Trash/ListMapKitViewController.h; sourceTree = "<group>"; };
+		BDE62D191C65DFEC0085810D /* ListMapKitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListMapKitViewController.m; path = ../../../../../../.Trash/ListMapKitViewController.m; sourceTree = "<group>"; };
 		BDEEC2221AD7EE9F00B522D9 /* SandBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SandBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDEEC2261AD7EE9F00B522D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BDEEC2271AD7EE9F00B522D9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -417,8 +405,6 @@
 		9A72AE981C4F2520007C2687 /* ObjectiveC */ = {
 			isa = PBXGroup;
 			children = (
-				BD0E8B841AFC0AFC00F8F355 /* ListObjeciveCViewController.h */,
-				BD0E8B851AFC0AFC00F8F355 /* ListObjeciveCViewController.m */,
 				9A72AE991C4F2629007C2687 /* Basic */,
 				9A72AE9A1C4F2637007C2687 /* Framework */,
 			);
@@ -436,14 +422,8 @@
 		9A72AE9A1C4F2637007C2687 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
-				BD0E8B811AFC09BD00F8F355 /* ListFoundationViewController.h */,
-				BD0E8B821AFC09BD00F8F355 /* ListFoundationViewController.m */,
-				BD0E8B871AFC0D4800F8F355 /* ListUIKitViewController.h */,
-				BD0E8B881AFC0D4800F8F355 /* ListUIKitViewController.m */,
-				BD0E8B8A1AFC102A00F8F355 /* ListCoreLocationViewController.h */,
-				BD0E8B8B1AFC102B00F8F355 /* ListCoreLocationViewController.m */,
-				BD0E8B8D1AFC10A400F8F355 /* ListMapKitViewController.h */,
-				BD0E8B8E1AFC10A400F8F355 /* ListMapKitViewController.m */,
+				BDE62D181C65DFEC0085810D /* ListMapKitViewController.h */,
+				BDE62D191C65DFEC0085810D /* ListMapKitViewController.m */,
 			);
 			name = Framework;
 			sourceTree = "<group>";
@@ -1016,16 +996,15 @@
 				9ACFE9B61C3A4EFD00E6A12A /* UtilsBlogSearch.m in Sources */,
 				9AFAD5E81BF2E36400FD0665 /* BaceListViewController.m in Sources */,
 				9A54376C1C17E7E500B9F5E6 /* ListCustomKeyboardsViewController.m in Sources */,
+				BDE62D1A1C65DFEC0085810D /* ListMapKitViewController.m in Sources */,
 				9A7FBB461C29394600B4E1C6 /* ContentsTopViewController.m in Sources */,
 				9AC984411C2D140D004D28AB /* CustomButtonCell.m in Sources */,
 				7F2BF3B11B0B2A5800CA83C4 /* PageControlListViewController.m in Sources */,
-				BD0E8B8F1AFC10A400F8F355 /* ListMapKitViewController.m in Sources */,
 				5708100D1AEF3D87009A6570 /* ListAlertControllerViewController.m in Sources */,
 				7F21D0C31B0C571400311AC2 /* NumberFormatterListViewController.m in Sources */,
 				9A7580051C1FB2BC003067AB /* ListUIImageObjectViewController.m in Sources */,
 				9A904BAA1BFACFDD00258ACB /* KeyNames.m in Sources */,
 				9AFAD5F01BF3106D00FD0665 /* ListUILocalNotificationObjectViewController.m in Sources */,
-				BD0E8B861AFC0AFC00F8F355 /* ListObjeciveCViewController.m in Sources */,
 				9A6F68191BFC1E4D0090E2D4 /* ColorCheckMarkTableViewController.m in Sources */,
 				7F2BF3A41B0AD10F00CA83C4 /* SampleAlertViewController.m in Sources */,
 				9AAF821D1C3B626C00D4EB41 /* DevelopmentManagementTableViewController.m in Sources */,
@@ -1044,14 +1023,11 @@
 				9A7FBB351C2933C500B4E1C6 /* CustomShoppingViewController.m in Sources */,
 				570B69471AE9D42200A42DEC /* CustomLabel.m in Sources */,
 				9A7580091C1FCCF1003067AB /* ListNSStringObjectViewController.m in Sources */,
-				BD0E8B891AFC0D4900F8F355 /* ListUIKitViewController.m in Sources */,
-				BD0E8B8C1AFC102B00F8F355 /* ListCoreLocationViewController.m in Sources */,
 				7F2185AC1B05ED8400F1D652 /* PickerViewController.m in Sources */,
 				9A7FBB401C2938DB00B4E1C6 /* ContentsSettingViewController.m in Sources */,
 				7F2BF3B41B0B2B1100CA83C4 /* StepperListViewController.m in Sources */,
 				BDE2123B1AE7D14A002A0746 /* 3DViewController.m in Sources */,
 				9A9AE03B1C18235400DA7636 /* ListNSFileManagerObjectViewController.m in Sources */,
-				BD0E8B831AFC09BD00F8F355 /* ListFoundationViewController.m in Sources */,
 				BDEEC2281AD7EE9F00B522D9 /* main.m in Sources */,
 				7F21D0C01B0C552000311AC2 /* ListViewController.m in Sources */,
 				7F21D0BD1B0C29D200311AC2 /* TableViewControllerListViewController.m in Sources */,
@@ -1187,7 +1163,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SandBox/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "you.ohshima.apps.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1202,7 +1178,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SandBox/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "you.ohshima.apps.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";

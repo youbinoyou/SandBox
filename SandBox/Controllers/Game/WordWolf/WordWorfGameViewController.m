@@ -54,7 +54,7 @@
                                  preferredStyle:UIAlertControllerStyleAlert];
     [startAlertController addAction:[UIAlertAction actionWithTitle:@"OK"
                                                              style:UIAlertActionStyleDefault
-                                                           handler:^(UIAlertAction * _Nonnull action) {
+                                                           handler:^(UIAlertAction * /*_Nonnull*/ action) {
                                                                NSLog(@"OK");
                                                              }]];
     [self presentViewController:startAlertController
@@ -73,7 +73,7 @@
                                  preferredStyle:UIAlertControllerStyleAlert];
     [conveyToMemberAlertController addAction:[UIAlertAction actionWithTitle:@"OK"
                                                              style:UIAlertActionStyleDefault
-                                                           handler:^(UIAlertAction * _Nonnull action) {
+                                                           handler:^(UIAlertAction * /*_Nonnull*/ action) {
                                                                NSLog(@"OK");
                                                                [self membarToMessages:m];
                                                            }]];
@@ -94,7 +94,7 @@
                                  preferredStyle:UIAlertControllerStyleAlert];
     [membarToMessageAlertController addAction:[UIAlertAction actionWithTitle:@"OK"
                                                                       style:UIAlertActionStyleDefault
-                                                                    handler:^(UIAlertAction * _Nonnull action) {
+                                                                    handler:^(UIAlertAction * /*_Nonnull*/ action) {
                                                                         NSLog(@"OK");
                                                                         [self conveyToMember:m+1];
                                                                     }]];
@@ -113,7 +113,7 @@
                                  preferredStyle:UIAlertControllerStyleAlert];
     [membarToMessageAlertController addAction:[UIAlertAction actionWithTitle:@"OK"
                                                                        style:UIAlertActionStyleDefault
-                                                                     handler:^(UIAlertAction * _Nonnull action) {
+                                                                     handler:^(UIAlertAction * /*_Nonnull*/ action) {
                                                                          NSLog(@"OK");
                                                                         
                                                                      }]];
