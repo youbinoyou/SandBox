@@ -51,6 +51,7 @@ NSString *const kXMLReaderTextNodeKey = @"万葉集";
                   ]
               }
           ];
+        [memo copy];
         
     }
     return self;

@@ -20,6 +20,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     NSLog(@"%@",[UtilsFILE fileStringWithFormat:@"%@",NSStringFromClass(self.class)]);
+    [self setListButtons];
+    [self setButtons];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -70,7 +72,6 @@
                          KEY_LIST_VIEW_CONTROLLER : @"ListMapKitViewController",
                          },
                      ];
-    [self setButtons];
 }
 
 - (void)setButtons{

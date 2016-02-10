@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaceListViewController.h"
 
-@interface ListObjeciveCViewController : UIViewController
+@interface ListObjeciveCViewController : BaceListViewController
 
 @end
