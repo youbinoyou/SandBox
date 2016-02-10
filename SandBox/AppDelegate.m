@@ -73,6 +73,12 @@
 - (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken
 {
     NSLog(@"My token is: %@", deviceToken);
+    UIAlertView *alertController = [UIAlertView new];
+    alertController.title = @"トークン";
+    alertController.message = [NSString stringWithFormat:@"%@",deviceToken];
+    [alertController addButtonWithTitle:@"OK"];
+    [alertController show];
+
 }
 
 - (void)application:(UIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error
