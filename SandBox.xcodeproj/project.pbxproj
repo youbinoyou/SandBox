@@ -71,6 +71,7 @@
 		9A962D711BF9CF71009AD1A4 /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A962D701BF9CF71009AD1A4 /* Settings.plist */; };
 		9A9AE03B1C18235400DA7636 /* ListNSFileManagerObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A9AE03A1C18235400DA7636 /* ListNSFileManagerObjectViewController.m */; };
 		9AAF821D1C3B626C00D4EB41 /* DevelopmentManagementTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AAF821C1C3B626C00D4EB41 /* DevelopmentManagementTableViewController.m */; };
+		9ABBE97F1C6B347D004AB04B /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9ABBE97E1C6B347D004AB04B /* Settings.bundle */; };
 		9ABEA8A81C6AEED1000ECCA9 /* ListCoreLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ABEA8A21C6AEED1000ECCA9 /* ListCoreLocationViewController.m */; };
 		9ABEA8A91C6AEED1000ECCA9 /* ListFoundationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ABEA8A41C6AEED1000ECCA9 /* ListFoundationViewController.m */; };
 		9ABEA8AA1C6AEED1000ECCA9 /* ListUIKitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ABEA8A71C6AEED1000ECCA9 /* ListUIKitViewController.m */; };
@@ -227,6 +228,7 @@
 		9A9AE03A1C18235400DA7636 /* ListNSFileManagerObjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListNSFileManagerObjectViewController.m; path = Controllers/NSFileManager/ListNSFileManagerObjectViewController.m; sourceTree = "<group>"; };
 		9AAF821B1C3B626C00D4EB41 /* DevelopmentManagementTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DevelopmentManagementTableViewController.h; path = Controllers/DevelopmentManagementTable/DevelopmentManagementTableViewController.h; sourceTree = "<group>"; };
 		9AAF821C1C3B626C00D4EB41 /* DevelopmentManagementTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DevelopmentManagementTableViewController.m; path = Controllers/DevelopmentManagementTable/DevelopmentManagementTableViewController.m; sourceTree = "<group>"; };
+		9ABBE97E1C6B347D004AB04B /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = Resources/Settings/Settings.bundle; sourceTree = "<group>"; };
 		9ABEA8A11C6AEED1000ECCA9 /* ListCoreLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListCoreLocationViewController.h; path = Framework/ListCoreLocationViewController.h; sourceTree = "<group>"; };
 		9ABEA8A21C6AEED1000ECCA9 /* ListCoreLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListCoreLocationViewController.m; path = Framework/ListCoreLocationViewController.m; sourceTree = "<group>"; };
 		9ABEA8A31C6AEED1000ECCA9 /* ListFoundationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListFoundationViewController.h; path = Framework/ListFoundationViewController.h; sourceTree = "<group>"; };
@@ -855,6 +857,7 @@
 				BDEEC2261AD7EE9F00B522D9 /* Info.plist */,
 				BDEEC2271AD7EE9F00B522D9 /* main.m */,
 				9A962D701BF9CF71009AD1A4 /* Settings.plist */,
+				9ABBE97E1C6B347D004AB04B /* Settings.bundle */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -886,6 +889,7 @@
 				BDEEC21E1AD7EE9F00B522D9 /* Sources */,
 				BDEEC21F1AD7EE9F00B522D9 /* Frameworks */,
 				BDEEC2201AD7EE9F00B522D9 /* Resources */,
+				9ABBE9801C6B382B004AB04B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -964,6 +968,7 @@
 				9A7FBB311C292F7300B4E1C6 /* CustomShopping.storyboard in Resources */,
 				7F2BF3A11B0ACD7F00CA83C4 /* SampleAlertView.xib in Resources */,
 				9A4FC02C1C22673700BAD54A /* CustomSecurityNumberKeyboard.storyboard in Resources */,
+				9ABBE97F1C6B347D004AB04B /* Settings.bundle in Resources */,
 				BDEEC2361AD7EE9F00B522D9 /* LaunchScreen.xib in Resources */,
 				BDEEC2331AD7EE9F00B522D9 /* Images.xcassets in Resources */,
 				7F24F6421B09D8F40024D249 /* Alert.storyboard in Resources */,
@@ -982,6 +987,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9ABBE9801C6B382B004AB04B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "APP_VERSION=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" $PRODUCT_SETTINGS_PATH)\n/usr/libexec/PlistBuddy -c \"Set :PreferenceSpecifiers:1:DefaultValue ${APP_VERSION}\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Settings.bundle/Root.plist\"\n\nBUILD_NUMBER=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" $PRODUCT_SETTINGS_PATH)\n/usr/libexec/PlistBuddy -c \"Set :PreferenceSpecifiers:2:DefaultValue ${BUILD_NUMBER}\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Settings.bundle/Root.plist\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BDEEC21E1AD7EE9F00B522D9 /* Sources */ = {

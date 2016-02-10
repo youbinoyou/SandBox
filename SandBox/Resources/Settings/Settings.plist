@@ -15,6 +15,14 @@
 				<key>sectionStyle</key>
 				<integer>0</integer>
 			</dict>
+			<dict>
+				<key>title</key>
+				<string>現在のバージョン</string>
+				<key>setTitle</key>
+				<string>stringVersion</string>
+				<key>sectionStyle</key>
+				<integer>0</integer>
+			</dict>
 		</array>
 	</dict>
 	<dict>
@@ -33,6 +41,17 @@
 		<string>関連</string>
 		<key>items</key>
 		<array>
+			<dict>
+				<key>title</key>
+				<string>公式サイト</string>
+				<key>actionItem</key>
+				<dict>
+					<key>action</key>
+					<string>linkURLOpen:</string>
+					<key>linkURL</key>
+					<string>http://sunstripe.main.jp/</string>
+				</dict>
+			</dict>
 			<dict>
 				<key>title</key>
 				<string>GitHub</string>
@@ -79,6 +98,61 @@
 	<dict>
 		<key>title</key>
 		<string>ログイン情報</string>
+		<key>items</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>問題を告知</string>
+		<key>items</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>ヘルプ</string>
+		<key>items</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>プライバシーと利用規約</string>
+		<key>items</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>ガイドライン</string>
+		<key>items</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>著作権情報</string>
 		<key>items</key>
 		<array>
 			<dict>
