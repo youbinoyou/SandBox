@@ -10,6 +10,8 @@
 
 #import "ColorCheckMarkTableViewController.h"
 
+const NSInteger tableview_section = 1;
+
 @interface ColorCheckMarkTableViewController ()
 
 @end
@@ -27,9 +29,19 @@
     
     //チェックボックスの色を変更
     // -3.0
-    [self.tableView setValue:[UIColor grayColor] forKey:@"multiselectCheckmarkColor"];
+    [self.tableView setValue:[UIColor blackColor] forKey:@"multiselectCheckmarkColor"];
     // 6.0 -
     [[UITableViewCell appearance] setTintColor:[UIColor orangeColor]];
+    // YESで複数選択・NOで単一選択
+    self.tableView.allowsMultipleSelection = YES;
+    //データを保存する
+    if (!self.parameter) {
+        NSMutableArray *array = [NSMutableArray new];
+        for (int i = 0; i < 20; i++) {
+            [array addObject:@(NO)];
+        }
+        self.parameter = array;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,16 +49,22 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     //#warning Incomplete implementation, return the number of sections
-    return 1;
+    return tableview_section;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     //#warning Incomplete implementation, return the number of rows
-    return 20;
+    return [_parameter count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -98,6 +116,7 @@
 // セルが選択された時に呼び出される
 // 選択されたときにチェックマークをつける
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    /*
     // 選択されたセルを取得
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     if (indexPath.row % 4 == 0) {
@@ -135,7 +154,12 @@
     } else {
         // セルのアクセサリにチェックマークを指定
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    } */
+    //データを保存する
+    if (self.parameter) {
+        self.parameter[indexPath.row] = @(![self.parameter[indexPath.row] boolValue]);
     }
+    [self scrollViewDidScroll:self.tableView];
 }
 
 // セルの選択がはずれた時に呼び出される
@@ -148,6 +172,58 @@
     } else {
         // セルのアクセサリを解除する（チェックマークを外す）
         cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+    //データを保存する
+    if (self.parameter) {
+        self.parameter[indexPath.row] = @(![self.parameter[indexPath.row] boolValue]);
+    }
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    for (NSIndexPath *path in [self.tableView indexPathsForVisibleRows]) {
+        UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:path];
+        if ([self.parameter[path.row] boolValue]) {
+            [self.tableView selectRowAtIndexPath:path
+                                        animated:YES
+                                  scrollPosition:UITableViewScrollPositionNone];
+            if (path.row % 4 == 0) {
+                // URLを指定したUIImageの生成例
+                // この部分が重要
+                dispatch_queue_t q_global = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+                dispatch_queue_t q_main = dispatch_get_main_queue();
+                dispatch_async(q_global, ^{
+                    NSString *imageURL = @"http://icons.iconarchive.com/icons/yellowicon/game-stars/256/Mario-icon.png";
+                    NSData *imageData= [NSData dataWithContentsOfURL : [NSURL URLWithString: imageURL]];
+                    dispatch_async(q_main, ^{
+                        UIImage *image = [[UIImage alloc] initWithData:imageData];
+                        UIImageView *checkmark = [[UIImageView alloc] initWithImage:image];
+                        checkmark.frame = CGRectMake(0, 0, 55, 55);
+                        cell.accessoryView = checkmark;
+                    });
+                });
+                
+            } else if(path.row % 4 == 1) {
+                // URLを指定したUIImageの生成例
+                // この部分が重要
+                dispatch_queue_t q_global = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+                dispatch_queue_t q_main = dispatch_get_main_queue();
+                dispatch_async(q_global, ^{
+                    NSString *imageURL = @"http://iau.ae/iau2/wp-content/uploads/2014/01/coaching_icon1.png";
+                    NSData *imageData= [NSData dataWithContentsOfURL : [NSURL URLWithString: imageURL]];
+                    dispatch_async(q_main, ^{
+                        UIImage *image = [[UIImage alloc] initWithData:imageData];
+                        UIImageView *checkmark = [[UIImageView alloc] initWithImage:image];
+                        checkmark.frame = CGRectMake(0, 0, 55, 55);
+                        cell.accessoryView = checkmark;
+                    });
+                });
+                
+            } else {
+                // セルのアクセサリにチェックマークを指定
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            }
+        }
     }
 }
 

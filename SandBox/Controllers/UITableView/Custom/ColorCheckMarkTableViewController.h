@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ColorCheckMarkTableViewController : UITableViewController
+@interface ColorCheckMarkTableViewController : UITableViewController<UIScrollViewDelegate>
+
+@property (nonatomic,strong) NSMutableArray *parameter;
 
 @end

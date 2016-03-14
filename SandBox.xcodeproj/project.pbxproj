@@ -72,6 +72,7 @@
 		9A9AE03B1C18235400DA7636 /* ListNSFileManagerObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A9AE03A1C18235400DA7636 /* ListNSFileManagerObjectViewController.m */; };
 		9AAF821D1C3B626C00D4EB41 /* DevelopmentManagementTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AAF821C1C3B626C00D4EB41 /* DevelopmentManagementTableViewController.m */; };
 		9ABBE97F1C6B347D004AB04B /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9ABBE97E1C6B347D004AB04B /* Settings.bundle */; };
+		9ABD26D21C89209500D998AC /* NSString+SandBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ABD26D11C89209500D998AC /* NSString+SandBox.m */; };
 		9ABEA8A81C6AEED1000ECCA9 /* ListCoreLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ABEA8A21C6AEED1000ECCA9 /* ListCoreLocationViewController.m */; };
 		9ABEA8A91C6AEED1000ECCA9 /* ListFoundationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ABEA8A41C6AEED1000ECCA9 /* ListFoundationViewController.m */; };
 		9ABEA8AA1C6AEED1000ECCA9 /* ListUIKitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ABEA8A71C6AEED1000ECCA9 /* ListUIKitViewController.m */; };
@@ -229,6 +230,8 @@
 		9AAF821B1C3B626C00D4EB41 /* DevelopmentManagementTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DevelopmentManagementTableViewController.h; path = Controllers/DevelopmentManagementTable/DevelopmentManagementTableViewController.h; sourceTree = "<group>"; };
 		9AAF821C1C3B626C00D4EB41 /* DevelopmentManagementTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DevelopmentManagementTableViewController.m; path = Controllers/DevelopmentManagementTable/DevelopmentManagementTableViewController.m; sourceTree = "<group>"; };
 		9ABBE97E1C6B347D004AB04B /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = Resources/Settings/Settings.bundle; sourceTree = "<group>"; };
+		9ABD26D01C89209500D998AC /* NSString+SandBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+SandBox.h"; path = "Utils/String/NSString+SandBox.h"; sourceTree = "<group>"; };
+		9ABD26D11C89209500D998AC /* NSString+SandBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+SandBox.m"; path = "Utils/String/NSString+SandBox.m"; sourceTree = "<group>"; };
 		9ABEA8A11C6AEED1000ECCA9 /* ListCoreLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListCoreLocationViewController.h; path = Framework/ListCoreLocationViewController.h; sourceTree = "<group>"; };
 		9ABEA8A21C6AEED1000ECCA9 /* ListCoreLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListCoreLocationViewController.m; path = Framework/ListCoreLocationViewController.m; sourceTree = "<group>"; };
 		9ABEA8A31C6AEED1000ECCA9 /* ListFoundationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListFoundationViewController.h; path = Framework/ListFoundationViewController.h; sourceTree = "<group>"; };
@@ -572,6 +575,15 @@
 			name = DevelopmentManagementTable;
 			sourceTree = "<group>";
 		};
+		9ABD26CF1C89205900D998AC /* String */ = {
+			isa = PBXGroup;
+			children = (
+				9ABD26D01C89209500D998AC /* NSString+SandBox.h */,
+				9ABD26D11C89209500D998AC /* NSString+SandBox.m */,
+			);
+			name = String;
+			sourceTree = "<group>";
+		};
 		9AC9843E1C2D13E0004D28AB /* UITableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -710,6 +722,7 @@
 		BDE212261AE68D46002A0746 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				9ABD26CF1C89205900D998AC /* String */,
 				9ACFE9B01C3A402100E6A12A /* UtilsMath.h */,
 				9ACFE9B11C3A402100E6A12A /* UtilsMath.m */,
 				9ACFE9B31C3A4E8F00E6A12A /* BlogSearch */,
@@ -1072,6 +1085,7 @@
 				BDEEC2281AD7EE9F00B522D9 /* main.m in Sources */,
 				7F21D0C01B0C552000311AC2 /* ListViewController.m in Sources */,
 				7F21D0BD1B0C29D200311AC2 /* TableViewControllerListViewController.m in Sources */,
+				9ABD26D21C89209500D998AC /* NSString+SandBox.m in Sources */,
 				7F24F6401B09D8D20024D249 /* AlertViewController.m in Sources */,
 				9A06C8101BFB337F00882EAA /* ListUITableViewObjectViewController.m in Sources */,
 				570896C41AFB644000300587 /* ListTabBarViewController.m in Sources */,

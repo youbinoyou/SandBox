@@ -7,6 +7,7 @@
 //
 
 #import "ListNSStringObjectViewController.h"
+#import "NSString+SandBox.h"
 
 @interface ListNSStringObjectViewController ()
 
@@ -108,6 +109,10 @@
                          keyAction : @"memo",
                          },
                      @{
+                         keyTitle : @"from時刻（yyyy-MM-dd HH:mm:ss）toX軸",
+                         keyAction : @"getXfromDate",
+                         },
+                     @{
                          keyTitle : @"情報提供元",
                          keyLink : @"http://iphone-tora.sakura.ne.jp/nsstring.html",
                          }
@@ -189,7 +194,7 @@
 - (void)getLength {
     UIAlertView *alert = [UIAlertView new];
     alert.title = @"文字列の長さを取得する";
-    self.mainString = [NSString stringWithFormat : @"length %ld",[self.mainString length]];
+    self.mainString = [NSString stringWithFormat : @"length %u",[self.mainString length]];
     alert.message = self.mainString;
     [alert addButtonWithTitle : @"OK"];
     [alert show];
@@ -498,5 +503,11 @@
     }
     return object;
 }
+
+- (void)getXfromDate
+{
+    NSLog(@"%@",[NSString getXFromDate:[NSDate new]]);
+}
+
 
 @end
