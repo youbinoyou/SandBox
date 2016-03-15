@@ -15,7 +15,8 @@
 
 @implementation ToastViewController
 
-- (id)init {
+- (id)init
+{
     self = [super init];
     if (self) {
         // 遅延時間
@@ -25,12 +26,13 @@
     return self;
 }
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     if (!_viewMessage) {
         _viewMessage = [UIView new];
         _viewMessage.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 44);
-        _viewMessage.backgroundColor = [UIColor colorWithRed:1 green:0 blue:1 alpha:0.5];
+        _viewMessage.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
         [self.view addSubview:_viewMessage];
         UITapGestureRecognizer *tapGestureRecognizer = [UITapGestureRecognizer new];
         [tapGestureRecognizer addTarget:self action:@selector(clickView:)];
@@ -53,23 +55,27 @@
     self.preferredContentSize = self.view.frame.size;
     _labelMessage.text = _message;
     NSLog(@"ToastViewController start %@",_labelMessage.text);
-    if (self.startHandler) {
-        self.startHandler();
+    if (_startHandler) {
+        _startHandler(self);
+        [self.delegate toast:self openHandler:_startHandler];
     }
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (void)viewWillAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated
+{
     CGRect rectViewMessage = _viewMessage.frame;
     rectViewMessage.origin.y = -_viewMessage.frame.size.height;
     _viewMessage.frame = rectViewMessage;
 }
 
-- (void)viewDidAppear:(BOOL)animated {
+- (void)viewDidAppear:(BOOL)animated
+{
     //アニメーション
     [UIView animateWithDuration:_duration animations:^{
         CGRect rectViewMessage = _viewMessage.frame;
@@ -88,12 +94,19 @@
     }];
 }
 
-- (void)viewWillDisappear:(BOOL)animated {
+- (void)viewWillDisappear:(BOOL)animated
+{
     //タイマー停止
     [timer invalidate];
 }
 
-- (IBAction)clickView:(id)sender {
+- (IBAction)clickView:(id)sender
+{
+    NSLog(@"強制クローズ");
+    if (_doneHandler) {
+        _doneHandler(self);
+        [self.delegate toast:self stopHandler:_doneHandler];
+    }
     //タイマー停止
     [timer invalidate];
     _duration = 0.5;
@@ -103,7 +116,8 @@
 
 
 //トースト閉じる
-- (void)toastClose {
+- (void)toastClose
+{
     //アニメーション
     [UIView animateWithDuration:_duration animations:^{
         CGRect rectViewMessage = _viewMessage.frame;
@@ -113,7 +127,7 @@
         if (finished) {
             //画面閉じる
             if (self.presentingViewController) {
-                //[self dismissViewControllerAnimated:YES completion:nil];
+                [self dismissViewControllerAnimated:YES completion:nil];
                 _viewMessage.alpha = 0.0;
             } else {
                 _viewMessage.alpha = 0.0;
@@ -123,10 +137,12 @@
     }];
 }
 
-- (void)dealloc {
+- (void)dealloc
+{
     NSLog(@"ToastViewController end%@",_labelMessage.text);
-    if (self.endHandler) {
-        self.endHandler();
+    if (_endHandler) {
+        _endHandler(self);
+        [self.delegate toast:self closeHandler:_endHandler];
     }
 }
 

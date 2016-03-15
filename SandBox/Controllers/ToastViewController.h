@@ -8,6 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void (^handler)(id sender);
+
+@protocol ToastViewControllerDelegate <NSObject>
+
+@optional
+- (void)toast:(id)sender openHandler:(handler)openHandler;
+- (void)toast:(id)sender stopHandler:(handler)stopHandler;
+- (void)toast:(id)sender closeHandler:(handler)closeHandler;
+
+@end
+
 @interface ToastViewController : UIViewController {
     NSTimer *timer;
 }
@@ -20,7 +31,13 @@
 @property (nonatomic, assign) NSTimeInterval duration;
 @property (nonatomic, assign) NSTimeInterval displayDuration;
 
-@property (nonatomic, assign) void (^startHandler)(void);
-@property (nonatomic, assign) void (^endHandler)(void);
+//起動した時に呼ばれます
+@property (nonatomic, assign) void (^startHandler)(id sender);
+//起動した時に呼ばれます
+@property (nonatomic, assign) void (^doneHandler)(id sender);
+//閉じた時に呼ばれます
+@property (nonatomic, assign) void (^endHandler)(id sender);
+
+@property (nonatomic, assign) id<ToastViewControllerDelegate> delegate;
 
 @end
