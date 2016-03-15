@@ -19,6 +19,12 @@ typedef void (^handler)(id sender);
 
 @end
 
+typedef NS_ENUM(NSInteger, ToastViewControllerAnimationType){
+    ToastViewControllerAnimationTypeTop = 1,
+    ToastViewControllerAnimationTypeCenter,
+    ToastViewControllerAnimationTypeBottom,
+};
+
 @interface ToastViewController : UIViewController {
     NSTimer *timer;
 }
@@ -39,5 +45,6 @@ typedef void (^handler)(id sender);
 @property (nonatomic, assign) void (^endHandler)(id sender);
 
 @property (nonatomic, assign) id<ToastViewControllerDelegate> delegate;
+@property (nonatomic, assign) ToastViewControllerAnimationType animationType;
 
 @end

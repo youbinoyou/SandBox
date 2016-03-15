@@ -252,6 +252,7 @@
         duration = 1.0;
     }
     toastViewController.duration = duration;
+    toastViewController.animationType = arc4random_uniform(3) + 1;
     toastViewController.displayDuration = displayDuration;
     toastViewController.message = message;
     toastViewController.startHandler = actionStart;
