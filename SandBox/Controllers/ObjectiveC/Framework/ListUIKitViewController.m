@@ -59,6 +59,18 @@
                          keyListViewController : @"ListUIViewControllerObjectViewController"
                          },
                      @{
+                         keyTitle : @"UICollectionViewController",
+                         keyListViewController : @"ListUICollectionViewControllerObjectViewController"
+                         },
+                     @{
+                         keyTitle : @"UICollectionView",
+                         keyListViewController : @"ListUICollectionViewObjectViewController"
+                         },
+                     @{
+                         keyTitle : @"UICollectionViewCell",
+                         keyListViewController : @"ListUICollectionViewCellObjectViewController"
+                         },
+                     @{
                          @"title":@"UINavigationController"
                          },
                      @{
