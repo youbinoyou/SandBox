@@ -26,7 +26,6 @@
 		7F2BF3A11B0ACD7F00CA83C4 /* SampleAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F2BF3A01B0ACD7F00CA83C4 /* SampleAlertView.xib */; };
 		7F2BF3A41B0AD10F00CA83C4 /* SampleAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2BF3A31B0AD10F00CA83C4 /* SampleAlertViewController.m */; };
 		7F2BF3A61B0AD34B00CA83C4 /* SampleAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F2BF3A51B0AD34B00CA83C4 /* SampleAlert.storyboard */; };
-		7F2BF3A81B0B10AB00CA83C4 /* Alert2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F2BF3A71B0B10AB00CA83C4 /* Alert2.storyboard */; };
 		7F2BF3AB1B0B276800CA83C4 /* SliderListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2BF3AA1B0B276800CA83C4 /* SliderListViewController.m */; };
 		7F2BF3AE1B0B2A4200CA83C4 /* ProgressViewListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2BF3AD1B0B2A4200CA83C4 /* ProgressViewListViewController.m */; };
 		7F2BF3B11B0B2A5800CA83C4 /* PageControlListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2BF3B01B0B2A5800CA83C4 /* PageControlListViewController.m */; };
@@ -94,6 +93,7 @@
 		9AFAD5F01BF3106D00FD0665 /* ListUILocalNotificationObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAD5EF1BF3106D00FD0665 /* ListUILocalNotificationObjectViewController.m */; };
 		BD0DA5B31AF7134400BDA278 /* UIAlertView+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0DA5B21AF7134400BDA278 /* UIAlertView+Custom.m */; };
 		BD0DA5B91AF7153900BDA278 /* UIView+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0DA5B81AF7153900BDA278 /* UIView+Custom.m */; };
+		BD8D37DB1C820223002DDB74 /* Alert2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F2BF3A71B0B10AB00CA83C4 /* Alert2.storyboard */; };
 		BDE2122F1AE69102002A0746 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDE2122E1AE69102002A0746 /* Main.storyboard */; };
 		BDE212321AE69182002A0746 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE212311AE69182002A0746 /* ViewController.m */; };
 		BDE212351AE6B477002A0746 /* CustomAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE212341AE6B477002A0746 /* CustomAlertController.m */; };
@@ -1022,14 +1022,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDE212381AE6B636002A0746 /* CustomAlert.storyboard in Resources */,
-				7F2BF3A81B0B10AB00CA83C4 /* Alert2.storyboard in Resources */,
 				BDE2122F1AE69102002A0746 /* Main.storyboard in Resources */,
 				9A5437651C17E2CB00B9F5E6 /* CustomNumberKeyboard.xib in Resources */,
 				9A7FBB311C292F7300B4E1C6 /* CustomShopping.storyboard in Resources */,
 				7F2BF3A11B0ACD7F00CA83C4 /* SampleAlertView.xib in Resources */,
 				9A4FC02C1C22673700BAD54A /* CustomSecurityNumberKeyboard.storyboard in Resources */,
 				9ABBE97F1C6B347D004AB04B /* Settings.bundle in Resources */,
+<<<<<<< Updated upstream
 				9ABB57CC1CAA9469007171C3 /* Calender.storyboard in Resources */,
+=======
+				BD8D37DB1C820223002DDB74 /* Alert2.storyboard in Resources */,
+>>>>>>> Stashed changes
 				BDEEC2361AD7EE9F00B522D9 /* LaunchScreen.xib in Resources */,
 				BDEEC2331AD7EE9F00B522D9 /* Images.xcassets in Resources */,
 				7F24F6421B09D8F40024D249 /* Alert.storyboard in Resources */,
