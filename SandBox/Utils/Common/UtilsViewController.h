@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ToastViewController.h"
 
 @interface UtilsViewController : UIViewController
 
@@ -76,10 +77,14 @@
              actionStart:(void (^)())actionStart actionFinish:(void (^)())actionFinish;
 
 + (void)showToastOnViewController:(UIViewController *)viewController
-                          message:(NSString*)message;
+                          message:(NSString *)message;
 
 + (void)showToastOnViewController:(UIViewController *)viewController
-                          message:(NSString*)message
+                          message:(NSString *)message
+                    animationType:(ToastViewControllerAnimationType)animationType;
+
++ (void)showToastOnViewController:(UIViewController *)viewController
+                          message:(NSString *)message
                       actionStart:(void (^)())actionStart
                      actionFinish:(void (^)())actionFinish;
 
@@ -89,5 +94,11 @@
                   displayDuration:(NSTimeInterval)displayDuration
                       actionStart:(void (^)())actionStart
                      actionFinish:(void (^)())actionFinish;
+
++ (void)showToastOnViewController:(UIViewController *)viewController message:(NSString *)message
+                    animationType:(ToastViewControllerAnimationType)animationType
+                         duration:(NSTimeInterval)duration
+                  displayDuration:(NSTimeInterval)displayDuration
+                      actionStart:(void (^)())actionStart actionFinish:(void (^)())actionFinish;
 
 @end

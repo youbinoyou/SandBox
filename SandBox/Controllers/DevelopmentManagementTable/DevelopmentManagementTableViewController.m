@@ -513,20 +513,20 @@
     
     [self saveWithFilePath:filePath withObject:self.mainTable];
     return;
-    
-    BOOL successful = [self.mainTable writeToFile:filePath atomically:NO];
-    if (successful) {
-        NSLog(@"%@", @"データの保存に成功しました。");
-    }
-    
-    self.mainTable = [[NSArray alloc] initWithContentsOfFile:filePath];
-    if (self.mainTable) {
-        for (NSString *data in self.mainTable) {
-            NSLog(@"%@", data);
-        }
-    } else {
-        NSLog(@"%@", @"データが存在しません。");
-    }
+//    
+//    BOOL successful = [self.mainTable writeToFile:filePath atomically:NO];
+//    if (successful) {
+//        NSLog(@"%@", @"データの保存に成功しました。");
+//    }
+//    
+//    self.mainTable = [[NSArray alloc] initWithContentsOfFile:filePath];
+//    if (self.mainTable) {
+//        for (NSString *data in self.mainTable) {
+//            NSLog(@"%@", data);
+//        }
+//    } else {
+//        NSLog(@"%@", @"データが存在しません。");
+//    }
 }
 
 - (void)originalDirectory {

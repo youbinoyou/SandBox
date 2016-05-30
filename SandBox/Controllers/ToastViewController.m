@@ -95,7 +95,7 @@
     [timer invalidate];
 }
 
-- (IBAction)clickView:(id)sender
+- (IBAction)clickToastView:(id)sender
 {
     NSLog(@"強制クローズ");
     if (_doneHandler) {
@@ -128,6 +128,11 @@
             [self closeAnimationTypeBottom];
             break;
         }
+        case ToastViewControllerAnimationTypeRandom : {
+            _animationType = (arc4random_uniform(3) + 1);
+            [self toastClose:sender];
+            break;
+        }
         default:
             break;
     }
@@ -156,7 +161,7 @@
         rectViewMessage.origin.y = -_viewMessage.frame.size.height;
         _viewMessage.frame = rectViewMessage;
         UITapGestureRecognizer *tapGestureRecognizer = [UITapGestureRecognizer new];
-        [tapGestureRecognizer addTarget:self action:@selector(clickView:)];
+        [tapGestureRecognizer addTarget:self action:@selector(clickToastView:)];
         [_viewMessage addGestureRecognizer:tapGestureRecognizer];
     }
     if (!_labelMessage) {
@@ -237,7 +242,7 @@
         //_viewMessage.center = self.view.center;
         
         UITapGestureRecognizer *tapGestureRecognizer = [UITapGestureRecognizer new];
-        [tapGestureRecognizer addTarget:self action:@selector(clickView:)];
+        [tapGestureRecognizer addTarget:self action:@selector(clickToastView:)];
         [_viewMessage addGestureRecognizer:tapGestureRecognizer];
     }
     if (!_labelMessage) {
@@ -315,7 +320,7 @@
         rectViewMessage.origin.y = _viewMessage.frame.size.height;
         _viewMessage.frame = rectViewMessage;
         UITapGestureRecognizer *tapGestureRecognizer = [UITapGestureRecognizer new];
-        [tapGestureRecognizer addTarget:self action:@selector(clickView:)];
+        [tapGestureRecognizer addTarget:self action:@selector(clickToastView:)];
         [_viewMessage addGestureRecognizer:tapGestureRecognizer];
     }
     if (!_labelMessage) {
@@ -337,12 +342,12 @@
 
 - (void)openAnimationTypeBottom
 {
-    [UIView animateWithDuration:_duration animations:^{
+    [UIView animateWithDuration:_duration animations : ^(void) {
         CGRect rectViewMessage = _viewMessage.frame;
         rectViewMessage.origin.y = 0;
         _viewMessage.frame = rectViewMessage;
         _viewMessage.alpha = 1.0;
-    }completion:^(BOOL finished){
+    } completion : ^(BOOL finished) {
         if (finished) {
             //タイマー発動
             timer = [NSTimer scheduledTimerWithTimeInterval : _displayDuration
@@ -357,11 +362,11 @@
 - (void)closeAnimationTypeBottom
 {
     //アニメーション
-    [UIView animateWithDuration:_duration animations:^{
+    [UIView animateWithDuration : _duration animations : ^(void) {
         CGRect rectViewMessage = _viewMessage.frame;
         rectViewMessage.origin.y = _viewMessage.frame.size.height;
         _viewMessage.frame = rectViewMessage;
-    }completion:^(BOOL finished){
+    } completion : ^(BOOL finished){
         if (finished) {
             //画面閉じる
             if (self.presentingViewController) {

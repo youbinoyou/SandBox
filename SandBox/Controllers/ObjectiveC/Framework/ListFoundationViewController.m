@@ -66,6 +66,10 @@
                          },
                      
                      @{
+                         keyTitle : @"NSError",
+                         keyListViewController : @"ListNSErrorObjectViewController"
+                         },
+                     @{
                          @"title":@"NSTimer",
                          @"action":@""
                          },

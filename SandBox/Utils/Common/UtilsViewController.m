@@ -7,7 +7,6 @@
 //
 
 #import "UtilsViewController.h"
-#import "ToastViewController.h"
 
 @interface UtilsViewController ()
 
@@ -207,17 +206,18 @@
 #pragma mark - トースト画面遷移処理
 
 //トースト画面を表示する。
-+ (void)showToastMessage:(NSString*)message {
++ (void)showToastMessage:(NSString *)message
+{
     [self showToastMessage:message actionStart:nil actionFinish:nil];
 }
 
-+ (void)showToastMessage:(NSString*)message
++ (void)showToastMessage:(NSString *)message
              actionStart:(void (^)())actionStart actionFinish:(void (^)())actionFinish {
     [self showToastMessage:message duration:0.5 displayDuration:2.0
                actionStart:actionStart actionFinish:actionFinish];
 }
 
-+ (void)showToastMessage:(NSString*)message duration:(NSTimeInterval)duration
++ (void)showToastMessage:(NSString *)message duration:(NSTimeInterval)duration
                   displayDuration:(NSTimeInterval)displayDuration
                       actionStart:(void (^)())actionStart actionFinish:(void (^)())actionFinish
 {
@@ -227,14 +227,28 @@
 }
 
 + (void)showToastOnViewController:(UIViewController *)viewController
-                          message:(NSString*)message
+                          message:(NSString *)message
 {
     [self showToastOnViewController:viewController message:message
                            duration:0.5 displayDuration:2.0 actionStart:nil actionFinish:nil];
 }
 
 + (void)showToastOnViewController:(UIViewController *)viewController
-                          message:(NSString*)message
+                          message:(NSString *)message
+                    animationType:(ToastViewControllerAnimationType)animationType
+{
+    [self showToastOnViewController:viewController
+                            message:message
+                      animationType:animationType
+                           duration:0.5
+                    displayDuration:2.0
+                        actionStart:nil
+                       actionFinish:nil];
+}
+
+
++ (void)showToastOnViewController:(UIViewController *)viewController
+                          message:(NSString *)message
                       actionStart:(void (^)())actionStart
                      actionFinish:(void (^)())actionFinish
 {
@@ -243,33 +257,50 @@
                         actionStart:actionStart actionFinish:actionFinish];
 }
 
-+ (void)showToastOnViewController:(UIViewController *)viewController message:(NSString*)message
++ (void)showToastOnViewController:(UIViewController *)viewController message:(NSString *)message
                          duration:(NSTimeInterval)duration
                   displayDuration:(NSTimeInterval)displayDuration
-             actionStart:(void (^)())actionStart actionFinish:(void (^)())actionFinish {
+                      actionStart:(void (^)())actionStart actionFinish:(void (^)())actionFinish
+{
+    [self showToastOnViewController:viewController
+                            message:message
+                      animationType:ToastViewControllerAnimationTypeRandom
+                           duration:duration
+                    displayDuration:displayDuration
+                        actionStart:actionStart
+                       actionFinish:actionFinish];
+}
+
+
++ (void)showToastOnViewController:(UIViewController *)viewController message:(NSString *)message
+                    animationType:(ToastViewControllerAnimationType)animationType
+                         duration:(NSTimeInterval)duration
+                  displayDuration:(NSTimeInterval)displayDuration
+             actionStart:(void (^)())actionStart actionFinish:(void (^)())actionFinish
+{
     ToastViewController *toastViewController = [ToastViewController new];
     if (duration > 1.0) {
         duration = 1.0;
     }
     toastViewController.duration = duration;
-    toastViewController.animationType = arc4random_uniform(3) + 1;
+    toastViewController.animationType = animationType;
     toastViewController.displayDuration = displayDuration;
     toastViewController.message = message;
     toastViewController.startHandler = actionStart;
     toastViewController.endHandler = actionFinish;
-    UIViewController *rootViewController;
+    UIViewController *rootViewController = nil;
     //コントローラーを取得
     if (viewController) {
         rootViewController = viewController;
     } else {
-       rootViewController = (UIViewController *)[UIApplication sharedApplication].keyWindow.rootViewController;
+        rootViewController = (UIViewController *)[UIApplication sharedApplication].keyWindow.rootViewController;
     }
-    NSLog(@"%@",rootViewController);
-    NSLog(@"%@",rootViewController.parentViewController);
-    NSLog(@"%@",rootViewController.popoverPresentationController);
-    NSLog(@"%@",rootViewController.presentationController);
-    NSLog(@"%@",rootViewController.presentedViewController);
-    NSLog(@"%@",rootViewController.presentingViewController);
+    NSLog(@"rootViewController : %@",rootViewController);
+    NSLog(@"parentViewController : %@",rootViewController.parentViewController);
+    NSLog(@"popoverPresentationController : %@",rootViewController.popoverPresentationController);
+    NSLog(@"presentationController : %@",rootViewController.presentationController);
+    NSLog(@"presentedViewController : %@",rootViewController.presentedViewController);
+    NSLog(@"presentingViewController : %@",rootViewController.presentingViewController);
     [UtilsViewController displayContentViewController:toastViewController parentViewController:rootViewController];
 }
 

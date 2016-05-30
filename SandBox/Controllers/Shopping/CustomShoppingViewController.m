@@ -23,7 +23,7 @@
                                 @"Shopping":@"買い物",
                                 @"Setting":@"設定",
                                 };
-    NSString *titleKey = self.selectedViewController.tabBarItem.title;
+    //NSString *titleKey = self.selectedViewController.tabBarItem.title;
     self.title = titleItem[@"Top"];
     self.delegate = self;
 }

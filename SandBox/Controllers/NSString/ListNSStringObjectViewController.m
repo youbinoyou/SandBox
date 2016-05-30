@@ -194,7 +194,7 @@
 - (void)getLength {
     UIAlertView *alert = [UIAlertView new];
     alert.title = @"文字列の長さを取得する";
-    self.mainString = [NSString stringWithFormat : @"length %u",[self.mainString length]];
+    self.mainString = [NSString stringWithFormat : @"length %lu",(unsigned long)[self.mainString length]];
     alert.message = self.mainString;
     [alert addButtonWithTitle : @"OK"];
     [alert show];

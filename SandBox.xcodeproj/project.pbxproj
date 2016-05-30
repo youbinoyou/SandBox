@@ -39,6 +39,7 @@
 		9A06C8101BFB337F00882EAA /* ListUITableViewObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A06C80F1BFB337F00882EAA /* ListUITableViewObjectViewController.m */; };
 		9A06C8141BFB385C00882EAA /* NoScrollTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A06C8131BFB385C00882EAA /* NoScrollTableViewController.m */; };
 		9A06C8171BFB3BE800882EAA /* CheckMarkTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A06C8161BFB3BE800882EAA /* CheckMarkTableViewController.m */; };
+		9A461CEB1CFC1CBD00CDC0C1 /* ListNSErrorObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A461CEA1CFC1CBD00CDC0C1 /* ListNSErrorObjectViewController.m */; };
 		9A4FC02C1C22673700BAD54A /* CustomSecurityNumberKeyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4FC02B1C22673700BAD54A /* CustomSecurityNumberKeyboard.storyboard */; };
 		9A4FC02F1C2272C100BAD54A /* CustomSecurityNumberKeyboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4FC02E1C2272C100BAD54A /* CustomSecurityNumberKeyboardViewController.m */; };
 		9A5437651C17E2CB00B9F5E6 /* CustomNumberKeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A5437641C17E2CB00B9F5E6 /* CustomNumberKeyboard.xib */; };
@@ -97,7 +98,6 @@
 		BDE2122F1AE69102002A0746 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDE2122E1AE69102002A0746 /* Main.storyboard */; };
 		BDE212321AE69182002A0746 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE212311AE69182002A0746 /* ViewController.m */; };
 		BDE212351AE6B477002A0746 /* CustomAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE212341AE6B477002A0746 /* CustomAlertController.m */; };
-		BDE212381AE6B636002A0746 /* CustomAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDE212371AE6B635002A0746 /* CustomAlert.storyboard */; };
 		BDE2123B1AE7D14A002A0746 /* 3DViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE2123A1AE7D14A002A0746 /* 3DViewController.m */; };
 		BDE212411AE91B8F002A0746 /* ListAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE212401AE91B8F002A0746 /* ListAlertViewController.m */; };
 		BDEEC2281AD7EE9F00B522D9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BDEEC2271AD7EE9F00B522D9 /* main.m */; };
@@ -177,6 +177,8 @@
 		9A06C8131BFB385C00882EAA /* NoScrollTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NoScrollTableViewController.m; path = Controllers/UITableView/Custom/NoScrollTableViewController.m; sourceTree = "<group>"; };
 		9A06C8151BFB3BE800882EAA /* CheckMarkTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckMarkTableViewController.h; path = Controllers/UITableView/Custom/CheckMarkTableViewController.h; sourceTree = "<group>"; };
 		9A06C8161BFB3BE800882EAA /* CheckMarkTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckMarkTableViewController.m; path = Controllers/UITableView/Custom/CheckMarkTableViewController.m; sourceTree = "<group>"; };
+		9A461CE91CFC1CBD00CDC0C1 /* ListNSErrorObjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListNSErrorObjectViewController.h; path = Controllers/NSError/ListNSErrorObjectViewController.h; sourceTree = "<group>"; };
+		9A461CEA1CFC1CBD00CDC0C1 /* ListNSErrorObjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListNSErrorObjectViewController.m; path = Controllers/NSError/ListNSErrorObjectViewController.m; sourceTree = "<group>"; };
 		9A4FC02B1C22673700BAD54A /* CustomSecurityNumberKeyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = CustomSecurityNumberKeyboard.storyboard; path = Base.lproj/StoryBoards/Common/CustomSecurityNumberKeyboard.storyboard; sourceTree = "<group>"; };
 		9A4FC02D1C2272C100BAD54A /* CustomSecurityNumberKeyboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomSecurityNumberKeyboardViewController.h; path = Controllers/CustomKeyboard/CustomSecurityNumberKeyboardViewController.h; sourceTree = "<group>"; };
 		9A4FC02E1C2272C100BAD54A /* CustomSecurityNumberKeyboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomSecurityNumberKeyboardViewController.m; path = Controllers/CustomKeyboard/CustomSecurityNumberKeyboardViewController.m; sourceTree = "<group>"; };
@@ -284,7 +286,6 @@
 		BDE212311AE69182002A0746 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = Controllers/ViewController.m; sourceTree = "<group>"; };
 		BDE212331AE6B477002A0746 /* CustomAlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomAlertController.h; path = Views/Common/CustomAlertController.h; sourceTree = "<group>"; };
 		BDE212341AE6B477002A0746 /* CustomAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomAlertController.m; path = Views/Common/CustomAlertController.m; sourceTree = "<group>"; };
-		BDE212371AE6B635002A0746 /* CustomAlert.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = CustomAlert.storyboard; path = Base.lproj/StoryBoards/Common/CustomAlert.storyboard; sourceTree = "<group>"; };
 		BDE212391AE7D14A002A0746 /* 3DViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 3DViewController.h; path = Controllers/Common/3DViewController.h; sourceTree = "<group>"; };
 		BDE2123A1AE7D14A002A0746 /* 3DViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = 3DViewController.m; path = Controllers/Common/3DViewController.m; sourceTree = "<group>"; };
 		BDE2123F1AE91B8F002A0746 /* ListAlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListAlertViewController.h; path = Controllers/ListAlertViewController.h; sourceTree = "<group>"; };
@@ -373,6 +374,15 @@
 				9A6F68181BFC1E4D0090E2D4 /* ColorCheckMarkTableViewController.m */,
 			);
 			name = Custom;
+			sourceTree = "<group>";
+		};
+		9A461CE81CFC1C8100CDC0C1 /* NSError */ = {
+			isa = PBXGroup;
+			children = (
+				9A461CE91CFC1CBD00CDC0C1 /* ListNSErrorObjectViewController.h */,
+				9A461CEA1CFC1CBD00CDC0C1 /* ListNSErrorObjectViewController.m */,
+			);
+			name = NSError;
 			sourceTree = "<group>";
 		};
 		9A5437691C17E7A900B9F5E6 /* CustomKeyboard */ = {
@@ -693,6 +703,7 @@
 				9AAF821A1C3B621E00D4EB41 /* DevelopmentManagementTable */,
 				9A7FBB321C29335A00B4E1C6 /* Shopping */,
 				9A962D721BF9D1ED009AD1A4 /* Setting */,
+				9A461CE81CFC1C8100CDC0C1 /* NSError */,
 				9A9AE0381C18231800DA7636 /* NSFileManager */,
 				9A7580061C1FCCBF003067AB /* NSString */,
 				9A5C9E491C102153002EA33A /* NSURLConnection */,
@@ -867,7 +878,6 @@
 		BDE212361AE6B48B002A0746 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				BDE212371AE6B635002A0746 /* CustomAlert.storyboard */,
 				9A5437641C17E2CB00B9F5E6 /* CustomNumberKeyboard.xib */,
 				9A4FC02B1C22673700BAD54A /* CustomSecurityNumberKeyboard.storyboard */,
 				9ABB57CB1CAA9469007171C3 /* Calender.storyboard */,
@@ -989,7 +999,7 @@
 				TargetAttributes = {
 					BDEEC2211AD7EE9F00B522D9 = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = EXZY2926Q2;
+						DevelopmentTeam = 7PP6KED5B2;
 					};
 					BDEEC23A1AD7EE9F00B522D9 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -1021,18 +1031,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BDE212381AE6B636002A0746 /* CustomAlert.storyboard in Resources */,
 				BDE2122F1AE69102002A0746 /* Main.storyboard in Resources */,
 				9A5437651C17E2CB00B9F5E6 /* CustomNumberKeyboard.xib in Resources */,
 				9A7FBB311C292F7300B4E1C6 /* CustomShopping.storyboard in Resources */,
 				7F2BF3A11B0ACD7F00CA83C4 /* SampleAlertView.xib in Resources */,
 				9A4FC02C1C22673700BAD54A /* CustomSecurityNumberKeyboard.storyboard in Resources */,
 				9ABBE97F1C6B347D004AB04B /* Settings.bundle in Resources */,
-<<<<<<< Updated upstream
 				9ABB57CC1CAA9469007171C3 /* Calender.storyboard in Resources */,
-=======
 				BD8D37DB1C820223002DDB74 /* Alert2.storyboard in Resources */,
->>>>>>> Stashed changes
 				BDEEC2361AD7EE9F00B522D9 /* LaunchScreen.xib in Resources */,
 				BDEEC2331AD7EE9F00B522D9 /* Images.xcassets in Resources */,
 				7F24F6421B09D8F40024D249 /* Alert.storyboard in Resources */,
@@ -1153,6 +1159,7 @@
 				570B694A1AE9D4A800A42DEC /* ListLabelViewController.m in Sources */,
 				9A825D611C4DC1FC000B94AA /* GameStatusViewController.m in Sources */,
 				7F462AEF1BA953F300896434 /* ListAppliedConstrueViewController.m in Sources */,
+				9A461CEB1CFC1CBD00CDC0C1 /* ListNSErrorObjectViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1277,7 +1284,7 @@
 				INFOPLIST_FILE = SandBox/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "you.ohshima.apps.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bacallan.apps.SandBox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1292,7 +1299,7 @@
 				INFOPLIST_FILE = SandBox/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "you.ohshima.apps.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bacallan.apps.SandBox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

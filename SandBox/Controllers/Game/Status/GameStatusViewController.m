@@ -237,6 +237,7 @@
 //    contentOffset.y = scrollView.frame.size.height - keyboardRect.origin.y;
 //    scrollView.contentOffset = contentOffset;
     CGSize rectScrollViewContentSize = CGSizeZero;
+    NSLog(@"%@",NSStringFromCGSize(rectScrollViewContentSize));
     CGPoint rectScrollViewContentOffset = CGPointZero;
     UIScrollView *scrollView = nil;
     UITextField *textField = nil;

@@ -23,6 +23,7 @@ typedef NS_ENUM(NSInteger, ToastViewControllerAnimationType){
     ToastViewControllerAnimationTypeTop = 1,
     ToastViewControllerAnimationTypeCenter,
     ToastViewControllerAnimationTypeBottom,
+    ToastViewControllerAnimationTypeRandom = 99,
 };
 
 @interface ToastViewController : UIViewController {

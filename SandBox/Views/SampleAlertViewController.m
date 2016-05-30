@@ -170,20 +170,20 @@
 - (void)closeAction:(id)sender {
     [self.delegate closeAlertView:self];
     return;
-    // PickerViewをアニメーションを使ってゆっくり非表示にする
-    UIView *pickerView = self.view;
-    
-    // アニメーション完了時のPickerViewの位置を計算
-    CGSize offSize = [UIScreen mainScreen].bounds.size;
-    CGPoint offScreenCenter = CGPointMake(offSize.width / 2.0, offSize.height * 1.5);
-    
-    [UIView beginAnimations:nil context:(void *)pickerView];
-    [UIView setAnimationDuration:0.3];
-    [UIView setAnimationDelegate:self];
-    // アニメーション終了時に呼び出す処理を設定
-    [UIView setAnimationDidStopSelector:@selector(animationDidStop:finished:context:)];
-    pickerView.center = offScreenCenter;
-    [UIView commitAnimations];
+//    // PickerViewをアニメーションを使ってゆっくり非表示にする
+//    UIView *pickerView = self.view;
+//    
+//    // アニメーション完了時のPickerViewの位置を計算
+//    CGSize offSize = [UIScreen mainScreen].bounds.size;
+//    CGPoint offScreenCenter = CGPointMake(offSize.width / 2.0, offSize.height * 1.5);
+//    
+//    [UIView beginAnimations:nil context:(void *)pickerView];
+//    [UIView setAnimationDuration:0.3];
+//    [UIView setAnimationDelegate:self];
+//    // アニメーション終了時に呼び出す処理を設定
+//    [UIView setAnimationDidStopSelector:@selector(animationDidStop:finished:context:)];
+//    pickerView.center = offScreenCenter;
+//    [UIView commitAnimations];
     
 }
 // 単位のPickerViewを閉じるアニメーションが終了したときに呼び出されるメソッド
