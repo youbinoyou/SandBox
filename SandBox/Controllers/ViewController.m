@@ -198,7 +198,7 @@
     
     //設定アプリで設定されている画面の明るさ設定値を取得
     NSInteger brightness = [defaults integerForKey:@"brightness_preference"];
-    NSLog(@"%ld",brightness);
+    NSLog(@"%ld",(long)brightness);
     // 設定値を画面に表示
     //valueLabel02.text = [NSString stringWithFormat:@"%d",brightness];
     

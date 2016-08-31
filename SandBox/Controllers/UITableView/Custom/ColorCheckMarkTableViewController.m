@@ -9,6 +9,7 @@
 //
 
 #import "ColorCheckMarkTableViewController.h"
+#import "UITableViewCell+Common.h"
 
 const NSInteger tableview_section = 1;
 
@@ -68,7 +69,9 @@ const NSInteger tableview_section = 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];//[tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:[UITableViewCell identifier]];
+    //[tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     // Configure the cell...
     cell.textLabel.text = @"index";
     if (indexPath.row % 4 == 2) {

@@ -64,7 +64,7 @@
     if (![touches isKindOfClass:[NSSet class]]) {
         NSLog(@"%@",@"touchesBegan:withEvent:");
         UIView *view = (UIView *)touches;
-        NSLog(@"タップ開始 %f, %f  タップ数：%ld", view.frame.origin.x, view.frame.origin.y, view.tag);
+        NSLog(@"タップ開始 %f, %f  タップ数：%ld", view.frame.origin.x, view.frame.origin.y, (long)view.tag);
         return;
     }
     UITouch *touch = [touches anyObject];
@@ -73,7 +73,7 @@
     
     [super touchesBegan:touches withEvent:event];
     
-    NSLog(@"タップ開始 %f, %f  タップ数：%ld", location.x, location.y, taps);
+    NSLog(@"タップ開始 %f, %f  タップ数：%ld", location.x, location.y, (long)taps);
 }
 
 - (void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -96,7 +96,7 @@
     if (![touches isKindOfClass:[NSSet class]]) {
         NSLog(@"%@",@"touchesEnded:withEvent:");
         UIView *view = (UIView *)touches;
-        NSLog(@"タップ終了 %f, %f  タップ数：%ld", view.frame.origin.x, view.frame.origin.y, view.tag);
+        NSLog(@"タップ終了 %f, %f  タップ数：%ld", view.frame.origin.x, view.frame.origin.y, (long)view.tag);
         return;
     }
     UITouch *touch = [touches anyObject];

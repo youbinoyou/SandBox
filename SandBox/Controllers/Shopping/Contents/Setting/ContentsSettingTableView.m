@@ -137,14 +137,14 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSLog(@"items : %ld",[self.tableItemList[section][@"items"]
+    NSLog(@"items : %ld",(long)[self.tableItemList[section][@"items"]
          count]);
     return [self.tableItemList[section][@"items"] count];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    NSLog(@"tableItemList : %ld",self.tableItemList.count);
+    NSLog(@"tableItemList : %ld",(long)self.tableItemList.count);
     return self.tableItemList.count;
 }
 

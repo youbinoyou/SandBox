@@ -39,6 +39,7 @@
 		9A06C8101BFB337F00882EAA /* ListUITableViewObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A06C80F1BFB337F00882EAA /* ListUITableViewObjectViewController.m */; };
 		9A06C8141BFB385C00882EAA /* NoScrollTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A06C8131BFB385C00882EAA /* NoScrollTableViewController.m */; };
 		9A06C8171BFB3BE800882EAA /* CheckMarkTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A06C8161BFB3BE800882EAA /* CheckMarkTableViewController.m */; };
+		9A3F0AA11D7698F500C67164 /* UITableViewCell+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A3F0AA01D7698F500C67164 /* UITableViewCell+Common.m */; };
 		9A461CEB1CFC1CBD00CDC0C1 /* ListNSErrorObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A461CEA1CFC1CBD00CDC0C1 /* ListNSErrorObjectViewController.m */; };
 		9A4FC02C1C22673700BAD54A /* CustomSecurityNumberKeyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4FC02B1C22673700BAD54A /* CustomSecurityNumberKeyboard.storyboard */; };
 		9A4FC02F1C2272C100BAD54A /* CustomSecurityNumberKeyboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4FC02E1C2272C100BAD54A /* CustomSecurityNumberKeyboardViewController.m */; };
@@ -177,6 +178,8 @@
 		9A06C8131BFB385C00882EAA /* NoScrollTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NoScrollTableViewController.m; path = Controllers/UITableView/Custom/NoScrollTableViewController.m; sourceTree = "<group>"; };
 		9A06C8151BFB3BE800882EAA /* CheckMarkTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckMarkTableViewController.h; path = Controllers/UITableView/Custom/CheckMarkTableViewController.h; sourceTree = "<group>"; };
 		9A06C8161BFB3BE800882EAA /* CheckMarkTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckMarkTableViewController.m; path = Controllers/UITableView/Custom/CheckMarkTableViewController.m; sourceTree = "<group>"; };
+		9A3F0A9F1D7698F500C67164 /* UITableViewCell+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITableViewCell+Common.h"; path = "Views/Common/UITableViewCell/UITableViewCell+Common.h"; sourceTree = "<group>"; };
+		9A3F0AA01D7698F500C67164 /* UITableViewCell+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITableViewCell+Common.m"; path = "Views/Common/UITableViewCell/UITableViewCell+Common.m"; sourceTree = "<group>"; };
 		9A461CE91CFC1CBD00CDC0C1 /* ListNSErrorObjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListNSErrorObjectViewController.h; path = Controllers/NSError/ListNSErrorObjectViewController.h; sourceTree = "<group>"; };
 		9A461CEA1CFC1CBD00CDC0C1 /* ListNSErrorObjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListNSErrorObjectViewController.m; path = Controllers/NSError/ListNSErrorObjectViewController.m; sourceTree = "<group>"; };
 		9A4FC02B1C22673700BAD54A /* CustomSecurityNumberKeyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = CustomSecurityNumberKeyboard.storyboard; path = Base.lproj/StoryBoards/Common/CustomSecurityNumberKeyboard.storyboard; sourceTree = "<group>"; };
@@ -615,6 +618,8 @@
 				9AC984401C2D140D004D28AB /* CustomButtonCell.m */,
 				9AC984421C2D1717004D28AB /* CommonCell.h */,
 				9AC984431C2D1717004D28AB /* CommonCell.m */,
+				9A3F0A9F1D7698F500C67164 /* UITableViewCell+Common.h */,
+				9A3F0AA01D7698F500C67164 /* UITableViewCell+Common.m */,
 			);
 			name = UITableViewCell;
 			sourceTree = "<group>";
@@ -1142,6 +1147,7 @@
 				BDE2123B1AE7D14A002A0746 /* 3DViewController.m in Sources */,
 				9A9AE03B1C18235400DA7636 /* ListNSFileManagerObjectViewController.m in Sources */,
 				BDEEC2281AD7EE9F00B522D9 /* main.m in Sources */,
+				9A3F0AA11D7698F500C67164 /* UITableViewCell+Common.m in Sources */,
 				9ADDBC451C98F08A002B9C27 /* CollectionViewController.m in Sources */,
 				7F21D0C01B0C552000311AC2 /* ListViewController.m in Sources */,
 				7F21D0BD1B0C29D200311AC2 /* TableViewControllerListViewController.m in Sources */,

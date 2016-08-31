@@ -59,7 +59,7 @@
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil]; //[tableView dequeueReusableCellWithIdentifier:nil forIndexPath:indexPath];
     
     // Configure the cell...
-    cell.textLabel.text = [NSString stringWithFormat:@"index %ld",indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"index %ld",(long)indexPath.row];
     
     return cell;
 }

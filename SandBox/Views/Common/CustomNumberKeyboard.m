@@ -43,7 +43,7 @@
  * @param sender 押下されたUIButton
  */
 - (IBAction)numButton:(UIButton *)sender {
-    NSString *numtag = [NSString stringWithFormat:@"%ld", sender.tag];
+    NSString *numtag = [NSString stringWithFormat:@"%ld", (long)sender.tag];
     self.activeTextField.text = [self.activeTextField.text stringByAppendingString:numtag];
 }
 
@@ -69,7 +69,7 @@
 - (IBAction)equalButton:(id)sender {
     num2 = [self.activeTextField.text integerValue];
     NSInteger equalNumber = (num1 + num2);
-    NSString *numtag = [NSString stringWithFormat:@"%ld", equalNumber];
+    NSString *numtag = [NSString stringWithFormat:@"%ld", (long)equalNumber];
     self.activeTextField.text = numtag;
     num1 = num2;
     num2 = 0.0;

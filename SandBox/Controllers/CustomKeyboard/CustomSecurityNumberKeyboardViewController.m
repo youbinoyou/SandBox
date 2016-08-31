@@ -79,7 +79,7 @@
 }
 
 - (IBAction)numberAction:(UIButton *)sender {
-    setNumber = [setNumber stringByAppendingFormat:@"%ld",sender.tag];
+    setNumber = [setNumber stringByAppendingFormat:@"%ld",(long)sender.tag];
     NSLog(@"%@",setNumber);
 }
 

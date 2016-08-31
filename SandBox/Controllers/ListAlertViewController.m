@@ -84,7 +84,7 @@
     
     if (alertView.numberOfButtons){
         /* @property(nonatomic,readonly) NSInteger numberOfButtons; */
-        NSLog(@"numberOfButtons : %ld",alertView.numberOfButtons);
+        NSLog(@"numberOfButtons : %ld",(long)alertView.numberOfButtons);
     }
     
     if ([alertView respondsToSelector:@selector(buttonTitleAtIndex:)]){
@@ -96,12 +96,12 @@
     
     if (alertView.cancelButtonIndex > -1){
         /* @property(nonatomic) NSInteger cancelButtonIndex; */
-        NSLog(@"cancelButtonIndex : %ld",alertView.cancelButtonIndex);
+        NSLog(@"cancelButtonIndex : %ld",(long)alertView.cancelButtonIndex);
     }
     
     if (alertView.firstOtherButtonIndex){
         /* @property(nonatomic,readonly) NSInteger firstOtherButtonIndex; */
-        NSLog(@"firstOtherButtonIndex : %ld",alertView.firstOtherButtonIndex);
+        NSLog(@"firstOtherButtonIndex : %ld",(long)alertView.firstOtherButtonIndex);
     }
     
     if (alertView.visible){
@@ -127,23 +127,23 @@
             //            };
             
         case UIAlertViewStyleDefault : {
-            NSLog(@"alertViewStyle : %ld",UIAlertViewStyleDefault);
+            NSLog(@"alertViewStyle : %ld",(long)UIAlertViewStyleDefault);
             break;
         }
         case UIAlertViewStyleSecureTextInput : {
-            NSLog(@"alertViewStyle : %ld",UIAlertViewStyleSecureTextInput);
+            NSLog(@"alertViewStyle : %ld",(long)UIAlertViewStyleSecureTextInput);
             break;
         }
         case UIAlertViewStylePlainTextInput : {
-            NSLog(@"alertViewStyle : %ld",UIAlertViewStylePlainTextInput);
+            NSLog(@"alertViewStyle : %ld",(long)UIAlertViewStylePlainTextInput);
             break;
         }
         case UIAlertViewStyleLoginAndPasswordInput : {
-            NSLog(@"alertViewStyle : %ld",UIAlertViewStyleLoginAndPasswordInput);
+            NSLog(@"alertViewStyle : %ld",(long)UIAlertViewStyleLoginAndPasswordInput);
             break;
         }
         default:{
-            NSLog(@"alertViewStyle : %ld",alertView.alertViewStyle);
+            NSLog(@"alertViewStyle : %ld",(long)alertView.alertViewStyle);
             break;
         }
     }
@@ -206,8 +206,8 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     
     NSLog(@"%s",__PRETTY_FUNCTION__);
-    NSLog(@"@param\n\nalertView:\n%@\nindex:\n%ld",alertView,buttonIndex);
-    NSLog(@"alert[%ld].title = %@",buttonIndex,[alertView buttonTitleAtIndex:buttonIndex]);
+    NSLog(@"@param\n\nalertView:\n%@\nindex:\n%ld",alertView,(long)buttonIndex);
+    NSLog(@"alert[%ld].title = %@",(long)buttonIndex,[alertView buttonTitleAtIndex:buttonIndex]);
     
     [self cheackUIAlertView:alertView];
     

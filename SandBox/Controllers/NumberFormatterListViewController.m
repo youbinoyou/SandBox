@@ -58,7 +58,7 @@
     
     // 文字列をNSIntegerに変換
     NSInteger i = str.integerValue;
-    NSLog(@"文字列→NSInteger：%ld", i);
+    NSLog(@"文字列→NSInteger：%ld", (long)i);
     
     // 文字列をfloatに変換
     float f = str.floatValue;
@@ -70,7 +70,7 @@
     
     
     // NSIntegerを文字列に変換
-    NSString *str1 = [NSString stringWithFormat:@"%ld", i];
+    NSString *str1 = [NSString stringWithFormat:@"%ld", (long)i];
     NSLog(@"NSInteger→文字列：%@", str1);
     
     // floatを文字列に変換

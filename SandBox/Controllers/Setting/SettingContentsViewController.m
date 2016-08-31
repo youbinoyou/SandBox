@@ -82,7 +82,7 @@
         }
     }
     if (tableSectionItems[indexPath.row]) {
-        NSLog(@"table[%ld][%@] = %@",indexPath.section,keyItems,tableSectionItems);
+        NSLog(@"table[%ld][%@] = %@",(long)indexPath.section,keyItems,tableSectionItems);
         cell.textLabel.text = self.tableList[indexPath.section][keyItems][indexPath.row][keyTitle];
         if (self.tableList[indexPath.section][keyItems]) {
             cell.textLabel.text = self.tableList[indexPath.section][keyItems][indexPath.row][keyTitle];

@@ -66,7 +66,7 @@
 - (void) connection:(NSURLConnection *) connection didReceiveResponse:(NSURLResponse *)response {
     receivedData = [[NSMutableData alloc] init];
     NSInteger statusCode = ((NSHTTPURLResponse *)response).statusCode;
-    NSLog(@"statusCode : %ld",statusCode);
+    NSLog(@"statusCode : %ld",(long)statusCode);
 }
 
 // サーバーからデータを受信するたびに呼び出されるメソッド。
@@ -88,7 +88,7 @@
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
     
      NSLog(@"request failed. code=[%ld], %@ - %@",
-     error.code,
+     (long)error.code,
      [error localizedDescription],
      [[error userInfo] objectForKey:NSURLErrorFailingURLStringErrorKey]);
     

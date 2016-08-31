@@ -285,7 +285,7 @@
         if ([view isKindOfClass:[UITextField class]]) {
             UITextField *textField = (UITextField *)view;
             textField.alpha = 0.0;
-            NSLog(@"textField : %ld : %@",textField.tag,textField.text);
+            NSLog(@"textField : %ld : %@",(long)textField.tag,textField.text);
             NSInteger index = textField.tag - (NSInteger)1;
             //id item = status[[self keyStatusIndex:index]];
             NSString *key = [self keyStatusIndex:index];
