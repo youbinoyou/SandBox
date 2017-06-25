@@ -103,6 +103,11 @@
                          @"title":@"NSURLConnection",
                          @"listViewController:":@"ListNSURLConnectionObjectViewController"
                          },
+                     @{
+                         @"title":@"NSOperationQueue",
+                         @"listViewController:":@"ListNSOperationQueueObjectViewController"
+                         },
+
                      
                      @{@"title":@"関連",@"action":@"dismissCloseButtonAction:"},
                      
