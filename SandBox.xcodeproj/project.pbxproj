@@ -13,6 +13,8 @@
 		570B69471AE9D42200A42DEC /* CustomLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 570B69461AE9D42200A42DEC /* CustomLabel.m */; };
 		570B694A1AE9D4A800A42DEC /* ListLabelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 570B69491AE9D4A800A42DEC /* ListLabelViewController.m */; };
 		570B694D1AEA0C7200A42DEC /* ListAttributedStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 570B694C1AEA0C7200A42DEC /* ListAttributedStringViewController.m */; };
+		57C3EBDB1F30CBB000FCCD2A /* PickerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C3EBDA1F30CBB000FCCD2A /* PickerViewModel.m */; };
+		57C3EBDE1F30E52900FCCD2A /* JapanCityNameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C3EBDD1F30E52900FCCD2A /* JapanCityNameModel.m */; };
 		7F2185A01B05A3A100F1D652 /* ActivityViewControllerListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F21859F1B05A3A100F1D652 /* ActivityViewControllerListViewController.m */; };
 		7F2185A31B05D7C500F1D652 /* Store.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2185A21B05D7C500F1D652 /* Store.m */; };
 		7F2185A61B05E32E00F1D652 /* TableViewListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2185A51B05E32E00F1D652 /* TableViewListViewController.m */; };
@@ -137,6 +139,10 @@
 		570B69491AE9D4A800A42DEC /* ListLabelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListLabelViewController.m; path = Controllers/ListLabelViewController.m; sourceTree = "<group>"; };
 		570B694B1AEA0C7200A42DEC /* ListAttributedStringViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListAttributedStringViewController.h; path = Controllers/ListAttributedStringViewController.h; sourceTree = "<group>"; };
 		570B694C1AEA0C7200A42DEC /* ListAttributedStringViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListAttributedStringViewController.m; path = Controllers/ListAttributedStringViewController.m; sourceTree = "<group>"; };
+		57C3EBD91F30CBB000FCCD2A /* PickerViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PickerViewModel.h; path = ViewModels/PickerView/PickerViewModel.h; sourceTree = "<group>"; };
+		57C3EBDA1F30CBB000FCCD2A /* PickerViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PickerViewModel.m; path = ViewModels/PickerView/PickerViewModel.m; sourceTree = "<group>"; };
+		57C3EBDC1F30E52900FCCD2A /* JapanCityNameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JapanCityNameModel.h; path = Models/JapanCityNameModel.h; sourceTree = "<group>"; };
+		57C3EBDD1F30E52900FCCD2A /* JapanCityNameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JapanCityNameModel.m; path = Models/JapanCityNameModel.m; sourceTree = "<group>"; };
 		7F21859E1B05A3A100F1D652 /* ActivityViewControllerListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActivityViewControllerListViewController.h; path = Controllers/ActivityViewControllerListViewController.h; sourceTree = "<group>"; };
 		7F21859F1B05A3A100F1D652 /* ActivityViewControllerListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActivityViewControllerListViewController.m; path = Controllers/ActivityViewControllerListViewController.m; sourceTree = "<group>"; };
 		7F2185A11B05D7C500F1D652 /* Store.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Store.h; path = Models/Store.h; sourceTree = "<group>"; };
@@ -339,6 +345,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		57C3EBD61F30C7F100FCCD2A /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				57C3EBD81F30CB5100FCCD2A /* PickerView */,
+				57C3EBD71F30C81600FCCD2A /* UIView */,
+			);
+			name = ViewModels;
+			sourceTree = "<group>";
+		};
+		57C3EBD71F30C81600FCCD2A /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = UIView;
+			sourceTree = "<group>";
+		};
+		57C3EBD81F30CB5100FCCD2A /* PickerView */ = {
+			isa = PBXGroup;
+			children = (
+				57C3EBD91F30CBB000FCCD2A /* PickerViewModel.h */,
+				57C3EBDA1F30CBB000FCCD2A /* PickerViewModel.m */,
+			);
+			name = PickerView;
+			sourceTree = "<group>";
+		};
 		7F2BF39E1B0ACD0A00CA83C4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -846,6 +877,8 @@
 				BDE2122C1AE68E85002A0746 /* Common */,
 				7F2185A11B05D7C500F1D652 /* Store.h */,
 				7F2185A21B05D7C500F1D652 /* Store.m */,
+				57C3EBDC1F30E52900FCCD2A /* JapanCityNameModel.h */,
+				57C3EBDD1F30E52900FCCD2A /* JapanCityNameModel.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -988,6 +1021,7 @@
 				BDE212291AE68D68002A0746 /* Views */,
 				BDE212281AE68D5C002A0746 /* StoryBoards */,
 				BDE212271AE68D4F002A0746 /* Resources */,
+				57C3EBD61F30C7F100FCCD2A /* ViewModels */,
 				BDE212261AE68D46002A0746 /* Utils */,
 				BDE212251AE68D36002A0746 /* Models */,
 				BDE212241AE68D2A002A0746 /* Controllers */,
@@ -1195,6 +1229,7 @@
 				9ADDBC421C98EFD7002B9C27 /* ListUICollectionViewControllerObjectViewController.m in Sources */,
 				9A904BAA1BFACFDD00258ACB /* KeyNames.m in Sources */,
 				9AFAD5F01BF3106D00FD0665 /* ListUILocalNotificationObjectViewController.m in Sources */,
+				57C3EBDB1F30CBB000FCCD2A /* PickerViewModel.m in Sources */,
 				9A6F68191BFC1E4D0090E2D4 /* ColorCheckMarkTableViewController.m in Sources */,
 				9ABB57CA1CAA92BD007171C3 /* CalendarDayCell.m in Sources */,
 				7F2BF3A41B0AD10F00CA83C4 /* SampleAlertViewController.m in Sources */,
@@ -1226,6 +1261,7 @@
 				9A9AE03B1C18235400DA7636 /* ListNSFileManagerObjectViewController.m in Sources */,
 				BDEEC2281AD7EE9F00B522D9 /* main.m in Sources */,
 				9A3F0AA11D7698F500C67164 /* UITableViewCell+Common.m in Sources */,
+				57C3EBDE1F30E52900FCCD2A /* JapanCityNameModel.m in Sources */,
 				9ADDBC451C98F08A002B9C27 /* CollectionViewController.m in Sources */,
 				7F21D0C01B0C552000311AC2 /* ListViewController.m in Sources */,
 				7F21D0BD1B0C29D200311AC2 /* TableViewControllerListViewController.m in Sources */,
