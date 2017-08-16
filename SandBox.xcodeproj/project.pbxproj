@@ -96,6 +96,8 @@
 		9AFAD5F01BF3106D00FD0665 /* ListUILocalNotificationObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAD5EF1BF3106D00FD0665 /* ListUILocalNotificationObjectViewController.m */; };
 		A9B760441F2837FF0028373D /* NSDate+SandBox.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B760431F2837FF0028373D /* NSDate+SandBox.m */; };
 		A9B760481F283B0A0028373D /* UIColor+SandBox.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B760471F283B0A0028373D /* UIColor+SandBox.m */; };
+		A9B7E4CC1F441C800014816C /* UtilsLocalJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B7E4CB1F441C800014816C /* UtilsLocalJSON.m */; };
+		A9B7E4CE1F441E350014816C /* sample.json in Resources */ = {isa = PBXBuildFile; fileRef = A9B7E4CD1F441E350014816C /* sample.json */; };
 		BD0DA5B31AF7134400BDA278 /* UIAlertView+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0DA5B21AF7134400BDA278 /* UIAlertView+Custom.m */; };
 		BD0DA5B91AF7153900BDA278 /* UIView+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0DA5B81AF7153900BDA278 /* UIView+Custom.m */; };
 		BD8D37DB1C820223002DDB74 /* Alert2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F2BF3A71B0B10AB00CA83C4 /* Alert2.storyboard */; };
@@ -289,6 +291,9 @@
 		A9B760431F2837FF0028373D /* NSDate+SandBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+SandBox.m"; path = "Utils/Date/NSDate+SandBox.m"; sourceTree = "<group>"; };
 		A9B760461F283B0A0028373D /* UIColor+SandBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+SandBox.h"; path = "Utils/Color/UIColor+SandBox.h"; sourceTree = "<group>"; };
 		A9B760471F283B0A0028373D /* UIColor+SandBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+SandBox.m"; path = "Utils/Color/UIColor+SandBox.m"; sourceTree = "<group>"; };
+		A9B7E4CA1F441C800014816C /* UtilsLocalJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UtilsLocalJSON.h; path = Utils/LocalJSON/UtilsLocalJSON.h; sourceTree = "<group>"; };
+		A9B7E4CB1F441C800014816C /* UtilsLocalJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UtilsLocalJSON.m; path = Utils/LocalJSON/UtilsLocalJSON.m; sourceTree = "<group>"; };
+		A9B7E4CD1F441E350014816C /* sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = sample.json; path = Resources/JSON/sample.json; sourceTree = "<group>"; };
 		BD0DA5B11AF7134400BDA278 /* UIAlertView+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIAlertView+Custom.h"; path = "Views/UIAlertView+Custom.h"; sourceTree = "<group>"; };
 		BD0DA5B21AF7134400BDA278 /* UIAlertView+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIAlertView+Custom.m"; path = "Views/UIAlertView+Custom.m"; sourceTree = "<group>"; };
 		BD0DA5B71AF7153900BDA278 /* UIView+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Custom.h"; path = "Views/UIView+Custom.h"; sourceTree = "<group>"; };
@@ -736,6 +741,23 @@
 			name = Color;
 			sourceTree = "<group>";
 		};
+		A9B7E4C71F441AD40014816C /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				A9B7E4CD1F441E350014816C /* sample.json */,
+			);
+			name = JSON;
+			sourceTree = "<group>";
+		};
+		A9B7E4C91F441C340014816C /* LocalJSON */ = {
+			isa = PBXGroup;
+			children = (
+				A9B7E4CA1F441C800014816C /* UtilsLocalJSON.h */,
+				A9B7E4CB1F441C800014816C /* UtilsLocalJSON.m */,
+			);
+			name = LocalJSON;
+			sourceTree = "<group>";
+		};
 		BDE212241AE68D2A002A0746 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -821,6 +843,7 @@
 		BDE212261AE68D46002A0746 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				A9B7E4C91F441C340014816C /* LocalJSON */,
 				A9B760451F283AE90028373D /* Color */,
 				A9B760411F2837B50028373D /* Date */,
 				9ABD26CF1C89205900D998AC /* String */,
@@ -836,6 +859,7 @@
 		BDE212271AE68D4F002A0746 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A9B7E4C71F441AD40014816C /* JSON */,
 				7F2BF39E1B0ACD0A00CA83C4 /* Views */,
 			);
 			name = Resources;
@@ -1079,6 +1103,7 @@
 				9A7FBB311C292F7300B4E1C6 /* CustomShopping.storyboard in Resources */,
 				7F2BF3A11B0ACD7F00CA83C4 /* SampleAlertView.xib in Resources */,
 				9A4FC02C1C22673700BAD54A /* CustomSecurityNumberKeyboard.storyboard in Resources */,
+				A9B7E4CE1F441E350014816C /* sample.json in Resources */,
 				9ABBE97F1C6B347D004AB04B /* Settings.bundle in Resources */,
 				9ABB57CC1CAA9469007171C3 /* Calender.storyboard in Resources */,
 				BD8D37DB1C820223002DDB74 /* Alert2.storyboard in Resources */,
@@ -1163,6 +1188,7 @@
 				7F2BF3A41B0AD10F00CA83C4 /* SampleAlertViewController.m in Sources */,
 				9AAF821D1C3B626C00D4EB41 /* DevelopmentManagementTableViewController.m in Sources */,
 				9A76937E1C213C3800F3FFB0 /* UtilsViewController.m in Sources */,
+				A9B7E4CC1F441C800014816C /* UtilsLocalJSON.m in Sources */,
 				9AFAD5E51BF2E2A100FD0665 /* ListUIImageViewObjectViewController.m in Sources */,
 				9ABB57C71CAA9227007171C3 /* SandBoxCalendarViewController.m in Sources */,
 				BDEEC22B1AD7EE9F00B522D9 /* AppDelegate.m in Sources */,
