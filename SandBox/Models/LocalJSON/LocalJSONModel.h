@@ -13,4 +13,6 @@
 @property (nonatomic,retain) NSDictionary *response;
 @property (nonatomic,retain) NSDictionary *results;
 
++ (LocalJSONModel *)setModelDictionary:(NSDictionary *)dic;
+
 @end

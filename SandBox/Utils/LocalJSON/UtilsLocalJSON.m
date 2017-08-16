@@ -7,6 +7,7 @@
 //
 
 #import "UtilsLocalJSON.h"
+#import "LocalJSONModel.h"
 
 @implementation UtilsLocalJSON
 
@@ -18,7 +19,7 @@
     NSError *jsonReadError = nil;
     NSBundle *bundle = [NSBundle mainBundle];
     NSString *path = [bundle pathForResource:fileName ofType:@"json"];
-    if(path){
+    if (!path) {
         NSError *nofileError = [NSError errorWithDomain:@"nofileError" code:200 userInfo:@{@"path":path}];
         NSLog(@"nofileError : %@",nofileError);
         return nil;
@@ -42,8 +43,10 @@
     }
     if ([array isKindOfClass:[NSDictionary class]]) {
         NSDictionary *response = (NSDictionary *)[array copy];
-        if (response[@"response"]) {
-            if ([response[@"response"][@"code"] integerValue] == 200) {
+        LocalJSONModel *jsonModel = [LocalJSONModel setModelDictionary:response];
+        
+        if (jsonModel.response) {
+            if ([jsonModel.response[@"code"] integerValue] == 200) {
                 NSLog(@"**success**\n\nFileName : %@",fileName);
             }
         } else {
