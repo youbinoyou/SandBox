@@ -10,6 +10,7 @@
 #import "CustomAlertController.h"
 #import "UtilsViewController.h"
 #import "UtilsBlogSearch.h"
+#import "UtilsLocalJSON.h"
 
 @interface ViewController ()
 
@@ -91,6 +92,8 @@
                        @"listViewController:":@"ListUILocalNotificationObjectViewController"},
                      @{@"title":@"ブログデータの扱いについて",
                        @"action":@"blogData"},
+                     @{@"title":@"データの扱いについて",
+                       @"action":@"jsonData"},
                      @{@"title":@"開発管理表",
                        @"listViewController:":@"DevelopmentManagementTableViewController"},
                      @{@"title":@"トースト",
@@ -134,6 +137,13 @@
     if ([blogSearch requestXml:@"http://www.sotechsha.co.jp/xml/sample.xml"]) {
         
         NSLog(@"titleList : %@",[blogSearch titleList]);
+    }
+}
+
+- (void)jsonData {
+    UtilsLocalJSON *localJSON = [[UtilsLocalJSON alloc] init];
+    if ([localJSON requestFileName:@"sample"]) {
+        NSLog(@"localJSON : %@",localJSON);
     }
 }
 
