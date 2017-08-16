@@ -19,7 +19,7 @@
     NSError *jsonReadError = nil;
     NSBundle *bundle = [NSBundle mainBundle];
     NSString *path = [bundle pathForResource:fileName ofType:@"json"];
-    if(path){
+    if (!path) {
         NSError *nofileError = [NSError errorWithDomain:@"nofileError" code:200 userInfo:@{@"path":path}];
         NSLog(@"nofileError : %@",nofileError);
         return nil;
