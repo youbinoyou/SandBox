@@ -100,6 +100,7 @@
 		A9B760481F283B0A0028373D /* UIColor+SandBox.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B760471F283B0A0028373D /* UIColor+SandBox.m */; };
 		A9B7E4CC1F441C800014816C /* UtilsLocalJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B7E4CB1F441C800014816C /* UtilsLocalJSON.m */; };
 		A9B7E4CE1F441E350014816C /* sample.json in Resources */ = {isa = PBXBuildFile; fileRef = A9B7E4CD1F441E350014816C /* sample.json */; };
+		A9B7E4D71F4438A70014816C /* LocalJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B7E4D61F4438A70014816C /* LocalJSONModel.m */; };
 		BD0DA5B31AF7134400BDA278 /* UIAlertView+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0DA5B21AF7134400BDA278 /* UIAlertView+Custom.m */; };
 		BD0DA5B91AF7153900BDA278 /* UIView+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0DA5B81AF7153900BDA278 /* UIView+Custom.m */; };
 		BD8D37DB1C820223002DDB74 /* Alert2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F2BF3A71B0B10AB00CA83C4 /* Alert2.storyboard */; };
@@ -300,6 +301,8 @@
 		A9B7E4CA1F441C800014816C /* UtilsLocalJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UtilsLocalJSON.h; path = Utils/LocalJSON/UtilsLocalJSON.h; sourceTree = "<group>"; };
 		A9B7E4CB1F441C800014816C /* UtilsLocalJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UtilsLocalJSON.m; path = Utils/LocalJSON/UtilsLocalJSON.m; sourceTree = "<group>"; };
 		A9B7E4CD1F441E350014816C /* sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = sample.json; path = Resources/JSON/sample.json; sourceTree = "<group>"; };
+		A9B7E4D51F4438A70014816C /* LocalJSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocalJSONModel.h; path = Models/LocalJSON/LocalJSONModel.h; sourceTree = "<group>"; };
+		A9B7E4D61F4438A70014816C /* LocalJSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocalJSONModel.m; path = Models/LocalJSON/LocalJSONModel.m; sourceTree = "<group>"; };
 		BD0DA5B11AF7134400BDA278 /* UIAlertView+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIAlertView+Custom.h"; path = "Views/UIAlertView+Custom.h"; sourceTree = "<group>"; };
 		BD0DA5B21AF7134400BDA278 /* UIAlertView+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIAlertView+Custom.m"; path = "Views/UIAlertView+Custom.m"; sourceTree = "<group>"; };
 		BD0DA5B71AF7153900BDA278 /* UIView+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Custom.h"; path = "Views/UIView+Custom.h"; sourceTree = "<group>"; };
@@ -789,6 +792,15 @@
 			name = LocalJSON;
 			sourceTree = "<group>";
 		};
+		A9B7E4D21F44381B0014816C /* LocalJSON */ = {
+			isa = PBXGroup;
+			children = (
+				A9B7E4D51F4438A70014816C /* LocalJSONModel.h */,
+				A9B7E4D61F4438A70014816C /* LocalJSONModel.m */,
+			);
+			name = LocalJSON;
+			sourceTree = "<group>";
+		};
 		BDE212241AE68D2A002A0746 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -864,6 +876,7 @@
 		BDE212251AE68D36002A0746 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A9B7E4D21F44381B0014816C /* LocalJSON */,
 				BDE2122C1AE68E85002A0746 /* Common */,
 				7F2185A11B05D7C500F1D652 /* Store.h */,
 				7F2185A21B05D7C500F1D652 /* Store.m */,
@@ -1188,6 +1201,7 @@
 				9AC984441C2D1717004D28AB /* CommonCell.m in Sources */,
 				9ABEA8A91C6AEED1000ECCA9 /* ListFoundationViewController.m in Sources */,
 				9A904BAD1BFAD19D00258ACB /* SettingContentsViewController.m in Sources */,
+				A9B7E4D71F4438A70014816C /* LocalJSONModel.m in Sources */,
 				9A76937B1C211A2E00F3FFB0 /* AdScreenViewController.m in Sources */,
 				9AFAD5EC1BF3087100FD0665 /* ListUIResponderObjectViewController.m in Sources */,
 				9A064CAB1BF5E61000E44803 /* ListUIViewControllerObjectViewController.m in Sources */,
