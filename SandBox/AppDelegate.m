@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "MembershipModel.h"
 
 @interface AppDelegate ()
 
@@ -14,8 +15,10 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    MembershipModel *membershipModel = [MembershipModel getInstance];
+    [membershipModel infoDisplay];
     
     // Let the device know we want to receive push notifications
     if ([[UIApplication sharedApplication] isRegisteredForRemoteNotifications]) {

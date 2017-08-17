@@ -99,6 +99,7 @@
 		A9B7E4CC1F441C800014816C /* UtilsLocalJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B7E4CB1F441C800014816C /* UtilsLocalJSON.m */; };
 		A9B7E4CE1F441E350014816C /* sample.json in Resources */ = {isa = PBXBuildFile; fileRef = A9B7E4CD1F441E350014816C /* sample.json */; };
 		A9B7E4D11F442F6E0014816C /* offline.html in Resources */ = {isa = PBXBuildFile; fileRef = A9B7E4D01F442F6E0014816C /* offline.html */; };
+		A9BB3F411F4535D900EEF9A2 /* MembershipModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BB3F401F4535D900EEF9A2 /* MembershipModel.m */; };
 		BD0DA5B31AF7134400BDA278 /* UIAlertView+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0DA5B21AF7134400BDA278 /* UIAlertView+Custom.m */; };
 		BD0DA5B91AF7153900BDA278 /* UIView+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0DA5B81AF7153900BDA278 /* UIView+Custom.m */; };
 		BD8D37DB1C820223002DDB74 /* Alert2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F2BF3A71B0B10AB00CA83C4 /* Alert2.storyboard */; };
@@ -296,6 +297,8 @@
 		A9B7E4CB1F441C800014816C /* UtilsLocalJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UtilsLocalJSON.m; path = Utils/LocalJSON/UtilsLocalJSON.m; sourceTree = "<group>"; };
 		A9B7E4CD1F441E350014816C /* sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = sample.json; path = Resources/JSON/sample.json; sourceTree = "<group>"; };
 		A9B7E4D01F442F6E0014816C /* offline.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = offline.html; path = Resources/HTML/offline.html; sourceTree = "<group>"; };
+		A9BB3F3F1F4535D900EEF9A2 /* MembershipModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MembershipModel.h; path = Models/Feature/Membership/MembershipModel.h; sourceTree = "<group>"; };
+		A9BB3F401F4535D900EEF9A2 /* MembershipModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MembershipModel.m; path = Models/Feature/Membership/MembershipModel.m; sourceTree = "<group>"; };
 		BD0DA5B11AF7134400BDA278 /* UIAlertView+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIAlertView+Custom.h"; path = "Views/UIAlertView+Custom.h"; sourceTree = "<group>"; };
 		BD0DA5B21AF7134400BDA278 /* UIAlertView+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIAlertView+Custom.m"; path = "Views/UIAlertView+Custom.m"; sourceTree = "<group>"; };
 		BD0DA5B71AF7153900BDA278 /* UIView+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Custom.h"; path = "Views/UIView+Custom.h"; sourceTree = "<group>"; };
@@ -746,6 +749,7 @@
 		A9B7E4C71F441AD40014816C /* JSON */ = {
 			isa = PBXGroup;
 			children = (
+				A9BB3F3D1F45351100EEF9A2 /* Feature */,
 				A9B7E4CD1F441E350014816C /* sample.json */,
 			);
 			name = JSON;
@@ -768,9 +772,72 @@
 			name = HTML;
 			sourceTree = "<group>";
 		};
+		A9BB3F371F4534A100EEF9A2 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				A9BB3F381F4534B800EEF9A2 /* Membership */,
+			);
+			name = Feature;
+			sourceTree = "<group>";
+		};
+		A9BB3F381F4534B800EEF9A2 /* Membership */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Membership;
+			sourceTree = "<group>";
+		};
+		A9BB3F391F4534C600EEF9A2 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				A9BB3F3A1F4534CE00EEF9A2 /* Membership */,
+			);
+			name = Feature;
+			sourceTree = "<group>";
+		};
+		A9BB3F3A1F4534CE00EEF9A2 /* Membership */ = {
+			isa = PBXGroup;
+			children = (
+				A9BB3F3F1F4535D900EEF9A2 /* MembershipModel.h */,
+				A9BB3F401F4535D900EEF9A2 /* MembershipModel.m */,
+			);
+			name = Membership;
+			sourceTree = "<group>";
+		};
+		A9BB3F3B1F4534EA00EEF9A2 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				A9BB3F3C1F4534F600EEF9A2 /* Membership */,
+			);
+			name = Feature;
+			sourceTree = "<group>";
+		};
+		A9BB3F3C1F4534F600EEF9A2 /* Membership */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Membership;
+			sourceTree = "<group>";
+		};
+		A9BB3F3D1F45351100EEF9A2 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				A9BB3F3E1F45351700EEF9A2 /* Membership */,
+			);
+			name = Feature;
+			sourceTree = "<group>";
+		};
+		A9BB3F3E1F45351700EEF9A2 /* Membership */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Membership;
+			sourceTree = "<group>";
+		};
 		BDE212241AE68D2A002A0746 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A9BB3F371F4534A100EEF9A2 /* Feature */,
 				9A72AE981C4F2520007C2687 /* ObjectiveC */,
 				9A6066861C436D64007A723A /* Game */,
 				9AAF821A1C3B621E00D4EB41 /* DevelopmentManagementTable */,
@@ -843,6 +910,7 @@
 		BDE212251AE68D36002A0746 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A9BB3F391F4534C600EEF9A2 /* Feature */,
 				BDE2122C1AE68E85002A0746 /* Common */,
 				7F2185A11B05D7C500F1D652 /* Store.h */,
 				7F2185A21B05D7C500F1D652 /* Store.m */,
@@ -879,6 +947,7 @@
 		BDE212281AE68D5C002A0746 /* StoryBoards */ = {
 			isa = PBXGroup;
 			children = (
+				A9BB3F3B1F4534EA00EEF9A2 /* Feature */,
 				BDE212361AE6B48B002A0746 /* Common */,
 				BDE2122E1AE69102002A0746 /* Main.storyboard */,
 				7F24F6411B09D8F40024D249 /* Alert.storyboard */,
@@ -1163,6 +1232,7 @@
 				9A7693811C21427100F3FFB0 /* ToastViewController.m in Sources */,
 				5704E4C31AF221F10027C067 /* ListExceptionViewController.m in Sources */,
 				9A4FC02F1C2272C100BAD54A /* CustomSecurityNumberKeyboardViewController.m in Sources */,
+				A9BB3F411F4535D900EEF9A2 /* MembershipModel.m in Sources */,
 				9AC984441C2D1717004D28AB /* CommonCell.m in Sources */,
 				9ABEA8A91C6AEED1000ECCA9 /* ListFoundationViewController.m in Sources */,
 				9A904BAD1BFAD19D00258ACB /* SettingContentsViewController.m in Sources */,
