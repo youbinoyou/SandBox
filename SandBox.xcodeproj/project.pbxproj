@@ -100,6 +100,9 @@
 		A9B7E4CE1F441E350014816C /* sample.json in Resources */ = {isa = PBXBuildFile; fileRef = A9B7E4CD1F441E350014816C /* sample.json */; };
 		A9B7E4D11F442F6E0014816C /* offline.html in Resources */ = {isa = PBXBuildFile; fileRef = A9B7E4D01F442F6E0014816C /* offline.html */; };
 		A9BB3F411F4535D900EEF9A2 /* MembershipModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BB3F401F4535D900EEF9A2 /* MembershipModel.m */; };
+		A9BB3F451F45655D00EEF9A2 /* AnimalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BB3F441F45655D00EEF9A2 /* AnimalModel.m */; };
+		A9BB3F4B1F456F8700EEF9A2 /* AnimalViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BB3F4A1F456F8700EEF9A2 /* AnimalViewModel.m */; };
+		A9BB3F501F45785800EEF9A2 /* AnimalView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BB3F4F1F45785800EEF9A2 /* AnimalView.m */; };
 		BD0DA5B31AF7134400BDA278 /* UIAlertView+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0DA5B21AF7134400BDA278 /* UIAlertView+Custom.m */; };
 		BD0DA5B91AF7153900BDA278 /* UIView+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0DA5B81AF7153900BDA278 /* UIView+Custom.m */; };
 		BD8D37DB1C820223002DDB74 /* Alert2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F2BF3A71B0B10AB00CA83C4 /* Alert2.storyboard */; };
@@ -299,6 +302,12 @@
 		A9B7E4D01F442F6E0014816C /* offline.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = offline.html; path = Resources/HTML/offline.html; sourceTree = "<group>"; };
 		A9BB3F3F1F4535D900EEF9A2 /* MembershipModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MembershipModel.h; path = Models/Feature/Membership/MembershipModel.h; sourceTree = "<group>"; };
 		A9BB3F401F4535D900EEF9A2 /* MembershipModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MembershipModel.m; path = Models/Feature/Membership/MembershipModel.m; sourceTree = "<group>"; };
+		A9BB3F431F45655D00EEF9A2 /* AnimalModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnimalModel.h; path = Models/Feature/Animation/AnimalModel.h; sourceTree = "<group>"; };
+		A9BB3F441F45655D00EEF9A2 /* AnimalModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnimalModel.m; path = Models/Feature/Animation/AnimalModel.m; sourceTree = "<group>"; };
+		A9BB3F491F456F8700EEF9A2 /* AnimalViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnimalViewModel.h; path = ViewModels/Feature/Animation/AnimalViewModel.h; sourceTree = "<group>"; };
+		A9BB3F4A1F456F8700EEF9A2 /* AnimalViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnimalViewModel.m; path = ViewModels/Feature/Animation/AnimalViewModel.m; sourceTree = "<group>"; };
+		A9BB3F4E1F45785800EEF9A2 /* AnimalView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnimalView.h; path = Views/Feature/Animation/AnimalView.h; sourceTree = "<group>"; };
+		A9BB3F4F1F45785800EEF9A2 /* AnimalView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnimalView.m; path = Views/Feature/Animation/AnimalView.m; sourceTree = "<group>"; };
 		BD0DA5B11AF7134400BDA278 /* UIAlertView+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIAlertView+Custom.h"; path = "Views/UIAlertView+Custom.h"; sourceTree = "<group>"; };
 		BD0DA5B21AF7134400BDA278 /* UIAlertView+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIAlertView+Custom.m"; path = "Views/UIAlertView+Custom.m"; sourceTree = "<group>"; };
 		BD0DA5B71AF7153900BDA278 /* UIView+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Custom.h"; path = "Views/UIView+Custom.h"; sourceTree = "<group>"; };
@@ -790,6 +799,7 @@
 		A9BB3F391F4534C600EEF9A2 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				A9BB3F421F45650100EEF9A2 /* Animation */,
 				A9BB3F3A1F4534CE00EEF9A2 /* Membership */,
 			);
 			name = Feature;
@@ -832,6 +842,57 @@
 			children = (
 			);
 			name = Membership;
+			sourceTree = "<group>";
+		};
+		A9BB3F421F45650100EEF9A2 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				A9BB3F431F45655D00EEF9A2 /* AnimalModel.h */,
+				A9BB3F441F45655D00EEF9A2 /* AnimalModel.m */,
+			);
+			name = Animation;
+			sourceTree = "<group>";
+		};
+		A9BB3F461F456F3000EEF9A2 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A9BB3F471F456F3800EEF9A2 /* Feature */,
+			);
+			name = ViewModels;
+			sourceTree = "<group>";
+		};
+		A9BB3F471F456F3800EEF9A2 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				A9BB3F481F456F4000EEF9A2 /* Animation */,
+			);
+			name = Feature;
+			sourceTree = "<group>";
+		};
+		A9BB3F481F456F4000EEF9A2 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				A9BB3F491F456F8700EEF9A2 /* AnimalViewModel.h */,
+				A9BB3F4A1F456F8700EEF9A2 /* AnimalViewModel.m */,
+			);
+			name = Animation;
+			sourceTree = "<group>";
+		};
+		A9BB3F4C1F45782300EEF9A2 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				A9BB3F4D1F45782B00EEF9A2 /* Animation */,
+			);
+			name = Feature;
+			sourceTree = "<group>";
+		};
+		A9BB3F4D1F45782B00EEF9A2 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				A9BB3F4E1F45785800EEF9A2 /* AnimalView.h */,
+				A9BB3F4F1F45785800EEF9A2 /* AnimalView.m */,
+			);
+			name = Animation;
 			sourceTree = "<group>";
 		};
 		BDE212241AE68D2A002A0746 /* Controllers */ = {
@@ -963,6 +1024,7 @@
 		BDE212291AE68D68002A0746 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A9BB3F4C1F45782300EEF9A2 /* Feature */,
 				BD0DA5B11AF7134400BDA278 /* UIAlertView+Custom.h */,
 				BD0DA5B21AF7134400BDA278 /* UIAlertView+Custom.m */,
 				BDE2122A1AE68DF9002A0746 /* Common */,
@@ -1054,6 +1116,7 @@
 		BDEEC2241AD7EE9F00B522D9 /* SandBox */ = {
 			isa = PBXGroup;
 			children = (
+				A9BB3F461F456F3000EEF9A2 /* ViewModels */,
 				BDE212291AE68D68002A0746 /* Views */,
 				BDE212281AE68D5C002A0746 /* StoryBoards */,
 				BDE212271AE68D4F002A0746 /* Resources */,
@@ -1255,6 +1318,7 @@
 				9ACFE9B61C3A4EFD00E6A12A /* UtilsBlogSearch.m in Sources */,
 				9AFAD5E81BF2E36400FD0665 /* BaceListViewController.m in Sources */,
 				9A54376C1C17E7E500B9F5E6 /* ListCustomKeyboardsViewController.m in Sources */,
+				A9BB3F451F45655D00EEF9A2 /* AnimalModel.m in Sources */,
 				9A7FBB461C29394600B4E1C6 /* ContentsTopViewController.m in Sources */,
 				9AC984411C2D140D004D28AB /* CustomButtonCell.m in Sources */,
 				7F2BF3B11B0B2A5800CA83C4 /* PageControlListViewController.m in Sources */,
@@ -1282,6 +1346,7 @@
 				9A06C8171BFB3BE800882EAA /* CheckMarkTableViewController.m in Sources */,
 				9A06C8141BFB385C00882EAA /* NoScrollTableViewController.m in Sources */,
 				9A5C9E4C1C10217B002EA33A /* ListNSURLConnectionObjectViewController.m in Sources */,
+				A9BB3F4B1F456F8700EEF9A2 /* AnimalViewModel.m in Sources */,
 				9A064CAF1BF5E91400E44803 /* ListUIWindowObjectViewController.m in Sources */,
 				9ABEA8AD1C6AEF34000ECCA9 /* ListObjeciveCViewController.m in Sources */,
 				9ABEA8A81C6AEED1000ECCA9 /* ListCoreLocationViewController.m in Sources */,
@@ -1306,6 +1371,7 @@
 				7F2185A31B05D7C500F1D652 /* Store.m in Sources */,
 				A9B760481F283B0A0028373D /* UIColor+SandBox.m in Sources */,
 				7F2185A91B05EC7100F1D652 /* PickerViewListViewController.m in Sources */,
+				A9BB3F501F45785800EEF9A2 /* AnimalView.m in Sources */,
 				BDE212411AE91B8F002A0746 /* ListAlertViewController.m in Sources */,
 				570B694D1AEA0C7200A42DEC /* ListAttributedStringViewController.m in Sources */,
 				9A7FBB431C29391100B4E1C6 /* ContentsShoppingViewController.m in Sources */,

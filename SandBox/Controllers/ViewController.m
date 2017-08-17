@@ -12,6 +12,9 @@
 #import "UtilsBlogSearch.h"
 #import "UtilsLocalJSON.h"
 #import "MembershipModel.h"
+#import "AnimalModel.h"
+#import "AnimalViewModel.h"
+#import "AnimalView.h"
 
 @interface ViewController ()
 
@@ -110,6 +113,8 @@
                        @"action":@"blogData"},
                      @{@"title":@"データの扱いについて",
                        @"action":@"jsonData"},
+                     @{@"title":@"アニメーションについて",
+                       @"action":@"animetionData"},
                      @{@"title":@"開発管理表",
                        @"listViewController:":@"DevelopmentManagementTableViewController"},
                      @{@"title":@"トースト",
@@ -160,6 +165,21 @@
     UtilsLocalJSON *localJSON = [[UtilsLocalJSON alloc] init];
     if ([localJSON requestFileName:@"sample"]) {
         NSLog(@"localJSON : %@",localJSON);
+    }
+}
+
+- (void)animetionData {
+    AnimalModel *animalModel = [AnimalModel setModelDictionary:[AnimalModel startUpAnimalInfo]];
+    if (animalModel) {
+        AnimalView *animalView = [[AnimalView alloc] init];
+        animalView.frame = CGRectMake(10, 10, 100, 100);
+        [self.view addSubview:animalView];
+        // animalModel.legs = nil;
+        [animalModel lifeCheck];
+        AnimalViewModel *animalViewModel = [[AnimalViewModel alloc] initWithViewId:@"AnimalViewModel" animalModel:animalModel];
+        [animalViewModel updateAnimalView:animalView];
+    } else {
+        NSLog(@"何も起こりませんでした");
     }
 }
 
@@ -299,7 +319,5 @@
     }
     return idVal;
 }
-
-
 
 @end
