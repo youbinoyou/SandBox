@@ -11,6 +11,7 @@
 #import "UtilsViewController.h"
 #import "UtilsBlogSearch.h"
 #import "UtilsLocalJSON.h"
+#import "MembershipModel.h"
 
 @interface ViewController ()
 
@@ -23,6 +24,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     // サスペンド状態から復帰したときに、特定のメソッドがコールされるように指定
+    
     [[NSNotificationCenter defaultCenter]
      addObserver:self
      selector:@selector(getUserDefaults)
@@ -32,7 +34,7 @@
     
     UILabel *titleLabel = [[UILabel alloc] init];
     titleLabel.textAlignment = NSTextAlignmentCenter;
-    titleLabel.text = @"Xcode 学習（c）You Ohshima";
+    titleLabel.text = [NSString stringWithFormat:@"Xcode 学習（c）You Ohshima"];
     [titleLabel sizeToFit];
     
     if ([self.view isKindOfClass:[UIScrollView class]]) {
@@ -43,6 +45,20 @@
     }
     
     [self.view addSubview:titleLabel];
+    
+    MembershipModel *membershipModel = [MembershipModel getInstance];
+    
+    if ([membershipModel isLogin]) {
+        [membershipModel infoDisplay];
+        UILabel *loginLabel = [[UILabel alloc] init];
+        loginLabel.textAlignment = NSTextAlignmentCenter;
+        loginLabel.text = [NSString stringWithFormat:@"こんにちわ、%@ さん",membershipModel.name];
+        [loginLabel sizeToFit];
+        CGRect loginLabelRect = loginLabel.frame;
+        loginLabelRect.origin.y += 20;
+        loginLabel.frame = loginLabelRect;
+        [self.view addSubview:loginLabel];
+    }
 }
 
 - (void)setListButtons {
