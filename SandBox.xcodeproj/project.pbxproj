@@ -96,6 +96,10 @@
 		9AFAD5F01BF3106D00FD0665 /* ListUILocalNotificationObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAD5EF1BF3106D00FD0665 /* ListUILocalNotificationObjectViewController.m */; };
 		A9B760441F2837FF0028373D /* NSDate+SandBox.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B760431F2837FF0028373D /* NSDate+SandBox.m */; };
 		A9B760481F283B0A0028373D /* UIColor+SandBox.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B760471F283B0A0028373D /* UIColor+SandBox.m */; };
+		A9B7E4CC1F441C800014816C /* UtilsLocalJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B7E4CB1F441C800014816C /* UtilsLocalJSON.m */; };
+		A9B7E4CE1F441E350014816C /* sample.json in Resources */ = {isa = PBXBuildFile; fileRef = A9B7E4CD1F441E350014816C /* sample.json */; };
+		A9B7E4D11F442F6E0014816C /* offline.html in Resources */ = {isa = PBXBuildFile; fileRef = A9B7E4D01F442F6E0014816C /* offline.html */; };
+		A9BB3F411F4535D900EEF9A2 /* MembershipModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BB3F401F4535D900EEF9A2 /* MembershipModel.m */; };
 		BD0DA5B31AF7134400BDA278 /* UIAlertView+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0DA5B21AF7134400BDA278 /* UIAlertView+Custom.m */; };
 		BD0DA5B91AF7153900BDA278 /* UIView+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0DA5B81AF7153900BDA278 /* UIView+Custom.m */; };
 		BD8D37DB1C820223002DDB74 /* Alert2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F2BF3A71B0B10AB00CA83C4 /* Alert2.storyboard */; };
@@ -289,6 +293,12 @@
 		A9B760431F2837FF0028373D /* NSDate+SandBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+SandBox.m"; path = "Utils/Date/NSDate+SandBox.m"; sourceTree = "<group>"; };
 		A9B760461F283B0A0028373D /* UIColor+SandBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+SandBox.h"; path = "Utils/Color/UIColor+SandBox.h"; sourceTree = "<group>"; };
 		A9B760471F283B0A0028373D /* UIColor+SandBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+SandBox.m"; path = "Utils/Color/UIColor+SandBox.m"; sourceTree = "<group>"; };
+		A9B7E4CA1F441C800014816C /* UtilsLocalJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UtilsLocalJSON.h; path = Utils/LocalJSON/UtilsLocalJSON.h; sourceTree = "<group>"; };
+		A9B7E4CB1F441C800014816C /* UtilsLocalJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UtilsLocalJSON.m; path = Utils/LocalJSON/UtilsLocalJSON.m; sourceTree = "<group>"; };
+		A9B7E4CD1F441E350014816C /* sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = sample.json; path = Resources/JSON/sample.json; sourceTree = "<group>"; };
+		A9B7E4D01F442F6E0014816C /* offline.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = offline.html; path = Resources/HTML/offline.html; sourceTree = "<group>"; };
+		A9BB3F3F1F4535D900EEF9A2 /* MembershipModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MembershipModel.h; path = Models/Feature/Membership/MembershipModel.h; sourceTree = "<group>"; };
+		A9BB3F401F4535D900EEF9A2 /* MembershipModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MembershipModel.m; path = Models/Feature/Membership/MembershipModel.m; sourceTree = "<group>"; };
 		BD0DA5B11AF7134400BDA278 /* UIAlertView+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIAlertView+Custom.h"; path = "Views/UIAlertView+Custom.h"; sourceTree = "<group>"; };
 		BD0DA5B21AF7134400BDA278 /* UIAlertView+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIAlertView+Custom.m"; path = "Views/UIAlertView+Custom.m"; sourceTree = "<group>"; };
 		BD0DA5B71AF7153900BDA278 /* UIView+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Custom.h"; path = "Views/UIView+Custom.h"; sourceTree = "<group>"; };
@@ -736,9 +746,98 @@
 			name = Color;
 			sourceTree = "<group>";
 		};
+		A9B7E4C71F441AD40014816C /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				A9BB3F3D1F45351100EEF9A2 /* Feature */,
+				A9B7E4CD1F441E350014816C /* sample.json */,
+			);
+			name = JSON;
+			sourceTree = "<group>";
+		};
+		A9B7E4C91F441C340014816C /* LocalJSON */ = {
+			isa = PBXGroup;
+			children = (
+				A9B7E4CA1F441C800014816C /* UtilsLocalJSON.h */,
+				A9B7E4CB1F441C800014816C /* UtilsLocalJSON.m */,
+			);
+			name = LocalJSON;
+			sourceTree = "<group>";
+		};
+		A9B7E4CF1F442F350014816C /* HTML */ = {
+			isa = PBXGroup;
+			children = (
+				A9B7E4D01F442F6E0014816C /* offline.html */,
+			);
+			name = HTML;
+			sourceTree = "<group>";
+		};
+		A9BB3F371F4534A100EEF9A2 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				A9BB3F381F4534B800EEF9A2 /* Membership */,
+			);
+			name = Feature;
+			sourceTree = "<group>";
+		};
+		A9BB3F381F4534B800EEF9A2 /* Membership */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Membership;
+			sourceTree = "<group>";
+		};
+		A9BB3F391F4534C600EEF9A2 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				A9BB3F3A1F4534CE00EEF9A2 /* Membership */,
+			);
+			name = Feature;
+			sourceTree = "<group>";
+		};
+		A9BB3F3A1F4534CE00EEF9A2 /* Membership */ = {
+			isa = PBXGroup;
+			children = (
+				A9BB3F3F1F4535D900EEF9A2 /* MembershipModel.h */,
+				A9BB3F401F4535D900EEF9A2 /* MembershipModel.m */,
+			);
+			name = Membership;
+			sourceTree = "<group>";
+		};
+		A9BB3F3B1F4534EA00EEF9A2 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				A9BB3F3C1F4534F600EEF9A2 /* Membership */,
+			);
+			name = Feature;
+			sourceTree = "<group>";
+		};
+		A9BB3F3C1F4534F600EEF9A2 /* Membership */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Membership;
+			sourceTree = "<group>";
+		};
+		A9BB3F3D1F45351100EEF9A2 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				A9BB3F3E1F45351700EEF9A2 /* Membership */,
+			);
+			name = Feature;
+			sourceTree = "<group>";
+		};
+		A9BB3F3E1F45351700EEF9A2 /* Membership */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Membership;
+			sourceTree = "<group>";
+		};
 		BDE212241AE68D2A002A0746 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A9BB3F371F4534A100EEF9A2 /* Feature */,
 				9A72AE981C4F2520007C2687 /* ObjectiveC */,
 				9A6066861C436D64007A723A /* Game */,
 				9AAF821A1C3B621E00D4EB41 /* DevelopmentManagementTable */,
@@ -811,6 +910,7 @@
 		BDE212251AE68D36002A0746 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A9BB3F391F4534C600EEF9A2 /* Feature */,
 				BDE2122C1AE68E85002A0746 /* Common */,
 				7F2185A11B05D7C500F1D652 /* Store.h */,
 				7F2185A21B05D7C500F1D652 /* Store.m */,
@@ -821,6 +921,7 @@
 		BDE212261AE68D46002A0746 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				A9B7E4C91F441C340014816C /* LocalJSON */,
 				A9B760451F283AE90028373D /* Color */,
 				A9B760411F2837B50028373D /* Date */,
 				9ABD26CF1C89205900D998AC /* String */,
@@ -836,6 +937,8 @@
 		BDE212271AE68D4F002A0746 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A9B7E4CF1F442F350014816C /* HTML */,
+				A9B7E4C71F441AD40014816C /* JSON */,
 				7F2BF39E1B0ACD0A00CA83C4 /* Views */,
 			);
 			name = Resources;
@@ -844,6 +947,7 @@
 		BDE212281AE68D5C002A0746 /* StoryBoards */ = {
 			isa = PBXGroup;
 			children = (
+				A9BB3F3B1F4534EA00EEF9A2 /* Feature */,
 				BDE212361AE6B48B002A0746 /* Common */,
 				BDE2122E1AE69102002A0746 /* Main.storyboard */,
 				7F24F6411B09D8F40024D249 /* Alert.storyboard */,
@@ -1076,9 +1180,11 @@
 			files = (
 				BDE2122F1AE69102002A0746 /* Main.storyboard in Resources */,
 				9A5437651C17E2CB00B9F5E6 /* CustomNumberKeyboard.xib in Resources */,
+				A9B7E4D11F442F6E0014816C /* offline.html in Resources */,
 				9A7FBB311C292F7300B4E1C6 /* CustomShopping.storyboard in Resources */,
 				7F2BF3A11B0ACD7F00CA83C4 /* SampleAlertView.xib in Resources */,
 				9A4FC02C1C22673700BAD54A /* CustomSecurityNumberKeyboard.storyboard in Resources */,
+				A9B7E4CE1F441E350014816C /* sample.json in Resources */,
 				9ABBE97F1C6B347D004AB04B /* Settings.bundle in Resources */,
 				9ABB57CC1CAA9469007171C3 /* Calender.storyboard in Resources */,
 				BD8D37DB1C820223002DDB74 /* Alert2.storyboard in Resources */,
@@ -1126,6 +1232,7 @@
 				9A7693811C21427100F3FFB0 /* ToastViewController.m in Sources */,
 				5704E4C31AF221F10027C067 /* ListExceptionViewController.m in Sources */,
 				9A4FC02F1C2272C100BAD54A /* CustomSecurityNumberKeyboardViewController.m in Sources */,
+				A9BB3F411F4535D900EEF9A2 /* MembershipModel.m in Sources */,
 				9AC984441C2D1717004D28AB /* CommonCell.m in Sources */,
 				9ABEA8A91C6AEED1000ECCA9 /* ListFoundationViewController.m in Sources */,
 				9A904BAD1BFAD19D00258ACB /* SettingContentsViewController.m in Sources */,
@@ -1163,6 +1270,7 @@
 				7F2BF3A41B0AD10F00CA83C4 /* SampleAlertViewController.m in Sources */,
 				9AAF821D1C3B626C00D4EB41 /* DevelopmentManagementTableViewController.m in Sources */,
 				9A76937E1C213C3800F3FFB0 /* UtilsViewController.m in Sources */,
+				A9B7E4CC1F441C800014816C /* UtilsLocalJSON.m in Sources */,
 				9AFAD5E51BF2E2A100FD0665 /* ListUIImageViewObjectViewController.m in Sources */,
 				9ABB57C71CAA9227007171C3 /* SandBoxCalendarViewController.m in Sources */,
 				BDEEC22B1AD7EE9F00B522D9 /* AppDelegate.m in Sources */,
