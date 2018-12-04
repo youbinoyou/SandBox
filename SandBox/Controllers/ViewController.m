@@ -66,6 +66,8 @@
                      
                      @{@"title":@"Objective-Cについて",
                        @"listViewController:":@"ListObjeciveCViewController"},
+                     @{@"title":@"NewProject",
+                       @"listViewController:":@"NewProjectViewController"},
                      @{@"title":@"ビューコントローラーについて",
                        @"listViewController:":@"ListUIViewControllerObjectViewController"},
                      @{@"title":@"ナビゲーションコントローラーについて",
