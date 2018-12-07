@@ -33,6 +33,7 @@
 		7F2ED0611B0D8BF300F795A4 /* AreaSelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F2ED0601B0D8BF300F795A4 /* AreaSelection.storyboard */; };
 		7F462AEF1BA953F300896434 /* ListAppliedConstrueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F462AEE1BA953F300896434 /* ListAppliedConstrueViewController.m */; };
 		7F462AF01BA953F300896434 /* ListAppliedConstrueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F462AEE1BA953F300896434 /* ListAppliedConstrueViewController.m */; };
+		938F177621BA0C6E00C14F37 /* NewProjectLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938F177521BA0C6E00C14F37 /* NewProjectLoginViewController.swift */; };
 		9A064CAB1BF5E61000E44803 /* ListUIViewControllerObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A064CAA1BF5E61000E44803 /* ListUIViewControllerObjectViewController.m */; };
 		9A064CAF1BF5E91400E44803 /* ListUIWindowObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A064CAE1BF5E91400E44803 /* ListUIWindowObjectViewController.m */; };
 		9A06C80D1BFB317600882EAA /* ListUIScrollViewObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A06C80C1BFB317600882EAA /* ListUIScrollViewObjectViewController.m */; };
@@ -346,6 +347,14 @@
 				7F2BF3A01B0ACD7F00CA83C4 /* SampleAlertView.xib */,
 			);
 			name = AlertViews;
+			sourceTree = "<group>";
+		};
+		938F176D21BA0AA100C14F37 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				938F177521BA0C6E00C14F37 /* NewProjectLoginViewController.swift */,
+			);
+			name = Login;
 			sourceTree = "<group>";
 		};
 		9A064CA81BF5E53900E44803 /* UIViewController */ = {
@@ -1160,6 +1169,7 @@
 				9AFAD5F01BF3106D00FD0665 /* ListUILocalNotificationObjectViewController.m in Sources */,
 				9A6F68191BFC1E4D0090E2D4 /* ColorCheckMarkTableViewController.m in Sources */,
 				9ABB57CA1CAA92BD007171C3 /* CalendarDayCell.m in Sources */,
+				938F177621BA0C6E00C14F37 /* NewProjectLoginViewController.swift in Sources */,
 				7F2BF3A41B0AD10F00CA83C4 /* SampleAlertViewController.m in Sources */,
 				9AAF821D1C3B626C00D4EB41 /* DevelopmentManagementTableViewController.m in Sources */,
 				9A76937E1C213C3800F3FFB0 /* UtilsViewController.m in Sources */,
