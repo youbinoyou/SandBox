@@ -1,5 +1,5 @@
 //
-//  NewProjectLoginViewController.swift
+//  NewProjectBarcodeScanViewController.swift
 //  SandBox
 //
 //  Created by 大島　曜 on 2018/12/07.
@@ -8,8 +8,8 @@
 
 import UIKit
 
-@objc(NewProjectLoginViewController)
-class NewProjectLoginViewController : UIViewController
+@objc(NewProjectBarcodeScanViewController)
+class NewProjectBarcodeScanViewController : UIViewController
 {
     override func viewDidLoad() {
         super.viewDidLoad()
