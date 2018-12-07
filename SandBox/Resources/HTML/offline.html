@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+        <title></title>
+    <style>
+        
+        /* css reset */
+        html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+        body{line-height:1}
+        article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+        nav ul{list-style:none}
+        blockquote,q{quotes:none}
+        blockquote:before,blockquote:after,q:before,q:after{content:none}
+        a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent}
+        ins{background-color:#ff9;color:#000;text-decoration:none}
+        mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold}
+        del{text-decoration:line-through}
+        abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}
+        table{border-collapse:collapse;border-spacing:0}
+        hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}
+        input,select{vertical-align:middle}
+        
+        body {
+            background: #ececec;
+            font-family:'ヒラギノ角ゴ ProN W4', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic',sans-serif;
+            letter-spacing: 0;
+            font-size: 10px;
+            line-height: 1.8;
+            color: #555;
+            text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8), 0px -1px 0px rgba(0, 0, 0, 0.1);
+        }
+    
+    article {
+        position:absolute;
+        top: 50%;
+        width: 100%;
+        height: 140px;
+        margin-top: -80px;
+        text-align: center;
+        min-height: 140px;
+        text-align: center;
+    }
+    
+    header {
+        font-size: 140%;
+    }
+    
+    #reload {
+        margin-top: 10px;
+    }
+    
+    .button_red {
+        background: #f00;
+        font-weight: bold;
+        color: #fff;
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+        background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(217, 0, 0, 1)), color-stop(61%, rgba(255, 0, 0, 1)), to(rgba(255, 0, 0, 1)));
+    }
+    .button_obj {
+        background: #ececec;
+        width: 40%;
+        -webkit-appearance: none;
+        max-width:180px;
+        margin: 0.5em 0;
+        padding: 8px 20px;
+        border: solid 1px;
+        font-size: 14px;
+        line-height: 120%;
+        cursor: pointer;
+    }
+    .r0_5 {
+        border-radius: 0.5em;
+    }
+    
+    .button_obj:hover {
+        background: #555555;
+        color:white;
+        filter:alpha(opacity=60);
+        opacity:0.6;
+    }
+    .button_obj:active {
+        filter:alpha(opacity=60);
+        opacity:0.6;
+    }
+        </style>
+    <script>
+        function reloadPage(){
+            location.reload();
+        }
+    document.addEventListener('touchmove', function(e) {
+                              if (window.innerHeight >= document.body.scrollHeight) {
+                              e.preventDefault();
+                              }
+                              }, false);
+        </script>
+    </head>
+    <body>
+        <article>
+            <header>インターネットがオフライン状態です</header>
+            <header>ネットワークの接続をご確認の上、もう一度実行してみてください</header>
+            <hr/>
+            <input id='reload' class='button_obj r0_5' type='button' value='再試行' onclick="javascript:reloadPage();" />
+        </article>
+    </body>
+</html>
