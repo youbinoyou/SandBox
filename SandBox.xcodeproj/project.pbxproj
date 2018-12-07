@@ -32,7 +32,12 @@
 		7F2BF3B41B0B2B1100CA83C4 /* StepperListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2BF3B31B0B2B1100CA83C4 /* StepperListViewController.m */; };
 		7F2ED0611B0D8BF300F795A4 /* AreaSelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F2ED0601B0D8BF300F795A4 /* AreaSelection.storyboard */; };
 		7F462AEF1BA953F300896434 /* ListAppliedConstrueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F462AEE1BA953F300896434 /* ListAppliedConstrueViewController.m */; };
-		7F462AF01BA953F300896434 /* ListAppliedConstrueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F462AEE1BA953F300896434 /* ListAppliedConstrueViewController.m */; };
+		938F177C21BA0CFD00C14F37 /* NewProjectMemberStatusConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938F177B21BA0CFD00C14F37 /* NewProjectMemberStatusConfirmViewController.swift */; };
+		938F177A21BA0CCF00C14F37 /* NewProjectMemberCardConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938F177921BA0CCF00C14F37 /* NewProjectMemberCardConfirmViewController.swift */; };
+		938F177621BA0C6E00C14F37 /* NewProjectLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938F177521BA0C6E00C14F37 /* NewProjectLoginViewController.swift */; };
+		938F177E21BA0D2D00C14F37 /* NewProjectBarcodeScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938F177D21BA0D2D00C14F37 /* NewProjectBarcodeScanViewController.swift */; };
+		938F15C721B6462D00C14F37 /* NewProjectTopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938F15C621B6462D00C14F37 /* NewProjectTopViewController.swift */; };
+		938F177821BA0C9200C14F37 /* NewProjectMemberRegistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938F177721BA0C9200C14F37 /* NewProjectMemberRegistViewController.swift */; };
 		9A064CAB1BF5E61000E44803 /* ListUIViewControllerObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A064CAA1BF5E61000E44803 /* ListUIViewControllerObjectViewController.m */; };
 		9A064CAF1BF5E91400E44803 /* ListUIWindowObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A064CAE1BF5E91400E44803 /* ListUIWindowObjectViewController.m */; };
 		9A06C80D1BFB317600882EAA /* ListUIScrollViewObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A06C80C1BFB317600882EAA /* ListUIScrollViewObjectViewController.m */; };
@@ -96,6 +101,10 @@
 		9AFAD5F01BF3106D00FD0665 /* ListUILocalNotificationObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAD5EF1BF3106D00FD0665 /* ListUILocalNotificationObjectViewController.m */; };
 		A9B760441F2837FF0028373D /* NSDate+SandBox.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B760431F2837FF0028373D /* NSDate+SandBox.m */; };
 		A9B760481F283B0A0028373D /* UIColor+SandBox.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B760471F283B0A0028373D /* UIColor+SandBox.m */; };
+		A9B7E4CC1F441C800014816C /* UtilsLocalJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B7E4CB1F441C800014816C /* UtilsLocalJSON.m */; };
+		A9B7E4CE1F441E350014816C /* sample.json in Resources */ = {isa = PBXBuildFile; fileRef = A9B7E4CD1F441E350014816C /* sample.json */; };
+		A9B7E4D11F442F6E0014816C /* offline.html in Resources */ = {isa = PBXBuildFile; fileRef = A9B7E4D01F442F6E0014816C /* offline.html */; };
+		A9BB3F411F4535D900EEF9A2 /* MembershipModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BB3F401F4535D900EEF9A2 /* MembershipModel.m */; };
 		BD0DA5B31AF7134400BDA278 /* UIAlertView+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0DA5B21AF7134400BDA278 /* UIAlertView+Custom.m */; };
 		BD0DA5B91AF7153900BDA278 /* UIView+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0DA5B81AF7153900BDA278 /* UIView+Custom.m */; };
 		BD8D37DB1C820223002DDB74 /* Alert2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F2BF3A71B0B10AB00CA83C4 /* Alert2.storyboard */; };
@@ -169,6 +178,9 @@
 		7F2ED0601B0D8BF300F795A4 /* AreaSelection.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = AreaSelection.storyboard; path = Base.lproj/StoryBoards/AreaSelection.storyboard; sourceTree = "<group>"; };
 		7F462AED1BA953F300896434 /* ListAppliedConstrueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListAppliedConstrueViewController.h; path = Controllers/ListAppliedConstrueViewController.h; sourceTree = "<group>"; };
 		7F462AEE1BA953F300896434 /* ListAppliedConstrueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListAppliedConstrueViewController.m; path = Controllers/ListAppliedConstrueViewController.m; sourceTree = "<group>"; };
+		938F177B21BA0CFD00C14F37 /* NewProjectMemberStatusConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewProjectMemberStatusConfirmViewController.swift; path = NewProject/Views/ViewControllers/Member/Confirm/Status/NewProjectMemberStatusConfirmViewController.swift; sourceTree = "<group>"; };
+		938F177921BA0CCF00C14F37 /* NewProjectMemberCardConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewProjectMemberCardConfirmViewController.swift; path = NewProject/Views/ViewControllers/Member/Confirm/Card/NewProjectMemberCardConfirmViewController.swift; sourceTree = "<group>"; };
+		938F15C621B6462D00C14F37 /* NewProjectTopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewProjectTopViewController.swift; path = NewProject/Views/ViewControllers/NewProjectTopViewController.swift; sourceTree = "<group>"; };
 		9A064CA91BF5E61000E44803 /* ListUIViewControllerObjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListUIViewControllerObjectViewController.h; path = Controllers/UIViewController/ListUIViewControllerObjectViewController.h; sourceTree = "<group>"; };
 		9A064CAA1BF5E61000E44803 /* ListUIViewControllerObjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListUIViewControllerObjectViewController.m; path = Controllers/UIViewController/ListUIViewControllerObjectViewController.m; sourceTree = "<group>"; };
 		9A064CAD1BF5E91400E44803 /* ListUIWindowObjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListUIWindowObjectViewController.h; path = Controllers/UIWindow/ListUIWindowObjectViewController.h; sourceTree = "<group>"; };
@@ -289,6 +301,12 @@
 		A9B760431F2837FF0028373D /* NSDate+SandBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+SandBox.m"; path = "Utils/Date/NSDate+SandBox.m"; sourceTree = "<group>"; };
 		A9B760461F283B0A0028373D /* UIColor+SandBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+SandBox.h"; path = "Utils/Color/UIColor+SandBox.h"; sourceTree = "<group>"; };
 		A9B760471F283B0A0028373D /* UIColor+SandBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+SandBox.m"; path = "Utils/Color/UIColor+SandBox.m"; sourceTree = "<group>"; };
+		A9B7E4CA1F441C800014816C /* UtilsLocalJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UtilsLocalJSON.h; path = Utils/LocalJSON/UtilsLocalJSON.h; sourceTree = "<group>"; };
+		A9B7E4CB1F441C800014816C /* UtilsLocalJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UtilsLocalJSON.m; path = Utils/LocalJSON/UtilsLocalJSON.m; sourceTree = "<group>"; };
+		A9B7E4CD1F441E350014816C /* sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = sample.json; path = Resources/JSON/sample.json; sourceTree = "<group>"; };
+		A9B7E4D01F442F6E0014816C /* offline.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = offline.html; path = Resources/HTML/offline.html; sourceTree = "<group>"; };
+		A9BB3F3F1F4535D900EEF9A2 /* MembershipModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MembershipModel.h; path = Models/Feature/Membership/MembershipModel.h; sourceTree = "<group>"; };
+		A9BB3F401F4535D900EEF9A2 /* MembershipModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MembershipModel.m; path = Models/Feature/Membership/MembershipModel.m; sourceTree = "<group>"; };
 		BD0DA5B11AF7134400BDA278 /* UIAlertView+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIAlertView+Custom.h"; path = "Views/UIAlertView+Custom.h"; sourceTree = "<group>"; };
 		BD0DA5B21AF7134400BDA278 /* UIAlertView+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIAlertView+Custom.m"; path = "Views/UIAlertView+Custom.m"; sourceTree = "<group>"; };
 		BD0DA5B71AF7153900BDA278 /* UIView+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Custom.h"; path = "Views/UIView+Custom.h"; sourceTree = "<group>"; };
@@ -346,6 +364,126 @@
 				7F2BF3A01B0ACD7F00CA83C4 /* SampleAlertView.xib */,
 			);
 			name = AlertViews;
+			sourceTree = "<group>";
+		};
+		938F177021BA0B0E00C14F37 /* Member */ = {
+			isa = PBXGroup;
+			children = (
+				938F177221BA0B6100C14F37 /* Confirm */,
+			);
+			name = Member;
+			sourceTree = "<group>";
+		};
+		938F177121BA0B4D00C14F37 /* Status */ = {
+			isa = PBXGroup;
+			children = (
+				938F177B21BA0CFD00C14F37 /* NewProjectMemberStatusConfirmViewController.swift */,
+			);
+			name = Status;
+			sourceTree = "<group>";
+		};
+		938F177221BA0B6100C14F37 /* Confirm */ = {
+			isa = PBXGroup;
+			children = (
+				938F177121BA0B4D00C14F37 /* Status */,
+				938F176F21BA0AFF00C14F37 /* Card */,
+			);
+			name = Confirm;
+			sourceTree = "<group>";
+    };
+		938F176D21BA0AA100C14F37 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				938F177221BA0B6100C14F37 /* Confirm */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+    };
+			name = Member;
+			sourceTree = "<group>";
+		};
+		938F177321BA0BB500C14F37 /* Barcode */ = {
+			isa = PBXGroup;
+			children = (
+				938F177421BA0BC200C14F37 /* Scan */,
+			);
+			name = Barcode;
+			sourceTree = "<group>";
+		};
+		938F177421BA0BC200C14F37 /* Scan */ = {
+			isa = PBXGroup;
+			children = (
+				938F177D21BA0D2D00C14F37 /* NewProjectBarcodeScanViewController.swift */,
+			);
+			name = Scan;
+			sourceTree = "<group>";
+		};
+		938F15BE21B62A8800C14F37 /* NewProject */ = {
+			isa = PBXGroup;
+			children = (
+				938F15C321B6455000C14F37 /* Utils */,
+				938F15C221B6453800C14F37 /* APIs */,
+				938F15C121B6452000C14F37 /* Services */,
+				938F15BF21B644F300C14F37 /* Views */,
+				938F160821B655FA00C14F37 /* Manager */,
+			);
+			name = NewProject;
+			sourceTree = "<group>";
+		};
+		938F15BF21B644F300C14F37 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				938F15C421B645CB00C14F37 /* ViewControllers */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		938F15C121B6452000C14F37 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		938F15C221B6453800C14F37 /* APIs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = APIs;
+			sourceTree = "<group>";
+		};
+		938F15C321B6455000C14F37 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		938F15C421B645CB00C14F37 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				938F177321BA0BB500C14F37 /* Barcode */,
+				938F177021BA0B0E00C14F37 /* Member */,
+				938F176D21BA0AA100C14F37 /* Login */,
+				938F176C21BA0A9400C14F37 /* Top */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		938F176C21BA0A9400C14F37 /* Top */ = {
+			isa = PBXGroup;
+			children = (
+				938F15C621B6462D00C14F37 /* NewProjectTopViewController.swift */,
+			);
+			name = Top;
+			sourceTree = "<group>";
+		};
+		938F176E21BA0AC400C14F37 /* Regist */ = {
+			isa = PBXGroup;
+			children = (
+				938F177721BA0C9200C14F37 /* NewProjectMemberRegistViewController.swift */,
+			);
+			name = Regist;
 			sourceTree = "<group>";
 		};
 		9A064CA81BF5E53900E44803 /* UIViewController */ = {
@@ -736,9 +874,98 @@
 			name = Color;
 			sourceTree = "<group>";
 		};
+		A9B7E4C71F441AD40014816C /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				A9BB3F3D1F45351100EEF9A2 /* Feature */,
+				A9B7E4CD1F441E350014816C /* sample.json */,
+			);
+			name = JSON;
+			sourceTree = "<group>";
+		};
+		A9B7E4C91F441C340014816C /* LocalJSON */ = {
+			isa = PBXGroup;
+			children = (
+				A9B7E4CA1F441C800014816C /* UtilsLocalJSON.h */,
+				A9B7E4CB1F441C800014816C /* UtilsLocalJSON.m */,
+			);
+			name = LocalJSON;
+			sourceTree = "<group>";
+		};
+		A9B7E4CF1F442F350014816C /* HTML */ = {
+			isa = PBXGroup;
+			children = (
+				A9B7E4D01F442F6E0014816C /* offline.html */,
+			);
+			name = HTML;
+			sourceTree = "<group>";
+		};
+		A9BB3F371F4534A100EEF9A2 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				A9BB3F381F4534B800EEF9A2 /* Membership */,
+			);
+			name = Feature;
+			sourceTree = "<group>";
+		};
+		A9BB3F381F4534B800EEF9A2 /* Membership */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Membership;
+			sourceTree = "<group>";
+		};
+		A9BB3F391F4534C600EEF9A2 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				A9BB3F3A1F4534CE00EEF9A2 /* Membership */,
+			);
+			name = Feature;
+			sourceTree = "<group>";
+		};
+		A9BB3F3A1F4534CE00EEF9A2 /* Membership */ = {
+			isa = PBXGroup;
+			children = (
+				A9BB3F3F1F4535D900EEF9A2 /* MembershipModel.h */,
+				A9BB3F401F4535D900EEF9A2 /* MembershipModel.m */,
+			);
+			name = Membership;
+			sourceTree = "<group>";
+		};
+		A9BB3F3B1F4534EA00EEF9A2 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				A9BB3F3C1F4534F600EEF9A2 /* Membership */,
+			);
+			name = Feature;
+			sourceTree = "<group>";
+		};
+		A9BB3F3C1F4534F600EEF9A2 /* Membership */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Membership;
+			sourceTree = "<group>";
+		};
+		A9BB3F3D1F45351100EEF9A2 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				A9BB3F3E1F45351700EEF9A2 /* Membership */,
+			);
+			name = Feature;
+			sourceTree = "<group>";
+		};
+		A9BB3F3E1F45351700EEF9A2 /* Membership */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Membership;
+			sourceTree = "<group>";
+		};
 		BDE212241AE68D2A002A0746 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A9BB3F371F4534A100EEF9A2 /* Feature */,
 				9A72AE981C4F2520007C2687 /* ObjectiveC */,
 				9A6066861C436D64007A723A /* Game */,
 				9AAF821A1C3B621E00D4EB41 /* DevelopmentManagementTable */,
@@ -811,6 +1038,7 @@
 		BDE212251AE68D36002A0746 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A9BB3F391F4534C600EEF9A2 /* Feature */,
 				BDE2122C1AE68E85002A0746 /* Common */,
 				7F2185A11B05D7C500F1D652 /* Store.h */,
 				7F2185A21B05D7C500F1D652 /* Store.m */,
@@ -821,6 +1049,7 @@
 		BDE212261AE68D46002A0746 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				A9B7E4C91F441C340014816C /* LocalJSON */,
 				A9B760451F283AE90028373D /* Color */,
 				A9B760411F2837B50028373D /* Date */,
 				9ABD26CF1C89205900D998AC /* String */,
@@ -836,6 +1065,8 @@
 		BDE212271AE68D4F002A0746 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A9B7E4CF1F442F350014816C /* HTML */,
+				A9B7E4C71F441AD40014816C /* JSON */,
 				7F2BF39E1B0ACD0A00CA83C4 /* Views */,
 			);
 			name = Resources;
@@ -844,6 +1075,7 @@
 		BDE212281AE68D5C002A0746 /* StoryBoards */ = {
 			isa = PBXGroup;
 			children = (
+				A9BB3F3B1F4534EA00EEF9A2 /* Feature */,
 				BDE212361AE6B48B002A0746 /* Common */,
 				BDE2122E1AE69102002A0746 /* Main.storyboard */,
 				7F24F6411B09D8F40024D249 /* Alert.storyboard */,
@@ -950,6 +1182,7 @@
 		BDEEC2241AD7EE9F00B522D9 /* SandBox */ = {
 			isa = PBXGroup;
 			children = (
+				938F15BE21B62A8800C14F37 /* NewProject */,
 				BDE212291AE68D68002A0746 /* Views */,
 				BDE212281AE68D5C002A0746 /* StoryBoards */,
 				BDE212271AE68D4F002A0746 /* Resources */,
@@ -1076,9 +1309,11 @@
 			files = (
 				BDE2122F1AE69102002A0746 /* Main.storyboard in Resources */,
 				9A5437651C17E2CB00B9F5E6 /* CustomNumberKeyboard.xib in Resources */,
+				A9B7E4D11F442F6E0014816C /* offline.html in Resources */,
 				9A7FBB311C292F7300B4E1C6 /* CustomShopping.storyboard in Resources */,
 				7F2BF3A11B0ACD7F00CA83C4 /* SampleAlertView.xib in Resources */,
 				9A4FC02C1C22673700BAD54A /* CustomSecurityNumberKeyboard.storyboard in Resources */,
+				A9B7E4CE1F441E350014816C /* sample.json in Resources */,
 				9ABBE97F1C6B347D004AB04B /* Settings.bundle in Resources */,
 				9ABB57CC1CAA9469007171C3 /* Calender.storyboard in Resources */,
 				BD8D37DB1C820223002DDB74 /* Alert2.storyboard in Resources */,
@@ -1126,9 +1361,11 @@
 				9A7693811C21427100F3FFB0 /* ToastViewController.m in Sources */,
 				5704E4C31AF221F10027C067 /* ListExceptionViewController.m in Sources */,
 				9A4FC02F1C2272C100BAD54A /* CustomSecurityNumberKeyboardViewController.m in Sources */,
+				A9BB3F411F4535D900EEF9A2 /* MembershipModel.m in Sources */,
 				9AC984441C2D1717004D28AB /* CommonCell.m in Sources */,
 				9ABEA8A91C6AEED1000ECCA9 /* ListFoundationViewController.m in Sources */,
 				9A904BAD1BFAD19D00258ACB /* SettingContentsViewController.m in Sources */,
+				938F15C721B6462D00C14F37 /* NewProjectTopViewController.swift in Sources */,
 				9A76937B1C211A2E00F3FFB0 /* AdScreenViewController.m in Sources */,
 				9AFAD5EC1BF3087100FD0665 /* ListUIResponderObjectViewController.m in Sources */,
 				9A064CAB1BF5E61000E44803 /* ListUIViewControllerObjectViewController.m in Sources */,
@@ -1145,6 +1382,7 @@
 				BD0DA5B91AF7153900BDA278 /* UIView+Custom.m in Sources */,
 				7F2185A61B05E32E00F1D652 /* TableViewListViewController.m in Sources */,
 				BD0DA5B31AF7134400BDA278 /* UIAlertView+Custom.m in Sources */,
+				938F177C21BA0CFD00C14F37 /* NewProjectMemberStatusConfirmViewController.swift in Sources */,
 				9ACFE9B61C3A4EFD00E6A12A /* UtilsBlogSearch.m in Sources */,
 				9AFAD5E81BF2E36400FD0665 /* BaceListViewController.m in Sources */,
 				9A54376C1C17E7E500B9F5E6 /* ListCustomKeyboardsViewController.m in Sources */,
@@ -1163,6 +1401,7 @@
 				7F2BF3A41B0AD10F00CA83C4 /* SampleAlertViewController.m in Sources */,
 				9AAF821D1C3B626C00D4EB41 /* DevelopmentManagementTableViewController.m in Sources */,
 				9A76937E1C213C3800F3FFB0 /* UtilsViewController.m in Sources */,
+				A9B7E4CC1F441C800014816C /* UtilsLocalJSON.m in Sources */,
 				9AFAD5E51BF2E2A100FD0665 /* ListUIImageViewObjectViewController.m in Sources */,
 				9ABB57C71CAA9227007171C3 /* SandBoxCalendarViewController.m in Sources */,
 				BDEEC22B1AD7EE9F00B522D9 /* AppDelegate.m in Sources */,
@@ -1187,9 +1426,11 @@
 				BDE2123B1AE7D14A002A0746 /* 3DViewController.m in Sources */,
 				9A9AE03B1C18235400DA7636 /* ListNSFileManagerObjectViewController.m in Sources */,
 				BDEEC2281AD7EE9F00B522D9 /* main.m in Sources */,
+				938F177A21BA0CCF00C14F37 /* NewProjectMemberCardConfirmViewController.swift in Sources */,
 				9A3F0AA11D7698F500C67164 /* UITableViewCell+Common.m in Sources */,
 				9ADDBC451C98F08A002B9C27 /* CollectionViewController.m in Sources */,
 				7F21D0C01B0C552000311AC2 /* ListViewController.m in Sources */,
+				938F177821BA0C9200C14F37 /* NewProjectMemberRegistViewController.swift in Sources */,
 				7F21D0BD1B0C29D200311AC2 /* TableViewControllerListViewController.m in Sources */,
 				9ABD26D21C89209500D998AC /* NSString+SandBox.m in Sources */,
 				7F24F6401B09D8D20024D249 /* AlertViewController.m in Sources */,
@@ -1201,6 +1442,7 @@
 				BDE212411AE91B8F002A0746 /* ListAlertViewController.m in Sources */,
 				570B694D1AEA0C7200A42DEC /* ListAttributedStringViewController.m in Sources */,
 				9A7FBB431C29391100B4E1C6 /* ContentsShoppingViewController.m in Sources */,
+				938F177E21BA0D2D00C14F37 /* NewProjectBarcodeScanViewController.swift in Sources */,
 				7F2BF3AE1B0B2A4200CA83C4 /* ProgressViewListViewController.m in Sources */,
 				570B694A1AE9D4A800A42DEC /* ListLabelViewController.m in Sources */,
 				A9B760441F2837FF0028373D /* NSDate+SandBox.m in Sources */,
