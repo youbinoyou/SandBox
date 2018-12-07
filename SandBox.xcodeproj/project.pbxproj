@@ -34,6 +34,7 @@
 		7F462AEF1BA953F300896434 /* ListAppliedConstrueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F462AEE1BA953F300896434 /* ListAppliedConstrueViewController.m */; };
 		7F462AF01BA953F300896434 /* ListAppliedConstrueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F462AEE1BA953F300896434 /* ListAppliedConstrueViewController.m */; };
 		938F177621BA0C6E00C14F37 /* NewProjectLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938F177521BA0C6E00C14F37 /* NewProjectLoginViewController.swift */; };
+		938F177E21BA0D2D00C14F37 /* NewProjectBarcodeScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938F177D21BA0D2D00C14F37 /* NewProjectBarcodeScanViewController.swift */; };
 		9A064CAB1BF5E61000E44803 /* ListUIViewControllerObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A064CAA1BF5E61000E44803 /* ListUIViewControllerObjectViewController.m */; };
 		9A064CAF1BF5E91400E44803 /* ListUIWindowObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A064CAE1BF5E91400E44803 /* ListUIWindowObjectViewController.m */; };
 		9A06C80D1BFB317600882EAA /* ListUIScrollViewObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A06C80C1BFB317600882EAA /* ListUIScrollViewObjectViewController.m */; };
@@ -355,6 +356,22 @@
 				938F177521BA0C6E00C14F37 /* NewProjectLoginViewController.swift */,
 			);
 			name = Login;
+			sourceTree = "<group>";
+		};
+		938F177321BA0BB500C14F37 /* Barcode */ = {
+			isa = PBXGroup;
+			children = (
+				938F177421BA0BC200C14F37 /* Scan */,
+			);
+			name = Barcode;
+			sourceTree = "<group>";
+		};
+		938F177421BA0BC200C14F37 /* Scan */ = {
+			isa = PBXGroup;
+			children = (
+				938F177D21BA0D2D00C14F37 /* NewProjectBarcodeScanViewController.swift */,
+			);
+			name = Scan;
 			sourceTree = "<group>";
 		};
 		9A064CA81BF5E53900E44803 /* UIViewController */ = {
@@ -1211,6 +1228,7 @@
 				BDE212411AE91B8F002A0746 /* ListAlertViewController.m in Sources */,
 				570B694D1AEA0C7200A42DEC /* ListAttributedStringViewController.m in Sources */,
 				9A7FBB431C29391100B4E1C6 /* ContentsShoppingViewController.m in Sources */,
+				938F177E21BA0D2D00C14F37 /* NewProjectBarcodeScanViewController.swift in Sources */,
 				7F2BF3AE1B0B2A4200CA83C4 /* ProgressViewListViewController.m in Sources */,
 				570B694A1AE9D4A800A42DEC /* ListLabelViewController.m in Sources */,
 				A9B760441F2837FF0028373D /* NSDate+SandBox.m in Sources */,
