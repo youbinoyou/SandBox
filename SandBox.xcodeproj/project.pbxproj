@@ -32,7 +32,6 @@
 		7F2BF3B41B0B2B1100CA83C4 /* StepperListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2BF3B31B0B2B1100CA83C4 /* StepperListViewController.m */; };
 		7F2ED0611B0D8BF300F795A4 /* AreaSelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F2ED0601B0D8BF300F795A4 /* AreaSelection.storyboard */; };
 		7F462AEF1BA953F300896434 /* ListAppliedConstrueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F462AEE1BA953F300896434 /* ListAppliedConstrueViewController.m */; };
-		7F462AF01BA953F300896434 /* ListAppliedConstrueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F462AEE1BA953F300896434 /* ListAppliedConstrueViewController.m */; };
 		938F177C21BA0CFD00C14F37 /* NewProjectMemberStatusConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938F177B21BA0CFD00C14F37 /* NewProjectMemberStatusConfirmViewController.swift */; };
 		938F177A21BA0CCF00C14F37 /* NewProjectMemberCardConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938F177921BA0CCF00C14F37 /* NewProjectMemberCardConfirmViewController.swift */; };
 		938F177621BA0C6E00C14F37 /* NewProjectLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938F177521BA0C6E00C14F37 /* NewProjectLoginViewController.swift */; };
