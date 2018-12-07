@@ -33,6 +33,8 @@
 		7F2ED0611B0D8BF300F795A4 /* AreaSelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F2ED0601B0D8BF300F795A4 /* AreaSelection.storyboard */; };
 		7F462AEF1BA953F300896434 /* ListAppliedConstrueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F462AEE1BA953F300896434 /* ListAppliedConstrueViewController.m */; };
 		7F462AF01BA953F300896434 /* ListAppliedConstrueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F462AEE1BA953F300896434 /* ListAppliedConstrueViewController.m */; };
+		938F177A21BA0CCF00C14F37 /* NewProjectMemberCardConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938F177921BA0CCF00C14F37 /* NewProjectMemberCardConfirmViewController.swift */; };
+		938F177621BA0C6E00C14F37 /* NewProjectLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938F177521BA0C6E00C14F37 /* NewProjectLoginViewController.swift */; };
 		938F177E21BA0D2D00C14F37 /* NewProjectBarcodeScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938F177D21BA0D2D00C14F37 /* NewProjectBarcodeScanViewController.swift */; };
 		938F15C721B6462D00C14F37 /* NewProjectTopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938F15C621B6462D00C14F37 /* NewProjectTopViewController.swift */; };
 		9A064CAB1BF5E61000E44803 /* ListUIViewControllerObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A064CAA1BF5E61000E44803 /* ListUIViewControllerObjectViewController.m */; };
@@ -175,6 +177,7 @@
 		7F2ED0601B0D8BF300F795A4 /* AreaSelection.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = AreaSelection.storyboard; path = Base.lproj/StoryBoards/AreaSelection.storyboard; sourceTree = "<group>"; };
 		7F462AED1BA953F300896434 /* ListAppliedConstrueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListAppliedConstrueViewController.h; path = Controllers/ListAppliedConstrueViewController.h; sourceTree = "<group>"; };
 		7F462AEE1BA953F300896434 /* ListAppliedConstrueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListAppliedConstrueViewController.m; path = Controllers/ListAppliedConstrueViewController.m; sourceTree = "<group>"; };
+		938F177921BA0CCF00C14F37 /* NewProjectMemberCardConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewProjectMemberCardConfirmViewController.swift; path = NewProject/Views/ViewControllers/Member/Confirm/Card/NewProjectMemberCardConfirmViewController.swift; sourceTree = "<group>"; };
 		938F15C621B6462D00C14F37 /* NewProjectTopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewProjectTopViewController.swift; path = NewProject/Views/ViewControllers/NewProjectTopViewController.swift; sourceTree = "<group>"; };
 		9A064CA91BF5E61000E44803 /* ListUIViewControllerObjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListUIViewControllerObjectViewController.h; path = Controllers/UIViewController/ListUIViewControllerObjectViewController.h; sourceTree = "<group>"; };
 		9A064CAA1BF5E61000E44803 /* ListUIViewControllerObjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListUIViewControllerObjectViewController.m; path = Controllers/UIViewController/ListUIViewControllerObjectViewController.m; sourceTree = "<group>"; };
@@ -361,6 +364,22 @@
 			name = AlertViews;
 			sourceTree = "<group>";
 		};
+		938F177021BA0B0E00C14F37 /* Member */ = {
+			isa = PBXGroup;
+			children = (
+				938F177221BA0B6100C14F37 /* Confirm */,
+			);
+			name = Member;
+			sourceTree = "<group>";
+		};
+		938F177221BA0B6100C14F37 /* Confirm */ = {
+			isa = PBXGroup;
+			children = (
+				938F176F21BA0AFF00C14F37 /* Card */,
+			);
+			name = Confirm;
+      sourceTree = "<group>";
+    };
 		938F177321BA0BB500C14F37 /* Barcode */ = {
 			isa = PBXGroup;
 			children = (
@@ -1374,6 +1393,7 @@
 				BDE2123B1AE7D14A002A0746 /* 3DViewController.m in Sources */,
 				9A9AE03B1C18235400DA7636 /* ListNSFileManagerObjectViewController.m in Sources */,
 				BDEEC2281AD7EE9F00B522D9 /* main.m in Sources */,
+				938F177A21BA0CCF00C14F37 /* NewProjectMemberCardConfirmViewController.swift in Sources */,
 				9A3F0AA11D7698F500C67164 /* UITableViewCell+Common.m in Sources */,
 				9ADDBC451C98F08A002B9C27 /* CollectionViewController.m in Sources */,
 				7F21D0C01B0C552000311AC2 /* ListViewController.m in Sources */,
