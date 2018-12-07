@@ -38,6 +38,7 @@
 		938F177621BA0C6E00C14F37 /* NewProjectLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938F177521BA0C6E00C14F37 /* NewProjectLoginViewController.swift */; };
 		938F177E21BA0D2D00C14F37 /* NewProjectBarcodeScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938F177D21BA0D2D00C14F37 /* NewProjectBarcodeScanViewController.swift */; };
 		938F15C721B6462D00C14F37 /* NewProjectTopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938F15C621B6462D00C14F37 /* NewProjectTopViewController.swift */; };
+		938F177821BA0C9200C14F37 /* NewProjectMemberRegistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938F177721BA0C9200C14F37 /* NewProjectMemberRegistViewController.swift */; };
 		9A064CAB1BF5E61000E44803 /* ListUIViewControllerObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A064CAA1BF5E61000E44803 /* ListUIViewControllerObjectViewController.m */; };
 		9A064CAF1BF5E91400E44803 /* ListUIWindowObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A064CAE1BF5E91400E44803 /* ListUIWindowObjectViewController.m */; };
 		9A06C80D1BFB317600882EAA /* ListUIScrollViewObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A06C80C1BFB317600882EAA /* ListUIScrollViewObjectViewController.m */; };
@@ -476,6 +477,14 @@
 				938F15C621B6462D00C14F37 /* NewProjectTopViewController.swift */,
 			);
 			name = Top;
+			sourceTree = "<group>";
+		};
+		938F176E21BA0AC400C14F37 /* Regist */ = {
+			isa = PBXGroup;
+			children = (
+				938F177721BA0C9200C14F37 /* NewProjectMemberRegistViewController.swift */,
+			);
+			name = Regist;
 			sourceTree = "<group>";
 		};
 		9A064CA81BF5E53900E44803 /* UIViewController */ = {
@@ -1422,6 +1431,7 @@
 				9A3F0AA11D7698F500C67164 /* UITableViewCell+Common.m in Sources */,
 				9ADDBC451C98F08A002B9C27 /* CollectionViewController.m in Sources */,
 				7F21D0C01B0C552000311AC2 /* ListViewController.m in Sources */,
+				938F177821BA0C9200C14F37 /* NewProjectMemberRegistViewController.swift in Sources */,
 				7F21D0BD1B0C29D200311AC2 /* TableViewControllerListViewController.m in Sources */,
 				9ABD26D21C89209500D998AC /* NSString+SandBox.m in Sources */,
 				7F24F6401B09D8D20024D249 /* AlertViewController.m in Sources */,
