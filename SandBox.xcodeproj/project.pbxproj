@@ -33,6 +33,7 @@
 		7F2ED0611B0D8BF300F795A4 /* AreaSelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F2ED0601B0D8BF300F795A4 /* AreaSelection.storyboard */; };
 		7F462AEF1BA953F300896434 /* ListAppliedConstrueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F462AEE1BA953F300896434 /* ListAppliedConstrueViewController.m */; };
 		7F462AF01BA953F300896434 /* ListAppliedConstrueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F462AEE1BA953F300896434 /* ListAppliedConstrueViewController.m */; };
+		938F177C21BA0CFD00C14F37 /* NewProjectMemberStatusConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938F177B21BA0CFD00C14F37 /* NewProjectMemberStatusConfirmViewController.swift */; };
 		9A064CAB1BF5E61000E44803 /* ListUIViewControllerObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A064CAA1BF5E61000E44803 /* ListUIViewControllerObjectViewController.m */; };
 		9A064CAF1BF5E91400E44803 /* ListUIWindowObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A064CAE1BF5E91400E44803 /* ListUIWindowObjectViewController.m */; };
 		9A06C80D1BFB317600882EAA /* ListUIScrollViewObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A06C80C1BFB317600882EAA /* ListUIScrollViewObjectViewController.m */; };
@@ -169,6 +170,7 @@
 		7F2ED0601B0D8BF300F795A4 /* AreaSelection.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = AreaSelection.storyboard; path = Base.lproj/StoryBoards/AreaSelection.storyboard; sourceTree = "<group>"; };
 		7F462AED1BA953F300896434 /* ListAppliedConstrueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListAppliedConstrueViewController.h; path = Controllers/ListAppliedConstrueViewController.h; sourceTree = "<group>"; };
 		7F462AEE1BA953F300896434 /* ListAppliedConstrueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListAppliedConstrueViewController.m; path = Controllers/ListAppliedConstrueViewController.m; sourceTree = "<group>"; };
+		938F177B21BA0CFD00C14F37 /* NewProjectMemberStatusConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewProjectMemberStatusConfirmViewController.swift; path = NewProject/Views/ViewControllers/Member/Confirm/Status/NewProjectMemberStatusConfirmViewController.swift; sourceTree = "<group>"; };
 		9A064CA91BF5E61000E44803 /* ListUIViewControllerObjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListUIViewControllerObjectViewController.h; path = Controllers/UIViewController/ListUIViewControllerObjectViewController.h; sourceTree = "<group>"; };
 		9A064CAA1BF5E61000E44803 /* ListUIViewControllerObjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListUIViewControllerObjectViewController.m; path = Controllers/UIViewController/ListUIViewControllerObjectViewController.m; sourceTree = "<group>"; };
 		9A064CAD1BF5E91400E44803 /* ListUIWindowObjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListUIWindowObjectViewController.h; path = Controllers/UIWindow/ListUIWindowObjectViewController.h; sourceTree = "<group>"; };
@@ -346,6 +348,30 @@
 				7F2BF3A01B0ACD7F00CA83C4 /* SampleAlertView.xib */,
 			);
 			name = AlertViews;
+			sourceTree = "<group>";
+		};
+		938F177021BA0B0E00C14F37 /* Member */ = {
+			isa = PBXGroup;
+			children = (
+				938F177221BA0B6100C14F37 /* Confirm */,
+			);
+			name = Member;
+			sourceTree = "<group>";
+		};
+		938F177121BA0B4D00C14F37 /* Status */ = {
+			isa = PBXGroup;
+			children = (
+				938F177B21BA0CFD00C14F37 /* NewProjectMemberStatusConfirmViewController.swift */,
+			);
+			name = Status;
+			sourceTree = "<group>";
+		};
+		938F177221BA0B6100C14F37 /* Confirm */ = {
+			isa = PBXGroup;
+			children = (
+				938F177121BA0B4D00C14F37 /* Status */,
+			);
+			name = Confirm;
 			sourceTree = "<group>";
 		};
 		9A064CA81BF5E53900E44803 /* UIViewController */ = {
@@ -1145,6 +1171,7 @@
 				BD0DA5B91AF7153900BDA278 /* UIView+Custom.m in Sources */,
 				7F2185A61B05E32E00F1D652 /* TableViewListViewController.m in Sources */,
 				BD0DA5B31AF7134400BDA278 /* UIAlertView+Custom.m in Sources */,
+				938F177C21BA0CFD00C14F37 /* NewProjectMemberStatusConfirmViewController.swift in Sources */,
 				9ACFE9B61C3A4EFD00E6A12A /* UtilsBlogSearch.m in Sources */,
 				9AFAD5E81BF2E36400FD0665 /* BaceListViewController.m in Sources */,
 				9A54376C1C17E7E500B9F5E6 /* ListCustomKeyboardsViewController.m in Sources */,
