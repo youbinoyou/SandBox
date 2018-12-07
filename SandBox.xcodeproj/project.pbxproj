@@ -32,8 +32,12 @@
 		7F2BF3B41B0B2B1100CA83C4 /* StepperListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2BF3B31B0B2B1100CA83C4 /* StepperListViewController.m */; };
 		7F2ED0611B0D8BF300F795A4 /* AreaSelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F2ED0601B0D8BF300F795A4 /* AreaSelection.storyboard */; };
 		7F462AEF1BA953F300896434 /* ListAppliedConstrueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F462AEE1BA953F300896434 /* ListAppliedConstrueViewController.m */; };
-		7F462AF01BA953F300896434 /* ListAppliedConstrueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F462AEE1BA953F300896434 /* ListAppliedConstrueViewController.m */; };
+		938F177C21BA0CFD00C14F37 /* NewProjectMemberStatusConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938F177B21BA0CFD00C14F37 /* NewProjectMemberStatusConfirmViewController.swift */; };
+		938F177A21BA0CCF00C14F37 /* NewProjectMemberCardConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938F177921BA0CCF00C14F37 /* NewProjectMemberCardConfirmViewController.swift */; };
+		938F177621BA0C6E00C14F37 /* NewProjectLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938F177521BA0C6E00C14F37 /* NewProjectLoginViewController.swift */; };
+		938F177E21BA0D2D00C14F37 /* NewProjectBarcodeScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938F177D21BA0D2D00C14F37 /* NewProjectBarcodeScanViewController.swift */; };
 		938F15C721B6462D00C14F37 /* NewProjectTopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938F15C621B6462D00C14F37 /* NewProjectTopViewController.swift */; };
+		938F177821BA0C9200C14F37 /* NewProjectMemberRegistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938F177721BA0C9200C14F37 /* NewProjectMemberRegistViewController.swift */; };
 		9A064CAB1BF5E61000E44803 /* ListUIViewControllerObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A064CAA1BF5E61000E44803 /* ListUIViewControllerObjectViewController.m */; };
 		9A064CAF1BF5E91400E44803 /* ListUIWindowObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A064CAE1BF5E91400E44803 /* ListUIWindowObjectViewController.m */; };
 		9A06C80D1BFB317600882EAA /* ListUIScrollViewObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A06C80C1BFB317600882EAA /* ListUIScrollViewObjectViewController.m */; };
@@ -174,6 +178,8 @@
 		7F2ED0601B0D8BF300F795A4 /* AreaSelection.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = AreaSelection.storyboard; path = Base.lproj/StoryBoards/AreaSelection.storyboard; sourceTree = "<group>"; };
 		7F462AED1BA953F300896434 /* ListAppliedConstrueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListAppliedConstrueViewController.h; path = Controllers/ListAppliedConstrueViewController.h; sourceTree = "<group>"; };
 		7F462AEE1BA953F300896434 /* ListAppliedConstrueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListAppliedConstrueViewController.m; path = Controllers/ListAppliedConstrueViewController.m; sourceTree = "<group>"; };
+		938F177B21BA0CFD00C14F37 /* NewProjectMemberStatusConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewProjectMemberStatusConfirmViewController.swift; path = NewProject/Views/ViewControllers/Member/Confirm/Status/NewProjectMemberStatusConfirmViewController.swift; sourceTree = "<group>"; };
+		938F177921BA0CCF00C14F37 /* NewProjectMemberCardConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewProjectMemberCardConfirmViewController.swift; path = NewProject/Views/ViewControllers/Member/Confirm/Card/NewProjectMemberCardConfirmViewController.swift; sourceTree = "<group>"; };
 		938F15C621B6462D00C14F37 /* NewProjectTopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewProjectTopViewController.swift; path = NewProject/Views/ViewControllers/NewProjectTopViewController.swift; sourceTree = "<group>"; };
 		9A064CA91BF5E61000E44803 /* ListUIViewControllerObjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListUIViewControllerObjectViewController.h; path = Controllers/UIViewController/ListUIViewControllerObjectViewController.h; sourceTree = "<group>"; };
 		9A064CAA1BF5E61000E44803 /* ListUIViewControllerObjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListUIViewControllerObjectViewController.m; path = Controllers/UIViewController/ListUIViewControllerObjectViewController.m; sourceTree = "<group>"; };
@@ -360,6 +366,58 @@
 			name = AlertViews;
 			sourceTree = "<group>";
 		};
+		938F177021BA0B0E00C14F37 /* Member */ = {
+			isa = PBXGroup;
+			children = (
+				938F177221BA0B6100C14F37 /* Confirm */,
+			);
+			name = Member;
+			sourceTree = "<group>";
+		};
+		938F177121BA0B4D00C14F37 /* Status */ = {
+			isa = PBXGroup;
+			children = (
+				938F177B21BA0CFD00C14F37 /* NewProjectMemberStatusConfirmViewController.swift */,
+			);
+			name = Status;
+			sourceTree = "<group>";
+		};
+		938F177221BA0B6100C14F37 /* Confirm */ = {
+			isa = PBXGroup;
+			children = (
+				938F177121BA0B4D00C14F37 /* Status */,
+				938F176F21BA0AFF00C14F37 /* Card */,
+			);
+			name = Confirm;
+			sourceTree = "<group>";
+    };
+		938F176D21BA0AA100C14F37 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				938F177221BA0B6100C14F37 /* Confirm */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+    };
+			name = Member;
+			sourceTree = "<group>";
+		};
+		938F177321BA0BB500C14F37 /* Barcode */ = {
+			isa = PBXGroup;
+			children = (
+				938F177421BA0BC200C14F37 /* Scan */,
+			);
+			name = Barcode;
+			sourceTree = "<group>";
+		};
+		938F177421BA0BC200C14F37 /* Scan */ = {
+			isa = PBXGroup;
+			children = (
+				938F177D21BA0D2D00C14F37 /* NewProjectBarcodeScanViewController.swift */,
+			);
+			name = Scan;
+			sourceTree = "<group>";
+		};
 		938F15BE21B62A8800C14F37 /* NewProject */ = {
 			isa = PBXGroup;
 			children = (
@@ -418,6 +476,14 @@
 				938F15C621B6462D00C14F37 /* NewProjectTopViewController.swift */,
 			);
 			name = Top;
+			sourceTree = "<group>";
+		};
+		938F176E21BA0AC400C14F37 /* Regist */ = {
+			isa = PBXGroup;
+			children = (
+				938F177721BA0C9200C14F37 /* NewProjectMemberRegistViewController.swift */,
+			);
+			name = Regist;
 			sourceTree = "<group>";
 		};
 		9A064CA81BF5E53900E44803 /* UIViewController */ = {
@@ -1316,6 +1382,7 @@
 				BD0DA5B91AF7153900BDA278 /* UIView+Custom.m in Sources */,
 				7F2185A61B05E32E00F1D652 /* TableViewListViewController.m in Sources */,
 				BD0DA5B31AF7134400BDA278 /* UIAlertView+Custom.m in Sources */,
+				938F177C21BA0CFD00C14F37 /* NewProjectMemberStatusConfirmViewController.swift in Sources */,
 				9ACFE9B61C3A4EFD00E6A12A /* UtilsBlogSearch.m in Sources */,
 				9AFAD5E81BF2E36400FD0665 /* BaceListViewController.m in Sources */,
 				9A54376C1C17E7E500B9F5E6 /* ListCustomKeyboardsViewController.m in Sources */,
@@ -1359,9 +1426,11 @@
 				BDE2123B1AE7D14A002A0746 /* 3DViewController.m in Sources */,
 				9A9AE03B1C18235400DA7636 /* ListNSFileManagerObjectViewController.m in Sources */,
 				BDEEC2281AD7EE9F00B522D9 /* main.m in Sources */,
+				938F177A21BA0CCF00C14F37 /* NewProjectMemberCardConfirmViewController.swift in Sources */,
 				9A3F0AA11D7698F500C67164 /* UITableViewCell+Common.m in Sources */,
 				9ADDBC451C98F08A002B9C27 /* CollectionViewController.m in Sources */,
 				7F21D0C01B0C552000311AC2 /* ListViewController.m in Sources */,
+				938F177821BA0C9200C14F37 /* NewProjectMemberRegistViewController.swift in Sources */,
 				7F21D0BD1B0C29D200311AC2 /* TableViewControllerListViewController.m in Sources */,
 				9ABD26D21C89209500D998AC /* NSString+SandBox.m in Sources */,
 				7F24F6401B09D8D20024D249 /* AlertViewController.m in Sources */,
@@ -1373,6 +1442,7 @@
 				BDE212411AE91B8F002A0746 /* ListAlertViewController.m in Sources */,
 				570B694D1AEA0C7200A42DEC /* ListAttributedStringViewController.m in Sources */,
 				9A7FBB431C29391100B4E1C6 /* ContentsShoppingViewController.m in Sources */,
+				938F177E21BA0D2D00C14F37 /* NewProjectBarcodeScanViewController.swift in Sources */,
 				7F2BF3AE1B0B2A4200CA83C4 /* ProgressViewListViewController.m in Sources */,
 				570B694A1AE9D4A800A42DEC /* ListLabelViewController.m in Sources */,
 				A9B760441F2837FF0028373D /* NSDate+SandBox.m in Sources */,
