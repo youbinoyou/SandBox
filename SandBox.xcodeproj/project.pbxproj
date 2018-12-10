@@ -33,6 +33,8 @@
 		7F2ED0611B0D8BF300F795A4 /* AreaSelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F2ED0601B0D8BF300F795A4 /* AreaSelection.storyboard */; };
 		7F462AEF1BA953F300896434 /* ListAppliedConstrueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F462AEE1BA953F300896434 /* ListAppliedConstrueViewController.m */; };
 		7F462AF01BA953F300896434 /* ListAppliedConstrueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F462AEE1BA953F300896434 /* ListAppliedConstrueViewController.m */; };
+		938F178921BE5A7A00C14F37 /* SwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938F178821BE5A7A00C14F37 /* SwiftViewController.swift */; };
+		938F178B21BE5C4500C14F37 /* SwiftViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 938F178A21BE5C4400C14F37 /* SwiftViewController.xib */; };
 		9A064CAB1BF5E61000E44803 /* ListUIViewControllerObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A064CAA1BF5E61000E44803 /* ListUIViewControllerObjectViewController.m */; };
 		9A064CAF1BF5E91400E44803 /* ListUIWindowObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A064CAE1BF5E91400E44803 /* ListUIWindowObjectViewController.m */; };
 		9A06C80D1BFB317600882EAA /* ListUIScrollViewObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A06C80C1BFB317600882EAA /* ListUIScrollViewObjectViewController.m */; };
@@ -173,6 +175,9 @@
 		7F2ED0601B0D8BF300F795A4 /* AreaSelection.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = AreaSelection.storyboard; path = Base.lproj/StoryBoards/AreaSelection.storyboard; sourceTree = "<group>"; };
 		7F462AED1BA953F300896434 /* ListAppliedConstrueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListAppliedConstrueViewController.h; path = Controllers/ListAppliedConstrueViewController.h; sourceTree = "<group>"; };
 		7F462AEE1BA953F300896434 /* ListAppliedConstrueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListAppliedConstrueViewController.m; path = Controllers/ListAppliedConstrueViewController.m; sourceTree = "<group>"; };
+		938F178721BE5A7900C14F37 /* SandBox-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SandBox-Bridging-Header.h"; sourceTree = "<group>"; };
+		938F178821BE5A7A00C14F37 /* SwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SwiftViewController.swift; path = Swift/Normal/SwiftViewController.swift; sourceTree = "<group>"; };
+		938F178A21BE5C4400C14F37 /* SwiftViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SwiftViewController.xib; path = Swift/Normal/xib/SwiftViewController.xib; sourceTree = "<group>"; };
 		9A064CA91BF5E61000E44803 /* ListUIViewControllerObjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListUIViewControllerObjectViewController.h; path = Controllers/UIViewController/ListUIViewControllerObjectViewController.h; sourceTree = "<group>"; };
 		9A064CAA1BF5E61000E44803 /* ListUIViewControllerObjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListUIViewControllerObjectViewController.m; path = Controllers/UIViewController/ListUIViewControllerObjectViewController.m; sourceTree = "<group>"; };
 		9A064CAD1BF5E91400E44803 /* ListUIWindowObjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListUIWindowObjectViewController.h; path = Controllers/UIWindow/ListUIWindowObjectViewController.h; sourceTree = "<group>"; };
@@ -356,6 +361,48 @@
 				7F2BF3A01B0ACD7F00CA83C4 /* SampleAlertView.xib */,
 			);
 			name = AlertViews;
+			sourceTree = "<group>";
+		};
+		938F178321BE59D100C14F37 /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				938F178621BE59FE00C14F37 /* Custom */,
+				938F178521BE59F200C14F37 /* Original */,
+				938F178421BE59DE00C14F37 /* Normal */,
+			);
+			name = Swift;
+			sourceTree = "<group>";
+		};
+		938F178421BE59DE00C14F37 /* Normal */ = {
+			isa = PBXGroup;
+			children = (
+				938F178C21BE5C5300C14F37 /* xib */,
+				938F178821BE5A7A00C14F37 /* SwiftViewController.swift */,
+				938F178721BE5A7900C14F37 /* SandBox-Bridging-Header.h */,
+			);
+			name = Normal;
+			sourceTree = "<group>";
+		};
+		938F178521BE59F200C14F37 /* Original */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Original;
+			sourceTree = "<group>";
+		};
+		938F178621BE59FE00C14F37 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Custom;
+			sourceTree = "<group>";
+		};
+		938F178C21BE5C5300C14F37 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				938F178A21BE5C4400C14F37 /* SwiftViewController.xib */,
+			);
+			name = xib;
 			sourceTree = "<group>";
 		};
 		9A064CA81BF5E53900E44803 /* UIViewController */ = {
@@ -1054,6 +1101,7 @@
 		BDEEC2241AD7EE9F00B522D9 /* SandBox */ = {
 			isa = PBXGroup;
 			children = (
+				938F178321BE59D100C14F37 /* Swift */,
 				BDE212291AE68D68002A0746 /* Views */,
 				BDE212281AE68D5C002A0746 /* StoryBoards */,
 				BDE212271AE68D4F002A0746 /* Resources */,
@@ -1147,6 +1195,7 @@
 				TargetAttributes = {
 					BDEEC2211AD7EE9F00B522D9 = {
 						CreatedOnToolsVersion = 6.1.1;
+						LastSwiftMigration = 1010;
 					};
 					BDEEC23A1AD7EE9F00B522D9 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -1186,6 +1235,7 @@
 				9A4FC02C1C22673700BAD54A /* CustomSecurityNumberKeyboard.storyboard in Resources */,
 				A9B7E4CE1F441E350014816C /* sample.json in Resources */,
 				9ABBE97F1C6B347D004AB04B /* Settings.bundle in Resources */,
+				938F178B21BE5C4500C14F37 /* SwiftViewController.xib in Resources */,
 				9ABB57CC1CAA9469007171C3 /* Calender.storyboard in Resources */,
 				BD8D37DB1C820223002DDB74 /* Alert2.storyboard in Resources */,
 				BDEEC2361AD7EE9F00B522D9 /* LaunchScreen.xib in Resources */,
@@ -1298,6 +1348,7 @@
 				9A3F0AA11D7698F500C67164 /* UITableViewCell+Common.m in Sources */,
 				9ADDBC451C98F08A002B9C27 /* CollectionViewController.m in Sources */,
 				7F21D0C01B0C552000311AC2 /* ListViewController.m in Sources */,
+				938F178921BE5A7A00C14F37 /* SwiftViewController.swift in Sources */,
 				7F21D0BD1B0C29D200311AC2 /* TableViewControllerListViewController.m in Sources */,
 				9ABD26D21C89209500D998AC /* NSString+SandBox.m in Sources */,
 				7F24F6401B09D8D20024D249 /* AlertViewController.m in Sources */,
@@ -1434,6 +1485,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SandBox/Info.plist;
@@ -1442,6 +1494,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = you.ohshima.SandBox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "SandBox/SandBox-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -1449,6 +1504,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SandBox/Info.plist;
@@ -1457,12 +1513,15 @@
 				PRODUCT_BUNDLE_IDENTIFIER = you.ohshima.SandBox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "SandBox/SandBox-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
 		BDEEC2491AD7EEA000B522D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -1483,6 +1542,7 @@
 		BDEEC24A1AD7EEA000B522D9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
